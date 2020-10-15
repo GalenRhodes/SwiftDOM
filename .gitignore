@@ -1,8 +1,8 @@
-/bin/
-/build/
-**/xcuserdata/
-**/grhodes.xcuserdatad/
+**/*.sh
 **/.DS_Store
 /.build
-**/*.sh
-/Emu6510.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+/bin/
+/build/
+/*.xcodeproj/xcuserdata/
+/*.xcodeproj/project.xcworkspace/xcuserdata/
+/*.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
