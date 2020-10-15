@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "RingBuffer",
+        "repositoryURL": "https://github.com/GalenRhodes/RingBuffer",
+        "state": {
+          "branch": null,
+          "revision": "ae4793764b49de024637e0d34887d094f4a7ee56",
+          "version": "1.0.5"
+        }
+      },
+      {
+        "package": "Rubicon",
+        "repositoryURL": "https://github.com/GalenRhodes/Rubicon.git",
+        "state": {
+          "branch": null,
+          "revision": "fd2a32c9d6dacb2668a0d7a6d82b4c86b1c3fa77",
+          "version": "0.2.27"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

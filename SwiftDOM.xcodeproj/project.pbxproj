@@ -3,13 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1117D02932E45917D63A9B22 /* NamedNodeMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D2D5628097299FB75E1A /* NamedNodeMap.swift */; };
+		1117D0DCF311A55F541DAF05 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D407CFC2E7108300228F /* Document.swift */; };
+		1117D171F01F85B9C71BD708 /* SwiftDOM.h in Headers */ = {isa = PBXBuildFile; fileRef = 1117D97616C45B5FB41CCFB8 /* SwiftDOM.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1117D20A8AABF3C57D69EF52 /* NodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D104641FAD168D6B453E /* NodeList.swift */; };
+		1117D260B0B05F9687044B78 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D4F87BFE79D6414EF86D /* Node.swift */; };
+		1117D36A7ED2BA5B18536CA4 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D2429CE42CCAD4F17119 /* Element.swift */; };
+		1117D36FAF979A5DF9669DAE /* UserDataEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D7F872F7D3CDFC5AB462 /* UserDataEvents.swift */; };
+		1117D3EFD581D43ABD9E2452 /* DOMErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D93C3B22CC1E727DF3CA /* DOMErrors.swift */; };
+		1117D5D40698C9EA06BB5D92 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DE490F96727556F45732 /* Attribute.swift */; };
+		1117D5DC1F6F2A6E4BB51BF2 /* NamespaceSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DD99B1DF32E57574F484 /* NamespaceSupport.swift */; };
+		1117D846CFD13C85A132FDCD /* NodeTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D8964582412341264D5E /* NodeTypes.swift */; };
+		1117D91440D15F4BE84C1936 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D99748A9ECFEA80722E3 /* Text.swift */; };
+		1117DA5828D99912F59D3DE2 /* TypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D0AE58EFF1D63E466F79 /* TypeInfo.swift */; };
+		1117DBF7C51FBD7522764F0B /* LiveCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DEFE7621A624019CC35B /* LiveCollection.swift */; };
 		83BB029A2537E67200834BF5 /* SwiftDOM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83BB02902537E67200834BF5 /* SwiftDOM.framework */; };
 		83BB029F2537E67200834BF5 /* SwiftDOMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB029E2537E67200834BF5 /* SwiftDOMTests.swift */; };
-		83BB02A12537E67200834BF5 /* SwiftDOM.h in Headers */ = {isa = PBXBuildFile; fileRef = 83BB02932537E67200834BF5 /* SwiftDOM.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +36,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1117D00DAAEC3DEB3C7B9FB9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		1117D0AE58EFF1D63E466F79 /* TypeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeInfo.swift; sourceTree = "<group>"; };
+		1117D104641FAD168D6B453E /* NodeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeList.swift; sourceTree = "<group>"; };
+		1117D2429CE42CCAD4F17119 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		1117D28C9A036B7081440ED7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
+		1117D2D5628097299FB75E1A /* NamedNodeMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedNodeMap.swift; sourceTree = "<group>"; };
+		1117D407CFC2E7108300228F /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		1117D4F87BFE79D6414EF86D /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		1117D799446075FCC97979A4 /* .jazzy.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .jazzy.yaml; sourceTree = "<group>"; };
+		1117D7F872F7D3CDFC5AB462 /* UserDataEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataEvents.swift; sourceTree = "<group>"; };
+		1117D8964582412341264D5E /* NodeTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeTypes.swift; sourceTree = "<group>"; };
+		1117D93C3B22CC1E727DF3CA /* DOMErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOMErrors.swift; sourceTree = "<group>"; };
+		1117D97616C45B5FB41CCFB8 /* SwiftDOM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftDOM.h; sourceTree = "<group>"; };
+		1117D99748A9ECFEA80722E3 /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		1117DC968621B8A84EB4D43B /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		1117DD99B1DF32E57574F484 /* NamespaceSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamespaceSupport.swift; sourceTree = "<group>"; };
+		1117DE490F96727556F45732 /* Attribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
+		1117DED6F9C3006FE54DE3AF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		1117DEFE7621A624019CC35B /* LiveCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveCollection.swift; sourceTree = "<group>"; };
 		83BB02902537E67200834BF5 /* SwiftDOM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftDOM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		83BB02932537E67200834BF5 /* SwiftDOM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftDOM.h; sourceTree = "<group>"; };
-		83BB02942537E67200834BF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83BB02992537E67200834BF5 /* SwiftDOMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDOMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BB029E2537E67200834BF5 /* SwiftDOMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDOMTests.swift; sourceTree = "<group>"; };
 		83BB02A02537E67200834BF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83BB02BB2537E7BF00834BF5 /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
+		83BB02BC2537E88E00834BF5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,12 +82,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1117DC6B7C98DE37AF2EFC7B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				1117D28C9A036B7081440ED7 /* .gitignore */,
+				1117DC968621B8A84EB4D43B /* Package.swift */,
+				1117DED6F9C3006FE54DE3AF /* LICENSE */,
+				1117D799446075FCC97979A4 /* .jazzy.yaml */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		1117DDF5ADEECE0C1C4A5CB6 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				1117D99748A9ECFEA80722E3 /* Text.swift */,
+				1117D2429CE42CCAD4F17119 /* Element.swift */,
+				1117D4F87BFE79D6414EF86D /* Node.swift */,
+				1117D407CFC2E7108300228F /* Document.swift */,
+				1117DE490F96727556F45732 /* Attribute.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		1117DFDDAAB65BCB7A43160F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				1117D97616C45B5FB41CCFB8 /* SwiftDOM.h */,
+				1117D00DAAEC3DEB3C7B9FB9 /* Info.plist */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		83BB02862537E67200834BF5 = {
 			isa = PBXGroup;
 			children = (
-				83BB02922537E67200834BF5 /* SwiftDOM */,
-				83BB029D2537E67200834BF5 /* SwiftDOMTests */,
+				83BB02B22537E74600834BF5 /* Tests */,
+				83BB02B12537E71F00834BF5 /* Sources */,
+				83BB02BC2537E88E00834BF5 /* README.md */,
 				83BB02912537E67200834BF5 /* Products */,
+				1117DC6B7C98DE37AF2EFC7B /* Other */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,8 +137,16 @@
 		83BB02922537E67200834BF5 /* SwiftDOM */ = {
 			isa = PBXGroup;
 			children = (
-				83BB02932537E67200834BF5 /* SwiftDOM.h */,
-				83BB02942537E67200834BF5 /* Info.plist */,
+				1117DFDDAAB65BCB7A43160F /* Other */,
+				1117D8964582412341264D5E /* NodeTypes.swift */,
+				1117D7F872F7D3CDFC5AB462 /* UserDataEvents.swift */,
+				1117D0AE58EFF1D63E466F79 /* TypeInfo.swift */,
+				1117DD99B1DF32E57574F484 /* NamespaceSupport.swift */,
+				1117D93C3B22CC1E727DF3CA /* DOMErrors.swift */,
+				1117DDF5ADEECE0C1C4A5CB6 /* Nodes */,
+				1117D2D5628097299FB75E1A /* NamedNodeMap.swift */,
+				1117D104641FAD168D6B453E /* NodeList.swift */,
+				1117DEFE7621A624019CC35B /* LiveCollection.swift */,
 			);
 			path = SwiftDOM;
 			sourceTree = "<group>";
@@ -86,6 +160,23 @@
 			path = SwiftDOMTests;
 			sourceTree = "<group>";
 		};
+		83BB02B12537E71F00834BF5 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				83BB02922537E67200834BF5 /* SwiftDOM */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		83BB02B22537E74600834BF5 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				83BB02BB2537E7BF00834BF5 /* LinuxMain.swift */,
+				83BB029D2537E67200834BF5 /* SwiftDOMTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -93,7 +184,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83BB02A12537E67200834BF5 /* SwiftDOM.h in Headers */,
+				1117D171F01F85B9C71BD708 /* SwiftDOM.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +205,9 @@
 			dependencies = (
 			);
 			name = SwiftDOM;
+			packageProductDependencies = (
+				83BB02AD2537E6D200834BF5,
+			);
 			productName = SwiftDOM;
 			productReference = 83BB02902537E67200834BF5 /* SwiftDOM.framework */;
 			productType = "com.apple.product-type.framework";
@@ -147,6 +241,7 @@
 				TargetAttributes = {
 					83BB028F2537E67200834BF5 = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
 					};
 					83BB02982537E67200834BF5 = {
 						CreatedOnToolsVersion = 12.0.1;
@@ -162,6 +257,9 @@
 				Base,
 			);
 			mainGroup = 83BB02862537E67200834BF5;
+			packageReferences = (
+				83BB02AC2537E6D200834BF5,
+			);
 			productRefGroup = 83BB02912537E67200834BF5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -194,6 +292,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1117D846CFD13C85A132FDCD /* NodeTypes.swift in Sources */,
+				1117D36FAF979A5DF9669DAE /* UserDataEvents.swift in Sources */,
+				1117DA5828D99912F59D3DE2 /* TypeInfo.swift in Sources */,
+				1117D5DC1F6F2A6E4BB51BF2 /* NamespaceSupport.swift in Sources */,
+				1117D3EFD581D43ABD9E2452 /* DOMErrors.swift in Sources */,
+				1117D91440D15F4BE84C1936 /* Text.swift in Sources */,
+				1117D36A7ED2BA5B18536CA4 /* Element.swift in Sources */,
+				1117D260B0B05F9687044B78 /* Node.swift in Sources */,
+				1117D0DCF311A55F541DAF05 /* Document.swift in Sources */,
+				1117D5D40698C9EA06BB5D92 /* Attribute.swift in Sources */,
+				1117D02932E45917D63A9B22 /* NamedNodeMap.swift in Sources */,
+				1117D20A8AABF3C57D69EF52 /* NodeList.swift in Sources */,
+				1117DBF7C51FBD7522764F0B /* LiveCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +451,7 @@
 		83BB02A52537E67200834BF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -347,7 +459,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SwiftDOM/Info.plist;
+				INFOPLIST_FILE = Sources/SwiftDOM/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -357,6 +469,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.projectgalen.SwiftDOM;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -364,6 +477,7 @@
 		83BB02A62537E67200834BF5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -371,7 +485,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SwiftDOM/Info.plist;
+				INFOPLIST_FILE = Sources/SwiftDOM/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -391,7 +505,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = Q5XWZ7S7E9;
-				INFOPLIST_FILE = SwiftDOMTests/Info.plist;
+				INFOPLIST_FILE = Tests/SwiftDOMTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -409,7 +523,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = Q5XWZ7S7E9;
-				INFOPLIST_FILE = SwiftDOMTests/Info.plist;
+				INFOPLIST_FILE = Tests/SwiftDOMTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -452,6 +566,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		83BB02AC2537E6D200834BF5 = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GalenRhodes/Rubicon.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.27;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		83BB02AD2537E6D200834BF5 = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83BB02AC2537E6D200834BF5;
+			productName = Rubicon;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83BB02872537E67200834BF5 /* Project object */;
 }
