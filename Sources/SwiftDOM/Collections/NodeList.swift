@@ -22,63 +22,52 @@
 
 import Foundation
 
-open class NodeList: Hashable, RandomAccessCollection, LiveCollection {
+open class NodeList<T: Node>: Hashable, RandomAccessCollection, LiveCollection {
 
-    public typealias Element = Node
-    public typealias SubSequence = NodeList
+    public typealias Element = T
+    public typealias SubSequence = NodeList<Element>
     public typealias Index = Int
     public typealias Indices = Range<Index>
-    public typealias Iterator = IndexingIterator<[Element]>
 
-    public static var empty: NodeList = NodeList()
-
-    open var startIndex: Int { 0 }
-    open var endIndex:   Int { 0 }
-    open var count:      Int { 0 }
+    @inlinable open var startIndex: Int { 0 }
+    @inlinable open var endIndex:   Int { 0 }
+    @inlinable open var count:      Int { 0 }
 
     public let uuid: String = UUID().uuidString
 
-    internal init() {}
+    @usableFromInline init() {}
 
-    open func hash(into hasher: inout Hasher) {}
+    @inlinable open func hash(into hasher: inout Hasher) { hasher.combine(uuid) }
 
-    public static func == (lhs: NodeList, rhs: NodeList) -> Bool {
-        if type(of: lhs) == type(of: rhs) {
-            if type(of: lhs) == NodeList.self {
-                return true
-            }
-            else if lhs.count == rhs.count {
-                if lhs.count > 0 {
-                    var li: Index = lhs.startIndex
-                    var ri: Index = rhs.startIndex
-
-                    while li != lhs.endIndex {
-                        guard lhs[li].isEqualTo(other: rhs[ri]) else { return false }
-                        li = lhs.index(after: li)
-                        ri = rhs.index(after: ri)
-                    }
-                }
-
-                return true
-            }
-        }
-
+    @inlinable open func contains(node: Element) -> Bool {
+        for n: T in self { if node.isEqualTo(n) { return true } }
         return false
     }
 
-    open subscript(position: Index) -> Element { fatalError("Index out of bounds") }
+    public static func == (lhs: NodeList, rhs: NodeList) -> Bool {
+        if lhs === rhs || lhs.uuid == rhs.uuid {
+            return true
+        }
+        else if lhs.count == rhs.count {
+            if lhs.count > 0 {
+                for (i, n): (Index, T) in lhs.enumerated() {
+                    if !n.isEqualTo(rhs[i]) {
+                        return false
+                    }
+                }
+            }
+            return true
+        }
+        return false
+    }
 
-    open subscript(bounds: Indices) -> SubSequence {
+    @inlinable open subscript(position: Index) -> Element { fatalError("Index out of bounds") }
+
+    @inlinable open subscript(bounds: Indices) -> SubSequence {
         if bounds.isEmpty { return self }
         fatalError("Range out of bounds")
     }
 
-    open func makeIterator() -> IndexingIterator<[Element]> {
-        let a: [Element] = []
-        return a.makeIterator()
-    }
-
-    open func collectionDidChange() {}
-
+    @inlinable open func domCollectionDidChange(_ node: Node) {}
 }
 

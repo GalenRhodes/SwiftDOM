@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: DOMErrors.swift
+ *    FILENAME: NotationNode.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/15/20
+ *        DATE: 10/21/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,22 +22,16 @@
 
 import Foundation
 
-public enum DOMError: Error {
-    case DomstringSize(description: String)
-    case HierarchyRequest(description: String)
-    case IndexSize(description: String)
-    case InuseAttribute(description: String)
-    case InvalidAccess(description: String)
-    case InvalidCharacter(description: String)
-    case InvalidModification(description: String)
-    case InvalidState(description: String)
-    case Namespace(description: String)
-    case NoDataAllowed(description: String)
-    case NoModificationAllowed(description: String)
-    case NotFound(description: String)
-    case NotSupported(description: String)
-    case Syntax(description: String)
-    case TypeMismatch(description: String)
-    case Validation(description: String)
-    case WrongDocument(description: String)
+public protocol NotationNode: Node {
+    var publicId: String { get }
+    var systemId: String { get }
+}
+
+public class AnyNotationNode: AnyNode, NotationNode {
+    @inlinable var notation: NotationNode { (node as! NotationNode) }
+
+    public init(_ notation: NotationNode) { super.init(notation) }
+
+    @inlinable open var publicId: String { notation.publicId }
+    @inlinable open var systemId: String { notation.systemId }
 }

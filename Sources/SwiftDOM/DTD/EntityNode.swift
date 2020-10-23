@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: UserDataEvents.swift
+ *    FILENAME: EntityNode.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/15/20
+ *        DATE: 10/21/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,12 +22,24 @@
 
 import Foundation
 
-public enum UserDataEvents: Int {
-    case Adopted  = 5
-    case Cloned   = 1
-    case Deleted  = 3
-    case Imported = 2
-    case Renamed  = 4
+public protocol EntityNode: Node {
+    var inputEncoding: String.Encoding { get }
+    var notationName:  String { get }
+    var publicId:      String { get }
+    var systemId:      String { get }
+    var xmlEncoding:   String { get }
+    var xmlVersion:    String { get }
 }
 
-public typealias UserDataHandler = (UserDataEvents, String, Any, Node, Node) -> Void
+public class AnyEntityNode: AnyNode, EntityNode {
+    @inlinable var entity: EntityNode { (node as! EntityNode) }
+
+    @inlinable open var inputEncoding: String.Encoding { entity.inputEncoding }
+    @inlinable open var notationName:  String { entity.notationName }
+    @inlinable open var publicId:      String { entity.publicId }
+    @inlinable open var systemId:      String { entity.systemId }
+    @inlinable open var xmlEncoding:   String { entity.xmlEncoding }
+    @inlinable open var xmlVersion:    String { entity.xmlVersion }
+
+    public init(_ entity: EntityNode) { super.init(entity) }
+}

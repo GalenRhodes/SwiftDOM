@@ -1,6 +1,6 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: UserDataEvents.swift
+ *    FILENAME: Text.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
  *        DATE: 10/15/20
@@ -22,12 +22,24 @@
 
 import Foundation
 
-public enum UserDataEvents: Int {
-    case Adopted  = 5
-    case Cloned   = 1
-    case Deleted  = 3
-    case Imported = 2
-    case Renamed  = 4
+public protocol TextNode: CharacterData {
+    var wholeText:                  String { get }
+    var isElementContentWhitespace: Bool { get }
+
+    func replaceWholeText(text: String) -> TextNode
+
+    func splitText(offset: Int) -> TextNode
 }
 
-public typealias UserDataHandler = (UserDataEvents, String, Any, Node, Node) -> Void
+open class AnyTextNode: AnyCharacterData, TextNode {
+    @inlinable open var wholeText:                  String { textNode.wholeText }
+    @inlinable open var isElementContentWhitespace: Bool { textNode.isElementContentWhitespace }
+
+    @inlinable var textNode: TextNode { cd as! TextNode }
+
+    public init(_ textNode: TextNode) { super.init(textNode) }
+
+    @inlinable open func replaceWholeText(text: String) -> TextNode { textNode.replaceWholeText(text: text) }
+
+    @inlinable open func splitText(offset: Int) -> TextNode { textNode.splitText(offset: offset) }
+}

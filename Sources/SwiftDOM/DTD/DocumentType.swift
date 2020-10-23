@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: Attribute.swift
+ *    FILENAME: DocumentType.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/15/20
+ *        DATE: 10/19/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,28 +22,26 @@
 
 import Foundation
 
-public protocol AttributeNode: Node {
+public protocol DocumentTypeNode: Node {
     var name:           String { get }
-    var ownerElement:   ElementNode { get }
-    var schemaTypeInfo: TypeInfo { get }
-    var isSpecified:    Bool { get }
-    var isId:           Bool { get }
-    var value:          String { get set }
+    var publicId:       String { get }
+    var systemId:       String { get }
+    var internalSubset: String { get }
+    var entities:       NamedNodeMap<AnyEntityNode> { get }
+    var notations:      NamedNodeMap<AnyNotationNode> { get }
 }
 
-public class AnyAttributeNode: AnyNode, AttributeNode {
+public class AnyDocumentTypeNode: AnyNode, DocumentTypeNode {
+    @usableFromInline var docType: DocumentTypeNode { node as! DocumentTypeNode }
 
-    @inlinable open var name:           String { attribute.name }
-    @inlinable open var ownerElement:   ElementNode { attribute.ownerElement }
-    @inlinable open var schemaTypeInfo: TypeInfo { attribute.schemaTypeInfo }
-    @inlinable open var isSpecified:    Bool { attribute.isSpecified }
-    @inlinable open var isId:           Bool { attribute.isId }
-    @inlinable open var value:          String {
-        get { attribute.value }
-        set { attribute.value = newValue }
+    public init(_ docType: DocumentTypeNode) {
+        super.init(docType)
     }
 
-    @inlinable var attribute: AttributeNode { node as! AttributeNode }
-
-    public init(_ node: AttributeNode) { super.init(node) }
+    @inlinable open var name:           String { docType.name }
+    @inlinable open var publicId:       String { docType.publicId }
+    @inlinable open var systemId:       String { docType.systemId }
+    @inlinable open var internalSubset: String { docType.internalSubset }
+    @inlinable open var entities:       NamedNodeMap<AnyEntityNode> { docType.entities }
+    @inlinable open var notations:      NamedNodeMap<AnyNotationNode> { docType.notations }
 }

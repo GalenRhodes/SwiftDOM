@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: NamedNodeMap.swift
+ *    FILENAME: ChildNode.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/15/20
+ *        DATE: 10/21/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,19 +22,12 @@
 
 import Foundation
 
-open class NamedNodeMap<T>: Hashable {
+open class ChildNode: NodeImpl {
+    @inlinable open override var parentNode:      Node? { _parentNode }
+    @inlinable open override var nextSibling:     Node? { _nextSibling }
+    @inlinable open override var previousSibling: Node? { _previousSibling }
 
-    open var count: Int { 0 }
-
-    public init() {}
-
-    open subscript(index: Int) -> T? { nil }
-
-    open subscript(nodeName: String) -> T? { nil }
-
-    open subscript(name: String, namespaceURI: String) -> T? { nil }
-
-    open func hash(into hasher: inout Hasher) { hasher.combine(2112) }
-
-    public static func == (lhs: NamedNodeMap<T>, rhs: NamedNodeMap<T>) -> Bool { lhs === rhs }
+    @usableFromInline var _parentNode:      ParentNode? = nil
+    @usableFromInline var _nextSibling:     ChildNode?  = nil
+    @usableFromInline var _previousSibling: ChildNode?  = nil
 }

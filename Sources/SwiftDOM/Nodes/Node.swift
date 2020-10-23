@@ -23,78 +23,54 @@
 import Foundation
 
 public protocol Node: AnyObject {
+    var owningDocument:  DocumentNode { get }
     var nodeName:        String { get }
     var baseURI:         String? { get }
     var localName:       String? { get }
     var namespaceURI:    String? { get }
+    var parentNode:      Node? { get }
     var firstChild:      Node? { get }
     var lastChild:       Node? { get }
     var nextSibling:     Node? { get }
     var previousSibling: Node? { get }
+    var hasAttributes:   Bool { get }
+    var hasChildNodes:   Bool { get }
+    var hasNamespace:    Bool { get }
     var nodeType:        NodeTypes { get }
-    var parentNode:      Node? { get }
     var nodeValue:       String? { get set }
     var textContent:     String? { get set }
     var prefix:          String? { get set }
-    var attributes:      NamedNodeMap<AttributeNode> { get }
-    var children:        NodeList { get }
+    var attributes:      NamedNodeMap<AnyAttributeNode> { get }
+    var children:        NodeList<AnyNode> { get }
 
-    func isEqualTo(other: Node) -> Bool
+    func append<T: Node>(child childNode: T) -> T
+
+    func cloneNode(deep: Bool) -> Node
+
+    func userData(key: String) -> Any?
+
+    func insert<T: Node, E: Node>(childNode: T, before refNode: E?) -> T
+
+    func isDefaultNamespace(namespaceURI uri: String) -> Bool
+
+    func isSameNode(as otherNode: Node) -> Bool
+
+    func lookupNamespaceURL(prefix: String) -> String?
+
+    func lookupPrefix(namespaceURI uri: String) -> String?
+
+    func normalize()
+
+    func remove<T: Node>(childNode: T) -> T
+
+    func replace<O: Node, T: Node>(childNode oldChildNode: O, with newChildNode: T) -> O
+
+    func setUserData(key: String, userData: Any?, handler: UserDataHandler?)
+
+    func isEqualTo(_ other: Node) -> Bool
 
     func asHashable() -> AnyNode
 
     func getHash(into hasher: inout Hasher)
 }
 
-open class AnyNode: Node, Hashable {
-    @usableFromInline var node: Node
-
-    @inlinable open var nodeName:        String { node.nodeName }
-    @inlinable open var baseURI:         String? { node.baseURI }
-    @inlinable open var localName:       String? { node.localName }
-    @inlinable open var namespaceURI:    String? { node.namespaceURI }
-    @inlinable open var firstChild:      Node? { node.firstChild }
-    @inlinable open var lastChild:       Node? { node.lastChild }
-    @inlinable open var nextSibling:     Node? { node.nextSibling }
-    @inlinable open var previousSibling: Node? { node.previousSibling }
-    @inlinable open var nodeType:        NodeTypes { node.nodeType }
-    @inlinable open var parentNode:      Node? { node.parentNode }
-    @inlinable open var attributes:      NamedNodeMap<AttributeNode> { node.attributes }
-    @inlinable open var nodeValue:       String? {
-        get { node.nodeValue }
-        set { node.nodeValue = newValue }
-    }
-    @inlinable open var textContent:     String? {
-        get { node.textContent }
-        set { node.textContent = newValue }
-    }
-    @inlinable open var prefix:          String? {
-        get { node.prefix }
-        set { node.prefix = newValue }
-    }
-    @inlinable open var children:        NodeList { node.children }
-
-    public init(_ node: Node) { self.node = node }
-
-    @inlinable public static func == (lhs: AnyNode, rhs: AnyNode) -> Bool { lhs.node.isEqualTo(other: rhs.node) }
-
-    @inlinable open func hash(into hasher: inout Hasher) { node.getHash(into: &hasher) }
-
-    @inlinable open func asHashable() -> AnyNode { self }
-
-    @inlinable open func isEqualTo(other: Node) -> Bool { ((self === other) || ((type(of: other) == AnyNode.self) && (self == (other as! AnyNode)))) }
-}
-
-extension Node where Self: Hashable {
-    public func getHash(into hasher: inout Hasher) { self.hash(into: &hasher) }
-
-    public func asHashable() -> AnyNode { AnyNode(self) }
-}
-
-extension Array where Element: Node {
-    @inlinable public static func == (lhs: [Node], rhs: [Node]) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
-}
-
-extension Dictionary where Value: Node {
-    @inlinable public static func == (lhs: [Key: Node], rhs: [Key: Node]) -> Bool { lhs.mapValues({ $0.asHashable() }) == rhs.mapValues({ $0.asHashable() }) }
-}

@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: TypeInfo.swift
+ *    FILENAME: LiveCollectionNotifier.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/15/20
+ *        DATE: 10/21/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,9 +22,9 @@
 
 import Foundation
 
-public enum TypeInfo: Int {
-    case Extension   = 2
-    case List        = 8
-    case Restriction = 1
-    case Union       = 4
+public protocol LiveCollectionNotifier {
+
+    func addLiveCollection(_ c: LiveCollection)
+
+    func removeLiveCollection(_ c: LiveCollection)
 }

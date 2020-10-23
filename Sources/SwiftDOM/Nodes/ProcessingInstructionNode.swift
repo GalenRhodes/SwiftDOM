@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: LiveCollection.swift
+ *    FILENAME: ProcessingInstructionNode.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/15/20
+ *        DATE: 10/21/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,17 +22,19 @@
 
 import Foundation
 
-public let DOMCollectionDidChange: Notification.Name = Notification.Name("DOMCollectionDidChange")
-
-public protocol LiveCollection {
-    var uuid: String { get }
-
-    func collectionDidChange()
+public protocol ProcessingInstructionNode: Node {
+    var data:   String { get set }
+    var target: String { get }
 }
 
-public protocol LiveCollectionNotifier: AnyObject {
+public class AnyProcessingInstructionNode: AnyNode, ProcessingInstructionNode {
+    @inlinable var pi: ProcessingInstructionNode { (node as! ProcessingInstructionNode) }
 
-    func addLiveCollection(_ c: LiveCollection)
+    public init(_ pi: ProcessingInstructionNode) { super.init(pi) }
 
-    func removeLiveCollection(_ c: LiveCollection)
+    @inlinable open var target: String { pi.target }
+    @inlinable open var data:   String {
+        get { pi.data }
+        set { pi.data = newValue }
+    }
 }

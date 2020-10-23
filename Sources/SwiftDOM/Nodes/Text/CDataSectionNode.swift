@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: UserDataEvents.swift
+ *    FILENAME: CDataSectionNode.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/15/20
+ *        DATE: 10/21/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,12 +22,11 @@
 
 import Foundation
 
-public enum UserDataEvents: Int {
-    case Adopted  = 5
-    case Cloned   = 1
-    case Deleted  = 3
-    case Imported = 2
-    case Renamed  = 4
+public protocol CDataSectionNode: TextNode {
 }
 
-public typealias UserDataHandler = (UserDataEvents, String, Any, Node, Node) -> Void
+open class AnyCDataSectionNode: AnyTextNode, CDataSectionNode {
+    @inlinable var cDataSection: CDataSectionNode { textNode as! CDataSectionNode }
+
+    public init(_ cDataSection: CDataSectionNode) { super.init(cDataSection) }
+}

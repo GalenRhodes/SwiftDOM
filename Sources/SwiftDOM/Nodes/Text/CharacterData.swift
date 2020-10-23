@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: Text.swift
+ *    FILENAME: CharacterData.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/15/20
+ *        DATE: 10/21/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -26,12 +26,13 @@ public protocol CharacterData: Node {
     var data: String { get set }
 }
 
-public protocol TextNode: CharacterData {
-}
+open class AnyCharacterData: AnyNode, CharacterData {
+    @inlinable var cd: CharacterData { node as! CharacterData }
 
-public protocol CDataSectionNode: TextNode {
-}
+    @inlinable open var data: String {
+        get { cd.data }
+        set { cd.data = newValue }
+    }
 
-public protocol CommentNode: CharacterData {
+    public init(_ charData: CharacterData) { super.init(charData) }
 }
-

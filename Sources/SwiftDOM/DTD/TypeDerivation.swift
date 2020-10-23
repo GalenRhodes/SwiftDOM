@@ -1,6 +1,6 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: UserDataEvents.swift
+ *    FILENAME: TypeInfo.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
  *        DATE: 10/15/20
@@ -22,12 +22,10 @@
 
 import Foundation
 
-public enum UserDataEvents: Int {
-    case Adopted  = 5
-    case Cloned   = 1
-    case Deleted  = 3
-    case Imported = 2
-    case Renamed  = 4
+public enum TypeDerivation: Int {
+    case Extension   = 2
+    case List        = 8
+    case Restriction = 1
+    case Union       = 4
 }
 
-public typealias UserDataHandler = (UserDataEvents, String, Any, Node, Node) -> Void

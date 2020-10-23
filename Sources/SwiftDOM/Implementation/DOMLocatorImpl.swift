@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: UserDataEvents.swift
+ *    FILENAME: DOMLocatorImpl.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/15/20
+ *        DATE: 10/21/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,12 +22,26 @@
 
 import Foundation
 
-public enum UserDataEvents: Int {
-    case Adopted  = 5
-    case Cloned   = 1
-    case Deleted  = 3
-    case Imported = 2
-    case Renamed  = 4
-}
+public struct DOMLocatorImpl: DOMLocator, Hashable {
 
-public typealias UserDataHandler = (UserDataEvents, String, Any, Node, Node) -> Void
+    public private(set) var byteOffset:   Int
+    public private(set) var lineNumber:   Int
+    public private(set) var columnNumber: Int
+    public private(set) var utf16Offset:  Int
+    public private(set) var uri:          String
+    public private(set) var relatedNode:  Node
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(byteOffset)
+        hasher.combine(lineNumber)
+        hasher.combine(columnNumber)
+        hasher.combine(utf16Offset)
+        hasher.combine(uri)
+        relatedNode.getHash(into: &hasher)
+    }
+
+    public static func == (lhs: DOMLocatorImpl, rhs: DOMLocatorImpl) -> Bool {
+        ((lhs.byteOffset == rhs.byteOffset) && (lhs.lineNumber == rhs.lineNumber) && (lhs.columnNumber == rhs.columnNumber) && (lhs.utf16Offset == rhs.utf16Offset) &&
+         (lhs.uri == rhs.uri) && lhs.relatedNode.isEqualTo(rhs.relatedNode))
+    }
+}
