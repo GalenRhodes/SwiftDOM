@@ -24,6 +24,7 @@ import Foundation
 
 open class CDataSectionNodeImpl: TextNodeImpl, CDataSectionNode {
     @inlinable open override var nodeType: NodeTypes { .CDataSectionNode }
+    @inlinable open override var nodeName: String { "#cdata-section" }
 
     public override init(_ owningDocument: DocumentNodeImpl, content: String) { super.init(owningDocument, content: content) }
 

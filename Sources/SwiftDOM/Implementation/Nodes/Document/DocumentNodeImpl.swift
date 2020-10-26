@@ -35,6 +35,7 @@ open class DocumentNodeImpl: NodeImpl, DocumentNode {
     open var xmlVersion:            String  = ""
 
     @inlinable open override var nodeType: NodeTypes { .DocumentNode }
+    @inlinable open override var nodeName: String { "#document" }
 
     public override init() {
         super.init()

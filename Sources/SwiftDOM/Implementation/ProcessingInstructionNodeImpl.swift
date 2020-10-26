@@ -23,11 +23,19 @@
 import Foundation
 
 open class ProcessingInstructionNodeImpl: NodeImpl, ProcessingInstructionNode {
-    open override var nodeType: NodeTypes { .ProcessingInstructionNode }
-    open override var nodeName: String { target }
+    @inlinable open override var nodeType:    NodeTypes { .ProcessingInstructionNode }
+    @inlinable open override var nodeName:    String { target }
+    @inlinable open override var nodeValue:   String? {
+        get { data }
+        set { if d = newValue { data = d } }
+    }
+    @inlinable open override var textContent: String? {
+        get { data }
+        set { if d = newValue { data = d } }
+    }
 
-    open internal(set) var target: String = ""
     open var data: String = ""
+    open internal(set) var target: String = ""
 
     @usableFromInline init(_ owningDocument: DocumentNodeImpl, data: String, target: String) {
         self.data = data

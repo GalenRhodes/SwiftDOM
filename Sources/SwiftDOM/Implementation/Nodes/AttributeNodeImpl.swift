@@ -36,7 +36,15 @@ open class AttributeNodeImpl: NamespaceNode, AttributeNode {
         set {}
     }
 
-    @inlinable open override var nodeType: NodeTypes { NodeTypes.AttributeNode }
+    @inlinable open override var nodeType:    NodeTypes { NodeTypes.AttributeNode }
+    @inlinable open override var nodeValue:   String? {
+        get { value }
+        set { if v = newValue { value = v } }
+    }
+    @inlinable open override var textContent: String? {
+        get { value }
+        set { if v = newValue { value = v } }
+    }
 
     public init(_ owningDocument: DocumentNodeImpl, namespaceURI uri: String, qualifiedName qName: String, value: String) {
         super.init(owningDocument, namespaceURI: uri, qualifiedName: qName)

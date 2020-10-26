@@ -28,12 +28,12 @@ open class CharacterDataImpl: NodeImpl, CharacterData {
         set { _data = newValue }
     }
     @inlinable open override var nodeValue:   String? {
-        get { data }
-        set { if let v: String = newValue { data = v } }
+        get { _data }
+        set { if let v: String = newValue { _data = v } }
     }
     @inlinable open override var textContent: String? {
-        get { data }
-        set { if let v: String = newValue { data = v } }
+        get { _data }
+        set { if let v: String = newValue { _data = v } }
     }
     @usableFromInline var _data: String = ""
 
@@ -55,6 +55,7 @@ open class TextNodeImpl: CharacterDataImpl, TextNode {
     }
 
     @inlinable open override var nodeType: NodeTypes { NodeTypes.TextNode }
+    @inlinable open override var nodeName: String { "#text" }
 
     open private(set) var isElementContentWhitespace: Bool = false
 

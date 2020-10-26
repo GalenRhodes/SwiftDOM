@@ -24,6 +24,7 @@ import Foundation
 
 open class CommentNodeImpl: CharacterDataImpl, CommentNode {
     @inlinable open override var nodeType: NodeTypes { .CommentNode }
+    @inlinable open override var nodeName: String { "#comment" }
 
     public override init(_ owningDocument: DocumentNodeImpl, content: String) { super.init(owningDocument, content: content) }
 
