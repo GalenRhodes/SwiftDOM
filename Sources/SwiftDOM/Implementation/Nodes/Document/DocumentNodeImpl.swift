@@ -24,10 +24,10 @@ import Foundation
 
 open class DocumentNodeImpl: NodeImpl, DocumentNode {
 
-    open private(set) var docType:         DocumentTypeNode? = nil
-    open private(set) var documentElement: ElementNode?      = nil
-    open private(set) var inputEncoding:   String.Encoding   = String.Encoding.utf8
-    open private(set) var xmlEncoding:     String            = "UTF-8"
+    open internal(set) var docType:         DocumentTypeNode? = nil
+    open internal(set) var documentElement: ElementNode?      = nil
+    open internal(set) var inputEncoding:   String.Encoding   = String.Encoding.utf8
+    open internal(set) var xmlEncoding:     String            = "UTF-8"
 
     open var documentURI:           String? = nil
     open var isStrictErrorChecking: Bool    = false

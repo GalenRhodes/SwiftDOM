@@ -38,7 +38,7 @@ open class NamedNodeMap<T>: Hashable, RandomAccessCollection {
     public init() {}
 
     @inlinable open subscript(nodeName: String) -> T? { nil }
-    @inlinable open subscript(name: String, namespaceURI: String) -> T? { nil }
+    @inlinable open subscript(namespaceURI uri: String, localName lName: String) -> T? { nil }
     @inlinable open subscript(position: Int) -> T { fatalError("Index out of bounds.") }
     @inlinable open subscript(bounds: Range<Int>) -> ArraySlice<T> { Array<T>()[bounds] }
 
@@ -48,7 +48,25 @@ open class NamedNodeMap<T>: Hashable, RandomAccessCollection {
 }
 
 extension NamedNodeMap where T: Node {
-    @inlinable public static func == (lhs: NamedNodeMap<T>, rhs: NamedNodeMap<T>) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
+    public static func == (lhs: NamedNodeMap<T>, rhs: NamedNodeMap<T>) -> Bool {
+        guard lhs.count == rhs.count else { return false }
+        for o: T in lhs { if !rhs.contains(where: { $0.isEqualTo(o) }) { return false } }
+        return true
+    }
+
+    @inlinable public func hash(into hasher: inout Hasher) { hasher.combine(map { $0.asHashable() }) }
 
     @inlinable public func contains(_ node: T) -> Bool { contains { $0.isSameNode(as: node) } }
+}
+
+extension NamedNodeMap where T: Equatable {
+    public static func == (lhs: NamedNodeMap<T>, rhs: NamedNodeMap<T>) -> Bool {
+        guard lhs.count == rhs.count else { return false }
+        for o: T in lhs { if !rhs.contains(where: { $0 == o }) { return false } }
+        return true
+    }
+}
+
+extension  NamedNodeMap where T: Hashable {
+    @inlinable public func hash(into hasher: inout Hasher) { for o: T in self { hasher.combine(o) } }
 }

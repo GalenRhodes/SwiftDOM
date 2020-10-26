@@ -23,9 +23,11 @@
 import Foundation
 
 open class ProcessingInstructionNodeImpl: NodeImpl, ProcessingInstructionNode {
+    open override var nodeType: NodeTypes { .ProcessingInstructionNode }
+    open override var nodeName: String { target }
 
+    open internal(set) var target: String = ""
     open var data: String = ""
-    open private(set) var target: String = ""
 
     @usableFromInline init(_ owningDocument: DocumentNodeImpl, data: String, target: String) {
         self.data = data
@@ -33,5 +35,5 @@ open class ProcessingInstructionNodeImpl: NodeImpl, ProcessingInstructionNode {
         super.init(owningDocument)
     }
 
-    @inlinable public static func == (lhs: ProcessingInstructionNodeImpl, rhs: ProcessingInstructionNodeImpl) -> Bool { lhs == rhs }
+    @inlinable public static func == (lhs: ProcessingInstructionNodeImpl, rhs: ProcessingInstructionNodeImpl) -> Bool { lhs === rhs }
 }

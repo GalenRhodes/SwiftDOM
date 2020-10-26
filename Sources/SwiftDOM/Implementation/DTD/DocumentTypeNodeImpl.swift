@@ -23,14 +23,31 @@
 import Foundation
 
 open class DocumentTypeNodeImpl: NodeImpl, DocumentTypeNode {
-    public internal(set) var name:           String                     = ""
-    public internal(set) var publicId:       String                     = ""
-    public internal(set) var systemId:       String                     = ""
-    public internal(set) var internalSubset: String                     = ""
-    public internal(set) var entities:       NamedNodeMap<EntityNode>   = NamedNodeMap()
-    public internal(set) var notations:      NamedNodeMap<NotationNode> = NamedNodeMap()
 
-    @usableFromInline override init(_ owningDocument: DocumentNodeImpl) { super.init(owningDocument) }
+    @inlinable open override var nodeName: String { name }
+    @inlinable open override var nodeType: NodeTypes { .DocumentTypeNode }
+
+    open internal(set) var name:           String                     = ""
+    open internal(set) var publicId:       String                     = ""
+    open internal(set) var systemId:       String                     = ""
+    open internal(set) var internalSubset: String                     = ""
+    open internal(set) var entities:       NamedNodeMap<EntityNode>   = NamedNodeMap()
+    open internal(set) var notations:      NamedNodeMap<NotationNode> = NamedNodeMap()
+
+    @usableFromInline init(_ owningDocument: DocumentNodeImpl, name: String, publicId: String, systemId: String, internalSubset: String) {
+        self.name = name
+        self.publicId = publicId
+        self.systemId = systemId
+        self.internalSubset = internalSubset
+        super.init(owningDocument)
+    }
+
+    @inlinable open override func isEqualTo(_ other: Node) -> Bool {
+        guard super.isEqualTo(other), let dt: DocumentTypeNode = (other as? DocumentTypeNode) else { return false }
+        guard publicId == dt.publicId && systemId == dt.systemId && internalSubset == dt.internalSubset else { return false }
+        guard entities == dt.entities && notations == dt.notations else { return false }
+        return true
+    }
 
     @inlinable public static func == (lhs: DocumentTypeNodeImpl, rhs: DocumentTypeNodeImpl) -> Bool { lhs === rhs }
 }

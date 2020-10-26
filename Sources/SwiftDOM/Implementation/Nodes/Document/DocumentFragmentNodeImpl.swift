@@ -23,6 +23,8 @@
 import Foundation
 
 class DocumentFragmentNodeImpl: NodeImpl, DocumentFragmentNode {
+    @inlinable override var nodeType: NodeTypes { .DocumentFragmentNode }
+
     @usableFromInline override init(_ owningDocument: DocumentNodeImpl) { super.init(owningDocument) }
 
     @inlinable static func == (lhs: DocumentFragmentNodeImpl, rhs: DocumentFragmentNodeImpl) -> Bool { lhs === rhs }

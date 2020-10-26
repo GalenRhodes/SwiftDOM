@@ -23,11 +23,11 @@
 import Foundation
 import Rubicon
 
-@usableFromInline class AttributeNamedNodeMap: NamedNodeMap<AttributeNode> {
+open class AttributeNamedNodeMap: NamedNodeMap<AttributeNode> {
 
-    @inlinable override var startIndex: Index { _attributes.startIndex }
-    @inlinable override var endIndex:   Index { _attributes.endIndex }
-    @inlinable override var count:      Int { _attributes.count }
+    @inlinable open override var startIndex: Index { _attributes.startIndex }
+    @inlinable open override var endIndex:   Index { _attributes.endIndex }
+    @inlinable open override var count:      Int { _attributes.count }
 
     @usableFromInline var _attributes: [Element] = []
 
@@ -42,17 +42,11 @@ import Rubicon
         }
     }
 
-    @inlinable override subscript(nodeName: String) -> Element? {
-        for a: AttributeNode in _attributes { if a.nodeName == nodeName { return a } }
-        return nil
-    }
+    @inlinable open override subscript(nodeName: String) -> Element? { first { $0.nodeName == nodeName } }
 
-    @inlinable override subscript(name: String, namespaceURI: String) -> Element? {
-        for a: AttributeNode in _attributes { if a.localName == name && a.namespaceURI == namespaceURI { return a } }
-        return nil
-    }
+    @inlinable open override subscript(namespaceURI uri: String, localName lName: String) -> Element? { first { $0.namespaceURI == uri && $0.localName == lName } }
 
-    @inlinable override subscript(position: Index) -> Element { _attributes[position] }
+    @inlinable open override subscript(position: Index) -> Element { _attributes[position] }
 
-    @inlinable override subscript(bounds: Indices) -> ArraySlice<Element> { _attributes[bounds] }
+    @inlinable open override subscript(bounds: Indices) -> ArraySlice<Element> { _attributes[bounds] }
 }

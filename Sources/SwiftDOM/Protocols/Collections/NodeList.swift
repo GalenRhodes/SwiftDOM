@@ -39,23 +39,33 @@ open class NodeList<T>: Hashable, RandomAccessCollection {
 
     @inlinable open func hash(into hasher: inout Hasher) { hasher.combine(uuid) }
 
-    public static func == (lhs: NodeList, rhs: NodeList) -> Bool { ((lhs === rhs) || (lhs.uuid == rhs.uuid)) }
+    @inlinable public static func == (lhs: NodeList, rhs: NodeList) -> Bool { ((lhs === rhs) || (lhs.uuid == rhs.uuid)) }
 
     @inlinable open subscript(position: Int) -> T { Array<T>()[position] }
 
-    @inlinable open subscript(bounds: Range<Int>) -> ArraySlice<T> {
-        if bounds.isEmpty { return [] }
-        fatalError("Range out of bounds")
-    }
+    @inlinable open subscript(bounds: Range<Int>) -> ArraySlice<T> { Array<T>()[bounds] }
 }
 
 extension NodeList where T: Node {
     @inlinable public func contains(node: T) -> Bool { contains { $0.isSameNode(as: node) } }
 
-    @inlinable public static func == (lhs: NodeList<T>, rhs: NodeList<T>) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
-
-    @inlinable public func hash(into hasher: inout Hasher) {
-        hasher.combine(uuid)
-        hasher.combine(map { $0.asHashable() })
+    @inlinable public static func == (lhs: NodeList<T>, rhs: NodeList<T>) -> Bool {
+        guard lhs.count == rhs.count else { return false }
+        for (i, n) in lhs.enumerated() { if !n.isEqualTo(rhs[i]) { return false } }
+        return true
     }
+
+    @inlinable public func hash(into hasher: inout Hasher) { hasher.combine(map { $0.asHashable() }) }
+}
+
+extension NodeList where T: Equatable {
+    public static func == (lhs: NodeList<T>, rhs: NodeList<T>) -> Bool {
+        guard lhs.count == rhs.count else { return false }
+        for (i, n) in lhs.enumerated() { if n != rhs[i] { return false } }
+        return true
+    }
+}
+
+extension NodeList where T: Hashable {
+    public func hash(into hasher: inout Hasher) { for o: T in self { hasher.combine(o) } }
 }

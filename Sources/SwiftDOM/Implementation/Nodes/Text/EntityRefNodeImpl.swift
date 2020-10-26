@@ -23,6 +23,8 @@
 import Foundation
 
 open class EntityRefNodeImpl: ParentNode, EntityRefNode {
+    @inlinable open override var nodeType: NodeTypes { .EntityReferenceNode }
+    @inlinable open override var nodeName: String { entityName }
 
     open internal(set) var entityName: String = ""
 
@@ -31,5 +33,5 @@ open class EntityRefNodeImpl: ParentNode, EntityRefNode {
         super.init(owningDocument)
     }
 
-    public override static func == (lhs: EntityRefNodeImpl, rhs: EntityRefNodeImpl) -> Bool { lhs === rhs }
+    @inlinable public static func == (lhs: EntityRefNodeImpl, rhs: EntityRefNodeImpl) -> Bool { lhs === rhs }
 }

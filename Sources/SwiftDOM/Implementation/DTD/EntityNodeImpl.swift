@@ -35,21 +35,22 @@ open class EntityNodeImpl: ParentNode, EntityNode {
 
     @usableFromInline var entityName: String = ""
 
-    @usableFromInline init(_ owningDocument: DocumentNodeImpl,
-                  entityName: String,
-                  inputEncoding: String.Encoding = String.Encoding.utf8,
-                  notationName: String,
-                  publicId: String,
-                  systemId: String,
-                  xmlEncoding: String,
-                  xmlVersion: String) {
-        self.entityName = entityName
+    public init(_ owningDocument: DocumentNodeImpl,
+                entityName: String,
+                notationName: String,
+                publicId: String,
+                systemId: String,
+                inputEncoding: String.Encoding = String.Encoding.utf8,
+                xmlEncoding: String,
+                xmlVersion: String) {
         self.inputEncoding = inputEncoding
         self.notationName = notationName
         self.publicId = publicId
         self.systemId = systemId
         self.xmlEncoding = xmlEncoding
         self.xmlVersion = xmlVersion
+        self.entityName = entityName
+        super.init(owningDocument)
     }
 
     @inlinable public static func == (lhs: EntityNodeImpl, rhs: EntityNodeImpl) -> Bool { lhs === rhs }

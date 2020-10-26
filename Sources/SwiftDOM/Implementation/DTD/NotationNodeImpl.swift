@@ -23,12 +23,18 @@
 import Foundation
 
 class NotationNodeImpl: NodeImpl, NotationNode {
-    open private(set) var publicId: String = ""
-    open private(set) var systemId: String = ""
+    @inlinable override var nodeType: NodeTypes { .NotationNode }
+    @inlinable override var nodeName: String { name }
 
-    @usableFromInline init(_ owningDocument: DocumentNodeImpl, publicId: String, systemId: String) {
+    open internal(set) var publicId: String = ""
+    open internal(set) var systemId: String = ""
+
+    open internal(set) var name: String = ""
+
+    @usableFromInline init(_ owningDocument: DocumentNodeImpl, name: String, publicId: String, systemId: String) {
         self.publicId = publicId
         self.systemId = systemId
+        self.name = name
         super.init(owningDocument)
     }
 
