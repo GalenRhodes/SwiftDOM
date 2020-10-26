@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: UserDataInfo.swift
+ *    FILENAME: NotationNodeImpl.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/21/20
+ *        DATE: 10/26/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,17 +22,15 @@
 
 import Foundation
 
-public struct UserDataInfo: Hashable {
-    private let uuid: String = UUID().uuidString
-    public let data: Any
-    public let body: UserDataHandler?
+class NotationNodeImpl: NodeImpl, NotationNode {
+    open private(set) var publicId: String = ""
+    open private(set) var systemId: String = ""
 
-    public init(data: Any, body: UserDataHandler?) {
-        self.data = data
-        self.body = body
+    @usableFromInline init(_ owningDocument: DocumentNodeImpl, publicId: String, systemId: String) {
+        self.publicId = publicId
+        self.systemId = systemId
+        super.init(owningDocument)
     }
 
-    public func hash(into hasher: inout Hasher) { hasher.combine(uuid) }
-
-    public static func == (lhs: UserDataInfo, rhs: UserDataInfo) -> Bool { lhs.uuid == rhs.uuid }
+    @inlinable public static func == (lhs: NotationNodeImpl, rhs: NotationNodeImpl) -> Bool { lhs === rhs }
 }

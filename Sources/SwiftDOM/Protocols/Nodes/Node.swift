@@ -24,10 +24,11 @@ import Foundation
 
 public protocol Node: AnyObject {
     var owningDocument:  DocumentNode { get }
+    var nodeType:        NodeTypes { get }
     var nodeName:        String { get }
-    var baseURI:         String? { get }
     var localName:       String? { get }
     var namespaceURI:    String? { get }
+    var baseURI:         String? { get }
     var parentNode:      Node? { get }
     var firstChild:      Node? { get }
     var lastChild:       Node? { get }
@@ -36,41 +37,51 @@ public protocol Node: AnyObject {
     var hasAttributes:   Bool { get }
     var hasChildNodes:   Bool { get }
     var hasNamespace:    Bool { get }
-    var nodeType:        NodeTypes { get }
+    var count:           Int { get }
+    var startIndex:      Int { get }
+    var endIndex:        Int { get }
     var nodeValue:       String? { get set }
     var textContent:     String? { get set }
     var prefix:          String? { get set }
-    var attributes:      NamedNodeMap<AnyAttributeNode> { get }
-    var children:        NodeList<AnyNode> { get }
+    var attributes:      NamedNodeMap<AttributeNode> { get }
 
-    func append<T: Node>(child childNode: T) -> T
+    func normalize()
 
-    func cloneNode(deep: Bool) -> Node
+    @discardableResult func append(child childNode: Node) -> Node
+
+    @discardableResult func insert(childNode: Node, before refNode: Node?) -> Node
+
+    @discardableResult func replace(childNode oldChildNode: Node, with newChildNode: Node) -> Node
+
+    @discardableResult func remove(childNode: Node) -> Node
 
     func userData(key: String) -> Any?
 
-    func insert<T: Node, E: Node>(childNode: T, before refNode: E?) -> T
+    func setUserData(key: String, userData: Any?, handler: UserDataHandler?)
 
-    func isDefaultNamespace(namespaceURI uri: String) -> Bool
+    func cloneNode(deep: Bool) -> Node
+
+    func contains(_ node: Node) -> Bool
+
+    func isEqualTo(_ other: Node) -> Bool
 
     func isSameNode(as otherNode: Node) -> Bool
+
+    func isDefaultNamespace(namespaceURI uri: String) -> Bool
 
     func lookupNamespaceURL(prefix: String) -> String?
 
     func lookupPrefix(namespaceURI uri: String) -> String?
 
-    func normalize()
-
-    func remove<T: Node>(childNode: T) -> T
-
-    func replace<O: Node, T: Node>(childNode oldChildNode: O, with newChildNode: T) -> O
-
-    func setUserData(key: String, userData: Any?, handler: UserDataHandler?)
-
-    func isEqualTo(_ other: Node) -> Bool
-
     func asHashable() -> AnyNode
 
     func getHash(into hasher: inout Hasher)
+
+    subscript(position: Int) -> Node { get }
+
+    subscript(bounds: Range<Int>) -> ArraySlice<Node> { get }
 }
 
+extension Node {
+    @inlinable public static func == (lhs: Node, rhs: Node) -> Bool { lhs === rhs }
+}

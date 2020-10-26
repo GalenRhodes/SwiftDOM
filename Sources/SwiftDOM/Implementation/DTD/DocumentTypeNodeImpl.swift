@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: UserDataInfo.swift
+ *    FILENAME: DocumentTypeNodeImpl.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/21/20
+ *        DATE: 10/26/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,17 +22,15 @@
 
 import Foundation
 
-public struct UserDataInfo: Hashable {
-    private let uuid: String = UUID().uuidString
-    public let data: Any
-    public let body: UserDataHandler?
+open class DocumentTypeNodeImpl: NodeImpl, DocumentTypeNode {
+    public internal(set) var name:           String                     = ""
+    public internal(set) var publicId:       String                     = ""
+    public internal(set) var systemId:       String                     = ""
+    public internal(set) var internalSubset: String                     = ""
+    public internal(set) var entities:       NamedNodeMap<EntityNode>   = NamedNodeMap()
+    public internal(set) var notations:      NamedNodeMap<NotationNode> = NamedNodeMap()
 
-    public init(data: Any, body: UserDataHandler?) {
-        self.data = data
-        self.body = body
-    }
+    @usableFromInline override init(_ owningDocument: DocumentNodeImpl) { super.init(owningDocument) }
 
-    public func hash(into hasher: inout Hasher) { hasher.combine(uuid) }
-
-    public static func == (lhs: UserDataInfo, rhs: UserDataInfo) -> Bool { lhs.uuid == rhs.uuid }
+    @inlinable public static func == (lhs: DocumentTypeNodeImpl, rhs: DocumentTypeNodeImpl) -> Bool { lhs === rhs }
 }

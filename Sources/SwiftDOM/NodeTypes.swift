@@ -35,5 +35,4 @@ public enum NodeTypes: Int {
     case NotationNode              = 12
     case ProcessingInstructionNode = 7
     case TextNode                  = 3
-    case Unknown                   = -1
 }

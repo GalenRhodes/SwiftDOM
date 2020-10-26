@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: LiveCollectionNotifier.swift
+ *    FILENAME: Attribute.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/21/20
+ *        DATE: 10/15/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,9 +22,28 @@
 
 import Foundation
 
-public protocol LiveCollectionNotifier {
+public protocol AttributeNode: Node {
+    var ownerElement:   ElementNode? { get }
+    var schemaTypeInfo: TypeInfo? { get }
+    var isSpecified:    Bool { get }
+    var isId:           Bool { get }
+    var name:           String { get }
+    var value:          String { get set }
+}
 
-    func addLiveCollection(_ c: LiveCollection)
+public class AnyAttributeNode: AnyNode, AttributeNode {
 
-    func removeLiveCollection(_ c: LiveCollection)
+    @inlinable open var name:           String { attribute.name }
+    @inlinable open var ownerElement:   ElementNode? { attribute.ownerElement }
+    @inlinable open var schemaTypeInfo: TypeInfo? { attribute.schemaTypeInfo }
+    @inlinable open var isSpecified:    Bool { attribute.isSpecified }
+    @inlinable open var isId:           Bool { attribute.isId }
+    @inlinable open var value:          String {
+        get { attribute.value }
+        set { attribute.value = newValue }
+    }
+
+    @inlinable var attribute: AttributeNode { node as! AttributeNode }
+
+    public init(_ node: AttributeNode) { super.init(node) }
 }

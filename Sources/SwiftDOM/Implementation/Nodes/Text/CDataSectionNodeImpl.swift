@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: UserDataInfo.swift
+ *    FILENAME: CDataSectionNodeImpl.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/21/20
+ *        DATE: 10/26/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,17 +22,12 @@
 
 import Foundation
 
-public struct UserDataInfo: Hashable {
-    private let uuid: String = UUID().uuidString
-    public let data: Any
-    public let body: UserDataHandler?
+open class CDataSectionNodeImpl: TextNodeImpl, CDataSectionNode {
+    @inlinable open override var nodeType: NodeTypes { .CDataSectionNode }
 
-    public init(data: Any, body: UserDataHandler?) {
-        self.data = data
-        self.body = body
-    }
+    public override init(_ owningDocument: DocumentNodeImpl, content: String) { super.init(owningDocument, content: content) }
 
-    public func hash(into hasher: inout Hasher) { hasher.combine(uuid) }
+    @inlinable override func createLikeMe(_ text: String) -> TextNodeImpl { (owningDocument.createCDataSectionNode(content: text) as! CDataSectionNodeImpl) }
 
-    public static func == (lhs: UserDataInfo, rhs: UserDataInfo) -> Bool { lhs.uuid == rhs.uuid }
+    @inlinable public static func == (lhs: CDataSectionNodeImpl, rhs: CDataSectionNodeImpl) -> Bool { lhs === rhs }
 }

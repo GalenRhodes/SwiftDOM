@@ -22,17 +22,19 @@
 
 import Foundation
 
-open class ParentNode: ChildNode, LiveCollectionNotifier {
+open class ParentNode: ChildNode {
 
-    @inlinable open override var firstChild: Node? { _firstChild }
-    @inlinable open override var lastChild:  Node? { _lastChild }
-    @inlinable open override var children:   NodeList<AnyNode> { ParentNodeList(self) }
+    @inlinable open override var firstChild:    Node? { _firstChild }
+    @inlinable open override var lastChild:     Node? { _lastChild }
+    @inlinable open override var hasChildNodes: Bool { _firstChild != nil }
+    @inlinable open override var startIndex:    Index { 0 }
+    @inlinable open override var endIndex:      Index { _nodes.count }
 
-    @usableFromInline var _firstChild: ChildNode?             = nil
-    @usableFromInline var _lastChild:  ChildNode?             = nil
-    @usableFromInline var _listeners:  Set<AnyLiveCollection> = Set()
+    @usableFromInline var _firstChild: ChildNode? = nil
+    @usableFromInline var _lastChild:  ChildNode? = nil
 
-    @discardableResult open override func insert<T: Node, E: Node>(childNode: T, before refNode: E?) -> T {
+    @discardableResult open override func insert(childNode: Node, before refNode: Node?) -> Node {
+        guard !isReadOnly else { fatalError("No modification allowed.") }
         if let _child: ChildNode = (childNode as? ChildNode) {
             /*
              * Let's do some sanity checks starting with making sure
@@ -41,14 +43,14 @@ open class ParentNode: ChildNode, LiveCollectionNotifier {
             if hierachyCheck(node: _child) {
                 fatalError("Hierarchy error.")
             }
-            else if let n: E = refNode {
+            else if let n: Node = refNode {
                 if let refNode: ChildNode = (n as? ChildNode), refNode._parentNode === self { _insert01(childNode: _child, before: refNode) }
                 else { fatalError("Reference node is not a chld of this node.") }
             }
             else {
                 _insert01(childNode: _child, before: nil)
             }
-            notifyListeners()
+            notifyChildListeners()
             return childNode
         }
         else {
@@ -56,10 +58,11 @@ open class ParentNode: ChildNode, LiveCollectionNotifier {
         }
     }
 
-    @discardableResult open override func remove<T: Node>(childNode: T) -> T {
+    @discardableResult open override func remove(childNode: Node) -> Node {
+        guard !isReadOnly else { fatalError("No modification allowed.") }
         if let c: ChildNode = (childNode as? ChildNode), c._parentNode === self {
             _remove(childNode: c)
-            notifyListeners()
+            notifyChildListeners()
             return childNode
         }
         else {
@@ -173,57 +176,24 @@ open class ParentNode: ChildNode, LiveCollectionNotifier {
         childNode._parentNode = nil
     }
 
-    @usableFromInline func notifyListeners() {
-        for l: AnyLiveCollection in _listeners {
-            l.domCollectionDidChange(self)
+    @inlinable open override subscript(bounds: Range<Index>) -> ArraySlice<Node> { _nodes[bounds] }
+    @inlinable open override subscript(position: Index) -> Node { _nodes[position] }
+
+    @inlinable func notifyChildListeners() {
+        __nodes = nil
+        NotificationCenter.default.post(name: DOMCollectionDidChange, object: self)
+        _parentNode?.notifyChildListeners()
+    }
+
+    @usableFromInline var __nodes: [Node]? = nil
+    @inlinable var        _nodes:  [Node] {
+        if let n: [Node] = __nodes { return n }
+        __nodes = []
+        var c: Node? = firstChild
+        while let _c: Node = c {
+            __nodes!.append(_c)
+            c = _c.nextSibling
         }
-    }
-
-    @inlinable open func addLiveCollection(_ c: LiveCollection) {
-        _listeners.insert(c.asHashable())
-    }
-
-    @inlinable open func removeLiveCollection(_ c: LiveCollection) {
-        _listeners.remove(c.asHashable())
-    }
-}
-
-@usableFromInline class ParentNodeList: NodeList<AnyNode> {
-    @usableFromInline var _nodes:  [AnyNode] = []
-    @usableFromInline let _parent: ParentNode
-
-    @usableFromInline var _startIndex: Int
-    @usableFromInline var _endIndex:   Int
-
-    @inlinable override var startIndex: Int { _startIndex < 0 ? _nodes.startIndex : _startIndex }
-    @inlinable override var endIndex:   Int { _endIndex < 0 ? _nodes.endIndex : _endIndex }
-    @inlinable override var count:      Int { endIndex - startIndex }
-
-    @usableFromInline init(_ parent: ParentNode, start: Int = -1, end: Int = -1) {
-        _parent = parent
-        super.init()
-        _parent.addLiveCollection(self)
-        domCollectionDidChange(_parent)
-    }
-
-    deinit {
-        _parent.removeLiveCollection(self)
-        _nodes.removeAll()
-    }
-
-    @inlinable override func contains(node: AnyNode) -> Bool { _nodes.contains(node) }
-
-    @inlinable override subscript(bounds: Range<Int>) -> NodeList<AnyNode> { NodeList() }
-    @inlinable override subscript(position: Int) -> AnyNode { _nodes[position] }
-
-    @inlinable override func domCollectionDidChange(_ node: Node) {
-        if let p: ParentNode = (node as? ParentNode) {
-            _nodes.removeAll()
-            var c: Node? = p.firstChild
-            while let _c: Node = c {
-                _nodes.append(_c.asHashable())
-                c = _c.nextSibling
-            }
-        }
+        return __nodes!
     }
 }

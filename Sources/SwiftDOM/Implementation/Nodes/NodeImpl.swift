@@ -22,27 +22,35 @@
 
 import Foundation
 
-open class NodeImpl: Node, Hashable {
+open class NodeImpl: Node, Hashable, RandomAccessCollection {
 
-    @usableFromInline static let _emptyAttributes: NamedNodeMap<AnyAttributeNode> = NamedNodeMap()
-    @usableFromInline static let _emptyChildren:   NodeList<AnyNode>              = NodeList()
+    public typealias Element = Node
+    public typealias Index = Int
+    public typealias SubSequence = ArraySlice<Element>
+    public typealias Indices = Range<Index>
 
-    @inlinable open var owningDocument:  DocumentNode { _owningDocument }
+    @usableFromInline static let _emptyAttributes: NamedNodeMap<AttributeNode> = NamedNodeMap()
+    @usableFromInline static let _emptyNodeArray:  Array<Node>                 = []
+
+    open internal(set) var isReadOnly: Bool = false
+
+    @inlinable open var nodeType:        NodeTypes { fatalError("No Node Type for this node.") }
     @inlinable open var nodeName:        String { "" }
-    @inlinable open var nodeType:        NodeTypes { NodeTypes.Unknown }
-    @inlinable open var hasAttributes:   Bool { !attributes.isEmpty }
-    @inlinable open var hasChildNodes:   Bool { !children.isEmpty }
-    @inlinable open var hasNamespace:    Bool { !(namespaceURI ?? "").isEmpty }
-    @inlinable open var baseURI:         String? { nil }
     @inlinable open var localName:       String? { nil }
     @inlinable open var namespaceURI:    String? { nil }
+    @inlinable open var baseURI:         String? { nil }
+    @inlinable open var owningDocument:  DocumentNode { _owningDocument }
+    @inlinable open var parentNode:      Node? { nil }
     @inlinable open var firstChild:      Node? { nil }
     @inlinable open var lastChild:       Node? { nil }
-    @inlinable open var parentNode:      Node? { nil }
     @inlinable open var nextSibling:     Node? { nil }
     @inlinable open var previousSibling: Node? { nil }
-    @inlinable open var attributes:      NamedNodeMap<AnyAttributeNode> { NodeImpl._emptyAttributes }
-    @inlinable open var children:        NodeList<AnyNode> { NodeImpl._emptyChildren }
+    @inlinable open var hasAttributes:   Bool { false }
+    @inlinable open var hasChildNodes:   Bool { false }
+    @inlinable open var hasNamespace:    Bool { !(namespaceURI?.isEmpty ?? true) }
+    @inlinable open var startIndex:      Int { 0 }
+    @inlinable open var endIndex:        Int { 0 }
+    @inlinable open var attributes:      NamedNodeMap<AttributeNode> { NodeImpl._emptyAttributes }
 
     @inlinable open var nodeValue:   String? {
         get { nil }
@@ -57,59 +65,120 @@ open class NodeImpl: Node, Hashable {
         set {}
     }
 
-    @usableFromInline var _owningDocument: DocumentNode
     @usableFromInline var _userData:       [String: UserDataInfo] = [:]
+    @usableFromInline var _owningDocument: DocumentNodeImpl!      = nil
 
-    public init(_ owningDocument: DocumentNode) {
+    internal init() {}
+
+    @usableFromInline init(_ owningDocument: DocumentNodeImpl) {
         _owningDocument = owningDocument
     }
 
-    open func hash(into hasher: inout Hasher) {
-        hasher.combine(nodeName)
-        hasher.combine(nodeType)
-        hasher.combine(attributes)
-        hasher.combine(children)
+    @inlinable open func normalize() {}
+
+    @discardableResult @inlinable open func insert(childNode: Node, before refNode: Node?) -> Node { childNode }
+
+    @discardableResult @inlinable open func remove(childNode: Node) -> Node { childNode }
+
+    @discardableResult @inlinable open func append(child childNode: Node) -> Node {
+        let ref: NodeImpl? = nil
+        return insert(childNode: childNode, before: ref)
     }
 
-    open func cloneNode(deep: Bool) -> Node { fatalError("cloneNode(deep:) has not been implemented") }
-
-    open func normalize() {}
-
-    @discardableResult open func insert<T: Node, E: Node>(childNode: T, before refNode: E?) -> T { fatalError("insert(childNode:before:) has not been implemented") }
-
-    @discardableResult open func remove<T: Node>(childNode: T) -> T { fatalError("remove(childNode:) has not been implemented") }
-
-    @discardableResult @inlinable open func replace<O: Node, T: Node>(childNode oldChildNode: O, with newChildNode: T) -> O {
+    @discardableResult @inlinable open func replace(childNode oldChildNode: Node, with newChildNode: Node) -> Node {
         insert(childNode: newChildNode, before: oldChildNode)
         return remove(childNode: oldChildNode)
     }
 
-    @discardableResult @inlinable open func append<T: Node>(child childNode: T) -> T { let e: NodeImpl? = nil; return insert(childNode: childNode, before: e) }
+    @inlinable open func userData(key: String) -> Any? {
+        _userData[key]?.data
+    }
 
-    @inlinable open func isDefaultNamespace(namespaceURI uri: String) -> Bool { fatalError("isDefaultNamespace(namespaceURI:) has not been implemented") }
-
-    @inlinable open func lookupNamespaceURL(prefix: String) -> String? { fatalError("lookupNamespaceURL(prefix:) has not been implemented") }
-
-    @inlinable open func lookupPrefix(namespaceURI uri: String) -> String? { fatalError("lookupPrefix(namespaceURI:) has not been implemented") }
-
-    @inlinable open func userData(key: String) -> Any? { _userData[key]?.data }
-
-    @inlinable open func setUserData(key: String, userData ud: Any?, handler: UserDataHandler?) {
-        if let ud: Any = ud { _userData[key] = UserDataInfo(data: ud, body: handler) }
+    @inlinable open func setUserData(key: String, userData: Any?, handler: UserDataHandler?) {
+        if let ud: Any = userData { _userData[key] = UserDataInfo(data: ud, body: handler) }
         else { _userData.removeValue(forKey: key) }
     }
 
-    @inlinable open func isSameNode(as otherNode: Node) -> Bool {
-        guard let _other: NodeImpl = (otherNode as? NodeImpl) else { return false }
-        return (self === _other)
+    @inlinable open func cloneNode(deep: Bool) -> Node {
+        switch nodeType {
+            case .AttributeNode:
+                if let me: AttributeNode = (self as? AttributeNode) {
+                    let clone: AttributeNode = (me.hasNamespace ? owningDocument.createAttribute(namespaceURI: me.namespaceURI!, name: me.localName!) : owningDocument.createAttribute(name: me.name))
+                    clone.nodeValue = me.value
+                    return clone
+                }
+            case .CDataSectionNode:
+                return owningDocument.createCDataSectionNode(content: textContent ?? "")
+            case .CommentNode:
+                return owningDocument.createComment(content: textContent ?? "")
+            case .DocumentFragmentNode: break // TODO: Finish...
+            case .DocumentNode:         break // TODO: Finish...
+            case .DocumentTypeNode:     break // TODO: Finish...
+            case .ElementNode:          break // TODO: Finish...
+            case .EntityNode:           break // TODO: Finish...
+            case .EntityReferenceNode:  break // TODO: Finish...
+            case .NotationNode:
+                if let me: NotationNode = (self as? NotationNode) { return owningDocument.createNotation(publicId: me.publicId, systemId: me.systemId) }
+            case .ProcessingInstructionNode:
+                if let me: ProcessingInstructionNode = (self as? ProcessingInstructionNode) { return owningDocument.createProcessingInstruction(data: me.data, target: me.target) }
+            case .TextNode:
+                return owningDocument.createTextNode(content: textContent ?? "")
+        }
+
+        fatalError("Unable to clone node.")
+    }
+
+    @inlinable open func contains(_ node: Node) -> Bool {
+        contains { $0.isSameNode(as: node) }
     }
 
     @inlinable open func isEqualTo(_ other: Node) -> Bool {
-        guard type(of: other) == NodeImpl.self, let _other: NodeImpl = (other as? NodeImpl) else { return false }
-        return (self == _other)
+        guard nodeType == other.nodeType && nodeName == other.nodeName && nodeValue == other.nodeValue else { return false }
+        guard localName == other.localName && namespaceURI == other.namespaceURI && prefix == other.prefix else { return false }
+        guard attributes == other.attributes && count == other.count else { return false }
+        for (i, node) in enumerated() { if !node.isEqualTo(other[i]) { return false } }
+        return true
     }
 
-    @inlinable open func asHashable() -> AnyNode { AnyNode(self) }
+    @inlinable open func isSameNode(as otherNode: Node) -> Bool {
+        // This method will work for NodeImpl or any of it's subclasses.
+        guard let otherNode: NodeImpl = (otherNode as? NodeImpl) else { return false }
+        return (self === otherNode)
+    }
+
+    @inlinable open func isDefaultNamespace(namespaceURI uri: String) -> Bool {
+        /* TODO: Implement me... */
+        fatalError("isDefaultNamespace(namespaceURI:) has not been implemented")
+    }
+
+    @inlinable open func lookupNamespaceURL(prefix: String) -> String? {
+        /* TODO: Implement me... */
+        fatalError("lookupNamespaceURL(prefix:) has not been implemented")
+    }
+
+    @inlinable open func lookupPrefix(namespaceURI uri: String) -> String? {
+        /* TODO: Implement me... */
+        fatalError("lookupPrefix(namespaceURI:) has not been implemented")
+    }
+
+    @inlinable open func asHashable() -> AnyNode {
+        AnyNode(self)
+    }
+
+    @inlinable open func hash(into hasher: inout Hasher) {
+        hasher.combine(nodeType)
+        hasher.combine(nodeName)
+        hasher.combine(owningDocument.asHashable())
+        hasher.combine(parentNode?.asHashable())
+    }
+
+    @inlinable open subscript(bounds: Range<Int>) -> ArraySlice<Node> {
+        NodeImpl._emptyNodeArray[bounds]
+    }
+
+    @inlinable open subscript(position: Int) -> Node {
+        NodeImpl._emptyNodeArray[position]
+    }
 
     @inlinable public static func == (lhs: NodeImpl, rhs: NodeImpl) -> Bool { lhs === rhs }
 }

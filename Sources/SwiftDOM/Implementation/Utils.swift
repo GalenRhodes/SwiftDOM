@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: UserDataInfo.swift
+ *    FILENAME: Utils.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/21/20
+ *        DATE: 10/23/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,17 +22,11 @@
 
 import Foundation
 
-public struct UserDataInfo: Hashable {
-    private let uuid: String = UUID().uuidString
-    public let data: Any
-    public let body: UserDataHandler?
+public let DOMAttributeListDidChange: Notification.Name = Notification.Name("DOMAttributeListDidChange")
+public let DOMCollectionDidChange:    Notification.Name = Notification.Name("DOMCollectionDidChange")
 
-    public init(data: Any, body: UserDataHandler?) {
-        self.data = data
-        self.body = body
-    }
-
-    public func hash(into hasher: inout Hasher) { hasher.combine(uuid) }
-
-    public static func == (lhs: UserDataInfo, rhs: UserDataInfo) -> Bool { lhs.uuid == rhs.uuid }
+@inlinable func nodeTypeIs(_ node: Node?, _ type: NodeTypes...) -> Bool {
+    guard let node: Node = node else { return false }
+    for t: NodeTypes in type { if node.nodeType == t { return true } }
+    return false
 }

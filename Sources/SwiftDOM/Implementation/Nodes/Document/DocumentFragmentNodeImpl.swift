@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: UserDataInfo.swift
+ *    FILENAME: DocumentFragmentNodeImpl.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/21/20
+ *        DATE: 10/26/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,17 +22,8 @@
 
 import Foundation
 
-public struct UserDataInfo: Hashable {
-    private let uuid: String = UUID().uuidString
-    public let data: Any
-    public let body: UserDataHandler?
+class DocumentFragmentNodeImpl: NodeImpl, DocumentFragmentNode {
+    @usableFromInline override init(_ owningDocument: DocumentNodeImpl) { super.init(owningDocument) }
 
-    public init(data: Any, body: UserDataHandler?) {
-        self.data = data
-        self.body = body
-    }
-
-    public func hash(into hasher: inout Hasher) { hasher.combine(uuid) }
-
-    public static func == (lhs: UserDataInfo, rhs: UserDataInfo) -> Bool { lhs.uuid == rhs.uuid }
+    @inlinable static func == (lhs: DocumentFragmentNodeImpl, rhs: DocumentFragmentNodeImpl) -> Bool { lhs === rhs }
 }

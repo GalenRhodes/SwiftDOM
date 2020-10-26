@@ -27,8 +27,8 @@ public protocol DocumentTypeNode: Node {
     var publicId:       String { get }
     var systemId:       String { get }
     var internalSubset: String { get }
-    var entities:       NamedNodeMap<AnyEntityNode> { get }
-    var notations:      NamedNodeMap<AnyNotationNode> { get }
+    var entities:       NamedNodeMap<EntityNode> { get }
+    var notations:      NamedNodeMap<NotationNode> { get }
 }
 
 public class AnyDocumentTypeNode: AnyNode, DocumentTypeNode {
@@ -42,6 +42,6 @@ public class AnyDocumentTypeNode: AnyNode, DocumentTypeNode {
     @inlinable open var publicId:       String { docType.publicId }
     @inlinable open var systemId:       String { docType.systemId }
     @inlinable open var internalSubset: String { docType.internalSubset }
-    @inlinable open var entities:       NamedNodeMap<AnyEntityNode> { docType.entities }
-    @inlinable open var notations:      NamedNodeMap<AnyNotationNode> { docType.notations }
+    @inlinable open var entities:       NamedNodeMap<EntityNode> { docType.entities }
+    @inlinable open var notations:      NamedNodeMap<NotationNode> { docType.notations }
 }

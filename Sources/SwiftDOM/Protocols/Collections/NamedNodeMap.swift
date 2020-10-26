@@ -1,6 +1,6 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: NodeList.swift
+ *    FILENAME: NamedNodeMap.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
  *        DATE: 10/15/20
@@ -22,52 +22,33 @@
 
 import Foundation
 
-open class NodeList<T: Node>: Hashable, RandomAccessCollection, LiveCollection {
+open class NamedNodeMap<T>: Hashable, RandomAccessCollection {
 
     public typealias Element = T
-    public typealias SubSequence = NodeList<Element>
+    public typealias SubSequence = ArraySlice<Element>
     public typealias Index = Int
     public typealias Indices = Range<Index>
 
-    @inlinable open var startIndex: Int { 0 }
-    @inlinable open var endIndex:   Int { 0 }
+    @inlinable open var startIndex: Index { 0 }
+    @inlinable open var endIndex:   Index { 0 }
     @inlinable open var count:      Int { 0 }
 
     public let uuid: String = UUID().uuidString
 
-    @usableFromInline init() {}
+    public init() {}
+
+    @inlinable open subscript(nodeName: String) -> T? { nil }
+    @inlinable open subscript(name: String, namespaceURI: String) -> T? { nil }
+    @inlinable open subscript(position: Int) -> T { fatalError("Index out of bounds.") }
+    @inlinable open subscript(bounds: Range<Int>) -> ArraySlice<T> { Array<T>()[bounds] }
 
     @inlinable open func hash(into hasher: inout Hasher) { hasher.combine(uuid) }
 
-    @inlinable open func contains(node: Element) -> Bool {
-        for n: T in self { if node.isEqualTo(n) { return true } }
-        return false
-    }
-
-    public static func == (lhs: NodeList, rhs: NodeList) -> Bool {
-        if lhs === rhs || lhs.uuid == rhs.uuid {
-            return true
-        }
-        else if lhs.count == rhs.count {
-            if lhs.count > 0 {
-                for (i, n): (Index, T) in lhs.enumerated() {
-                    if !n.isEqualTo(rhs[i]) {
-                        return false
-                    }
-                }
-            }
-            return true
-        }
-        return false
-    }
-
-    @inlinable open subscript(position: Index) -> Element { fatalError("Index out of bounds") }
-
-    @inlinable open subscript(bounds: Indices) -> SubSequence {
-        if bounds.isEmpty { return self }
-        fatalError("Range out of bounds")
-    }
-
-    @inlinable open func domCollectionDidChange(_ node: Node) {}
+    public static func == (lhs: NamedNodeMap<T>, rhs: NamedNodeMap<T>) -> Bool { lhs === rhs }
 }
 
+extension NamedNodeMap where T: Node {
+    @inlinable public static func == (lhs: NamedNodeMap<T>, rhs: NamedNodeMap<T>) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
+
+    @inlinable public func contains(_ node: T) -> Bool { contains { $0.isSameNode(as: node) } }
+}

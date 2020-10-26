@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: UserDataInfo.swift
+ *    FILENAME: ProcessingInstructionNodeImpl.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/21/20
+ *        DATE: 10/26/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,17 +22,16 @@
 
 import Foundation
 
-public struct UserDataInfo: Hashable {
-    private let uuid: String = UUID().uuidString
-    public let data: Any
-    public let body: UserDataHandler?
+open class ProcessingInstructionNodeImpl: NodeImpl, ProcessingInstructionNode {
 
-    public init(data: Any, body: UserDataHandler?) {
+    open var data: String = ""
+    open private(set) var target: String = ""
+
+    @usableFromInline init(_ owningDocument: DocumentNodeImpl, data: String, target: String) {
         self.data = data
-        self.body = body
+        self.target = target
+        super.init(owningDocument)
     }
 
-    public func hash(into hasher: inout Hasher) { hasher.combine(uuid) }
-
-    public static func == (lhs: UserDataInfo, rhs: UserDataInfo) -> Bool { lhs.uuid == rhs.uuid }
+    @inlinable public static func == (lhs: ProcessingInstructionNodeImpl, rhs: ProcessingInstructionNodeImpl) -> Bool { lhs == rhs }
 }

@@ -23,8 +23,8 @@
 import Foundation
 
 public protocol DocumentNode: Node {
-    var docType:               DocumentTypeNode { get }
-    var documentElement:       ElementNode { get }
+    var docType:               DocumentTypeNode? { get }
+    var documentElement:       ElementNode? { get }
     var documentURI:           String? { get set }
     var inputEncoding:         String.Encoding { get }
     var isStrictErrorChecking: Bool { get set }
@@ -32,7 +32,7 @@ public protocol DocumentNode: Node {
     var xmlEncoding:           String { get }
     var xmlVersion:            String { get set }
 
-    func adopt<T: Node>(node: T) -> T
+    func adopt(node: Node) -> Node
 
     func createAttribute(name: String) -> AttributeNode
 
@@ -50,6 +50,12 @@ public protocol DocumentNode: Node {
 
     func createDocumentFragment() -> DocumentFragmentNode
 
+    func createProcessingInstruction(data: String, target: String) -> ProcessingInstructionNode
+
+    func createNotation(publicId: String, systemId: String) -> NotationNode
+
+    func createDocType(name: String, publicId: String, systemId: String) -> DocumentTypeNode
+
     func normalizeDocument()
 
     func getElementBy(elementId: String) -> ElementNode?
@@ -58,9 +64,9 @@ public protocol DocumentNode: Node {
 
     func getElementsBy(namespaceURI: String, name: String) -> NodeList<AnyElementNode>
 
-    func importNode<T: Node>(node: T, deep: Bool) -> T
+    func importNode(node: Node, deep: Bool) -> Node
 
-    func renameNode<T: Node>(node: T, namespaceURI: String, qualifiedName: String) -> T
+    func renameNode(node: Node, namespaceURI: String, qualifiedName: String) -> Node
 }
 
 open class AnyDocumentNode: AnyNode, DocumentNode {
@@ -69,8 +75,8 @@ open class AnyDocumentNode: AnyNode, DocumentNode {
 
     public init(_ document: DocumentNode) { super.init(document) }
 
-    @inlinable open var docType:         DocumentTypeNode { document.docType }
-    @inlinable open var documentElement: ElementNode { document.documentElement }
+    @inlinable open var docType:         DocumentTypeNode? { document.docType }
+    @inlinable open var documentElement: ElementNode? { document.documentElement }
     @inlinable open var inputEncoding:   String.Encoding { document.inputEncoding }
     @inlinable open var xmlEncoding:     String { document.xmlEncoding }
 
@@ -91,7 +97,7 @@ open class AnyDocumentNode: AnyNode, DocumentNode {
         set { document.xmlVersion = newValue }
     }
 
-    @inlinable open func adopt<T: Node>(node: T) -> T {
+    @inlinable open func adopt(node: Node) -> Node {
         document.adopt(node: node)
     }
 
@@ -143,11 +149,23 @@ open class AnyDocumentNode: AnyNode, DocumentNode {
         document.getElementsBy(namespaceURI: namespaceURI, name: name)
     }
 
-    @inlinable open func importNode<T: Node>(node: T, deep: Bool) -> T {
+    @inlinable open func importNode(node: Node, deep: Bool) -> Node {
         document.importNode(node: node, deep: deep)
     }
 
-    @inlinable open func renameNode<T: Node>(node: T, namespaceURI: String, qualifiedName: String) -> T {
+    @inlinable open func renameNode(node: Node, namespaceURI: String, qualifiedName: String) -> Node {
         document.renameNode(node: node, namespaceURI: namespaceURI, qualifiedName: qualifiedName)
+    }
+
+    @inlinable open func createProcessingInstruction(data: String, target: String) -> ProcessingInstructionNode {
+        document.createProcessingInstruction(data: data, target: target)
+    }
+
+    @inlinable open func createNotation(publicId: String, systemId: String) -> NotationNode {
+        document.createNotation(publicId: publicId, systemId: systemId)
+    }
+
+    @inlinable open func createDocType(name: String, publicId: String, systemId: String) -> DocumentTypeNode {
+        document.createDocType(name: name, publicId: publicId, systemId: systemId)
     }
 }

@@ -76,7 +76,7 @@ open class NamespaceNode: ParentNode {
     @usableFromInline var _localName:    String? = nil
     @usableFromInline var _namespaceURI: String? = nil
 
-    public init(_ owningDocument: DocumentNode, namespaceURI uri: String, qualifiedName qName: String) {
+    public init(_ owningDocument: DocumentNodeImpl, namespaceURI uri: String, qualifiedName qName: String) {
         guard !uri.isEmpty else { fatalError("Invalid URI: \(uri)") }
         guard let m: RegExResult = NamespaceNode.regexQName.firstMatch(in: qName) else { fatalError("Invalid Qualified Name: \(qName)") }
 
@@ -88,7 +88,7 @@ open class NamespaceNode: ParentNode {
         super.init(owningDocument)
     }
 
-    public init(_ owningDocument: DocumentNode, nodeName: String) {
+    public init(_ owningDocument: DocumentNodeImpl, nodeName: String) {
         guard let _ = NamespaceNode.regexName.firstMatch(in: nodeName) else { fatalError("Invalid Node Name: \(nodeName)") }
         _nodeName = nodeName
         super.init(owningDocument)

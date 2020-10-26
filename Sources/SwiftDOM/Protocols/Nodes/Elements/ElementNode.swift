@@ -23,6 +23,7 @@
 import Foundation
 
 public protocol ElementNode: Node {
+
     var schemaTypeInfo: TypeInfo? { get }
     var tagName:        String { get }
 
@@ -34,19 +35,19 @@ public protocol ElementNode: Node {
 
     func attributeWith(namespaceURI: String, name: String) -> AttributeNode?
 
-    func elementsBy(tagName: String) -> NodeList<AnyElementNode>
+    func elementsBy(tagName: String) -> NodeList<ElementNode>
 
-    func elementsBy(namespaceURI: String, name: String) -> NodeList<AnyElementNode>
+    func elementsBy(namespaceURI: String, name: String) -> NodeList<ElementNode>
 
     func hasAttributeWith(name: String) -> Bool
 
     func hasAttributeWith(namespaceURI: String, name: String) -> Bool
 
-    func removeAttributeWith(name: String)
+    func removeAttributeWith(name: String) -> AttributeNode?
 
-    func removeAttributeWith(namespaceURI: String, name: String)
+    func removeAttributeWith(namespaceURI: String, name: String) -> AttributeNode?
 
-    func removeAttribute(attribute: AttributeNode) -> AttributeNode
+    func removeAttribute(attribute: AttributeNode) -> AttributeNode?
 
     func setAttributeWith(name: String, value: String)
 
@@ -64,6 +65,7 @@ public protocol ElementNode: Node {
 }
 
 public class AnyElementNode: AnyNode, ElementNode {
+
     @inlinable var element: ElementNode { node as! ElementNode }
 
     public var schemaTypeInfo: TypeInfo? { element.schemaTypeInfo }
@@ -87,11 +89,11 @@ public class AnyElementNode: AnyNode, ElementNode {
         element.attributeWith(namespaceURI: namespaceURI, name: name)
     }
 
-    @inlinable open func elementsBy(tagName: String) -> NodeList<AnyElementNode> {
+    @inlinable open func elementsBy(tagName: String) -> NodeList<ElementNode> {
         element.elementsBy(tagName: tagName)
     }
 
-    @inlinable open func elementsBy(namespaceURI: String, name: String) -> NodeList<AnyElementNode> {
+    @inlinable open func elementsBy(namespaceURI: String, name: String) -> NodeList<ElementNode> {
         element.elementsBy(namespaceURI: namespaceURI, name: name)
     }
 
@@ -103,15 +105,15 @@ public class AnyElementNode: AnyNode, ElementNode {
         element.hasAttributeWith(namespaceURI: namespaceURI, name: name)
     }
 
-    @inlinable open func removeAttributeWith(name: String) {
+    @inlinable open func removeAttributeWith(name: String) -> AttributeNode? {
         element.removeAttributeWith(name: name)
     }
 
-    @inlinable open func removeAttributeWith(namespaceURI: String, name: String) {
+    @inlinable open func removeAttributeWith(namespaceURI: String, name: String) -> AttributeNode? {
         element.removeAttributeWith(namespaceURI: namespaceURI, name: name)
     }
 
-    @inlinable open func removeAttribute(attribute: AttributeNode) -> AttributeNode {
+    @inlinable open func removeAttribute(attribute: AttributeNode) -> AttributeNode? {
         element.removeAttribute(attribute: attribute)
     }
 
