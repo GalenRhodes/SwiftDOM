@@ -26,7 +26,7 @@ public protocol EntityRefNode: Node {
 }
 
 public class AnyEntityRefNode: AnyNode, EntityRefNode {
-    @inlinable var entRef: EntityRefNode { (node as! EntityRefNode) }
+    var entRef: EntityRefNode { (node as! EntityRefNode) }
 
     public init(_ entRef: EntityRefNode) { super.init(entRef) }
 }

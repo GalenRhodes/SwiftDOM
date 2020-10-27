@@ -73,105 +73,105 @@ public protocol DocumentNode: Node {
 
 open class AnyDocumentNode: AnyNode, DocumentNode {
 
-    @inlinable var document: DocumentNode { node as! DocumentNode }
+    var document: DocumentNode { node as! DocumentNode }
 
     public init(_ document: DocumentNode) { super.init(document) }
 
-    @inlinable open var docType:         DocumentTypeNode? { document.docType }
-    @inlinable open var documentElement: ElementNode { document.documentElement }
-    @inlinable open var inputEncoding:   String.Encoding { document.inputEncoding }
-    @inlinable open var xmlEncoding:     String { document.xmlEncoding }
+    open var docType:         DocumentTypeNode? { document.docType }
+    open var documentElement: ElementNode { document.documentElement }
+    open var inputEncoding:   String.Encoding { document.inputEncoding }
+    open var xmlEncoding:     String { document.xmlEncoding }
 
-    @inlinable open var documentURI:           String? {
+    open var documentURI:           String? {
         get { document.documentURI }
         set { document.documentURI = newValue }
     }
-    @inlinable open var isStrictErrorChecking: Bool {
+    open var isStrictErrorChecking: Bool {
         get { document.isStrictErrorChecking }
         set { document.isStrictErrorChecking = newValue }
     }
-    @inlinable open var xmlStandalone:         Bool {
+    open var xmlStandalone:         Bool {
         get { document.xmlStandalone }
         set { document.xmlStandalone = newValue }
     }
-    @inlinable open var xmlVersion:            String {
+    open var xmlVersion:            String {
         get { document.xmlVersion }
         set { document.xmlVersion = newValue }
     }
 
-    @inlinable open func adopt(node: Node) -> Node {
+    open func adopt(node: Node) -> Node {
         document.adopt(node: node)
     }
 
-    @inlinable open func createAttribute(name: String) -> AttributeNode {
+    open func createAttribute(name: String) -> AttributeNode {
         document.createAttribute(name: name)
     }
 
-    @inlinable open func createAttribute(namespaceURI: String, name: String) -> AttributeNode {
+    open func createAttribute(namespaceURI: String, name: String) -> AttributeNode {
         document.createAttribute(namespaceURI: namespaceURI, name: name)
     }
 
-    @inlinable open func createElement(name: String) -> ElementNode {
+    open func createElement(name: String) -> ElementNode {
         document.createElement(name: name)
     }
 
-    @inlinable open func createElement(namespaceURI: String, name: String) -> ElementNode {
+    open func createElement(namespaceURI: String, name: String) -> ElementNode {
         document.createElement(namespaceURI: namespaceURI, name: name)
     }
 
-    @inlinable open func createTextNode(content: String) -> TextNode {
+    open func createTextNode(content: String) -> TextNode {
         document.createTextNode(content: content)
     }
 
-    @inlinable open func createCDataSectionNode(content: String) -> CDataSectionNode {
+    open func createCDataSectionNode(content: String) -> CDataSectionNode {
         document.createCDataSectionNode(content: content)
     }
 
-    @inlinable open func createComment(content: String) -> CommentNode {
+    open func createComment(content: String) -> CommentNode {
         document.createComment(content: content)
     }
 
-    @inlinable open func createDocumentFragment() -> DocumentFragmentNode {
+    open func createDocumentFragment() -> DocumentFragmentNode {
         document.createDocumentFragment()
     }
 
-    @inlinable open func normalizeDocument() {
+    open func normalizeDocument() {
         document.normalizeDocument()
     }
 
-    @inlinable open func getElementBy(elementId: String) -> ElementNode? {
+    open func getElementBy(elementId: String) -> ElementNode? {
         document.getElementBy(elementId: elementId)
     }
 
-    @inlinable open func getElementsBy(name: String) -> NodeList<AnyElementNode> {
+    open func getElementsBy(name: String) -> NodeList<AnyElementNode> {
         document.getElementsBy(name: name)
     }
 
-    @inlinable open func getElementsBy(namespaceURI: String, name: String) -> NodeList<AnyElementNode> {
+    open func getElementsBy(namespaceURI: String, name: String) -> NodeList<AnyElementNode> {
         document.getElementsBy(namespaceURI: namespaceURI, name: name)
     }
 
-    @inlinable open func importNode(node: Node, deep: Bool) -> Node {
+    open func importNode(node: Node, deep: Bool) -> Node {
         document.importNode(node: node, deep: deep)
     }
 
-    @inlinable @discardableResult open func renameNode(node: Node, namespaceURI: String, qualifiedName: String) -> Node {
+    @discardableResult open func renameNode(node: Node, namespaceURI: String, qualifiedName: String) -> Node {
         document.renameNode(node: node, namespaceURI: namespaceURI, qualifiedName: qualifiedName)
     }
 
-    @inlinable @discardableResult open func renameNode(node: Node, nodeName: String) -> Node {
+    @discardableResult open func renameNode(node: Node, nodeName: String) -> Node {
         document.renameNode(node: node, nodeName: nodeName)
     }
 
-    @inlinable open func createProcessingInstruction(data: String, target: String) -> ProcessingInstructionNode {
+    open func createProcessingInstruction(data: String, target: String) -> ProcessingInstructionNode {
         document.createProcessingInstruction(data: data, target: target)
     }
 
-    @inlinable open func createNotation(name: String, publicId: String, systemId: String) -> NotationNode {
+    open func createNotation(name: String, publicId: String, systemId: String) -> NotationNode {
         document.createNotation(name: name, publicId: publicId, systemId: systemId)
     }
 
-    @inlinable open func createDocType(name: String, publicId: String, systemId: String, internalSubset: String) -> DocumentTypeNode {
+    open func createDocType(name: String, publicId: String, systemId: String, internalSubset: String) -> DocumentTypeNode {
         document.createDocType(name: name, publicId: publicId, systemId: systemId, internalSubset: internalSubset)
     }
 }

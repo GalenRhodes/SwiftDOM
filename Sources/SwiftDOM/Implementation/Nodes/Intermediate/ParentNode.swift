@@ -24,14 +24,14 @@ import Foundation
 
 open class ParentNode: ChildNode {
 
-    @inlinable open override var firstChild:    Node? { _firstChild }
-    @inlinable open override var lastChild:     Node? { _lastChild }
-    @inlinable open override var hasChildNodes: Bool { _firstChild != nil }
-    @inlinable open override var startIndex:    Index { 0 }
-    @inlinable open override var endIndex:      Index { _nodes.count }
+    open override var firstChild:    Node? { _firstChild }
+    open override var lastChild:     Node? { _lastChild }
+    open override var hasChildNodes: Bool { _firstChild != nil }
+    open override var startIndex:    Index { 0 }
+    open override var endIndex:      Index { _nodes.count }
 
-    @usableFromInline var _firstChild: ChildNode? = nil
-    @usableFromInline var _lastChild:  ChildNode? = nil
+    var _firstChild: ChildNode? = nil
+    var _lastChild:  ChildNode? = nil
 
     @discardableResult open override func insert(childNode: Node, before refNode: Node?) -> Node {
         guard !isReadOnly else { fatalError("No modification allowed.") }
@@ -70,13 +70,13 @@ open class ParentNode: ChildNode {
         }
     }
 
-    @usableFromInline func hierachyCheck(node: Node?) -> Bool {
+    func hierachyCheck(node: Node?) -> Bool {
         guard let n: Node = node else { return false }
         guard let p: ParentNode = (n as? ParentNode) else { return false }
         return self === p || hierachyCheck(node: p._parentNode)
     }
 
-    @usableFromInline func _insert01(childNode: ChildNode, before refNode: ChildNode?) {
+    func _insert01(childNode: ChildNode, before refNode: ChildNode?) {
         /*
          * Is the new node already a child to this or another node?
          */
@@ -105,7 +105,7 @@ open class ParentNode: ChildNode {
         }
     }
 
-    @usableFromInline func _insert02(childNode: ChildNode, before refNode: ChildNode?) {
+    func _insert02(childNode: ChildNode, before refNode: ChildNode?) {
         childNode._parentNode = self
         childNode._previousSibling = nil
         childNode._nextSibling = nil
@@ -139,7 +139,7 @@ open class ParentNode: ChildNode {
         }
     }
 
-    @usableFromInline func _remove(childNode: ChildNode) {
+    func _remove(childNode: ChildNode) {
         if let prev: ChildNode = childNode._previousSibling {
             if let next: ChildNode = childNode._nextSibling {
                 /*
@@ -176,17 +176,17 @@ open class ParentNode: ChildNode {
         childNode._parentNode = nil
     }
 
-    @inlinable open override subscript(bounds: Range<Index>) -> ArraySlice<Node> { _nodes[bounds] }
-    @inlinable open override subscript(position: Index) -> Node { _nodes[position] }
+    open override subscript(bounds: Range<Index>) -> ArraySlice<Node> { _nodes[bounds] }
+    open override subscript(position: Index) -> Node { _nodes[position] }
 
-    @inlinable func notifyChildListeners() {
+    func notifyChildListeners() {
         __nodes = nil
         NotificationCenter.default.post(name: DOMCollectionDidChange, object: self)
         _parentNode?.notifyChildListeners()
     }
 
-    @usableFromInline var __nodes: [Node]? = nil
-    @inlinable var        _nodes:  [Node] {
+    var __nodes: [Node]? = nil
+    var        _nodes:  [Node] {
         if let n: [Node] = __nodes { return n }
         __nodes = []
         var c: Node? = firstChild

@@ -23,11 +23,11 @@
 import Foundation
 
 open class ChildNode: NodeImpl {
-    @inlinable open override var parentNode:      Node? { _parentNode }
-    @inlinable open override var nextSibling:     Node? { _nextSibling }
-    @inlinable open override var previousSibling: Node? { _previousSibling }
+    open override var parentNode:      Node? { _parentNode }
+    open override var nextSibling:     Node? { _nextSibling }
+    open override var previousSibling: Node? { _previousSibling }
 
-    @usableFromInline var _parentNode:      ParentNode? = nil
-    @usableFromInline var _nextSibling:     ChildNode?  = nil
-    @usableFromInline var _previousSibling: ChildNode?  = nil
+    var _parentNode:      ParentNode? = nil
+    var _nextSibling:     ChildNode?  = nil
+    var _previousSibling: ChildNode?  = nil
 }

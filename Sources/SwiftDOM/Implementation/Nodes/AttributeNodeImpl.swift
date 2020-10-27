@@ -29,19 +29,19 @@ open class AttributeNodeImpl: NamespaceNode, AttributeNode {
     open internal(set) var isSpecified:    Bool         = false
     open internal(set) var isId:           Bool         = false
 
-    @inlinable open var name:  String { nodeName }
-    @inlinable open var value: String {
+    open var name:  String { nodeName }
+    open var value: String {
         /* TODO: Implement me... */
         get { "" }
         set {}
     }
 
-    @inlinable open override var nodeType:    NodeTypes { NodeTypes.AttributeNode }
-    @inlinable open override var nodeValue:   String? {
+    open override var nodeType:    NodeTypes { NodeTypes.AttributeNode }
+    open override var nodeValue:   String? {
         get { value }
         set { if let v = newValue { value = v } }
     }
-    @inlinable open override var textContent: String? {
+    open override var textContent: String? {
         get { value }
         set { if let v = newValue { value = v } }
     }
@@ -56,5 +56,13 @@ open class AttributeNodeImpl: NamespaceNode, AttributeNode {
         self.value = value
     }
 
-    @inlinable public static func == (lhs: AttributeNodeImpl, rhs: AttributeNodeImpl) -> Bool { lhs === rhs }
+    open override func baseClone(_ doc: DocumentNodeImpl, postEvent: Bool, deep: Bool) -> NodeImpl {
+        let a: AttributeNodeImpl = (hasNamespace ? AttributeNodeImpl(doc, namespaceURI: namespaceURI, qualifiedName: name, value: value) : AttributeNodeImpl(doc, attributeName: name, value: value))
+        a.schemaTypeInfo = schemaTypeInfo
+        a.isSpecified = isSpecified
+        a.isId = isId
+        return a
+    }
+
+    public static func == (lhs: AttributeNodeImpl, rhs: AttributeNodeImpl) -> Bool { lhs === rhs }
 }

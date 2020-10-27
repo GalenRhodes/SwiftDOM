@@ -23,9 +23,9 @@
 import Foundation
 
 open class NamedNode: ParentNode {
-    @inlinable open override var nodeName: String { _nodeName }
+    open override var nodeName: String { _nodeName }
 
-    @usableFromInline var _nodeName: String { willSet { guard let _ = regexName.firstMatch(in: newValue) else { fatalError("Invalid Node Name: \"\(newValue)\"") } } }
+    var _nodeName: String { willSet { guard let _ = regexName.firstMatch(in: newValue) else { fatalError("Invalid Node Name: \"\(newValue)\"") } } }
 
     public init(_ owningDocument: DocumentNodeImpl, nodeName: String) {
         guard let _ = regexName.firstMatch(in: nodeName) else { fatalError("Invalid Node Name: \"\(nodeName)\"") }

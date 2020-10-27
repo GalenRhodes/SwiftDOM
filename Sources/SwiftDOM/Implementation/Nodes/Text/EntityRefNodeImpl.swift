@@ -23,8 +23,8 @@
 import Foundation
 
 open class EntityRefNodeImpl: ParentNode, EntityRefNode {
-    @inlinable open override var nodeType: NodeTypes { .EntityReferenceNode }
-    @inlinable open override var nodeName: String { entityName }
+    open override var nodeType: NodeTypes { .EntityReferenceNode }
+    open override var nodeName: String { entityName }
 
     open internal(set) var entityName: String = ""
 
@@ -33,5 +33,11 @@ open class EntityRefNodeImpl: ParentNode, EntityRefNode {
         super.init(owningDocument)
     }
 
-    @inlinable public static func == (lhs: EntityRefNodeImpl, rhs: EntityRefNodeImpl) -> Bool { lhs === rhs }
+    open override func baseClone(_ doc: DocumentNodeImpl, postEvent: Bool, deep: Bool) -> NodeImpl {
+        let e = EntityRefNodeImpl(doc, entityName: entityName)
+        forEachChild { e.append(child: $0.cloneNode(doc, postEvent: postEvent, deep: true)) }
+        return e
+    }
+
+    public static func == (lhs: EntityRefNodeImpl, rhs: EntityRefNodeImpl) -> Bool { lhs === rhs }
 }

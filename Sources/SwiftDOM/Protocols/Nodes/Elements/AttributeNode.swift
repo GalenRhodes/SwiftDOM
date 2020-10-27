@@ -33,17 +33,17 @@ public protocol AttributeNode: Node {
 
 public class AnyAttributeNode: AnyNode, AttributeNode {
 
-    @inlinable open var name:           String { attribute.name }
-    @inlinable open var ownerElement:   ElementNode? { attribute.ownerElement }
-    @inlinable open var schemaTypeInfo: TypeInfo? { attribute.schemaTypeInfo }
-    @inlinable open var isSpecified:    Bool { attribute.isSpecified }
-    @inlinable open var isId:           Bool { attribute.isId }
-    @inlinable open var value:          String {
+    open var name:           String { attribute.name }
+    open var ownerElement:   ElementNode? { attribute.ownerElement }
+    open var schemaTypeInfo: TypeInfo? { attribute.schemaTypeInfo }
+    open var isSpecified:    Bool { attribute.isSpecified }
+    open var isId:           Bool { attribute.isId }
+    open var value:          String {
         get { attribute.value }
         set { attribute.value = newValue }
     }
 
-    @inlinable var attribute: AttributeNode { node as! AttributeNode }
+    var attribute: AttributeNode { node as! AttributeNode }
 
     public init(_ node: AttributeNode) { super.init(node) }
 }

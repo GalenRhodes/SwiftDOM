@@ -27,9 +27,9 @@ public protocol CharacterData: Node {
 }
 
 open class AnyCharacterData: AnyNode, CharacterData {
-    @inlinable var cd: CharacterData { node as! CharacterData }
+    var cd: CharacterData { node as! CharacterData }
 
-    @inlinable open var data: String {
+    open var data: String {
         get { cd.data }
         set { cd.data = newValue }
     }

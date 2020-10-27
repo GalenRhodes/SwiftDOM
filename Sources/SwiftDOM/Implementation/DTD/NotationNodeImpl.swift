@@ -23,9 +23,9 @@
 import Foundation
 
 open class NotationNodeImpl: NodeImpl, NotationNode {
-    @inlinable override open var nodeType: NodeTypes { .NotationNode }
-    @inlinable override open var nodeName: String { name }
-    @inlinable override open var textContent: String? {
+    override open var nodeType: NodeTypes { .NotationNode }
+    override open var nodeName: String { name }
+    override open var textContent: String? {
         get { nil }
         set {}
     }
@@ -35,12 +35,16 @@ open class NotationNodeImpl: NodeImpl, NotationNode {
 
     open internal(set) var name: String = ""
 
-    @usableFromInline init(_ owningDocument: DocumentNodeImpl, name: String, publicId: String, systemId: String) {
+    init(_ owningDocument: DocumentNodeImpl, name: String, publicId: String, systemId: String) {
         self.publicId = publicId
         self.systemId = systemId
         self.name = name
         super.init(owningDocument)
     }
 
-    @inlinable public static func == (lhs: NotationNodeImpl, rhs: NotationNodeImpl) -> Bool { lhs === rhs }
+    open override func baseClone(_ doc: DocumentNodeImpl, postEvent: Bool, deep: Bool) -> NodeImpl {
+        NotationNodeImpl(doc, name: name, publicId: publicId, systemId: systemId)
+    }
+
+    public static func == (lhs: NotationNodeImpl, rhs: NotationNodeImpl) -> Bool { lhs === rhs }
 }

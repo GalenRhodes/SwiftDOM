@@ -23,13 +23,13 @@
 import Foundation
 
 open class LiveNodeList<T>: NodeList<T> {
-    @usableFromInline var _nodes: [T] = []
+    var _nodes: [T] = []
 
-    @inlinable open override var startIndex: Int { _nodes.startIndex }
-    @inlinable open override var endIndex:   Int { _nodes.endIndex }
-    @inlinable open override var count:      Int { _nodes.count }
+    open override var startIndex: Int { _nodes.startIndex }
+    open override var endIndex:   Int { _nodes.endIndex }
+    open override var count:      Int { _nodes.count }
 
-    @usableFromInline init(_ parent: ParentNode) {
+    init(_ parent: ParentNode) {
         super.init()
         NotificationCenter.default.addObserver(forName: DOMCollectionDidChange, object: parent, queue: nil) {
             [weak self] in
@@ -37,9 +37,9 @@ open class LiveNodeList<T>: NodeList<T> {
         }
     }
 
-    @inlinable open func handleCollectionDidChange(_ parent: ParentNode) {}
+    open func handleCollectionDidChange(_ parent: ParentNode) {}
 
-    @inlinable open override subscript(bounds: Range<Int>) -> ArraySlice<T> { _nodes[bounds] }
+    open override subscript(bounds: Range<Int>) -> ArraySlice<T> { _nodes[bounds] }
 
-    @inlinable open override subscript(position: Int) -> T { _nodes[position] }
+    open override subscript(position: Int) -> T { _nodes[position] }
 }

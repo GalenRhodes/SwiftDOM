@@ -32,14 +32,14 @@ public protocol EntityNode: Node {
 }
 
 public class AnyEntityNode: AnyNode, EntityNode {
-    @inlinable var entity: EntityNode { (node as! EntityNode) }
+    var entity: EntityNode { (node as! EntityNode) }
 
-    @inlinable open var inputEncoding: String.Encoding { entity.inputEncoding }
-    @inlinable open var notationName:  String { entity.notationName }
-    @inlinable open var publicId:      String { entity.publicId }
-    @inlinable open var systemId:      String { entity.systemId }
-    @inlinable open var xmlEncoding:   String { entity.xmlEncoding }
-    @inlinable open var xmlVersion:    String { entity.xmlVersion }
+    open var inputEncoding: String.Encoding { entity.inputEncoding }
+    open var notationName:  String { entity.notationName }
+    open var publicId:      String { entity.publicId }
+    open var systemId:      String { entity.systemId }
+    open var xmlEncoding:   String { entity.xmlEncoding }
+    open var xmlVersion:    String { entity.xmlVersion }
 
     public init(_ entity: EntityNode) { super.init(entity) }
 }

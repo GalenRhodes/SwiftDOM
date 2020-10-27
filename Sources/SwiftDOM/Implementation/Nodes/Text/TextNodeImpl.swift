@@ -23,19 +23,19 @@
 import Foundation
 
 open class CharacterDataImpl: NodeImpl, CharacterData {
-    @inlinable open var data: String {
+    open var data: String {
         get { _data }
         set { _data = newValue }
     }
-    @inlinable open override var nodeValue:   String? {
+    open override var nodeValue:   String? {
         get { _data }
         set { if let v: String = newValue { _data = v } }
     }
-    @inlinable open override var textContent: String? {
+    open override var textContent: String? {
         get { _data }
         set { if let v: String = newValue { _data = v } }
     }
-    @usableFromInline var _data: String = ""
+    var _data: String = ""
 
     public init(_ owningDocument: DocumentNodeImpl, content: String) {
         super.init(owningDocument)
@@ -44,7 +44,7 @@ open class CharacterDataImpl: NodeImpl, CharacterData {
 }
 
 open class TextNodeImpl: CharacterDataImpl, TextNode {
-    @inlinable open var wholeText: String {
+    open var wholeText: String {
         get {
             var _str: String = ""
             TextNodeImpl.getWholeTextBackwards(text: &_str, node: previousSibling, parent: parentNode)
@@ -54,14 +54,14 @@ open class TextNodeImpl: CharacterDataImpl, TextNode {
         set { replaceWholeText(text: newValue) }
     }
 
-    @inlinable open override var nodeType: NodeTypes { NodeTypes.TextNode }
-    @inlinable open override var nodeName: String { "#text" }
+    open override var nodeType: NodeTypes { NodeTypes.TextNode }
+    open override var nodeName: String { "#text" }
 
-    open private(set) var isElementContentWhitespace: Bool = false
+    open internal(set) var isElementContentWhitespace: Bool = false
 
     public override init(_ owningDocument: DocumentNodeImpl, content: String) { super.init(owningDocument, content: content) }
 
-    @inlinable open func splitText(offset: Int) -> TextNode {
+    open func splitText(offset: Int) -> TextNode {
         let index: String.Index = _data.index(_data.startIndex, offsetBy: offset)
         let other: String       = String(_data[index ..< _data.endIndex])
         let txt:   TextNodeImpl = TextNodeImpl(owningDocument as! DocumentNodeImpl, content: other)
@@ -72,11 +72,11 @@ open class TextNodeImpl: CharacterDataImpl, TextNode {
         return txt
     }
 
-    @inlinable func createLikeMe(_ text: String) -> TextNodeImpl {
+    func createLikeMe(_ text: String) -> TextNodeImpl {
         (owningDocument.createTextNode(content: text) as! TextNodeImpl)
     }
 
-    @inlinable @discardableResult open func replaceWholeText(text: String) -> TextNode {
+    @discardableResult open func replaceWholeText(text: String) -> TextNode {
         if !(TextNodeImpl.canModifyPrev(self) && TextNodeImpl.canModifyNext(self)) { fatalError("No Modification Allowed.") }
 
         var currentNode: TextNodeImpl = self
@@ -114,7 +114,7 @@ open class TextNodeImpl: CharacterDataImpl, TextNode {
         return currentNode
     }
 
-    @usableFromInline @discardableResult static func getWholeTextBackwards(text: inout String, node aNode: Node?, parent aParent: Node?) -> Bool {
+    @discardableResult static func getWholeTextBackwards(text: inout String, node aNode: Node?, parent aParent: Node?) -> Bool {
         var _node: Node? = aNode
 
         while let node: Node = _node {
@@ -138,7 +138,7 @@ open class TextNodeImpl: CharacterDataImpl, TextNode {
         return false
     }
 
-    @usableFromInline @discardableResult static func getWholeTextForewards(text: inout String, node aNode: Node?, parent aParent: Node?) -> Bool {
+    @discardableResult static func getWholeTextForewards(text: inout String, node aNode: Node?, parent aParent: Node?) -> Bool {
         var _node: Node? = aNode
 
         while let node: Node = _node {
@@ -162,7 +162,7 @@ open class TextNodeImpl: CharacterDataImpl, TextNode {
         return false
     }
 
-    @usableFromInline static func canModifyNext(_ node: Node?) -> Bool {
+    static func canModifyNext(_ node: Node?) -> Bool {
         var textFirstChild: Bool  = false
         var _next:          Node? = node?.nextSibling
 
@@ -201,7 +201,7 @@ open class TextNodeImpl: CharacterDataImpl, TextNode {
         return true
     }
 
-    @usableFromInline static func canModifyPrev(_ node: Node?) -> Bool {
+    static func canModifyPrev(_ node: Node?) -> Bool {
         var textLastChild: Bool  = false
         var _prev:         Node? = node?.previousSibling
 
@@ -240,7 +240,7 @@ open class TextNodeImpl: CharacterDataImpl, TextNode {
         return true
     }
 
-    @usableFromInline static func hasTextOnlyChildren(_ node: Node?) -> Bool {
+    static func hasTextOnlyChildren(_ node: Node?) -> Bool {
         var child: Node? = node
 
         if child == nil { return false }
@@ -256,5 +256,9 @@ open class TextNodeImpl: CharacterDataImpl, TextNode {
         return true
     }
 
-    @inlinable public static func == (lhs: TextNodeImpl, rhs: TextNodeImpl) -> Bool { lhs === rhs }
+    open override func baseClone(_ doc: DocumentNodeImpl, postEvent: Bool, deep: Bool) -> NodeImpl {
+        TextNodeImpl(doc, content: data)
+    }
+
+    public static func == (lhs: TextNodeImpl, rhs: TextNodeImpl) -> Bool { lhs === rhs }
 }

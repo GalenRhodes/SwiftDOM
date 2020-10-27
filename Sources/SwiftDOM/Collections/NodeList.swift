@@ -29,35 +29,35 @@ open class NodeList<T>: Hashable, RandomAccessCollection {
     public typealias Index = Int
     public typealias Indices = Range<Int>
 
-    @inlinable open var startIndex: Int { 0 }
-    @inlinable open var endIndex:   Int { 0 }
-    @inlinable open var count:      Int { 0 }
+    open var startIndex: Int { 0 }
+    open var endIndex:   Int { 0 }
+    open var count:      Int { 0 }
 
     public let uuid: String = UUID().uuidString
 
-    @usableFromInline init() {}
+    init() {}
 
-    @inlinable open func hash(into hasher: inout Hasher) { hasher.combine(uuid) }
+    open func hash(into hasher: inout Hasher) { hasher.combine(uuid) }
 
-    @inlinable public static func == (lhs: NodeList, rhs: NodeList) -> Bool { ((lhs === rhs) || (lhs.uuid == rhs.uuid)) }
+    public static func == (lhs: NodeList, rhs: NodeList) -> Bool { ((lhs === rhs) || (lhs.uuid == rhs.uuid)) }
 
-    @inlinable open subscript(position: Int) -> T { Array<T>()[position] }
+    open subscript(position: Int) -> T { Array<T>()[position] }
 
-    @inlinable open subscript(bounds: Range<Int>) -> ArraySlice<T> { Array<T>()[bounds] }
+    open subscript(bounds: Range<Int>) -> ArraySlice<T> { Array<T>()[bounds] }
 
-    internal func clone() -> NodeList<T> { NodeList() }
+    func clone(deep: Bool = false, postEvents: Bool = false) -> NodeList<T> { NodeList() }
 }
 
 extension NodeList where T: Node {
-    @inlinable public func contains(node: T) -> Bool { contains { $0.isSameNode(as: node) } }
+    public func contains(node: T) -> Bool { contains { $0.isSameNode(as: node) } }
 
-    @inlinable public static func == (lhs: NodeList<T>, rhs: NodeList<T>) -> Bool {
+    public static func == (lhs: NodeList<T>, rhs: NodeList<T>) -> Bool {
         guard lhs.count == rhs.count else { return false }
         for (i, n) in lhs.enumerated() { if !n.isEqualTo(rhs[i]) { return false } }
         return true
     }
 
-    @inlinable public func hash(into hasher: inout Hasher) { hasher.combine(map { $0.asHashable() }) }
+    public func hash(into hasher: inout Hasher) { hasher.combine(map { $0.asHashable() }) }
 }
 
 extension NodeList where T: Equatable {

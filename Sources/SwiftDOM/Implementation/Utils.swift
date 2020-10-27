@@ -25,7 +25,7 @@ import Foundation
 public let DOMAttributeListDidChange: Notification.Name = Notification.Name("DOMAttributeListDidChange")
 public let DOMCollectionDidChange:    Notification.Name = Notification.Name("DOMCollectionDidChange")
 
-@inlinable func nodeTypeIs(_ node: Node?, _ type: NodeTypes...) -> Bool {
+func nodeTypeIs(_ node: Node?, _ type: NodeTypes...) -> Bool {
     guard let node: Node = node else { return false }
     for t: NodeTypes in type { if node.nodeType == t { return true } }
     return false

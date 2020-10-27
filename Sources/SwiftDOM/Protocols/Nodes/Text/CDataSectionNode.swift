@@ -26,7 +26,7 @@ public protocol CDataSectionNode: TextNode {
 }
 
 open class AnyCDataSectionNode: AnyTextNode, CDataSectionNode {
-    @inlinable var cDataSection: CDataSectionNode { textNode as! CDataSectionNode }
+    var cDataSection: CDataSectionNode { textNode as! CDataSectionNode }
 
     public init(_ cDataSection: CDataSectionNode) { super.init(cDataSection) }
 }

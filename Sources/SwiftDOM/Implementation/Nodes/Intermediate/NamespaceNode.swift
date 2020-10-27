@@ -25,9 +25,9 @@ import Rubicon
 
 open class NamespaceNode: NamedNode {
 
-    @inlinable open override var localName:    String? { _localName }
-    @inlinable open override var namespaceURI: String? { _namespaceURI }
-    @inlinable open override var prefix:       String? {
+    open override var localName:    String? { _localName }
+    open override var namespaceURI: String? { _namespaceURI }
+    open override var prefix:       String? {
         get { _prefix }
         set {
             if hasNamespace {
@@ -50,9 +50,9 @@ open class NamespaceNode: NamedNode {
         }
     }
 
-    @usableFromInline var _prefix:       String? = nil
-    @usableFromInline var _localName:    String? = nil
-    @usableFromInline var _namespaceURI: String? = nil
+    var _prefix:       String? = nil
+    var _localName:    String? = nil
+    var _namespaceURI: String? = nil
 
     public init(_ owningDocument: DocumentNodeImpl, namespaceURI uri: String, qualifiedName qName: String) {
         let t: NsNamesCheckResult = nsNamesCheck(namespaceURI: uri, qualifiedName: qName)
@@ -64,7 +64,7 @@ open class NamespaceNode: NamedNode {
 
     public override init(_ owningDocument: DocumentNodeImpl, nodeName: String) { super.init(owningDocument, nodeName: nodeName) }
 
-    @inlinable open func rename(namespaceURI uri: String, qualifiedName qName: String) {
+    open func rename(namespaceURI uri: String, qualifiedName qName: String) {
         let t: NsNamesCheckResult = nsNamesCheck(namespaceURI: uri, qualifiedName: qName)
         _prefix = t.prefix
         _localName = t.localName

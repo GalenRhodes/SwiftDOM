@@ -26,7 +26,7 @@ public protocol DocumentFragmentNode: Node {
 }
 
 public class AnyDocumentFragmentNode: AnyNode, DocumentFragmentNode {
-    @usableFromInline var docFrag: DocumentFragmentNode { node as! DocumentFragmentNode }
+    var docFrag: DocumentFragmentNode { node as! DocumentFragmentNode }
 
     public init(_ docFrag: DocumentFragmentNode) {
         super.init(docFrag)

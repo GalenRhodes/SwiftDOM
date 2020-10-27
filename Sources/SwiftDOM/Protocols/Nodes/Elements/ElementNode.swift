@@ -68,86 +68,86 @@ public protocol ElementNode: Node {
 
 public class AnyElementNode: AnyNode, ElementNode {
 
-    @inlinable var element: ElementNode { node as! ElementNode }
+    var element: ElementNode { node as! ElementNode }
 
     public var schemaTypeInfo: TypeInfo? { element.schemaTypeInfo }
     public var tagName:        String { element.tagName }
 
     public init(_ element: ElementNode) { super.init(element) }
 
-    @inlinable open func attributeValueWith(name: String) -> String? {
+    open func attributeValueWith(name: String) -> String? {
         element.attributeValueWith(name: name)
     }
 
-    @inlinable open func attributeValueWith(namespaceURI: String, name: String) -> String? {
+    open func attributeValueWith(namespaceURI: String, name: String) -> String? {
         element.attributeValueWith(namespaceURI: namespaceURI, name: name)
     }
 
-    @inlinable open func attributeWith(name: String) -> AttributeNode? {
+    open func attributeWith(name: String) -> AttributeNode? {
         element.attributeWith(name: name)
     }
 
-    @inlinable open func attributeWith(namespaceURI: String, name: String) -> AttributeNode? {
+    open func attributeWith(namespaceURI: String, name: String) -> AttributeNode? {
         element.attributeWith(namespaceURI: namespaceURI, name: name)
     }
 
-    @inlinable open func attribute(where body: (AttributeNode) throws -> AttributeNode?) rethrows -> AttributeNode? {
+    open func attribute(where body: (AttributeNode) throws -> AttributeNode?) rethrows -> AttributeNode? {
         try element.attribute(where: body)
     }
 
-    @inlinable open func elementsBy(tagName: String) -> NodeList<ElementNode> {
+    open func elementsBy(tagName: String) -> NodeList<ElementNode> {
         element.elementsBy(tagName: tagName)
     }
 
-    @inlinable open func elementsBy(namespaceURI: String, name: String) -> NodeList<ElementNode> {
+    open func elementsBy(namespaceURI: String, name: String) -> NodeList<ElementNode> {
         element.elementsBy(namespaceURI: namespaceURI, name: name)
     }
 
-    @inlinable open func hasAttributeWith(name: String) -> Bool {
+    open func hasAttributeWith(name: String) -> Bool {
         element.hasAttributeWith(name: name)
     }
 
-    @inlinable open func hasAttributeWith(namespaceURI: String, name: String) -> Bool {
+    open func hasAttributeWith(namespaceURI: String, name: String) -> Bool {
         element.hasAttributeWith(namespaceURI: namespaceURI, name: name)
     }
 
-    @inlinable @discardableResult open func removeAttributeWith(name: String) -> AttributeNode? {
+    @discardableResult open func removeAttributeWith(name: String) -> AttributeNode? {
         element.removeAttributeWith(name: name)
     }
 
-    @inlinable @discardableResult open func removeAttributeWith(namespaceURI: String, name: String) -> AttributeNode? {
+    @discardableResult open func removeAttributeWith(namespaceURI: String, name: String) -> AttributeNode? {
         element.removeAttributeWith(namespaceURI: namespaceURI, name: name)
     }
 
-    @inlinable @discardableResult open func removeAttribute(attribute: AttributeNode) -> AttributeNode? {
+    @discardableResult open func removeAttribute(attribute: AttributeNode) -> AttributeNode? {
         element.removeAttribute(attribute: attribute)
     }
 
-    @inlinable open func setAttributeWith(name: String, value: String) {
+    open func setAttributeWith(name: String, value: String) {
         element.setAttributeWith(name: name, value: value)
     }
 
-    @inlinable open func setAttributeWith(namespaceURI: String, name: String, value: String) {
+    open func setAttributeWith(namespaceURI: String, name: String, value: String) {
         element.setAttributeWith(namespaceURI: namespaceURI, name: name, value: value)
     }
 
-    @inlinable @discardableResult open func setAttribute(attribute: AttributeNode) -> AttributeNode? {
+    @discardableResult open func setAttribute(attribute: AttributeNode) -> AttributeNode? {
         element.setAttribute(attribute: attribute)
     }
 
-    @inlinable @discardableResult open func setAttributeNS(attribute: AttributeNode) -> AttributeNode? {
+    @discardableResult open func setAttributeNS(attribute: AttributeNode) -> AttributeNode? {
         element.setAttributeNS(attribute: attribute)
     }
 
-    @inlinable open func setIdAttributeWith(name: String, isId: Bool) {
+    open func setIdAttributeWith(name: String, isId: Bool) {
         element.setIdAttributeWith(name: name, isId: isId)
     }
 
-    @inlinable open func setIdAttributeWith(namespaceURI: String, name: String, isId: Bool) {
+    open func setIdAttributeWith(namespaceURI: String, name: String, isId: Bool) {
         element.setIdAttributeWith(namespaceURI: namespaceURI, name: name, isId: isId)
     }
 
-    @inlinable open func setIdAttribute(attribute: AttributeNode, isId: Bool) {
+    open func setIdAttribute(attribute: AttributeNode, isId: Bool) {
         element.setIdAttribute(attribute: attribute, isId: isId)
     }
 }

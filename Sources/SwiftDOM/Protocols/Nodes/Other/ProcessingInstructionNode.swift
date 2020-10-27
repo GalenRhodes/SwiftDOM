@@ -28,12 +28,12 @@ public protocol ProcessingInstructionNode: Node {
 }
 
 public class AnyProcessingInstructionNode: AnyNode, ProcessingInstructionNode {
-    @inlinable var pi: ProcessingInstructionNode { (node as! ProcessingInstructionNode) }
+    var pi: ProcessingInstructionNode { (node as! ProcessingInstructionNode) }
 
     public init(_ pi: ProcessingInstructionNode) { super.init(pi) }
 
-    @inlinable open var target: String { pi.target }
-    @inlinable open var data:   String {
+    open var target: String { pi.target }
+    open var data:   String {
         get { pi.data }
         set { pi.data = newValue }
     }

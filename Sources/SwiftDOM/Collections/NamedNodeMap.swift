@@ -29,22 +29,22 @@ open class NamedNodeMap<T>: Hashable, RandomAccessCollection {
     public typealias Index = Int
     public typealias Indices = Range<Index>
 
-    @inlinable open var startIndex: Index { 0 }
-    @inlinable open var endIndex:   Index { 0 }
-    @inlinable open var count:      Int { 0 }
+    open var startIndex: Index { 0 }
+    open var endIndex:   Index { 0 }
+    open var count:      Int { 0 }
 
     public let uuid: String = UUID().uuidString
 
     public init() {}
 
-    @inlinable open subscript(nodeName: String) -> T? { nil }
-    @inlinable open subscript(namespaceURI uri: String, localName lName: String) -> T? { nil }
-    @inlinable open subscript(position: Int) -> T { fatalError("Index out of bounds.") }
-    @inlinable open subscript(bounds: Range<Int>) -> ArraySlice<T> { Array<T>()[bounds] }
+    open subscript(nodeName: String) -> T? { nil }
+    open subscript(namespaceURI uri: String, localName lName: String) -> T? { nil }
+    open subscript(position: Int) -> T { fatalError("Index out of bounds.") }
+    open subscript(bounds: Range<Int>) -> ArraySlice<T> { Array<T>()[bounds] }
 
-    @inlinable open func hash(into hasher: inout Hasher) { hasher.combine(uuid) }
+    open func hash(into hasher: inout Hasher) { hasher.combine(uuid) }
 
-    internal func clone() -> NamedNodeMap<T> { NamedNodeMap() }
+    func clone(deep: Bool = false, postEvents: Bool = true) -> NamedNodeMap<T> { NamedNodeMap() }
 
     public static func == (lhs: NamedNodeMap<T>, rhs: NamedNodeMap<T>) -> Bool { lhs === rhs }
 }
@@ -56,9 +56,9 @@ extension NamedNodeMap where T: Node {
         return true
     }
 
-    @inlinable public func hash(into hasher: inout Hasher) { hasher.combine(map { $0.asHashable() }) }
+    public func hash(into hasher: inout Hasher) { hasher.combine(map { $0.asHashable() }) }
 
-    @inlinable public func contains(_ node: T) -> Bool { contains { $0.isSameNode(as: node) } }
+    public func contains(_ node: T) -> Bool { contains { $0.isSameNode(as: node) } }
 }
 
 extension NamedNodeMap where T: Equatable {
@@ -70,5 +70,5 @@ extension NamedNodeMap where T: Equatable {
 }
 
 extension  NamedNodeMap where T: Hashable {
-    @inlinable public func hash(into hasher: inout Hasher) { for o: T in self { hasher.combine(o) } }
+    public func hash(into hasher: inout Hasher) { for o: T in self { hasher.combine(o) } }
 }

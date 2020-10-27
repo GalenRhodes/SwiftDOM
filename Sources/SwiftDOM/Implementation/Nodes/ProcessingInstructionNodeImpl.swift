@@ -23,13 +23,13 @@
 import Foundation
 
 open class ProcessingInstructionNodeImpl: NodeImpl, ProcessingInstructionNode {
-    @inlinable open override var nodeType:    NodeTypes { .ProcessingInstructionNode }
-    @inlinable open override var nodeName:    String { target }
-    @inlinable open override var nodeValue:   String? {
+    open override var nodeType:    NodeTypes { .ProcessingInstructionNode }
+    open override var nodeName:    String { target }
+    open override var nodeValue:   String? {
         get { data }
         set { if let d = newValue { data = d } }
     }
-    @inlinable open override var textContent: String? {
+    open override var textContent: String? {
         get { data }
         set { if let d = newValue { data = d } }
     }
@@ -37,11 +37,15 @@ open class ProcessingInstructionNodeImpl: NodeImpl, ProcessingInstructionNode {
     open var data: String = ""
     open internal(set) var target: String = ""
 
-    @usableFromInline init(_ owningDocument: DocumentNodeImpl, data: String, target: String) {
+    init(_ owningDocument: DocumentNodeImpl, data: String, target: String) {
         self.data = data
         self.target = target
         super.init(owningDocument)
     }
 
-    @inlinable public static func == (lhs: ProcessingInstructionNodeImpl, rhs: ProcessingInstructionNodeImpl) -> Bool { lhs === rhs }
+    open override func baseClone(_ doc: DocumentNodeImpl, postEvent: Bool, deep: Bool) -> NodeImpl {
+        ProcessingInstructionNodeImpl(doc, data: data, target: target)
+    }
+
+    public static func == (lhs: ProcessingInstructionNodeImpl, rhs: ProcessingInstructionNodeImpl) -> Bool { lhs === rhs }
 }

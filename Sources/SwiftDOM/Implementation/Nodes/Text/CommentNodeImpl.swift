@@ -23,10 +23,14 @@
 import Foundation
 
 open class CommentNodeImpl: CharacterDataImpl, CommentNode {
-    @inlinable open override var nodeType: NodeTypes { .CommentNode }
-    @inlinable open override var nodeName: String { "#comment" }
+    open override var nodeType: NodeTypes { .CommentNode }
+    open override var nodeName: String { "#comment" }
 
     public override init(_ owningDocument: DocumentNodeImpl, content: String) { super.init(owningDocument, content: content) }
 
-    @inlinable public static func == (lhs: CommentNodeImpl, rhs: CommentNodeImpl) -> Bool { lhs === rhs }
+    open override func baseClone(_ doc: DocumentNodeImpl, postEvent: Bool, deep: Bool) -> NodeImpl {
+        CommentNodeImpl(doc, content: data)
+    }
+
+    public static func == (lhs: CommentNodeImpl, rhs: CommentNodeImpl) -> Bool { lhs === rhs }
 }

@@ -23,12 +23,16 @@
 import Foundation
 
 open class CDataSectionNodeImpl: TextNodeImpl, CDataSectionNode {
-    @inlinable open override var nodeType: NodeTypes { .CDataSectionNode }
-    @inlinable open override var nodeName: String { "#cdata-section" }
+    open override var nodeType: NodeTypes { .CDataSectionNode }
+    open override var nodeName: String { "#cdata-section" }
 
     public override init(_ owningDocument: DocumentNodeImpl, content: String) { super.init(owningDocument, content: content) }
 
-    @inlinable override func createLikeMe(_ text: String) -> TextNodeImpl { (owningDocument.createCDataSectionNode(content: text) as! CDataSectionNodeImpl) }
+    override func createLikeMe(_ text: String) -> TextNodeImpl { (owningDocument.createCDataSectionNode(content: text) as! CDataSectionNodeImpl) }
 
-    @inlinable public static func == (lhs: CDataSectionNodeImpl, rhs: CDataSectionNodeImpl) -> Bool { lhs === rhs }
+    open override func baseClone(_ doc: DocumentNodeImpl, postEvent: Bool, deep: Bool) -> NodeImpl {
+        CDataSectionNodeImpl(doc, content: data)
+    }
+
+    public static func == (lhs: CDataSectionNodeImpl, rhs: CDataSectionNodeImpl) -> Bool { lhs === rhs }
 }

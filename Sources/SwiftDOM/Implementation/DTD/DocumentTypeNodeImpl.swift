@@ -24,9 +24,9 @@ import Foundation
 
 open class DocumentTypeNodeImpl: NodeImpl, DocumentTypeNode {
 
-    @inlinable open override var nodeName: String { name }
-    @inlinable open override var nodeType: NodeTypes { .DocumentTypeNode }
-    @inlinable open override var textContent: String? {
+    open override var nodeName: String { name }
+    open override var nodeType: NodeTypes { .DocumentTypeNode }
+    open override var textContent: String? {
         get { nil }
         set {}
     }
@@ -38,7 +38,7 @@ open class DocumentTypeNodeImpl: NodeImpl, DocumentTypeNode {
     open internal(set) var entities:       NamedNodeMap<EntityNode>   = NamedNodeMap()
     open internal(set) var notations:      NamedNodeMap<NotationNode> = NamedNodeMap()
 
-    @usableFromInline init(_ owningDocument: DocumentNodeImpl, name: String, publicId: String, systemId: String, internalSubset: String) {
+    init(_ owningDocument: DocumentNodeImpl, name: String, publicId: String, systemId: String, internalSubset: String) {
         self.name = name
         self.publicId = publicId
         self.systemId = systemId
@@ -46,12 +46,21 @@ open class DocumentTypeNodeImpl: NodeImpl, DocumentTypeNode {
         super.init(owningDocument)
     }
 
-    @inlinable open override func isEqualTo(_ other: Node) -> Bool {
+    open override func isEqualTo(_ other: Node) -> Bool {
         guard super.isEqualTo(other), let dt: DocumentTypeNode = (other as? DocumentTypeNode) else { return false }
         guard publicId == dt.publicId && systemId == dt.systemId && internalSubset == dt.internalSubset else { return false }
         guard entities == dt.entities && notations == dt.notations else { return false }
         return true
     }
 
-    @inlinable public static func == (lhs: DocumentTypeNodeImpl, rhs: DocumentTypeNodeImpl) -> Bool { lhs === rhs }
+    open override func baseClone(_ doc: DocumentNodeImpl, postEvent: Bool, deep: Bool) -> NodeImpl {
+        let e = DocumentTypeNodeImpl(doc, name: name, publicId: publicId, systemId: systemId, internalSubset: deep ? internalSubset : "")
+        if deep {
+            e.entities = entities.clone(postEvents: postEvent)
+            e.notations = notations.clone(postEvents: postEvent)
+        }
+        return e
+    }
+
+    public static func == (lhs: DocumentTypeNodeImpl, rhs: DocumentTypeNodeImpl) -> Bool { lhs === rhs }
 }

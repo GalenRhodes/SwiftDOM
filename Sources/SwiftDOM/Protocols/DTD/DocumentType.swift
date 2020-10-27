@@ -32,16 +32,16 @@ public protocol DocumentTypeNode: Node {
 }
 
 public class AnyDocumentTypeNode: AnyNode, DocumentTypeNode {
-    @usableFromInline var docType: DocumentTypeNode { node as! DocumentTypeNode }
+    var docType: DocumentTypeNode { node as! DocumentTypeNode }
 
     public init(_ docType: DocumentTypeNode) {
         super.init(docType)
     }
 
-    @inlinable open var name:           String { docType.name }
-    @inlinable open var publicId:       String { docType.publicId }
-    @inlinable open var systemId:       String { docType.systemId }
-    @inlinable open var internalSubset: String { docType.internalSubset }
-    @inlinable open var entities:       NamedNodeMap<EntityNode> { docType.entities }
-    @inlinable open var notations:      NamedNodeMap<NotationNode> { docType.notations }
+    open var name:           String { docType.name }
+    open var publicId:       String { docType.publicId }
+    open var systemId:       String { docType.systemId }
+    open var internalSubset: String { docType.internalSubset }
+    open var entities:       NamedNodeMap<EntityNode> { docType.entities }
+    open var notations:      NamedNodeMap<NotationNode> { docType.notations }
 }

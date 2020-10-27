@@ -38,40 +38,40 @@ public protocol DOMLocator {
 }
 
 @frozen public struct AnyDOMLocator: DOMLocator, Hashable {
-    @usableFromInline var loc: DOMLocator
+    var loc: DOMLocator
 
     public init(_ loc: DOMLocator) { self.loc = loc }
 
-    @inlinable public func hash(into hasher: inout Hasher) { loc.getHash(into: &hasher) }
+    public func hash(into hasher: inout Hasher) { loc.getHash(into: &hasher) }
 
-    @inlinable public static func == (lhs: AnyDOMLocator, rhs: AnyDOMLocator) -> Bool { lhs.loc.isEqualTo(rhs.loc) }
+    public static func == (lhs: AnyDOMLocator, rhs: AnyDOMLocator) -> Bool { lhs.loc.isEqualTo(rhs.loc) }
 
-    @inlinable public func asHashable() -> AnyDOMLocator { self }
+    public func asHashable() -> AnyDOMLocator { self }
 
-    @inlinable public var byteOffset:   Int { loc.byteOffset }
-    @inlinable public var lineNumber:   Int { loc.lineNumber }
-    @inlinable public var columnNumber: Int { loc.columnNumber }
-    @inlinable public var utf16Offset:  Int { loc.utf16Offset }
-    @inlinable public var uri:          String { loc.uri }
-    @inlinable public var relatedNode:  Node { loc.relatedNode }
+    public var byteOffset:   Int { loc.byteOffset }
+    public var lineNumber:   Int { loc.lineNumber }
+    public var columnNumber: Int { loc.columnNumber }
+    public var utf16Offset:  Int { loc.utf16Offset }
+    public var uri:          String { loc.uri }
+    public var relatedNode:  Node { loc.relatedNode }
 }
 
 extension DOMLocator where Self: Hashable {
-    @inlinable public func isEqualTo(_ other: DOMLocator) -> Bool { guard let other: Self = (other as? Self) else { return false }; return (self == other) }
+    public func isEqualTo(_ other: DOMLocator) -> Bool { guard let other: Self = (other as? Self) else { return false }; return (self == other) }
 
-    @inlinable public func asHashable() -> AnyDOMLocator { AnyDOMLocator(self) }
+    public func asHashable() -> AnyDOMLocator { AnyDOMLocator(self) }
 
-    @inlinable public func getHash(into hasher: inout Hasher) { hash(into: &hasher) }
+    public func getHash(into hasher: inout Hasher) { hash(into: &hasher) }
 }
 
 extension Array where Element: DOMLocator {
-    @inlinable public static func == (lhs: [DOMLocator], rhs: [DOMLocator]) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
+    public static func == (lhs: [DOMLocator], rhs: [DOMLocator]) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
 }
 
 extension Dictionary where Value: DOMLocator {
-    @inlinable public static func == (lhs: [Key: DOMLocator], rhs: [Key: DOMLocator]) -> Bool { lhs.mapValues({ $0.asHashable() }) == rhs.mapValues({ $0.asHashable() }) }
+    public static func == (lhs: [Key: DOMLocator], rhs: [Key: DOMLocator]) -> Bool { lhs.mapValues({ $0.asHashable() }) == rhs.mapValues({ $0.asHashable() }) }
 }
 
 extension Set where Element: DOMLocator {
-    @inlinable public static func == (lhs: Set<Element>, rhs: Set<Element>) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
+    public static func == (lhs: Set<Element>, rhs: Set<Element>) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
 }

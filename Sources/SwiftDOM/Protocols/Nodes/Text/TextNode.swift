@@ -32,17 +32,17 @@ public protocol TextNode: CharacterData {
 }
 
 open class AnyTextNode: AnyCharacterData, TextNode {
-    @inlinable open var wholeText:                  String {
+    open var wholeText:                  String {
         get { textNode.wholeText }
         set { textNode.wholeText = newValue }
     }
-    @inlinable open var isElementContentWhitespace: Bool { textNode.isElementContentWhitespace }
+    open var isElementContentWhitespace: Bool { textNode.isElementContentWhitespace }
 
-    @inlinable var textNode: TextNode { cd as! TextNode }
+    var textNode: TextNode { cd as! TextNode }
 
     public init(_ textNode: TextNode) { super.init(textNode) }
 
-    @inlinable open func splitText(offset: Int) -> TextNode { textNode.splitText(offset: offset) }
+    open func splitText(offset: Int) -> TextNode { textNode.splitText(offset: offset) }
 
-    @inlinable open func replaceWholeText(text: String) -> TextNode { textNode.replaceWholeText(text: text) }
+    open func replaceWholeText(text: String) -> TextNode { textNode.replaceWholeText(text: text) }
 }

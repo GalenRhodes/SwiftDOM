@@ -23,12 +23,12 @@
 import Foundation
 
 open class ElementNodeList: LiveNodeList<ElementNode> {
-    @usableFromInline let nodeName:     String?
-    @usableFromInline let localName:    String?
-    @usableFromInline let namespaceURI: String?
-    @usableFromInline let elemId:       String?
+    let nodeName:     String?
+    let localName:    String?
+    let namespaceURI: String?
+    let elemId:       String?
 
-    @usableFromInline init(_ parent: ParentNode, nodeName: String) {
+    init(_ parent: ParentNode, nodeName: String) {
         self.nodeName = nodeName
         self.localName = nil
         self.namespaceURI = nil
@@ -37,7 +37,7 @@ open class ElementNodeList: LiveNodeList<ElementNode> {
         handleCollectionDidChange(parent)
     }
 
-    @usableFromInline init(_ parent: ParentNode, namespaceURI: String, localName: String) {
+    init(_ parent: ParentNode, namespaceURI: String, localName: String) {
         self.namespaceURI = namespaceURI
         self.localName = localName
         self.nodeName = nil
@@ -55,7 +55,7 @@ open class ElementNodeList: LiveNodeList<ElementNode> {
         handleCollectionDidChange(parent)
     }
 
-    @inlinable open override func handleCollectionDidChange(_ parent: ParentNode) {
+    open override func handleCollectionDidChange(_ parent: ParentNode) {
         _nodes.removeAll()
         if let name: String = nodeName {
             find(in: parent) { (node: ElementNodeImpl) in ((name == "*") || (name == node.nodeName)) }
@@ -68,7 +68,7 @@ open class ElementNodeList: LiveNodeList<ElementNode> {
         }
     }
 
-    @usableFromInline func find(in parent: ParentNode, with body: (ElementNodeImpl) -> Bool) {
+    func find(in parent: ParentNode, with body: (ElementNodeImpl) -> Bool) {
         var _aNode: Node? = parent.firstChild
         while let aNode: Node = _aNode {
             if let elem: ElementNodeImpl = aNode as? ElementNodeImpl {

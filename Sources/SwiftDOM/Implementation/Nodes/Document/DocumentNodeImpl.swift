@@ -33,29 +33,29 @@ open class DocumentNodeImpl: ParentNode, DocumentNode {
     open var xmlStandalone:         Bool    = false
     open var xmlVersion:            String  = ""
 
-    @inlinable open override var nodeType:    NodeTypes { .DocumentNode }
-    @inlinable open override var nodeName:    String { "#document" }
-    @inlinable open override var textContent: String? {
+    open override var nodeType:    NodeTypes { .DocumentNode }
+    open override var nodeName:    String { "#document" }
+    open override var textContent: String? {
         get { nil }
         set {}
     }
 
-    @inlinable open var documentElement: ElementNode {
+    open var documentElement: ElementNode {
         if _docElem == nil {
             insert(childNode: ElementNodeImpl(self, tagName: "root"), before: nil)
         }
         return _docElem!
     }
 
-    @usableFromInline var _docElem: ElementNodeImpl?      = nil
-    @usableFromInline var _docType: DocumentTypeNodeImpl? = nil
+    var _docElem: ElementNodeImpl?      = nil
+    var _docType: DocumentTypeNodeImpl? = nil
 
     public override init() {
         super.init()
         _owningDocument = self
     }
 
-    @inlinable @discardableResult open override func insert(childNode: Node, before refNode: Node?) -> Node {
+    @discardableResult open override func insert(childNode: Node, before refNode: Node?) -> Node {
         switch childNode.nodeType {
             case .ElementNode:
                 if let _ = _docElem { fatalError("Document element already exists.") }
@@ -75,62 +75,62 @@ open class DocumentNodeImpl: ParentNode, DocumentNode {
         }
     }
 
-    @inlinable open func adopt(node: Node) -> Node {
+    open func adopt(node: Node) -> Node {
         guard let node: NodeImpl = (node as? NodeImpl) else { fatalError("Cannot adopt node.") }
         node.owningDocument = self
         node.triggerUserData(event: .Adopted, src: node, dst: nil)
         return node
     }
 
-    @inlinable open func createAttribute(name: String) -> AttributeNode {
+    open func createAttribute(name: String) -> AttributeNode {
         AttributeNodeImpl(self, attributeName: name, value: "")
     }
 
-    @inlinable open func createAttribute(namespaceURI: String, name: String) -> AttributeNode {
+    open func createAttribute(namespaceURI: String, name: String) -> AttributeNode {
         AttributeNodeImpl(self, namespaceURI: namespaceURI, qualifiedName: name, value: "")
     }
 
-    @inlinable open func createElement(name: String) -> ElementNode {
+    open func createElement(name: String) -> ElementNode {
         ElementNodeImpl(self, tagName: name)
     }
 
-    @inlinable open func createElement(namespaceURI: String, name: String) -> ElementNode {
+    open func createElement(namespaceURI: String, name: String) -> ElementNode {
         ElementNodeImpl(self, namespaceURI: namespaceURI, qualifiedName: name)
     }
 
-    @inlinable open func createTextNode(content: String) -> TextNode {
+    open func createTextNode(content: String) -> TextNode {
         TextNodeImpl(self, content: content)
     }
 
-    @inlinable open func createCDataSectionNode(content: String) -> CDataSectionNode {
+    open func createCDataSectionNode(content: String) -> CDataSectionNode {
         CDataSectionNodeImpl(self, content: content)
     }
 
-    @inlinable open func createComment(content: String) -> CommentNode {
+    open func createComment(content: String) -> CommentNode {
         CommentNodeImpl(self, content: content)
     }
 
-    @inlinable open func createDocumentFragment() -> DocumentFragmentNode {
+    open func createDocumentFragment() -> DocumentFragmentNode {
         DocumentFragmentNodeImpl(self)
     }
 
-    @inlinable open func createProcessingInstruction(data: String, target: String) -> ProcessingInstructionNode {
+    open func createProcessingInstruction(data: String, target: String) -> ProcessingInstructionNode {
         ProcessingInstructionNodeImpl(self, data: data, target: target)
     }
 
-    @inlinable open func createNotation(name: String, publicId: String, systemId: String) -> NotationNode {
+    open func createNotation(name: String, publicId: String, systemId: String) -> NotationNode {
         NotationNodeImpl(self, name: name, publicId: publicId, systemId: systemId)
     }
 
-    @inlinable open func createDocType(name: String, publicId: String, systemId: String, internalSubset: String) -> DocumentTypeNode {
+    open func createDocType(name: String, publicId: String, systemId: String, internalSubset: String) -> DocumentTypeNode {
         DocumentTypeNodeImpl(self, name: name, publicId: publicId, systemId: systemId, internalSubset: internalSubset)
     }
 
-    @inlinable open func normalizeDocument() {
+    open func normalizeDocument() {
         /* TODO: Implement me... */
     }
 
-    @inlinable open func getElementBy(elementId id: String) -> ElementNode? {
+    open func getElementBy(elementId id: String) -> ElementNode? {
         guard let parent: ElementNodeImpl = _docElem else { return nil }
         var elem: ElementNodeImpl? = nil
         parent.forEachChild(deep: true) {
@@ -145,32 +145,44 @@ open class DocumentNodeImpl: ParentNode, DocumentNode {
         return elem
     }
 
-    @inlinable open func getElementsBy(name: String) -> NodeList<AnyElementNode> {
+    open func getElementsBy(name: String) -> NodeList<AnyElementNode> {
         ElementNodeList(documentElement, nodeName: name)
     }
 
-    @inlinable open func getElementsBy(namespaceURI: String, name: String) -> NodeList<AnyElementNode> {
+    open func getElementsBy(namespaceURI: String, name: String) -> NodeList<AnyElementNode> {
         ElementNodeList(documentElement, namespaceURI: namespaceURI, localName: name)
     }
 
-    @inlinable open func importNode(node: Node, deep: Bool) -> Node {
+    open func importNode(node: Node, deep: Bool) -> Node {
         guard let node: NodeImpl = (node as? NodeImpl) else { fatalError("Unable to import node.") }
-        let clone: NodeImpl = node._clone(self, postEvent: false, deep: deep)
+        let clone: NodeImpl = node.baseClone(self, postEvent: false, deep: deep)
         node.triggerUserData(event: .Imported, src: node, dst: clone)
         return clone
     }
 
-    @inlinable @discardableResult open func renameNode(node: Node, namespaceURI: String, qualifiedName: String) -> Node {
+    @discardableResult open func renameNode(node: Node, namespaceURI: String, qualifiedName: String) -> Node {
         guard let nsNode: NamespaceNode = (node as? NamespaceNode) else { fatalError("Node cannot be renamed.") }
         nsNode.rename(namespaceURI: namespaceURI, qualifiedName: qualifiedName)
         return node
     }
 
-    @inlinable @discardableResult open func renameNode(node: Node, nodeName: String) -> Node {
+    @discardableResult open func renameNode(node: Node, nodeName: String) -> Node {
         guard let namedNode: NamedNode = (node as? NamedNode) else { fatalError("Node cannot be renamed.") }
         namedNode._nodeName = nodeName
         return node
     }
 
-    @inlinable public static func == (lhs: DocumentNodeImpl, rhs: DocumentNodeImpl) -> Bool { lhs === rhs }
+    open override func baseClone(_ doc: DocumentNodeImpl, postEvent: Bool, deep: Bool) -> NodeImpl {
+        let d = DocumentNodeImpl()
+        d.inputEncoding = inputEncoding
+        d.xmlEncoding = xmlEncoding
+        d.xmlStandalone = xmlStandalone
+        d.xmlVersion = xmlVersion
+        d.documentURI = documentURI
+        d.isStrictErrorChecking = isStrictErrorChecking
+        if deep { forEachChild { d.append(child: $0.cloneNode(d, postEvent: postEvent, deep: deep)) } }
+        return d
+    }
+
+    public static func == (lhs: DocumentNodeImpl, rhs: DocumentNodeImpl) -> Bool { lhs === rhs }
 }

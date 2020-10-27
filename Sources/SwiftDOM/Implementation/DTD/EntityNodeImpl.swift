@@ -23,8 +23,8 @@
 import Foundation
 
 open class EntityNodeImpl: ParentNode, EntityNode {
-    @inlinable open override var nodeType: NodeTypes { .EntityNode }
-    @inlinable open override var nodeName: String { entityName }
+    open override var nodeType: NodeTypes { .EntityNode }
+    open override var nodeName: String { entityName }
 
     open internal(set) var inputEncoding: String.Encoding = String.Encoding.utf8
     open internal(set) var notationName:  String          = ""
@@ -33,7 +33,7 @@ open class EntityNodeImpl: ParentNode, EntityNode {
     open internal(set) var xmlEncoding:   String          = ""
     open internal(set) var xmlVersion:    String          = ""
 
-    @usableFromInline var entityName: String = ""
+    var entityName: String = ""
 
     public init(_ owningDocument: DocumentNodeImpl,
                 entityName: String,
@@ -53,5 +53,18 @@ open class EntityNodeImpl: ParentNode, EntityNode {
         super.init(owningDocument)
     }
 
-    @inlinable public static func == (lhs: EntityNodeImpl, rhs: EntityNodeImpl) -> Bool { lhs === rhs }
+    open override func baseClone(_ doc: DocumentNodeImpl, postEvent: Bool, deep: Bool) -> NodeImpl {
+        let e = EntityNodeImpl(doc,
+                               entityName: entityName,
+                               notationName: notationName,
+                               publicId: publicId,
+                               systemId: systemId,
+                               inputEncoding: inputEncoding,
+                               xmlEncoding: xmlEncoding,
+                               xmlVersion: xmlVersion)
+        forEachChild { e.append(child: $0.cloneNode(doc, postEvent: postEvent, deep: true)) }
+        return e
+    }
+
+    public static func == (lhs: EntityNodeImpl, rhs: EntityNodeImpl) -> Bool { lhs === rhs }
 }

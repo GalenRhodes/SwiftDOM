@@ -28,10 +28,10 @@ public protocol NotationNode: Node {
 }
 
 public class AnyNotationNode: AnyNode, NotationNode {
-    @inlinable var notation: NotationNode { (node as! NotationNode) }
+    var notation: NotationNode { (node as! NotationNode) }
 
     public init(_ notation: NotationNode) { super.init(notation) }
 
-    @inlinable open var publicId: String { notation.publicId }
-    @inlinable open var systemId: String { notation.systemId }
+    open var publicId: String { notation.publicId }
+    open var systemId: String { notation.systemId }
 }

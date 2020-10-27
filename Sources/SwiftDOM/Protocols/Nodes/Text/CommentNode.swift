@@ -27,7 +27,7 @@ public protocol CommentNode: CharacterData {
 
 open class AnyCommentNode: AnyCharacterData, CommentNode {
 
-    @inlinable var comment: CommentNode { cd as! CommentNode }
+    var comment: CommentNode { cd as! CommentNode }
 
     public init(_ comment: CommentNode) { super.init(comment) }
 }

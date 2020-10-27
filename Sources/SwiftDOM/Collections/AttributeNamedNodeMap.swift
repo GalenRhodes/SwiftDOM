@@ -25,13 +25,13 @@ import Rubicon
 
 open class AttributeNamedNodeMap: NamedNodeMap<AttributeNode> {
 
-    @inlinable open override var startIndex: Index { _attributes.startIndex }
-    @inlinable open override var endIndex:   Index { _attributes.endIndex }
-    @inlinable open override var count:      Int { _attributes.count }
+    open override var startIndex: Index { _attributes.startIndex }
+    open override var endIndex:   Index { _attributes.endIndex }
+    open override var count:      Int { _attributes.count }
 
-    @usableFromInline var _attributes: [Element] = []
+    var _attributes: [Element] = []
 
-    @usableFromInline init(_ elem: ElementNode) {
+    init(_ elem: ElementNode) {
         super.init()
         NotificationCenter.default.addObserver(forName: DOMAttributeListDidChange, object: elem, queue: nil) {
             [weak self] in
@@ -42,11 +42,11 @@ open class AttributeNamedNodeMap: NamedNodeMap<AttributeNode> {
         }
     }
 
-    @inlinable open override subscript(nodeName: String) -> Element? { first { $0.nodeName == nodeName } }
+    open override subscript(nodeName: String) -> Element? { first { $0.nodeName == nodeName } }
 
-    @inlinable open override subscript(namespaceURI uri: String, localName lName: String) -> Element? { first { $0.namespaceURI == uri && $0.localName == lName } }
+    open override subscript(namespaceURI uri: String, localName lName: String) -> Element? { first { $0.namespaceURI == uri && $0.localName == lName } }
 
-    @inlinable open override subscript(position: Index) -> Element { _attributes[position] }
+    open override subscript(position: Index) -> Element { _attributes[position] }
 
-    @inlinable open override subscript(bounds: Indices) -> ArraySlice<Element> { _attributes[bounds] }
+    open override subscript(bounds: Indices) -> ArraySlice<Element> { _attributes[bounds] }
 }

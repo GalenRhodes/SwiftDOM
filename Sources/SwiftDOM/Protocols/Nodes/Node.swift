@@ -83,5 +83,5 @@ public protocol Node: AnyObject {
 }
 
 extension Node {
-    @inlinable public static func == (lhs: Node, rhs: Node) -> Bool { lhs === rhs }
+    public static func == (lhs: Node, rhs: Node) -> Bool { lhs === rhs }
 }

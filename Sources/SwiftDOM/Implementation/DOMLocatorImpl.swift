@@ -24,12 +24,12 @@ import Foundation
 
 public struct DOMLocatorImpl: DOMLocator, Hashable {
 
-    public private(set) var byteOffset:   Int
-    public private(set) var lineNumber:   Int
-    public private(set) var columnNumber: Int
-    public private(set) var utf16Offset:  Int
-    public private(set) var uri:          String
-    public private(set) var relatedNode:  Node
+    public internal(set) var byteOffset:   Int
+    public internal(set) var lineNumber:   Int
+    public internal(set) var columnNumber: Int
+    public internal(set) var utf16Offset:  Int
+    public internal(set) var uri:          String
+    public internal(set) var relatedNode:  Node
 
     public func hash(into hasher: inout Hasher) {
         hasher.combine(byteOffset)
