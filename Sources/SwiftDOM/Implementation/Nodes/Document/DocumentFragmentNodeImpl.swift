@@ -22,9 +22,9 @@
 
 import Foundation
 
-class DocumentFragmentNodeImpl: NodeImpl, DocumentFragmentNode {
-    @inlinable override var nodeType: NodeTypes { .DocumentFragmentNode }
-    @inlinable override var nodeName: String { "#document-fragment" }
+open class DocumentFragmentNodeImpl: ParentNode, DocumentFragmentNode {
+    @inlinable open override var nodeType: NodeTypes { .DocumentFragmentNode }
+    @inlinable open override var nodeName: String { "#document-fragment" }
 
     @usableFromInline override init(_ owningDocument: DocumentNodeImpl) { super.init(owningDocument) }
 

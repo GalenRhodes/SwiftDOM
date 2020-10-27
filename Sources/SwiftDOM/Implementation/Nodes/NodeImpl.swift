@@ -32,14 +32,13 @@ open class NodeImpl: Node, Hashable, RandomAccessCollection {
     @usableFromInline static let _emptyAttributes: NamedNodeMap<AttributeNode> = NamedNodeMap()
     @usableFromInline static let _emptyNodeArray:  Array<Node>                 = []
 
-    open internal(set) var isReadOnly: Bool = false
+    open internal(set) var isReadOnly: Bool    = false
+    open internal(set) var baseURI:    String? = nil
 
     @inlinable open var nodeType:        NodeTypes { fatalError("No Node Type for this node.") }
     @inlinable open var nodeName:        String { "" }
     @inlinable open var localName:       String? { nil }
     @inlinable open var namespaceURI:    String? { nil }
-    @inlinable open var baseURI:         String? { nil }
-    @inlinable open var owningDocument:  DocumentNode { _owningDocument }
     @inlinable open var parentNode:      Node? { nil }
     @inlinable open var firstChild:      Node? { nil }
     @inlinable open var lastChild:       Node? { nil }
@@ -51,18 +50,38 @@ open class NodeImpl: Node, Hashable, RandomAccessCollection {
     @inlinable open var startIndex:      Int { 0 }
     @inlinable open var endIndex:        Int { 0 }
     @inlinable open var attributes:      NamedNodeMap<AttributeNode> { NodeImpl._emptyAttributes }
-
-    @inlinable open var nodeValue:   String? {
+    @inlinable open var prefix:          String? {
         get { nil }
         set {}
     }
-    @inlinable open var textContent: String? {
+    @inlinable open var nodeValue:       String? {
         get { nil }
         set {}
     }
-    @inlinable open var prefix:      String? {
-        get { nil }
-        set {}
+    @inlinable open var textContent:     String? {
+        get {
+            var _s: String = ""
+            var _c: Node?  = firstChild
+            while let c: Node = _c {
+                if let t: String = c.textContent { _s += t }
+                _c = c.nextSibling
+            }
+            return _s
+        }
+        set {
+            removeAllChildren()
+            if let t: String = newValue, !t.isEmpty { append(child: _owningDocument.createTextNode(content: t)) }
+        }
+    }
+    @inlinable open var owningDocument: DocumentNode {
+        get { _owningDocument }
+        set {
+            if let newDoc: DocumentNodeImpl = newValue as? DocumentNodeImpl {
+                _owningDocument = newDoc
+                attributes.forEach { ($0 as! AttributeNodeImpl).owningDocument = newDoc }
+                forEach { ($0 as! ElementNodeImpl).owningDocument = newDoc }
+            }
+        }
     }
 
     @usableFromInline var _userData:       [String: UserDataInfo] = [:]
@@ -72,6 +91,10 @@ open class NodeImpl: Node, Hashable, RandomAccessCollection {
 
     @usableFromInline init(_ owningDocument: DocumentNodeImpl) {
         _owningDocument = owningDocument
+    }
+
+    deinit {
+        triggerUserData(event: .Deleted, src: nil, dst: nil)
     }
 
     @inlinable open func normalize() {}
@@ -100,32 +123,95 @@ open class NodeImpl: Node, Hashable, RandomAccessCollection {
     }
 
     @inlinable open func cloneNode(deep: Bool) -> Node {
+        guard let od: DocumentNodeImpl = _owningDocument else { fatalError("Unable to clone node.") }
+        return _clone(od, postEvent: true, deep: deep)
+    }
+
+    @usableFromInline func _clone(_ doc: DocumentNodeImpl, postEvent: Bool, deep: Bool) -> NodeImpl {
+        var theClone: NodeImpl? = nil
+
         switch nodeType {
             case .AttributeNode:
                 if let me: AttributeNode = (self as? AttributeNode) {
-                    let clone: AttributeNode = (me.hasNamespace ? owningDocument.createAttribute(namespaceURI: me.namespaceURI!, name: me.localName!) : owningDocument.createAttribute(name: me.name))
-                    clone.nodeValue = me.value
-                    return clone
+                    let clone: AttributeNodeImpl = (me.hasNamespace ? AttributeNodeImpl(doc, namespaceURI: me.namespaceURI!, qualifiedName: me.nodeName, value: me.value)
+                                                                    : AttributeNodeImpl(doc, attributeName: me.name, value: me.value))
+                    clone.isId = me.isId
+                    clone.isSpecified = true
+                    theClone = clone
                 }
             case .CDataSectionNode:
-                return owningDocument.createCDataSectionNode(content: textContent ?? "")
+                theClone = CDataSectionNodeImpl(doc, content: textContent ?? "")
             case .CommentNode:
-                return owningDocument.createComment(content: textContent ?? "")
-            case .DocumentFragmentNode: break // TODO: Finish...
-            case .DocumentNode:         break // TODO: Finish...
-            case .DocumentTypeNode:     break // TODO: Finish...
-            case .ElementNode:          break // TODO: Finish...
-            case .EntityNode:           break // TODO: Finish...
-            case .EntityReferenceNode:  break // TODO: Finish...
+                theClone = CommentNodeImpl(doc, content: textContent ?? "")
+            case .DocumentFragmentNode:
+                if let me: DocumentFragmentNodeImpl = (self as? DocumentFragmentNodeImpl) {
+                    let clone = DocumentFragmentNodeImpl(doc)
+                    if deep { me.forEachChild { clone.append(child: $0._clone(doc, postEvent: postEvent, deep: deep)) } }
+                    theClone = clone
+                }
+            case .DocumentNode:
+                if let me: DocumentNodeImpl = self as? DocumentNodeImpl {
+                    let clone = DocumentNodeImpl()
+                    clone.isStrictErrorChecking = me.isStrictErrorChecking
+                    clone.inputEncoding = me.inputEncoding
+                    clone.xmlEncoding = me.xmlEncoding
+                    clone.xmlVersion = me.xmlVersion
+                    clone.xmlStandalone = me.xmlStandalone
+                    clone.documentURI = me.documentURI
+                    if deep { me.forEachChild { clone.append(child: $0._clone(clone, postEvent: postEvent, deep: deep)); return false } }
+                    theClone = clone
+                }
+            case .DocumentTypeNode:
+                if let me: DocumentTypeNodeImpl = (self as? DocumentTypeNodeImpl) {
+                    let docType = DocumentTypeNodeImpl(doc, name: me.name, publicId: me.publicId, systemId: me.systemId, internalSubset: me.internalSubset)
+                    docType.entities = me.entities.clone()
+                    docType.notations = me.notations.clone()
+                    theClone = docType
+                }
+            case .ElementNode:
+                if let me: ElementNodeImpl = (self as? ElementNodeImpl) {
+                    let elem: ElementNodeImpl = (me.hasNamespace ? ElementNodeImpl(doc, namespaceURI: me.namespaceURI!, qualifiedName: me.tagName) : ElementNodeImpl(doc, tagName: me.tagName))
+                    me.forEachAttribute { elem._attributes.append($0._clone(doc, postEvent: postEvent, deep: deep)) }
+                    if deep { me.forEachChild { elem.append(child: $0._clone(doc, postEvent: postEvent, deep: deep)) } }
+                    theClone = elem
+                }
+            case .EntityNode:
+                if let me: EntityNodeImpl = (self as? EntityNodeImpl) {
+                    let ent = EntityNodeImpl(doc,
+                                             entityName: me.nodeName,
+                                             notationName: me.notationName,
+                                             publicId: me.publicId,
+                                             systemId: me.systemId,
+                                             xmlEncoding: me.xmlEncoding,
+                                             xmlVersion: me.xmlVersion)
+                    if deep { me.forEachChild { ent.append(child: $0._clone(doc, postEvent: postEvent, deep: deep)) } }
+                    theClone = ent
+                }
+            case .EntityReferenceNode:
+                if let me: EntityRefNodeImpl = (self as? EntityRefNodeImpl) {
+                    let entRef = EntityRefNodeImpl(doc, entityName: me.nodeName)
+                    if deep { me.forEachChild { entRef.append(child: $0._clone(doc, postEvent: postEvent, deep: deep)) } }
+                    theClone = entRef
+                }
             case .NotationNode:
-                if let me: NotationNode = (self as? NotationNode) { return owningDocument.createNotation(publicId: me.publicId, systemId: me.systemId) }
+                if let me: NotationNode = (self as? NotationNode) { theClone = NotationNodeImpl(doc, name: nodeName, publicId: me.publicId, systemId: me.systemId) }
             case .ProcessingInstructionNode:
-                if let me: ProcessingInstructionNode = (self as? ProcessingInstructionNode) { return owningDocument.createProcessingInstruction(data: me.data, target: me.target) }
+                theClone = ProcessingInstructionNodeImpl(doc, data: nodeName, target: nodeValue ?? "")
             case .TextNode:
-                return owningDocument.createTextNode(content: textContent ?? "")
+                theClone = TextNodeImpl(doc, content: textContent ?? "")
         }
 
-        fatalError("Unable to clone node.")
+        guard let tc: NodeImpl = theClone else { fatalError("Unable to clone node.") }
+        if postEvent { triggerUserData(event: .Cloned, src: self, dst: tc) }
+        return tc
+    }
+
+    @usableFromInline func triggerUserData(event: UserDataEvents, src: Node?, dst: Node?) {
+        for (key, userDataInfo): (String, UserDataInfo) in _userData {
+            if let h: UserDataHandler = userDataInfo.body {
+                h(event, key, userDataInfo.data, src, dst)
+            }
+        }
     }
 
     @inlinable open func contains(_ node: Node) -> Bool {
@@ -136,14 +222,13 @@ open class NodeImpl: Node, Hashable, RandomAccessCollection {
         guard nodeType == other.nodeType && nodeName == other.nodeName && nodeValue == other.nodeValue else { return false }
         guard localName == other.localName && namespaceURI == other.namespaceURI && prefix == other.prefix else { return false }
         guard attributes == other.attributes && count == other.count else { return false }
-        for (i, node) in enumerated() { if !node.isEqualTo(other[i]) { return false } }
+        for (i, node): (Int, Node) in enumerated() { if !node.isEqualTo(other[i]) { return false } }
         return true
     }
 
     @inlinable open func isSameNode(as otherNode: Node) -> Bool {
-        // This method will work for NodeImpl or any of it's subclasses.
-        guard let otherNode: NodeImpl = (otherNode as? NodeImpl) else { return false }
-        return (self === otherNode)
+        if let other: NodeImpl = (otherNode as? NodeImpl) { return (self === other) }
+        else { return false }
     }
 
     @inlinable open func isDefaultNamespace(namespaceURI uri: String) -> Bool {
@@ -178,6 +263,12 @@ open class NodeImpl: Node, Hashable, RandomAccessCollection {
 
     @inlinable open subscript(position: Int) -> Node {
         NodeImpl._emptyNodeArray[position]
+    }
+
+    @inlinable func removeAllChildren() {
+        var children: [Node] = []
+        for child: Node in self { children.append(child) }
+        for child: Node in children { remove(childNode: child) }
     }
 
     @inlinable public static func == (lhs: NodeImpl, rhs: NodeImpl) -> Bool { lhs === rhs }

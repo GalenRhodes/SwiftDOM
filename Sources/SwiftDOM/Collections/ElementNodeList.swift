@@ -26,11 +26,13 @@ open class ElementNodeList: LiveNodeList<ElementNode> {
     @usableFromInline let nodeName:     String?
     @usableFromInline let localName:    String?
     @usableFromInline let namespaceURI: String?
+    @usableFromInline let elemId:       String?
 
     @usableFromInline init(_ parent: ParentNode, nodeName: String) {
         self.nodeName = nodeName
         self.localName = nil
         self.namespaceURI = nil
+        self.elemId = nil
         super.init(parent)
         handleCollectionDidChange(parent)
     }
@@ -39,6 +41,16 @@ open class ElementNodeList: LiveNodeList<ElementNode> {
         self.namespaceURI = namespaceURI
         self.localName = localName
         self.nodeName = nil
+        self.elemId = nil
+        super.init(parent)
+        handleCollectionDidChange(parent)
+    }
+
+    public init(_ parent: ParentNode, elemId: String) {
+        self.localName = nil
+        self.namespaceURI = nil
+        self.nodeName = nil
+        self.elemId = elemId
         super.init(parent)
         handleCollectionDidChange(parent)
     }
@@ -50,6 +62,9 @@ open class ElementNodeList: LiveNodeList<ElementNode> {
         }
         else if let lName: String = localName, let uri: String = namespaceURI {
             find(in: parent) { (node: ElementNodeImpl) in ((lName == "*" || lName == node.localName) && (uri == "*" || uri == node.namespaceURI)) }
+        }
+        else if let elemId: String = elemId {
+            find(in: parent) { (elem: ElementNodeImpl) in elem._attributes.contains { (attr: AttributeNodeImpl) in attr.isId && attr.value == elemId } }
         }
     }
 

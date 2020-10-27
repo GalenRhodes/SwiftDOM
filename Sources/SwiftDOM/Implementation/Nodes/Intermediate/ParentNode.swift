@@ -17,7 +17,7 @@
  * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
  * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
- * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.s
  *//************************************************************************/
 
 import Foundation
@@ -195,5 +195,26 @@ open class ParentNode: ChildNode {
             c = _c.nextSibling
         }
         return __nodes!
+    }
+
+    override func removeAllChildren() {
+        var _c: ChildNode? = _firstChild
+        while let c: ChildNode = _c {
+            _c = c._nextSibling
+            c._nextSibling = nil
+            c._previousSibling = nil
+            c._parentNode = nil
+        }
+        notifyChildListeners()
+    }
+
+    open func forEachChild(deep: Bool = false, node block: (NodeImpl) throws -> Bool) rethrows -> Bool {
+        var _c: ChildNode? = _firstChild
+        while let c: ChildNode = _c {
+            if try block(c) { return true }
+            if deep, let p: ParentNode = c as? ParentNode { if try p.forEachChild(deep: deep, node: block) { return true } }
+            _c = c._nextSibling
+        }
+        return false
     }
 }

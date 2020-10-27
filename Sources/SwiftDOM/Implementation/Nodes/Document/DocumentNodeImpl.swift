@@ -22,61 +22,155 @@
 
 import Foundation
 
-open class DocumentNodeImpl: NodeImpl, DocumentNode {
+open class DocumentNodeImpl: ParentNode, DocumentNode {
 
-    open internal(set) var docType:         DocumentTypeNode? = nil
-    open internal(set) var documentElement: ElementNode?      = nil
-    open internal(set) var inputEncoding:   String.Encoding   = String.Encoding.utf8
-    open internal(set) var xmlEncoding:     String            = "UTF-8"
+    open internal(set) var docType:       DocumentTypeNode? = nil
+    open internal(set) var inputEncoding: String.Encoding   = String.Encoding.utf8
+    open internal(set) var xmlEncoding:   String            = "UTF-8"
 
     open var documentURI:           String? = nil
     open var isStrictErrorChecking: Bool    = false
     open var xmlStandalone:         Bool    = false
     open var xmlVersion:            String  = ""
 
-    @inlinable open override var nodeType: NodeTypes { .DocumentNode }
-    @inlinable open override var nodeName: String { "#document" }
+    @inlinable open override var nodeType:    NodeTypes { .DocumentNode }
+    @inlinable open override var nodeName:    String { "#document" }
+    @inlinable open override var textContent: String? {
+        get { nil }
+        set {}
+    }
+
+    @inlinable open var documentElement: ElementNode {
+        if _docElem == nil {
+            insert(childNode: ElementNodeImpl(self, tagName: "root"), before: nil)
+        }
+        return _docElem!
+    }
+
+    @usableFromInline var _docElem: ElementNodeImpl?      = nil
+    @usableFromInline var _docType: DocumentTypeNodeImpl? = nil
 
     public override init() {
         super.init()
         _owningDocument = self
     }
 
-    @inlinable open func adopt(node: Node) -> Node { /* TODO: Implement me... */ fatalError("adopt(node:) has not been implemented") }
+    @inlinable @discardableResult open override func insert(childNode: Node, before refNode: Node?) -> Node {
+        switch childNode.nodeType {
+            case .ElementNode:
+                if let _ = _docElem { fatalError("Document element already exists.") }
+                _docElem = (childNode as! ElementNodeImpl)
+                if refNode?.nodeType == .DocumentTypeNode { super.insert(childNode: childNode, before: refNode?.nextSibling) }
+                else { super.insert(childNode: childNode, before: refNode) }
+                return childNode
+            case .DocumentTypeNode:
+                if let dt: DocumentTypeNodeImpl = _docType { remove(childNode: dt) }
+                _docType = (childNode as! DocumentTypeNodeImpl)
+                return super.insert(childNode: childNode, before: _firstChild)
+            case .CommentNode:
+                return super.insert(childNode: childNode, before: refNode)
+            case .ProcessingInstructionNode:
+                return super.insert(childNode: childNode, before: refNode)
+            default: fatalError("Incorrect node type.")
+        }
+    }
 
-    @inlinable open func createAttribute(name: String) -> AttributeNode { /* TODO: Implement me... */ fatalError("createAttribute(name:) has not been implemented") }
+    @inlinable open func adopt(node: Node) -> Node {
+        guard let node: NodeImpl = (node as? NodeImpl) else { fatalError("Cannot adopt node.") }
+        node.owningDocument = self
+        node.triggerUserData(event: .Adopted, src: node, dst: nil)
+        return node
+    }
 
-    @inlinable open func createAttribute(namespaceURI: String, name: String) -> AttributeNode { /* TODO: Implement me... */fatalError("createAttribute(namespaceURI:name:) has not been implemented") }
+    @inlinable open func createAttribute(name: String) -> AttributeNode {
+        AttributeNodeImpl(self, attributeName: name, value: "")
+    }
 
-    @inlinable open func createElement(name: String) -> ElementNode { /* TODO: Implement me... */ fatalError("createElement(name:) has not been implemented") }
+    @inlinable open func createAttribute(namespaceURI: String, name: String) -> AttributeNode {
+        AttributeNodeImpl(self, namespaceURI: namespaceURI, qualifiedName: name, value: "")
+    }
 
-    @inlinable open func createElement(namespaceURI: String, name: String) -> ElementNode { /* TODO: Implement me... */ fatalError("createElement(namespaceURI:name:) has not been implemented") }
+    @inlinable open func createElement(name: String) -> ElementNode {
+        ElementNodeImpl(self, tagName: name)
+    }
 
-    @inlinable open func createTextNode(content: String) -> TextNode { /* TODO: Implement me... */ fatalError("createTextNode(content:) has not been implemented") }
+    @inlinable open func createElement(namespaceURI: String, name: String) -> ElementNode {
+        ElementNodeImpl(self, namespaceURI: namespaceURI, qualifiedName: name)
+    }
 
-    @inlinable open func createCDataSectionNode(content: String) -> CDataSectionNode { /* TODO: Implement me... */ fatalError("createCDataSectionNode(content:) has not been implemented") }
+    @inlinable open func createTextNode(content: String) -> TextNode {
+        TextNodeImpl(self, content: content)
+    }
 
-    @inlinable open func createComment(content: String) -> CommentNode { /* TODO: Implement me... */ fatalError("createComment(content:) has not been implemented") }
+    @inlinable open func createCDataSectionNode(content: String) -> CDataSectionNode {
+        CDataSectionNodeImpl(self, content: content)
+    }
 
-    @inlinable open func createDocumentFragment() -> DocumentFragmentNode { /* TODO: Implement me... */ fatalError("createDocumentFragment() has not been implemented") }
+    @inlinable open func createComment(content: String) -> CommentNode {
+        CommentNodeImpl(self, content: content)
+    }
 
-    @inlinable open func createProcessingInstruction(data: String, target: String) -> ProcessingInstructionNode { /* TODO: Implement me... */ fatalError("createProcessingInstruction()") }
+    @inlinable open func createDocumentFragment() -> DocumentFragmentNode {
+        DocumentFragmentNodeImpl(self)
+    }
 
-    @inlinable open func createNotation(publicId: String, systemId: String) -> NotationNode { fatalError("createNotation(publicId:systemId:) has not been implemented") /* TODO: Implement me... */ }
+    @inlinable open func createProcessingInstruction(data: String, target: String) -> ProcessingInstructionNode {
+        ProcessingInstructionNodeImpl(self, data: data, target: target)
+    }
 
-    @inlinable open func createDocType(name: String, publicId: String, systemId: String) -> DocumentTypeNode { fatalError("createDocType(name:publicId:systemId:)") /* TODO: Implement me... */ }
+    @inlinable open func createNotation(name: String, publicId: String, systemId: String) -> NotationNode {
+        NotationNodeImpl(self, name: name, publicId: publicId, systemId: systemId)
+    }
 
-    @inlinable open func normalizeDocument() { /* TODO: Implement me... */ }
+    @inlinable open func createDocType(name: String, publicId: String, systemId: String, internalSubset: String) -> DocumentTypeNode {
+        DocumentTypeNodeImpl(self, name: name, publicId: publicId, systemId: systemId, internalSubset: internalSubset)
+    }
 
-    @inlinable open func getElementBy(elementId: String) -> ElementNode? { /* TODO: Implement me... */ fatalError("getElementBy(elementId:) has not been implemented") }
+    @inlinable open func normalizeDocument() {
+        /* TODO: Implement me... */
+    }
 
-    @inlinable open func getElementsBy(name: String) -> NodeList<AnyElementNode> { /* TODO: Implement me... */ fatalError("getElementsBy(name:) has not been implemented") }
+    @inlinable open func getElementBy(elementId id: String) -> ElementNode? {
+        guard let parent: ElementNodeImpl = _docElem else { return nil }
+        var elem: ElementNodeImpl? = nil
+        parent.forEachChild(deep: true) {
+            if let e: ElementNodeImpl = ($0 as? ElementNodeImpl) {
+                if e._attributes.contains(where: { (a: AttributeNodeImpl) in a.isId && a.value == id }) {
+                    elem = e
+                    return true
+                }
+            }
+            return false
+        }
+        return elem
+    }
 
-    @inlinable open func getElementsBy(namespaceURI: String, name: String) -> NodeList<AnyElementNode> { /* TODO: Implement me... */ fatalError("getElementsBy(namespaceURI:name:)") }
+    @inlinable open func getElementsBy(name: String) -> NodeList<AnyElementNode> {
+        ElementNodeList(documentElement, nodeName: name)
+    }
 
-    @inlinable open func importNode(node: Node, deep: Bool) -> Node { /* TODO: Implement me... */ fatalError("importNode(node:deep:) has not been implemented") }
+    @inlinable open func getElementsBy(namespaceURI: String, name: String) -> NodeList<AnyElementNode> {
+        ElementNodeList(documentElement, namespaceURI: namespaceURI, localName: name)
+    }
 
-    @inlinable open func renameNode(node: Node, namespaceURI: String, qualifiedName: String) -> Node { /* TODO: Implement me... */ fatalError("renameNode(node:namespaceURI:qualifiedName:)") }
+    @inlinable open func importNode(node: Node, deep: Bool) -> Node {
+        guard let node: NodeImpl = (node as? NodeImpl) else { fatalError("Unable to import node.") }
+        let clone: NodeImpl = node._clone(self, postEvent: false, deep: deep)
+        node.triggerUserData(event: .Imported, src: node, dst: clone)
+        return clone
+    }
+
+    @inlinable @discardableResult open func renameNode(node: Node, namespaceURI: String, qualifiedName: String) -> Node {
+        guard let nsNode: NamespaceNode = (node as? NamespaceNode) else { fatalError("Node cannot be renamed.") }
+        nsNode.rename(namespaceURI: namespaceURI, qualifiedName: qualifiedName)
+        return node
+    }
+
+    @inlinable @discardableResult open func renameNode(node: Node, nodeName: String) -> Node {
+        guard let namedNode: NamedNode = (node as? NamedNode) else { fatalError("Node cannot be renamed.") }
+        namedNode._nodeName = nodeName
+        return node
+    }
 
     @inlinable public static func == (lhs: DocumentNodeImpl, rhs: DocumentNodeImpl) -> Bool { lhs === rhs }
 }

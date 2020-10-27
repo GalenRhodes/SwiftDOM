@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: NotationNodeImpl.swift
+ *    FILENAME: NamedNode.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/26/20
+ *        DATE: 10/27/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,25 +22,14 @@
 
 import Foundation
 
-open class NotationNodeImpl: NodeImpl, NotationNode {
-    @inlinable override open var nodeType: NodeTypes { .NotationNode }
-    @inlinable override open var nodeName: String { name }
-    @inlinable override open var textContent: String? {
-        get { nil }
-        set {}
-    }
+open class NamedNode: ParentNode {
+    @inlinable open override var nodeName: String { _nodeName }
 
-    open internal(set) var publicId: String = ""
-    open internal(set) var systemId: String = ""
+    @usableFromInline var _nodeName: String { willSet { guard let _ = regexName.firstMatch(in: newValue) else { fatalError("Invalid Node Name: \"\(newValue)\"") } } }
 
-    open internal(set) var name: String = ""
-
-    @usableFromInline init(_ owningDocument: DocumentNodeImpl, name: String, publicId: String, systemId: String) {
-        self.publicId = publicId
-        self.systemId = systemId
-        self.name = name
+    public init(_ owningDocument: DocumentNodeImpl, nodeName: String) {
+        guard let _ = regexName.firstMatch(in: nodeName) else { fatalError("Invalid Node Name: \"\(nodeName)\"") }
+        _nodeName = nodeName
         super.init(owningDocument)
     }
-
-    @inlinable public static func == (lhs: NotationNodeImpl, rhs: NotationNodeImpl) -> Bool { lhs === rhs }
 }

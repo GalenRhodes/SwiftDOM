@@ -29,8 +29,9 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
 
     public private(set) var schemaTypeInfo: TypeInfo? = nil
 
-    @inlinable open override var attributes: NamedNodeMap<AttributeNode> { AttributeNamedNodeMap(self) }
-    @inlinable open override var nodeType:   NodeTypes { NodeTypes.ElementNode }
+    @inlinable open override var attributes:    NamedNodeMap<AttributeNode> { AttributeNamedNodeMap(self) }
+    @inlinable open override var nodeType:      NodeTypes { NodeTypes.ElementNode }
+    @inlinable open override var hasAttributes: Bool { !_attributes.isEmpty }
 
     @usableFromInline var _attributes:    [AttributeNodeImpl]                   = []
     @usableFromInline var _attrNameCache: [String: AttributeNodeImpl]           = [:]
@@ -76,15 +77,15 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
         (_getAttribWith(namespaceURI: uri, localName: name) != nil)
     }
 
-    @inlinable open func removeAttributeWith(name: String) -> AttributeNode? {
+    @inlinable @discardableResult open func removeAttributeWith(name: String) -> AttributeNode? {
         _remove(attributes: _attributes.removeAllGet { $0.name == name })
     }
 
-    @inlinable open func removeAttributeWith(namespaceURI uri: String, name: String) -> AttributeNode? {
+    @inlinable @discardableResult open func removeAttributeWith(namespaceURI uri: String, name: String) -> AttributeNode? {
         _remove(attributes: _attributes.removeAllGet { $0.namespaceURI == uri && $0.localName == name })
     }
 
-    @inlinable open func removeAttribute(attribute: AttributeNode) -> AttributeNode? {
+    @inlinable @discardableResult open func removeAttribute(attribute: AttributeNode) -> AttributeNode? {
         _remove(attributes: _attributes.removeAllGet { $0.isSameNode(as: attribute) })
     }
 
@@ -100,11 +101,11 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
         _notifyAttributeListeners()
     }
 
-    @inlinable open func setAttribute(attribute: AttributeNode) -> AttributeNode? {
+    @inlinable @discardableResult open func setAttribute(attribute: AttributeNode) -> AttributeNode? {
         _setAttribute(attribute: attribute) { $0.name == attribute.name }
     }
 
-    @inlinable open func setAttributeNS(attribute: AttributeNode) -> AttributeNode? {
+    @inlinable @discardableResult open func setAttributeNS(attribute: AttributeNode) -> AttributeNode? {
         guard let uri: String = attribute.namespaceURI, let lName: String = attribute.localName else { fatalError("Attribute does not have a namespace.") }
         return _setAttribute(attribute: attribute) { $0.namespaceURI == uri && $0.localName == lName }
     }
@@ -224,6 +225,16 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
             else { _attrNSCache[uri] = [ name: a ] }
             return a
         }
+        return nil
+    }
+
+    open func forEachAttribute(_ body: (AttributeNodeImpl) throws -> Bool) rethrows -> Bool {
+        for a: AttributeNodeImpl in _attributes { if try body(a) { return true } }
+        return false
+    }
+
+    @inlinable open func attribute(where body: (AttributeNode) throws -> Bool) rethrows -> AttributeNode? {
+        for a: AttributeNodeImpl in _attributes { if try body(a) { return a } }
         return nil
     }
 

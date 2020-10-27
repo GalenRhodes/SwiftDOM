@@ -35,6 +35,8 @@ public protocol ElementNode: Node {
 
     func attributeWith(namespaceURI: String, name: String) -> AttributeNode?
 
+    func attribute(where body: (AttributeNode) throws -> AttributeNode?) rethrows -> AttributeNode?
+
     func elementsBy(tagName: String) -> NodeList<ElementNode>
 
     func elementsBy(namespaceURI: String, name: String) -> NodeList<ElementNode>
@@ -43,19 +45,19 @@ public protocol ElementNode: Node {
 
     func hasAttributeWith(namespaceURI: String, name: String) -> Bool
 
-    func removeAttributeWith(name: String) -> AttributeNode?
+    @discardableResult func removeAttributeWith(name: String) -> AttributeNode?
 
-    func removeAttributeWith(namespaceURI: String, name: String) -> AttributeNode?
+    @discardableResult func removeAttributeWith(namespaceURI: String, name: String) -> AttributeNode?
 
-    func removeAttribute(attribute: AttributeNode) -> AttributeNode?
+    @discardableResult func removeAttribute(attribute: AttributeNode) -> AttributeNode?
 
     func setAttributeWith(name: String, value: String)
 
     func setAttributeWith(namespaceURI: String, name: String, value: String)
 
-    func setAttribute(attribute: AttributeNode) -> AttributeNode?
+    @discardableResult func setAttribute(attribute: AttributeNode) -> AttributeNode?
 
-    func setAttributeNS(attribute: AttributeNode) -> AttributeNode?
+    @discardableResult func setAttributeNS(attribute: AttributeNode) -> AttributeNode?
 
     func setIdAttributeWith(name: String, isId: Bool)
 
@@ -89,6 +91,10 @@ public class AnyElementNode: AnyNode, ElementNode {
         element.attributeWith(namespaceURI: namespaceURI, name: name)
     }
 
+    @inlinable open func attribute(where body: (AttributeNode) throws -> AttributeNode?) rethrows -> AttributeNode? {
+        try element.attribute(where: body)
+    }
+
     @inlinable open func elementsBy(tagName: String) -> NodeList<ElementNode> {
         element.elementsBy(tagName: tagName)
     }
@@ -105,15 +111,15 @@ public class AnyElementNode: AnyNode, ElementNode {
         element.hasAttributeWith(namespaceURI: namespaceURI, name: name)
     }
 
-    @inlinable open func removeAttributeWith(name: String) -> AttributeNode? {
+    @inlinable @discardableResult open func removeAttributeWith(name: String) -> AttributeNode? {
         element.removeAttributeWith(name: name)
     }
 
-    @inlinable open func removeAttributeWith(namespaceURI: String, name: String) -> AttributeNode? {
+    @inlinable @discardableResult open func removeAttributeWith(namespaceURI: String, name: String) -> AttributeNode? {
         element.removeAttributeWith(namespaceURI: namespaceURI, name: name)
     }
 
-    @inlinable open func removeAttribute(attribute: AttributeNode) -> AttributeNode? {
+    @inlinable @discardableResult open func removeAttribute(attribute: AttributeNode) -> AttributeNode? {
         element.removeAttribute(attribute: attribute)
     }
 
@@ -125,11 +131,11 @@ public class AnyElementNode: AnyNode, ElementNode {
         element.setAttributeWith(namespaceURI: namespaceURI, name: name, value: value)
     }
 
-    @inlinable open func setAttribute(attribute: AttributeNode) -> AttributeNode? {
+    @inlinable @discardableResult open func setAttribute(attribute: AttributeNode) -> AttributeNode? {
         element.setAttribute(attribute: attribute)
     }
 
-    @inlinable open func setAttributeNS(attribute: AttributeNode) -> AttributeNode? {
+    @inlinable @discardableResult open func setAttributeNS(attribute: AttributeNode) -> AttributeNode? {
         element.setAttributeNS(attribute: attribute)
     }
 

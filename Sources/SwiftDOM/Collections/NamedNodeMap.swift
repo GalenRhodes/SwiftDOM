@@ -44,6 +44,8 @@ open class NamedNodeMap<T>: Hashable, RandomAccessCollection {
 
     @inlinable open func hash(into hasher: inout Hasher) { hasher.combine(uuid) }
 
+    internal func clone() -> NamedNodeMap<T> { NamedNodeMap() }
+
     public static func == (lhs: NamedNodeMap<T>, rhs: NamedNodeMap<T>) -> Bool { lhs === rhs }
 }
 

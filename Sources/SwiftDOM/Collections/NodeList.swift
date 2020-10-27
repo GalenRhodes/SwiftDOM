@@ -44,6 +44,8 @@ open class NodeList<T>: Hashable, RandomAccessCollection {
     @inlinable open subscript(position: Int) -> T { Array<T>()[position] }
 
     @inlinable open subscript(bounds: Range<Int>) -> ArraySlice<T> { Array<T>()[bounds] }
+
+    internal func clone() -> NodeList<T> { NodeList() }
 }
 
 extension NodeList where T: Node {

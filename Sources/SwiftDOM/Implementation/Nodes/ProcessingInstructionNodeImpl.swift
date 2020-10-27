@@ -27,11 +27,11 @@ open class ProcessingInstructionNodeImpl: NodeImpl, ProcessingInstructionNode {
     @inlinable open override var nodeName:    String { target }
     @inlinable open override var nodeValue:   String? {
         get { data }
-        set { if d = newValue { data = d } }
+        set { if let d = newValue { data = d } }
     }
     @inlinable open override var textContent: String? {
         get { data }
-        set { if d = newValue { data = d } }
+        set { if let d = newValue { data = d } }
     }
 
     open var data: String = ""

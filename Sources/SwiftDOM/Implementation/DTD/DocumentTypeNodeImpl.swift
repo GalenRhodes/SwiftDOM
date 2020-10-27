@@ -26,6 +26,10 @@ open class DocumentTypeNodeImpl: NodeImpl, DocumentTypeNode {
 
     @inlinable open override var nodeName: String { name }
     @inlinable open override var nodeType: NodeTypes { .DocumentTypeNode }
+    @inlinable open override var textContent: String? {
+        get { nil }
+        set {}
+    }
 
     open internal(set) var name:           String                     = ""
     open internal(set) var publicId:       String                     = ""
