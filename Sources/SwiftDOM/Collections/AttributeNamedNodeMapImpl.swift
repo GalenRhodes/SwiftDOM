@@ -1,6 +1,6 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: AttributeNamedNodeMap.swift
+ *    FILENAME: AttributeNamedNodeMapImpl.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
  *        DATE: 10/25/20
@@ -23,7 +23,7 @@
 import Foundation
 import Rubicon
 
-open class AttributeNamedNodeMap: NamedNodeMap<AttributeNode> {
+open class AttributeNamedNodeMapImpl: LiveNamedNodeMap<AttributeNode> {
 
     open override var startIndex: Index { _attributes.startIndex }
     open override var endIndex:   Index { _attributes.endIndex }
@@ -31,15 +31,15 @@ open class AttributeNamedNodeMap: NamedNodeMap<AttributeNode> {
 
     var _attributes: [Element] = []
 
-    init(_ elem: ElementNode) {
-        super.init()
-        NotificationCenter.default.addObserver(forName: DOMAttributeListDidChange, object: elem, queue: nil) {
-            [weak self] in
-            if let s: AttributeNamedNodeMap = self, let e: ElementNodeImpl = $0.object as? ElementNodeImpl {
-                s._attributes.removeAll()
-                for a: AttributeNode in e._attributes { s._attributes.append(a) }
-            }
-        }
+    init(_ elem: ElementNodeImpl) {
+        super.init(parent: elem)
+        attributeListDidChange()
+    }
+
+    open override func clone(parent p: ParentNode, deep: Bool, postEvent: Bool) -> NamedNodeMap<AttributeNode> {
+        let m = AttributeNamedNodeMapImpl(parent as! ElementNodeImpl)
+        m.attributeListDidChange()
+        return m
     }
 
     open override subscript(nodeName: String) -> Element? { first { $0.nodeName == nodeName } }

@@ -62,6 +62,9 @@ open class EntityNodeImpl: ParentNode, EntityNode {
                                inputEncoding: inputEncoding,
                                xmlEncoding: xmlEncoding,
                                xmlVersion: xmlVersion)
+        //----------------------------------
+        // Entities always do a deep clone.
+        //----------------------------------
         forEachChild { e.append(child: $0.cloneNode(doc, postEvent: postEvent, deep: true)) }
         return e
     }

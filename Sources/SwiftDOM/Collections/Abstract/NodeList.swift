@@ -53,7 +53,7 @@ extension NodeList where T: Node {
 
     public static func == (lhs: NodeList<T>, rhs: NodeList<T>) -> Bool {
         guard lhs.count == rhs.count else { return false }
-        for (i, n) in lhs.enumerated() { if !n.isEqualTo(rhs[i]) { return false } }
+        for (i, n): (Int, T) in lhs.enumerated() { if !n.isEqualTo(rhs[i]) { return false } }
         return true
     }
 
@@ -63,7 +63,7 @@ extension NodeList where T: Node {
 extension NodeList where T: Equatable {
     public static func == (lhs: NodeList<T>, rhs: NodeList<T>) -> Bool {
         guard lhs.count == rhs.count else { return false }
-        for (i, n) in lhs.enumerated() { if n != rhs[i] { return false } }
+        for (i, n): (Int, T) in lhs.enumerated() { if n != rhs[i] { return false } }
         return true
     }
 }

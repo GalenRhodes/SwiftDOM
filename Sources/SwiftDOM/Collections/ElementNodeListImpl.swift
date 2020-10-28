@@ -1,6 +1,6 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: ElementNodeList.swift
+ *    FILENAME: ElementNodeListImpl.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
  *        DATE: 10/23/20
@@ -22,40 +22,51 @@
 
 import Foundation
 
-open class ElementNodeList: LiveNodeList<ElementNode> {
+open class ElementNodeListImpl: LiveNodeList<ElementNode> {
     let nodeName:     String?
     let localName:    String?
     let namespaceURI: String?
     let elemId:       String?
 
-    init(_ parent: ParentNode, nodeName: String) {
-        self.nodeName = nodeName
-        self.localName = nil
-        self.namespaceURI = nil
-        self.elemId = nil
+    init(_ parent: ParentNode, nodeName name: String) {
+        nodeName = name
+        localName = nil
+        namespaceURI = nil
+        elemId = nil
         super.init(parent)
-        handleCollectionDidChange(parent)
+        handleCollectionDidChange()
     }
 
-    init(_ parent: ParentNode, namespaceURI: String, localName: String) {
-        self.namespaceURI = namespaceURI
-        self.localName = localName
-        self.nodeName = nil
-        self.elemId = nil
+    init(_ parent: ParentNode, namespaceURI uri: String, localName name: String) {
+        namespaceURI = uri
+        localName = name
+        nodeName = nil
+        elemId = nil
         super.init(parent)
-        handleCollectionDidChange(parent)
+        handleCollectionDidChange()
     }
 
-    public init(_ parent: ParentNode, elemId: String) {
-        self.localName = nil
-        self.namespaceURI = nil
-        self.nodeName = nil
-        self.elemId = elemId
+    public init(_ parent: ParentNode, elemId id: String) {
+        localName = nil
+        namespaceURI = nil
+        nodeName = nil
+        elemId = id
         super.init(parent)
-        handleCollectionDidChange(parent)
+        handleCollectionDidChange()
     }
 
-    open override func handleCollectionDidChange(_ parent: ParentNode) {
+    open override func clone(parent p: ParentNode, deep: Bool, postEvents: Bool) -> NodeList<ElementNode> {
+        var clone: ElementNodeListImpl! = nil
+
+        if let nn: String = nodeName { clone = ElementNodeListImpl(parent, nodeName: nn) }
+        else if let id: String = elemId { clone = ElementNodeListImpl(parent, elemId: id) }
+        else if let uri: String = namespaceURI, let ln: String = localName { clone = ElementNodeListImpl(parent, namespaceURI: uri, localName: ln) }
+        else { fatalError("Unable to clone NodeList.") }
+
+        clone.handleCollectionDidChange()
+    }
+
+    open override func handleCollectionDidChange() {
         _nodes.removeAll()
         if let name: String = nodeName {
             find(in: parent) { (node: ElementNodeImpl) in ((name == "*") || (name == node.nodeName)) }

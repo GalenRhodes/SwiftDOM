@@ -29,7 +29,7 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
 
     public internal(set) var schemaTypeInfo: TypeInfo? = nil
 
-    open override var attributes:    NamedNodeMap<AttributeNode> { AttributeNamedNodeMap(self) }
+    open override var attributes:    NamedNodeMap<AttributeNode> { AttributeNamedNodeMapImpl(self) }
     open override var nodeType:      NodeTypes { NodeTypes.ElementNode }
     open override var hasAttributes: Bool { !_attributes.isEmpty }
 
@@ -62,11 +62,11 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
     }
 
     open func elementsBy(tagName: String) -> NodeList<ElementNode> {
-        ElementNodeList(self, nodeName: tagName)
+        ElementNodeListImpl(self, nodeName: tagName)
     }
 
     open func elementsBy(namespaceURI uri: String, name: String) -> NodeList<ElementNode> {
-        ElementNodeList(self, namespaceURI: uri, localName: name)
+        ElementNodeListImpl(self, namespaceURI: uri, localName: name)
     }
 
     open func hasAttributeWith(name: String) -> Bool {

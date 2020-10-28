@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: LiveNodeList.swift
+ *    FILENAME: LiveNamedNodeMap.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/23/20
+ *        DATE: 10/28/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,24 +22,22 @@
 
 import Foundation
 
-open class LiveNodeList<T>: NodeList<T> {
-    var _nodes: [T] = []
+open class LiveNamedNodeMap<T>: NamedNodeMap<T> {
 
-    open override var startIndex: Int { _nodes.startIndex }
-    open override var endIndex:   Int { _nodes.endIndex }
-    open override var count:      Int { _nodes.count }
+    open let parent: ParentNode
 
-    init(_ parent: ParentNode) {
+    open init(parent p: ParentNode) {
+        parent = p
         super.init()
-        NotificationCenter.default.addObserver(forName: DOMCollectionDidChange, object: parent, queue: nil) {
-            [weak self] in
-            if let s: LiveNodeList<T> = self, let p: ParentNode = ($0.object as? ParentNode) { s.handleCollectionDidChange(p) }
+        NotificationCenter.default.addObserver(forName: DOMAttributeListDidChange, object: parent, queue: nil) {
+            [weak self] (note: Notification) in
+            if let s: LiveNamedNodeMap<T> = self, let p: ParentNode = (note.object as? ParentNode), p === parent { attributeListDidChange() }
         }
     }
 
-    open func handleCollectionDidChange(_ parent: ParentNode) {}
+    open func attributeListDidChange() {}
 
-    open override subscript(bounds: Range<Int>) -> ArraySlice<T> { _nodes[bounds] }
+    open func clone(parent p: ParentNode, deep: Bool, postEvent: Bool) -> NamedNodeMap<T> { fatalError("Unable to clone NamedNodeMap") }
 
-    open override subscript(position: Int) -> T { _nodes[position] }
+    open override func clone(deep: Bool, postEvents: Bool) -> NamedNodeMap<T> { clone(parent: parent, deep: deep, postEvent: postEvents) }
 }
