@@ -245,5 +245,4 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
     }
 
     public static func == (lhs: ElementNodeImpl, rhs: ElementNodeImpl) -> Bool { lhs === rhs }
-
 }

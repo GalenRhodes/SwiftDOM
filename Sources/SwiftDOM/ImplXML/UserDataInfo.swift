@@ -24,8 +24,8 @@ import Foundation
 
 public struct UserDataInfo: Hashable {
     private let uuid: String = UUID().uuidString
-    public let data: Any
-    public let body: UserDataHandler?
+    public let  data: Any
+    public let  body: UserDataHandler?
 
     public init(data: Any, body: UserDataHandler?) {
         self.data = data

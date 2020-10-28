@@ -186,7 +186,7 @@ open class ParentNode: ChildNode {
     }
 
     var __nodes: [Node]? = nil
-    var        _nodes:  [Node] {
+    var _nodes:  [Node] {
         if let n: [Node] = __nodes { return n }
         __nodes = []
         var c: Node? = firstChild

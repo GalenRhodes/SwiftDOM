@@ -23,8 +23,8 @@
 import Foundation
 
 open class NotationNodeImpl: NodeImpl, NotationNode {
-    override open var nodeType: NodeTypes { .NotationNode }
-    override open var nodeName: String { name }
+    override open var nodeType:    NodeTypes { .NotationNode }
+    override open var nodeName:    String { name }
     override open var textContent: String? {
         get { nil }
         set {}

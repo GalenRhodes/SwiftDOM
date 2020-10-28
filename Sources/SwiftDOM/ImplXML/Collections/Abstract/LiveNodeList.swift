@@ -35,7 +35,8 @@ open class LiveNodeList<Element>: NodeList<Element> {
         self.parent = parent
         super.init()
         NotificationCenter.default.addObserver(forName: DOMCollectionDidChange, object: parent, queue: nil) {
-            [weak self] in if let s: LiveNodeList<Element> = self, let p: ParentNode = ($0.object as? ParentNode), p === s.parent { s.handleCollectionDidChange() }
+            [weak self] in
+            if let s: LiveNodeList<Element> = self, let p: ParentNode = ($0.object as? ParentNode), p === s.parent { s.handleCollectionDidChange() }
         }
     }
 
