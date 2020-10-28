@@ -208,13 +208,12 @@ open class ParentNode: ChildNode {
         notifyChildListeners()
     }
 
-    open func forEachChild(deep: Bool = false, node block: (NodeImpl) throws -> Bool) rethrows -> Bool {
+    open func forEachChild(deep: Bool = false, node block: (NodeImpl) throws -> Void) rethrows {
         var _c: ChildNode? = _firstChild
         while let c: ChildNode = _c {
-            if try block(c) { return true }
-            if deep, let p: ParentNode = c as? ParentNode { if try p.forEachChild(deep: deep, node: block) { return true } }
+            try block(c)
+            if deep, let p: ParentNode = c as? ParentNode { try p.forEachChild(deep: deep, node: block) }
             _c = c._nextSibling
         }
-        return false
     }
 }

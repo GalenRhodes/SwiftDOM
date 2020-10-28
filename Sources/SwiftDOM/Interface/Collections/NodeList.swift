@@ -22,10 +22,10 @@
 
 import Foundation
 
-open class NodeList<T>: Hashable, RandomAccessCollection {
+open class NodeList<Element>: Hashable, RandomAccessCollection {
 
-    public typealias Element = T
-    public typealias SubSequence = ArraySlice<T>
+    public typealias Element = Element
+    public typealias SubSequence = ArraySlice<Element>
     public typealias Index = Int
     public typealias Indices = Range<Int>
 
@@ -39,35 +39,37 @@ open class NodeList<T>: Hashable, RandomAccessCollection {
 
     open func hash(into hasher: inout Hasher) { hasher.combine(uuid) }
 
+    open subscript(position: Int) -> Element { Array<Element>()[position] }
+
+    open subscript(bounds: Range<Int>) -> ArraySlice<Element> { Array<Element>()[bounds] }
+
+    open func clone(deep: Bool = false, postEvents: Bool = false) -> NodeList<Element> { NodeList<Element>() }
+
+    open func mapAs<S>(transform: (Element) throws -> S) rethrows -> NodeList<S> { NodeList<S>() }
+
     public static func == (lhs: NodeList, rhs: NodeList) -> Bool { ((lhs === rhs) || (lhs.uuid == rhs.uuid)) }
-
-    open subscript(position: Int) -> T { Array<T>()[position] }
-
-    open subscript(bounds: Range<Int>) -> ArraySlice<T> { Array<T>()[bounds] }
-
-    func clone(deep: Bool = false, postEvents: Bool = false) -> NodeList<T> { NodeList() }
 }
 
-extension NodeList where T: Node {
-    public func contains(node: T) -> Bool { contains { $0.isSameNode(as: node) } }
+extension NodeList where Element: Node {
+    public func contains(node: Element) -> Bool { contains { $0.isSameNode(as: node) } }
 
-    public static func == (lhs: NodeList<T>, rhs: NodeList<T>) -> Bool {
+    public static func == (lhs: NodeList<Element>, rhs: NodeList<Element>) -> Bool {
         guard lhs.count == rhs.count else { return false }
-        for (i, n): (Int, T) in lhs.enumerated() { if !n.isEqualTo(rhs[i]) { return false } }
+        for (i, n): (Int, Element) in lhs.enumerated() { if !n.isEqualTo(rhs[i]) { return false } }
         return true
     }
 
     public func hash(into hasher: inout Hasher) { hasher.combine(map { $0.asHashable() }) }
 }
 
-extension NodeList where T: Equatable {
-    public static func == (lhs: NodeList<T>, rhs: NodeList<T>) -> Bool {
+extension NodeList where Element: Equatable {
+    public static func == (lhs: NodeList<Element>, rhs: NodeList<Element>) -> Bool {
         guard lhs.count == rhs.count else { return false }
-        for (i, n): (Int, T) in lhs.enumerated() { if n != rhs[i] { return false } }
+        for (i, n): (Int, Element) in lhs.enumerated() { if n != rhs[i] { return false } }
         return true
     }
 }
 
-extension NodeList where T: Hashable {
-    public func hash(into hasher: inout Hasher) { for o: T in self { hasher.combine(o) } }
+extension NodeList where Element: Hashable {
+    public func hash(into hasher: inout Hasher) { for o: Element in self { hasher.combine(o) } }
 }

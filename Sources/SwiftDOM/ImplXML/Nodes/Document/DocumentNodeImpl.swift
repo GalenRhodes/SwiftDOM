@@ -133,24 +133,16 @@ open class DocumentNodeImpl: ParentNode, DocumentNode {
     open func getElementBy(elementId id: String) -> ElementNode? {
         guard let parent: ElementNodeImpl = _docElem else { return nil }
         var elem: ElementNodeImpl? = nil
-        parent.forEachChild(deep: true) {
-            if let e: ElementNodeImpl = ($0 as? ElementNodeImpl) {
-                if e._attributes.contains(where: { (a: AttributeNodeImpl) in a.isId && a.value == id }) {
-                    elem = e
-                    return true
-                }
-            }
-            return false
-        }
+        parent.forEachChild(deep: true) { if let e: ElementNodeImpl = ($0 as? ElementNodeImpl) { if e._attributes.contains(where: { $0.isId && $0.value == id }) { elem = e } } }
         return elem
     }
 
-    open func getElementsBy(name: String) -> NodeList<AnyElementNode> {
-        ElementNodeListImpl(documentElement, nodeName: name)
+    open func getElementsBy(name: String) -> NodeList<ElementNode> {
+        ElementNodeListImpl(documentElement as! ElementNodeImpl, nodeName: name)
     }
 
-    open func getElementsBy(namespaceURI: String, name: String) -> NodeList<AnyElementNode> {
-        ElementNodeListImpl(documentElement, namespaceURI: namespaceURI, localName: name)
+    open func getElementsBy(namespaceURI: String, name: String) -> NodeList<ElementNode> {
+        ElementNodeListImpl(documentElement as! ElementNodeImpl, namespaceURI: namespaceURI, localName: name)
     }
 
     open func importNode(node: Node, deep: Bool) -> Node {

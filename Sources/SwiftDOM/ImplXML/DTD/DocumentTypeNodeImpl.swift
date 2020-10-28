@@ -36,13 +36,13 @@ open class DocumentTypeNodeImpl: NodeImpl, DocumentTypeNode {
     open internal(set) var systemId:       String = ""
     open internal(set) var internalSubset: String = ""
 
-    open var entities:  NamedNodeMap<EntityNode> { _entities }
-    open var notations: NamedNodeMap<NotationNode> { _notations }
+    open var entities: NamedNodeMap<EntityNode> { _entities.mapAs({ $0 as EntityNode }) }
+    open var notations: NamedNodeMap<NotationNode> { _notations.mapAs({ $0 as NotationNode }) }
 
-    var _entities:  LiveNamedNodeMap<EntityNodeImpl>!   = nil
-    var _notations: LiveNamedNodeMap<NotationNodeImpl>! = nil
+    var _entities:  DocTypeNamedNodeMap<EntityNodeImpl>!   = nil
+    var _notations: DocTypeNamedNodeMap<NotationNodeImpl>! = nil
 
-    open init(_ owningDocument: DocumentNodeImpl, name n: String, publicId p: String, systemId s: String, internalSubset i: String) {
+    public init(_ owningDocument: DocumentNodeImpl, name n: String, publicId p: String, systemId s: String, internalSubset i: String) {
         name = n
         publicId = p
         systemId = s
@@ -50,8 +50,8 @@ open class DocumentTypeNodeImpl: NodeImpl, DocumentTypeNode {
 
         super.init(owningDocument)
 
-        _entities = LiveNamedNodeMap(self)
-        _notations = LiveNamedNodeMap(self)
+        _entities = DocTypeNamedNodeMap<EntityNodeImpl>(docType: self)
+        _notations = DocTypeNamedNodeMap<NotationNodeImpl>(docType: self)
     }
 
     open override func isEqualTo(_ other: Node) -> Bool {
@@ -66,4 +66,35 @@ open class DocumentTypeNodeImpl: NodeImpl, DocumentTypeNode {
     }
 
     public static func == (lhs: DocumentTypeNodeImpl, rhs: DocumentTypeNodeImpl) -> Bool { lhs === rhs }
+}
+
+class DocTypeNamedNodeMap<Element>: LiveNamedNodeMap<Element> {
+    var data:    [Element] = []
+    var docType: DocumentTypeNodeImpl { parent as! DocumentTypeNodeImpl }
+
+    init(docType p: DocumentTypeNodeImpl) {
+        super.init(parent: p)
+    }
+
+    public override func mapAs<S>(_ transform: (Element) throws -> S) rethrows -> NamedNodeMap<S> {
+        DocTypeNamedNodeMap<S>(docType: docType)
+    }
+}
+
+extension DocTypeNamedNodeMap where Element == EntityNodeImpl {
+    func nameNodeMapDidChange() {
+        if self !== docType._entities {
+            data.removeAll()
+            for n in docType._entities.data { data.append(n) }
+        }
+    }
+}
+
+extension DocTypeNamedNodeMap where Element == NotationNodeImpl {
+    func nameNodeMapDidChange() {
+        if self !== docType._notations {
+            data.removeAll()
+            for n in docType._notations.data { data.append(n) }
+        }
+    }
 }

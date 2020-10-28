@@ -35,7 +35,7 @@ public protocol ElementNode: Node {
 
     func attributeWith(namespaceURI: String, name: String) -> AttributeNode?
 
-    func attribute(where body: (AttributeNode) throws -> AttributeNode?) rethrows -> AttributeNode?
+    func attribute(where body: (AttributeNode) throws -> Bool) rethrows -> AttributeNode?
 
     func elementsBy(tagName: String) -> NodeList<ElementNode>
 
@@ -91,7 +91,7 @@ public class AnyElementNode: AnyNode, ElementNode {
         element.attributeWith(namespaceURI: namespaceURI, name: name)
     }
 
-    open func attribute(where body: (AttributeNode) throws -> AttributeNode?) rethrows -> AttributeNode? {
+    open func attribute(where body: (AttributeNode) throws -> Bool) rethrows -> AttributeNode? {
         try element.attribute(where: body)
     }
 

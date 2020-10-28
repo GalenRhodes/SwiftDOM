@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: EntityRefNodeImpl.swift
+ *    FILENAME: AttributeNamedNodeMapImpl.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/26/20
+ *        DATE: 10/25/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -21,23 +21,30 @@
  *//************************************************************************/
 
 import Foundation
+import Rubicon
 
-open class EntityRefNodeImpl: ParentNode, EntityRefNode {
-    open override var nodeType: NodeTypes { .EntityReferenceNode }
-    open override var nodeName: String { entityName }
+open class AttributeNamedNodeMapImpl<T>: LiveNamedNodeMap<T> {
 
-    open internal(set) var entityName: String = ""
+    open override var startIndex: Index { _attributes.startIndex }
+    open override var endIndex:   Index { _attributes.endIndex }
+    open override var count:      Int { _attributes.count }
 
-    public init(_ owningDocument: DocumentNodeImpl, entityName: String) {
-        self.entityName = entityName
-        super.init(owningDocument)
+    var _attributes: [Element] = []
+
+    init(_ elem: ElementNodeImpl) {
+        super.init(parent: elem)
+        nameNodeMapDidChange()
     }
 
-    open override func baseClone(_ doc: DocumentNodeImpl, postEvent: Bool, deep: Bool) -> NodeImpl {
-        let e = EntityRefNodeImpl(doc, entityName: entityName)
-        forEachChild { e.append(child: $0.cloneNode(doc, postEvent: postEvent, deep: true)) }
-        return e
+    open override func mapAs<S>(_ transform: (T) throws -> S) rethrows -> NamedNodeMap<S> {
+        AttributeNamedNodeMapImpl<S>(parent as! ElementNodeImpl)
     }
 
-    public static func == (lhs: EntityRefNodeImpl, rhs: EntityRefNodeImpl) -> Bool { lhs === rhs }
+    open override func clone(parent p: NodeImpl, deep: Bool, postEvent: Bool) -> NamedNodeMap<T> {
+        AttributeNamedNodeMapImpl<T>(parent as! ElementNodeImpl)
+    }
+
+    open override subscript(position: Index) -> Element { _attributes[position] }
+
+    open override subscript(bounds: Indices) -> ArraySlice<Element> { _attributes[bounds] }
 }

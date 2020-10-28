@@ -22,8 +22,8 @@
 
 import Foundation
 
-open class LiveNodeList<T>: NodeList<T> {
-    var _nodes: [T] = []
+open class LiveNodeList<Element>: NodeList<Element> {
+    var _nodes: [Element] = []
 
     open override var startIndex: Int { _nodes.startIndex }
     open override var endIndex:   Int { _nodes.endIndex }
@@ -35,17 +35,17 @@ open class LiveNodeList<T>: NodeList<T> {
         self.parent = parent
         super.init()
         NotificationCenter.default.addObserver(forName: DOMCollectionDidChange, object: parent, queue: nil) {
-            [weak self] in if let s: LiveNodeList<T> = self, let p: ParentNode = ($0.object as? ParentNode), p === s.parent { s.handleCollectionDidChange() }
+            [weak self] in if let s: LiveNodeList<Element> = self, let p: ParentNode = ($0.object as? ParentNode), p === s.parent { s.handleCollectionDidChange() }
         }
     }
 
     open func handleCollectionDidChange() {}
 
-    open override func clone(deep: Bool = false, postEvents: Bool = false) -> NodeList<T> { clone(parent: parent, deep: deep, postEvents: postEvents) }
+    open override func clone(deep: Bool = false, postEvents: Bool = false) -> NodeList<Element> { clone(parent: parent, deep: deep, postEvents: postEvents) }
 
-    open func clone(parent p: ParentNode, deep: Bool, postEvents: Bool = false) -> NodeList<T> { fatalError("Not implemented.") }
+    open func clone(parent p: ParentNode, deep: Bool, postEvents: Bool = false) -> NodeList<Element> { fatalError("Not implemented.") }
 
-    open override subscript(bounds: Range<Int>) -> ArraySlice<T> { _nodes[bounds] }
+    open override subscript(bounds: Range<Index>) -> ArraySlice<Element> { _nodes[bounds] }
 
-    open override subscript(position: Int) -> T { _nodes[position] }
+    open override subscript(position: Index) -> Element { _nodes[position] }
 }

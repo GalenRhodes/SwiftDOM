@@ -57,7 +57,7 @@ open class AttributeNodeImpl: NamespaceNode, AttributeNode {
     }
 
     open override func baseClone(_ doc: DocumentNodeImpl, postEvent: Bool, deep: Bool) -> NodeImpl {
-        let a: AttributeNodeImpl = (hasNamespace ? AttributeNodeImpl(doc, namespaceURI: namespaceURI, qualifiedName: name, value: value) : AttributeNodeImpl(doc, attributeName: name, value: value))
+        let a: AttributeNodeImpl = (hasNamespace ? AttributeNodeImpl(doc, namespaceURI: namespaceURI!, qualifiedName: name, value: value) : AttributeNodeImpl(doc, attributeName: name, value: value))
         a.schemaTypeInfo = schemaTypeInfo
         a.isSpecified = isSpecified
         a.isId = isId

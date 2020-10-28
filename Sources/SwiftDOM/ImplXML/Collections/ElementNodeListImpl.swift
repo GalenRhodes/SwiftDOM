@@ -28,42 +28,33 @@ open class ElementNodeListImpl: LiveNodeList<ElementNode> {
     let namespaceURI: String?
     let elemId:       String?
 
-    init(_ parent: ParentNode, nodeName name: String) {
+    public convenience init(_ parent: ParentNode, nodeName name: String) {
+        self.init(parent, nodeName: name, namespaceURI: nil, localName: nil, elemId: nil)
+    }
+
+    public convenience init(_ parent: ParentNode, namespaceURI uri: String, localName name: String) {
+        self.init(parent, nodeName: nil, namespaceURI: uri, localName: name, elemId: nil)
+    }
+
+    public convenience init(_ parent: ParentNode, elemId id: String) {
+        self.init(parent, nodeName: nil, namespaceURI: nil, localName: nil, elemId: id)
+    }
+
+    private init(_ parent: ParentNode, nodeName name: String?, namespaceURI uri: String?, localName lName: String?, elemId id: String?) {
         nodeName = name
-        localName = nil
-        namespaceURI = nil
-        elemId = nil
-        super.init(parent)
-        handleCollectionDidChange()
-    }
-
-    init(_ parent: ParentNode, namespaceURI uri: String, localName name: String) {
+        localName = lName
         namespaceURI = uri
-        localName = name
-        nodeName = nil
-        elemId = nil
-        super.init(parent)
-        handleCollectionDidChange()
-    }
-
-    public init(_ parent: ParentNode, elemId id: String) {
-        localName = nil
-        namespaceURI = nil
-        nodeName = nil
         elemId = id
         super.init(parent)
         handleCollectionDidChange()
     }
 
+    open override func mapAs<S>(transform: (ElementNode) throws -> S) rethrows -> NodeList<S> {
+        NodeList<S>()
+    }
+
     open override func clone(parent p: ParentNode, deep: Bool, postEvents: Bool) -> NodeList<ElementNode> {
-        var clone: ElementNodeListImpl! = nil
-
-        if let nn: String = nodeName { clone = ElementNodeListImpl(parent, nodeName: nn) }
-        else if let id: String = elemId { clone = ElementNodeListImpl(parent, elemId: id) }
-        else if let uri: String = namespaceURI, let ln: String = localName { clone = ElementNodeListImpl(parent, namespaceURI: uri, localName: ln) }
-        else { fatalError("Unable to clone NodeList.") }
-
-        clone.handleCollectionDidChange()
+        ElementNodeListImpl(parent, nodeName: nodeName, namespaceURI: namespaceURI, localName: localName, elemId: elemId)
     }
 
     open override func handleCollectionDidChange() {

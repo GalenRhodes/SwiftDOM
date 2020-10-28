@@ -134,9 +134,8 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
         }
     }
 
-    open func forEachAttribute(_ body: (AttributeNodeImpl) throws -> Bool) rethrows -> Bool {
-        for a: AttributeNodeImpl in _attributes { if try body(a) { return true } }
-        return false
+    open func forEachAttribute(_ body: (AttributeNodeImpl) throws -> Void) rethrows {
+        for a: AttributeNodeImpl in _attributes { try body(a) }
     }
 
     open func attribute(where body: (AttributeNode) throws -> Bool) rethrows -> AttributeNode? {
@@ -145,8 +144,8 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
     }
 
     open override func baseClone(_ doc: DocumentNodeImpl, postEvent: Bool, deep: Bool) -> NodeImpl {
-        let e: ElementNodeImpl = (hasNamespace ? ElementNodeImpl(doc, namespaceURI: namespaceURI, qualifiedName: tagName) : ElementNodeImpl(doc, tagName: tagName))
-        forEachAttribute { e._attributes.append($0.cloneNode(doc, postEvent: postEvent, deep: true)) }
+        let e: ElementNodeImpl = (hasNamespace ? ElementNodeImpl(doc, namespaceURI: namespaceURI!, qualifiedName: tagName) : ElementNodeImpl(doc, tagName: tagName))
+        forEachAttribute { (a: AttributeNodeImpl) in e._attributes.append(a.cloneNode(doc, postEvent: postEvent, deep: true) as! AttributeNodeImpl) }
         if deep { forEachChild { e.append(child: $0.cloneNode(doc, postEvent: postEvent, deep: deep)) } }
         return e
     }
@@ -209,7 +208,7 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
     }
 
     func _notifyAttributeListeners() {
-        NotificationCenter.default.post(name: DOMAttributeListDidChange, object: self)
+        NotificationCenter.default.post(name: DOMNamedNodeMapDidChange, object: self)
     }
 
     func _remove(attributes list: [AttributeNodeImpl]) -> AttributeNodeImpl? {
@@ -246,4 +245,5 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
     }
 
     public static func == (lhs: ElementNodeImpl, rhs: ElementNodeImpl) -> Bool { lhs === rhs }
+
 }

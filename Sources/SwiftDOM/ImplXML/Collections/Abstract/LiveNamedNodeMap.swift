@@ -22,22 +22,25 @@
 
 import Foundation
 
-open class LiveNamedNodeMap<T>: NamedNodeMap<T> {
+open class LiveNamedNodeMap<Element>: NamedNodeMap<Element> {
 
-    open let parent: ParentNode
+    public let parent: NodeImpl
 
-    open init(parent p: ParentNode) {
+    public init(parent p: NodeImpl) {
         parent = p
         super.init()
-        NotificationCenter.default.addObserver(forName: DOMAttributeListDidChange, object: parent, queue: nil) {
+        NotificationCenter.default.addObserver(forName: DOMNamedNodeMapDidChange, object: parent, queue: nil) {
             [weak self] (note: Notification) in
-            if let s: LiveNamedNodeMap<T> = self, let p: ParentNode = (note.object as? ParentNode), p === parent { attributeListDidChange() }
+            if let s: LiveNamedNodeMap<Element> = self, let p: ParentNode = (note.object as? ParentNode), p === s.parent { s.nameNodeMapDidChange() }
         }
+        nameNodeMapDidChange()
     }
 
-    open func attributeListDidChange() {}
+    open func nameNodeMapDidChange() {}
 
-    open func clone(parent p: ParentNode, deep: Bool, postEvent: Bool) -> NamedNodeMap<T> { fatalError("Unable to clone NamedNodeMap") }
+    open func clone(parent p: NodeImpl, deep: Bool, postEvent: Bool) -> NamedNodeMap<Element> { fatalError("Unable to clone NamedNodeMap") }
 
-    open override func clone(deep: Bool, postEvents: Bool) -> NamedNodeMap<T> { clone(parent: parent, deep: deep, postEvent: postEvents) }
+    open override func clone(deep: Bool, postEvents: Bool) -> NamedNodeMap<Element> { clone(parent: parent, deep: deep, postEvent: postEvents) }
+
+    open override func mapAs<S>(_ transform: (Element) throws -> S) rethrows -> NamedNodeMap<S> { LiveNamedNodeMap<S>(parent: parent) }
 }

@@ -60,9 +60,9 @@ public protocol DocumentNode: Node {
 
     func getElementBy(elementId: String) -> ElementNode?
 
-    func getElementsBy(name: String) -> NodeList<AnyElementNode>
+    func getElementsBy(name: String) -> NodeList<ElementNode>
 
-    func getElementsBy(namespaceURI: String, name: String) -> NodeList<AnyElementNode>
+    func getElementsBy(namespaceURI: String, name: String) -> NodeList<ElementNode>
 
     func importNode(node: Node, deep: Bool) -> Node
 
@@ -143,11 +143,11 @@ open class AnyDocumentNode: AnyNode, DocumentNode {
         document.getElementBy(elementId: elementId)
     }
 
-    open func getElementsBy(name: String) -> NodeList<AnyElementNode> {
+    open func getElementsBy(name: String) -> NodeList<ElementNode> {
         document.getElementsBy(name: name)
     }
 
-    open func getElementsBy(namespaceURI: String, name: String) -> NodeList<AnyElementNode> {
+    open func getElementsBy(namespaceURI: String, name: String) -> NodeList<ElementNode> {
         document.getElementsBy(namespaceURI: namespaceURI, name: name)
     }
 
