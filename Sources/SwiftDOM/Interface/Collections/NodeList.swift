@@ -50,26 +50,35 @@ open class NodeList<Element>: Hashable, RandomAccessCollection {
     public static func == (lhs: NodeList, rhs: NodeList) -> Bool { ((lhs === rhs) || (lhs.uuid == rhs.uuid)) }
 }
 
-extension NodeList where Element: Node {
-    public func contains(node: Element) -> Bool { contains { $0.isSameNode(as: node) } }
+extension NodeList {
+    public func contains(node: Element) -> Bool where Element: AnyObject { contains { $0 === node } }
 
-    public static func == (lhs: NodeList<Element>, rhs: NodeList<Element>) -> Bool {
+    public func contains(node: Element) -> Bool where Element: Node { contains { $0.isSameNode(as: node) } }
+
+    public func contains(node: Element) -> Bool where Element: Equatable { contains { $0 == node } }
+
+    public func hash(into hasher: inout Hasher) where Element: Node { hasher.combine(map { $0.asHashable() }) }
+
+    public func hash(into hasher: inout Hasher) where Element: Hashable { for o: Element in self { hasher.combine(o) } }
+
+    public static func == (lhs: NodeList<Element>, rhs: NodeList<Element>) -> Bool where Element: AnyObject {
+        if lhs === rhs || lhs.uuid == rhs.uuid { return true }
         guard lhs.count == rhs.count else { return false }
-        for (i, n): (Int, Element) in lhs.enumerated() { if !n.isEqualTo(rhs[i]) { return false } }
+        for (i, n): (Int, Element) in lhs.enumerated() { if n !== rhs[i] { return false } }
         return true
     }
 
-    public func hash(into hasher: inout Hasher) { hasher.combine(map { $0.asHashable() }) }
-}
+    public static func == (lhs: NodeList<Element>, rhs: NodeList<Element>) -> Bool where Element: Node {
+        if lhs === rhs || lhs.uuid == rhs.uuid { return true }
+        guard lhs.count == rhs.count else { return false }
+        for (i, n): (Int, Element) in lhs.enumerated() { if !n.isSameNode(as: rhs[i]) { return false } }
+        return true
+    }
 
-extension NodeList where Element: Equatable {
-    public static func == (lhs: NodeList<Element>, rhs: NodeList<Element>) -> Bool {
+    public static func == (lhs: NodeList<Element>, rhs: NodeList<Element>) -> Bool where Element: Equatable {
+        if lhs === rhs || lhs.uuid == rhs.uuid { return true }
         guard lhs.count == rhs.count else { return false }
         for (i, n): (Int, Element) in lhs.enumerated() { if n != rhs[i] { return false } }
         return true
     }
-}
-
-extension NodeList where Element: Hashable {
-    public func hash(into hasher: inout Hasher) { for o: Element in self { hasher.combine(o) } }
 }

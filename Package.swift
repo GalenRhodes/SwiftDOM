@@ -10,7 +10,7 @@ let package = Package(
       .library(name: "SwiftDOM", targets: [ "SwiftDOM" ]),
   ],
   dependencies: [
-      .package(name: "Rubicon", url: "https://github.com/GalenRhodes/Rubicon", from: "0.2.27"),
+      .package(name: "Rubicon", url: "https://github.com/GalenRhodes/Rubicon", from: "0.2.33"),
   ],
   targets: [
       .target(name: "SwiftDOM", dependencies: [ "Rubicon" ]),

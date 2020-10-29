@@ -460,8 +460,8 @@
 		83BB02B12537E71F00834BF5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				836097B72538DA86008CB79D /* DocFixer */,
 				83BB02922537E67200834BF5 /* SwiftDOM */,
+				836097B72538DA86008CB79D /* DocFixer */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -555,7 +555,7 @@
 		83BB02872537E67200834BF5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1210;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					836097AC2538DA7B008CB79D = {

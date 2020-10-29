@@ -51,32 +51,39 @@ open class NamedNodeMap<Element>: Hashable, RandomAccessCollection {
     public static func == (lhs: NamedNodeMap<Element>, rhs: NamedNodeMap<Element>) -> Bool { (lhs === rhs) || (lhs.uuid == rhs.uuid) }
 }
 
-extension NamedNodeMap where Element: Node {
-    public func hash(into hasher: inout Hasher) { hasher.combine(map { $0.asHashable() }) }
+extension NamedNodeMap {
+    public subscript(nodeName: String) -> Element? where Element: Node { first { $0.nodeName == nodeName } }
 
-    public func contains(_ node: Element) -> Bool { contains { $0.isSameNode(as: node) } }
+    public subscript(namespaceURI uri: String, localName lName: String) -> Element? where Element: Node { first { $0.namespaceURI == uri && $0.localName == lName } }
 
-    public subscript(nodeName: String) -> Element? { first { $0.nodeName == nodeName } }
+    public func hash(into hasher: inout Hasher) where Element: Node { hasher.combine(map { $0.asHashable() }) }
 
-    public subscript(namespaceURI uri: String, localName lName: String) -> Element? { first { $0.namespaceURI == uri && $0.localName == lName } }
+    public func hash(into hasher: inout Hasher) where Element: Hashable { for o: Element in self { hasher.combine(o) } }
 
-    public static func == (lhs: NamedNodeMap<Element>, rhs: NamedNodeMap<Element>) -> Bool {
+    public func contains(_ node: Element) -> Bool where Element: AnyObject { contains { $0 === node } }
+
+    public func contains(_ node: Element) -> Bool where Element: Node { contains { $0.isSameNode(as: node) } }
+
+    public func contains(_ node: Element) -> Bool where Element: Equatable { contains { $0 == node } }
+
+    public static func == (lhs: NamedNodeMap<Element>, rhs: NamedNodeMap<Element>) -> Bool where Element: AnyObject {
         if (lhs === rhs) || (lhs.uuid == rhs.uuid) { return true }
         guard lhs.count == rhs.count else { return false }
-        for o: Element in lhs { if !rhs.contains(where: { $0.isEqualTo(o) }) { return false } }
+        for o: Element in lhs { if !rhs.contains(o) { return false } }
         return true
     }
-}
 
-extension NamedNodeMap where Element: Equatable {
-    public static func == (lhs: NamedNodeMap<Element>, rhs: NamedNodeMap<Element>) -> Bool {
+    public static func == (lhs: NamedNodeMap<Element>, rhs: NamedNodeMap<Element>) -> Bool where Element: Node {
         if (lhs === rhs) || (lhs.uuid == rhs.uuid) { return true }
         guard lhs.count == rhs.count else { return false }
-        for o: Element in lhs { if !rhs.contains(where: { $0 == o }) { return false } }
+        for o: Element in lhs { if !rhs.contains(o) { return false } }
         return true
     }
-}
 
-extension NamedNodeMap where Element: Hashable {
-    public func hash(into hasher: inout Hasher) { for o: Element in self { hasher.combine(o) } }
+    public static func == (lhs: NamedNodeMap<Element>, rhs: NamedNodeMap<Element>) -> Bool where Element: Equatable {
+        if (lhs === rhs) || (lhs.uuid == rhs.uuid) { return true }
+        guard lhs.count == rhs.count else { return false }
+        for o: Element in lhs { if !rhs.contains(o) { return false } }
+        return true
+    }
 }
