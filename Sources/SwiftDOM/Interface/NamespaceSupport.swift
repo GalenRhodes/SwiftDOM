@@ -24,6 +24,7 @@ import Foundation
 import Rubicon
 
 //@f:0
+/*===============================================================================================================================*/
 /// [Reference](https://www.w3.org/TR/REC-xml/#NT-NameStartChar)
 ///
 internal let xAscii:           String = "a-zA-Z_\\xC0-\\xD6\\xD8-\\xF6\\xF8-\\xFF"

@@ -22,10 +22,24 @@
 
 import Foundation
 
+/*===============================================================================================================================*/
+/// Notification name posted when the source for a live named node map is updated.
+///
 public let DOMNamedNodeMapDidChange: Notification.Name = Notification.Name("DOMNamedNodeMapDidChange")
-public let DOMCollectionDidChange:   Notification.Name = Notification.Name("DOMCollectionDidChange")
+/*===============================================================================================================================*/
+/// Notification name posted when the source for a live node list is updated.
+///
+public let DOMNodeListDidChange:     Notification.Name = Notification.Name("DOMNodeListDidChange")
 
-func nodeTypeIs(_ node: Node?, _ type: NodeTypes...) -> Bool {
+/*===============================================================================================================================*/
+/// Check a node's type against a list of types.
+/// 
+/// - Parameters:
+///   - node: the node.
+///   - type: the types to check for.
+/// - Returns: `true` if the node's type is one of those in the list provided. `false` otherwise.
+///
+public func nodeTypeIs(_ node: Node?, _ type: NodeTypes...) -> Bool {
     guard let node: Node = node else { return false }
     for t: NodeTypes in type { if node.nodeType == t { return true } }
     return false

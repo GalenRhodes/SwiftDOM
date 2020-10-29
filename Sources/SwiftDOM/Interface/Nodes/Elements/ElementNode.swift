@@ -151,4 +151,3 @@ public class AnyElementNode: AnyNode, ElementNode {
         element.setIdAttribute(attribute: attribute, isId: isId)
     }
 }
-

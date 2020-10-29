@@ -23,28 +23,33 @@
 import Foundation
 import Rubicon
 
-open class AttributeNamedNodeMapImpl<T>: LiveNamedNodeMap<T> {
+open class AttributeNamedNodeMapImpl<Element>: LiveNamedNodeMap<Element> {
 
-    open override var startIndex: Index { _attributes.startIndex }
-    open override var endIndex:   Index { _attributes.endIndex }
-    open override var count:      Int { _attributes.count }
+    open override var startIndex: Index { _element._attributes.startIndex }
+    open override var endIndex:   Index { _element._attributes.endIndex }
+    open override var count:      Int { _element._attributes.count }
 
-    var _attributes: [Element] = []
+    var _element: ElementNodeImpl { (parent as! ElementNodeImpl) }
 
     init(_ elem: ElementNodeImpl) {
         super.init(parent: elem)
-        nameNodeMapDidChange()
     }
 
-    open override func mapAs<S>(_ transform: (T) throws -> S) rethrows -> NamedNodeMap<S> {
-        AttributeNamedNodeMapImpl<S>(parent as! ElementNodeImpl)
+    open override func mapAs<S>(_ transform: (Element) throws -> S) rethrows -> NamedNodeMap<S> {
+        AttributeNamedNodeMapImpl<S>(_element)
     }
 
-    open override func clone(parent p: NodeImpl, deep: Bool, postEvent: Bool) -> NamedNodeMap<T> {
-        AttributeNamedNodeMapImpl<T>(parent as! ElementNodeImpl)
+    open override func clone(parent p: NodeImpl, deep: Bool, postEvent: Bool) -> NamedNodeMap<Element> {
+        AttributeNamedNodeMapImpl<Element>(_element)
     }
+}
 
-    open override subscript(position: Index) -> Element { _attributes[position] }
+extension AttributeNamedNodeMapImpl where Element == AttributeNode {
+    public subscript(nodeName: String) -> Element? { _element.attributeWith(name: nodeName) }
 
-    open override subscript(bounds: Indices) -> ArraySlice<Element> { _attributes[bounds] }
+    public subscript(namespaceURI uri: String, localName lName: String) -> Element? { _element.attributeWith(namespaceURI: uri, name: lName) }
+
+    public subscript(position: Index) -> Element { _element.attributes[position] }
+
+    public subscript(bounds: Indices) -> ArraySlice<Element> { _element.attributes[bounds] }
 }

@@ -8,7 +8,7 @@
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
  * Permission to use, copy, modify, and distribute this software for any
- * purpose with or without fee is hereby granted, provided that the above
+ * purpose with or without fee is hereby granted, provided that the above`
  * copyright notice and this permission notice appear in all copies.
  *
  * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
@@ -29,20 +29,23 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
 
     public internal(set) var schemaTypeInfo: TypeInfo? = nil
 
-    open override var attributes:    NamedNodeMap<AttributeNode> { AttributeNamedNodeMapImpl(self) }
+    open override var attributes:    NamedNodeMap<AttributeNode> { _attribMap }
     open override var nodeType:      NodeTypes { NodeTypes.ElementNode }
     open override var hasAttributes: Bool { !_attributes.isEmpty }
 
-    var _attributes:    [AttributeNodeImpl]                   = []
-    var _attrNameCache: [String: AttributeNodeImpl]           = [:]
-    var _attrNSCache:   [String: [String: AttributeNodeImpl]] = [:]
+    var _attribMap:     AttributeNamedNodeMapImpl<AttributeNode>! = nil
+    var _attributes:    [AttributeNodeImpl]                       = []
+    var _attrNameCache: [String: AttributeNodeImpl]               = [:]
+    var _attrNSCache:   [String: [String: AttributeNodeImpl]]     = [:]
 
     public override init(_ owningDocument: DocumentNodeImpl, namespaceURI uri: String, qualifiedName qName: String) {
         super.init(owningDocument, namespaceURI: uri, qualifiedName: qName)
+        _attribMap = AttributeNamedNodeMapImpl<AttributeNode>(self)
     }
 
     public init(_ owningDocument: DocumentNodeImpl, tagName: String) {
         super.init(owningDocument, nodeName: tagName)
+        _attribMap = AttributeNamedNodeMapImpl<AttributeNode>(self)
     }
 
     open func attributeValueWith(name: String) -> String? {
@@ -62,11 +65,11 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
     }
 
     open func elementsBy(tagName: String) -> NodeList<ElementNode> {
-        ElementNodeListImpl(self, nodeName: tagName)
+        ElementNodeListImpl<ElementNode>(self, nodeName: tagName)
     }
 
     open func elementsBy(namespaceURI uri: String, name: String) -> NodeList<ElementNode> {
-        ElementNodeListImpl(self, namespaceURI: uri, localName: name)
+        ElementNodeListImpl<ElementNode>(self, namespaceURI: uri, localName: name)
     }
 
     open func hasAttributeWith(name: String) -> Bool {
@@ -92,13 +95,13 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
     open func setAttributeWith(name: String, value: String) {
         if let a: AttributeNodeImpl = _getAttribWith(name: name) { a.value = value }
         else { _addNewAttribute(name: name, value: value) }
-        _notifyAttributeListeners()
+        NotificationCenter.default.post(name: DOMNamedNodeMapDidChange, object: self)
     }
 
     open func setAttributeWith(namespaceURI uri: String, name: String, value: String) {
         if let a: AttributeNode = _getAttribWith(namespaceURI: uri, localName: name) { a.value = value }
         else { _addNewAttribute(namespaceURI: uri, localName: name, value: value) }
-        _notifyAttributeListeners()
+        NotificationCenter.default.post(name: DOMNamedNodeMapDidChange, object: self)
     }
 
     @discardableResult open func setAttribute(attribute: AttributeNode) -> AttributeNode? {
@@ -112,30 +115,26 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
 
     open func setIdAttributeWith(name: String, isId: Bool) {
         if let a: AttributeNodeImpl = _getAttribWith(name: name) {
-            _setAttrAsId(attr: a)
-            _notifyAttributeListeners()
+            a.isId = true
+            NotificationCenter.default.post(name: DOMNamedNodeMapDidChange, object: self)
         }
     }
 
     open func setIdAttributeWith(namespaceURI uri: String, name: String, isId: Bool) {
         if let a: AttributeNodeImpl = _getAttribWith(namespaceURI: uri, localName: name) {
-            _setAttrAsId(attr: a)
-            _notifyAttributeListeners()
+            a.isId = true
+            NotificationCenter.default.post(name: DOMNamedNodeMapDidChange, object: self)
         }
     }
 
     open func setIdAttribute(attribute: AttributeNode, isId: Bool) {
         if let a: AttributeNodeImpl = (attribute as? AttributeNodeImpl), (a.ownerElement?.isSameNode(as: self) ?? false), _attributes.contains(where: { $0.isSameNode(as: attribute) }) {
-            _setAttrAsId(attr: a)
-            _notifyAttributeListeners()
+            a.isId = true
+            NotificationCenter.default.post(name: DOMNamedNodeMapDidChange, object: self)
         }
         else {
             fatalError("Attribute is not owned by this element.")
         }
-    }
-
-    open func forEachAttribute(_ body: (AttributeNodeImpl) throws -> Void) rethrows {
-        for a: AttributeNodeImpl in _attributes { try body(a) }
     }
 
     open func attribute(where body: (AttributeNode) throws -> Bool) rethrows -> AttributeNode? {
@@ -150,32 +149,38 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
         return e
     }
 
-    func _attribute(where test: (AttributeNodeImpl) throws -> Bool) rethrows -> AttributeNodeImpl? {
+    open func forEachAttribute(_ body: (AttributeNodeImpl) throws -> Void) rethrows {
+        for a: AttributeNodeImpl in _attributes { try body(a) }
+    }
+
+    final func _attribute(where test: (AttributeNodeImpl) throws -> Bool) rethrows -> AttributeNodeImpl? {
         if let attrIdx: Int = try _indexOfAttribute(where: test) { return _attributes[attrIdx] }
         else { return nil }
     }
 
-    func _indexOfAttribute(where test: (AttributeNodeImpl) throws -> Bool) rethrows -> Int? {
+    final func _indexOfAttribute(where test: (AttributeNodeImpl) throws -> Bool) rethrows -> Int? {
         try _attributes.firstIndex(where: { try test($0) })
     }
 
-    func _addNewAttribute(name: String, value: String) {
+    final func _addNewAttribute(name: String, value: String) {
         let a: AttributeNodeImpl = (owningDocument.createAttribute(name: name) as! AttributeNodeImpl)
         _addNewAttribute(attr: a, value: value)
+        _attrNameCache[name] = a
     }
 
-    func _addNewAttribute(namespaceURI uri: String, localName lName: String, value: String) {
+    final func _addNewAttribute(namespaceURI uri: String, localName lName: String, value: String) {
         let a: AttributeNodeImpl = (owningDocument.createAttribute(namespaceURI: uri, name: lName) as! AttributeNodeImpl)
         _addNewAttribute(attr: a, value: value)
+        _addToNSCache(namespaceURI: uri, localName: lName, attribute: a)
     }
 
-    func _addNewAttribute(attr: AttributeNodeImpl, value: String) {
+    final func _addNewAttribute(attr: AttributeNodeImpl, value: String) {
         attr.value = value
-        _setAttrOwner(attr: attr, elem: self)
+        attr.ownerElement = self
         _attributes.append(attr)
     }
 
-    func _setAttribute(attribute: AttributeNode, where test: (AttributeNodeImpl) throws -> Bool) rethrows -> AttributeNodeImpl? {
+    final func _setAttribute(attribute: AttributeNode, where test: (AttributeNodeImpl) throws -> Bool) rethrows -> AttributeNodeImpl? {
         guard let attribute: AttributeNodeImpl = (attribute as? AttributeNodeImpl) else { fatalError("Invalid attribute class.") }
         guard attribute.ownerElement == nil || (attribute.ownerElement?.isSameNode(as: self) ?? false) else { fatalError("Attribute is already owned.") }
 
@@ -185,63 +190,64 @@ open class ElementNodeImpl: NamespaceNode, ElementNode {
             if let oaIdx: Int = try _attributes.firstIndex(where: { try test($0) }) {
                 let oa: AttributeNodeImpl = _attributes[oaIdx]
                 _attributes.remove(at: oaIdx)
-                _setAttrOwner(attr: oa, elem: nil)
+                oa.ownerElement = nil
                 _oa = oa
-                _clearCaches()
-                _notifyAttributeListeners()
+                _attrNameCache.removeAll()
+                _attrNSCache.removeAll()
+                NotificationCenter.default.post(name: DOMNamedNodeMapDidChange, object: self)
             }
 
+            attribute.ownerElement = self
             _attributes.append(attribute)
-            _setAttrOwner(attr: attribute, elem: self)
-            _notifyAttributeListeners()
+            NotificationCenter.default.post(name: DOMNamedNodeMapDidChange, object: self)
         }
 
         return _oa
     }
 
-    func _setAttrAsId(attr: AttributeNodeImpl) {
-        attr.isId = true
-    }
-
-    func _setAttrOwner(attr: AttributeNodeImpl, elem: ElementNode?) {
-        attr.ownerElement = elem
-    }
-
-    func _notifyAttributeListeners() {
-        NotificationCenter.default.post(name: DOMNamedNodeMapDidChange, object: self)
-    }
-
-    func _remove(attributes list: [AttributeNodeImpl]) -> AttributeNodeImpl? {
-        if list.count > 0 {
-            for a: AttributeNodeImpl in list { _setAttrOwner(attr: a, elem: nil) }
-            _clearCaches()
-            _notifyAttributeListeners()
+    final func _getAttribWith(name: String) -> AttributeNodeImpl? {
+        if let a: AttributeNodeImpl = _attrNameCache[name] {
+            return a
         }
-        return list.first
-    }
-
-    func _clearCaches() {
-        _attrNameCache.removeAll()
-        _attrNSCache.removeAll()
-    }
-
-    func _getAttribWith(name: String) -> AttributeNodeImpl? {
-        if let a: AttributeNodeImpl = _attrNameCache[name] { return a }
-        if let a: AttributeNodeImpl = _attribute(where: { $0.name == name }) {
+        else if let a: AttributeNodeImpl = _attribute(where: { $0.name == name }) {
             _attrNameCache[name] = a
             return a
         }
-        return nil
+        else {
+            return nil
+        }
     }
 
-    func _getAttribWith(namespaceURI uri: String, localName name: String) -> AttributeNodeImpl? {
-        if let a: AttributeNodeImpl = _attrNSCache[uri]?[name] { return a }
-        if let a: AttributeNodeImpl = _attribute(where: { $0.namespaceURI == uri && $0.localName == name }) {
-            if var c1: [String: AttributeNodeImpl] = _attrNSCache[uri] { c1[name] = a }
-            else { _attrNSCache[uri] = [ name: a ] }
+    final func _getAttribWith(namespaceURI uri: String, localName name: String) -> AttributeNodeImpl? {
+        if let a: AttributeNodeImpl = _attrNSCache[uri]?[name] {
             return a
         }
-        return nil
+        else if let a: AttributeNodeImpl = _attribute(where: { $0.namespaceURI == uri && $0.localName == name }) {
+            return _addToNSCache(namespaceURI: uri, localName: name, attribute: a)
+        }
+        else {
+            return nil
+        }
+    }
+
+    @discardableResult func _addToNSCache(namespaceURI uri: String, localName name: String, attribute attr: AttributeNodeImpl) -> AttributeNodeImpl {
+        if var c1: [String: AttributeNodeImpl] = _attrNSCache[uri] {
+            c1[name] = attr
+        }
+        else {
+            _attrNSCache[uri] = [ name: attr ]
+        }
+        return attr
+    }
+
+    final func _remove(attributes list: [AttributeNodeImpl]) -> AttributeNodeImpl? {
+        if list.count > 0 {
+            for a: AttributeNodeImpl in list { a.ownerElement = nil }
+            _attrNameCache.removeAll()
+            _attrNSCache.removeAll()
+            NotificationCenter.default.post(name: DOMNamedNodeMapDidChange, object: self)
+        }
+        return list.first
     }
 
     public static func == (lhs: ElementNodeImpl, rhs: ElementNodeImpl) -> Bool { lhs === rhs }

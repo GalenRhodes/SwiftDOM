@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AnyElementNode Class Reference</title>
+    <link href="../css/jazzy.css" rel="stylesheet" type="text/css" />
+    <link href="../css/highlight.css" rel="stylesheet" type="text/css" />
+    <meta charset='utf-8'>
+    <script defer src="../js/jquery.min.js"></script>
+    <script defer src="../js/jazzy.js"></script>
+
+  </head>
+  <body>
+    <a class="dashAnchor" name="//apple_ref/swift/Class/AnyElementNode"></a>
+    <a title="AnyElementNode Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SwiftDOM©</a> (8% documented)</p>
+        <p class="header-right"><a href="https://github.com/GalenRhodes/SwiftDOM"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        AnyElementNode Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AnyAttributeNode.html">AnyAttributeNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyCDataSectionNode.html">AnyCDataSectionNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyCharacterData.html">AnyCharacterData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyCommentNode.html">AnyCommentNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyDocumentFragmentNode.html">AnyDocumentFragmentNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyDocumentNode.html">AnyDocumentNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyDocumentTypeNode.html">AnyDocumentTypeNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyElementNode.html">AnyElementNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyEntityNode.html">AnyEntityNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyEntityRefNode.html">AnyEntityRefNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyNode.html">AnyNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyNotationNode.html">AnyNotationNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyProcessingInstructionNode.html">AnyProcessingInstructionNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyTextNode.html">AnyTextNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyTypeInfo.html">AnyTypeInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AttributeNamedNodeMapImpl.html">AttributeNamedNodeMapImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AttributeNodeImpl.html">AttributeNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CDataSectionNodeImpl.html">CDataSectionNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CharacterDataImpl.html">CharacterDataImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChildNode.html">ChildNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CommentNodeImpl.html">CommentNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DocumentFragmentNodeImpl.html">DocumentFragmentNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DocumentNodeImpl.html">DocumentNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DocumentTypeNodeImpl.html">DocumentTypeNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ElementNodeImpl.html">ElementNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ElementNodeListImpl.html">ElementNodeListImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EntityNodeImpl.html">EntityNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EntityRefNodeImpl.html">EntityRefNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LiveNamedNodeMap.html">LiveNamedNodeMap</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LiveNodeList.html">LiveNodeList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NamedNode.html">NamedNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NamedNodeMap.html">NamedNodeMap</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NamespaceNode.html">NamespaceNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NodeImpl.html">NodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NodeList.html">NodeList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NotationNodeImpl.html">NotationNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ParentNode.html">ParentNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProcessingInstructionNodeImpl.html">ProcessingInstructionNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TextNodeImpl.html">TextNodeImpl</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:8SwiftDOM24DOMNamedNodeMapDidChangeSo18NSNotificationNameavp">DOMNamedNodeMapDidChange</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:8SwiftDOM20DOMNodeListDidChangeSo18NSNotificationNameavp">DOMNodeListDidChange</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:8SwiftDOM9regexNameSo19NSRegularExpressionCvp">regexName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:8SwiftDOM11regexNcNameSo19NSRegularExpressionCvp">regexNcName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:8SwiftDOM10regexQNameSo19NSRegularExpressionCvp">regexQName</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/Namespace.html">Namespace</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/NodeTypes.html">NodeTypes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TypeDerivation.html">TypeDerivation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UserDataEvents.html">UserDataEvents</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Dictionary.html">Dictionary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Set.html">Set</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:8SwiftDOM10nodeTypeIsySbAA4Node_pSg_AA0F5TypesOdtF">nodeTypeIs(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:8SwiftDOM12nsNamesCheck12namespaceURI13qualifiedNameSSAC_SSSg6prefixSS05localI0tSS_SStF">nsNamesCheck(namespaceURI:qualifiedName:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AttributeNode.html">AttributeNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:8SwiftDOM16CDataSectionNodeP">CDataSectionNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/CharacterData.html">CharacterData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:8SwiftDOM11CommentNodeP">CommentNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DOMLocator.html">DOMLocator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:8SwiftDOM20DocumentFragmentNodeP">DocumentFragmentNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DocumentNode.html">DocumentNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DocumentTypeNode.html">DocumentTypeNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ElementNode.html">ElementNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EntityNode.html">EntityNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:8SwiftDOM13EntityRefNodeP">EntityRefNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Node.html">Node</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NotationNode.html">NotationNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ProcessingInstructionNode.html">ProcessingInstructionNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TextNode.html">TextNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TypeInfo.html">TypeInfo</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/AnyDOMLocator.html">AnyDOMLocator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DOMLocatorImpl.html">DOMLocatorImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UserDataInfo.html">UserDataInfo</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM18NsNamesCheckResulta">NsNamesCheckResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM15UserDataHandlera">UserDataHandler</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>AnyElementNode</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">AnyElementNode</span> <span class="p">:</span> <span class="kt"><a href="../Classes/AnyNode.html">AnyNode</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/ElementNode.html">ElementNode</a></span></code></pre>
+
+                </div>
+              </div>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC14schemaTypeInfoAA0gH0_pSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/schemaTypeInfo"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC14schemaTypeInfoAA0gH0_pSgvp">schemaTypeInfo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">schemaTypeInfo</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TypeInfo.html">TypeInfo</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC7tagNameSSvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/tagName"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC7tagNameSSvp">tagName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">tagName</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeCyAcA0dE0_pcfc"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/init(_:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeCyAcA0dE0_pcfc">init(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">element</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ElementNode.html">ElementNode</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC18attributeValueWith4nameSSSgSS_tF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/attributeValueWith(name:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC18attributeValueWith4nameSSSgSS_tF">attributeValueWith(name:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">attributeValueWith</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L78-L80">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC18attributeValueWith12namespaceURI4nameSSSgSS_SStF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/attributeValueWith(namespaceURI:name:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC18attributeValueWith12namespaceURI4nameSSSgSS_SStF">attributeValueWith(namespaceURI:name:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">attributeValueWith</span><span class="p">(</span><span class="nv">namespaceURI</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L82-L84">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC13attributeWith4nameAA09AttributeE0_pSgSS_tF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/attributeWith(name:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC13attributeWith4nameAA09AttributeE0_pSgSS_tF">attributeWith(name:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">attributeWith</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/AttributeNode.html">AttributeNode</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L86-L88">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC13attributeWith12namespaceURI4nameAA09AttributeE0_pSgSS_SStF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/attributeWith(namespaceURI:name:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC13attributeWith12namespaceURI4nameAA09AttributeE0_pSgSS_SStF">attributeWith(namespaceURI:name:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">attributeWith</span><span class="p">(</span><span class="nv">namespaceURI</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/AttributeNode.html">AttributeNode</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L90-L92">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC9attribute5whereAA09AttributeE0_pSgSbAaF_pKXE_tKF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/attribute(where:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC9attribute5whereAA09AttributeE0_pSgSbAaF_pKXE_tKF">attribute(where:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">attribute</span><span class="p">(</span><span class="k">where</span> <span class="nv">body</span><span class="p">:</span> <span class="p">(</span><span class="kt"><a href="../Protocols/AttributeNode.html">AttributeNode</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">rethrows</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/AttributeNode.html">AttributeNode</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L94-L96">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC10elementsBy7tagNameAA0E4ListCyAA0dE0_pGSS_tF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/elementsBy(tagName:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC10elementsBy7tagNameAA0E4ListCyAA0dE0_pGSS_tF">elementsBy(tagName:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">elementsBy</span><span class="p">(</span><span class="nv">tagName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/NodeList.html">NodeList</a></span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/ElementNode.html">ElementNode</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L98-L100">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC10elementsBy12namespaceURI4nameAA0E4ListCyAA0dE0_pGSS_SStF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/elementsBy(namespaceURI:name:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC10elementsBy12namespaceURI4nameAA0E4ListCyAA0dE0_pGSS_SStF">elementsBy(namespaceURI:name:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">elementsBy</span><span class="p">(</span><span class="nv">namespaceURI</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/NodeList.html">NodeList</a></span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/ElementNode.html">ElementNode</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L102-L104">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC16hasAttributeWith4nameSbSS_tF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/hasAttributeWith(name:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC16hasAttributeWith4nameSbSS_tF">hasAttributeWith(name:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">hasAttributeWith</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L106-L108">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC16hasAttributeWith12namespaceURI4nameSbSS_SStF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/hasAttributeWith(namespaceURI:name:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC16hasAttributeWith12namespaceURI4nameSbSS_SStF">hasAttributeWith(namespaceURI:name:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">hasAttributeWith</span><span class="p">(</span><span class="nv">namespaceURI</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L110-L112">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC19removeAttributeWith4nameAA0gE0_pSgSS_tF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/removeAttributeWith(name:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC19removeAttributeWith4nameAA0gE0_pSgSS_tF">removeAttributeWith(name:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">removeAttributeWith</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/AttributeNode.html">AttributeNode</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L114-L116">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC19removeAttributeWith12namespaceURI4nameAA0gE0_pSgSS_SStF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/removeAttributeWith(namespaceURI:name:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC19removeAttributeWith12namespaceURI4nameAA0gE0_pSgSS_SStF">removeAttributeWith(namespaceURI:name:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">removeAttributeWith</span><span class="p">(</span><span class="nv">namespaceURI</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/AttributeNode.html">AttributeNode</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L118-L120">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC15removeAttribute9attributeAA0gE0_pSgAaF_p_tF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/removeAttribute(attribute:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC15removeAttribute9attributeAA0gE0_pSgAaF_p_tF">removeAttribute(attribute:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">removeAttribute</span><span class="p">(</span><span class="nv">attribute</span><span class="p">:</span> <span class="kt"><a href="../Protocols/AttributeNode.html">AttributeNode</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/AttributeNode.html">AttributeNode</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L122-L124">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC16setAttributeWith4name5valueySS_SStF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/setAttributeWith(name:value:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC16setAttributeWith4name5valueySS_SStF">setAttributeWith(name:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">setAttributeWith</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L126-L128">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC16setAttributeWith12namespaceURI4name5valueySS_S2StF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/setAttributeWith(namespaceURI:name:value:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC16setAttributeWith12namespaceURI4name5valueySS_S2StF">setAttributeWith(namespaceURI:name:value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">setAttributeWith</span><span class="p">(</span><span class="nv">namespaceURI</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L130-L132">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC12setAttribute9attributeAA0gE0_pSgAaF_p_tF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/setAttribute(attribute:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC12setAttribute9attributeAA0gE0_pSgAaF_p_tF">setAttribute(attribute:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">setAttribute</span><span class="p">(</span><span class="nv">attribute</span><span class="p">:</span> <span class="kt"><a href="../Protocols/AttributeNode.html">AttributeNode</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/AttributeNode.html">AttributeNode</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L134-L136">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC14setAttributeNS9attributeAA0gE0_pSgAaF_p_tF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/setAttributeNS(attribute:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC14setAttributeNS9attributeAA0gE0_pSgAaF_p_tF">setAttributeNS(attribute:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">setAttributeNS</span><span class="p">(</span><span class="nv">attribute</span><span class="p">:</span> <span class="kt"><a href="../Protocols/AttributeNode.html">AttributeNode</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Protocols/AttributeNode.html">AttributeNode</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L138-L140">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC18setIdAttributeWith4name02isG0ySS_SbtF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/setIdAttributeWith(name:isId:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC18setIdAttributeWith4name02isG0ySS_SbtF">setIdAttributeWith(name:isId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">setIdAttributeWith</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">isId</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L142-L144">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC18setIdAttributeWith12namespaceURI4name02isG0ySS_SSSbtF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/setIdAttributeWith(namespaceURI:name:isId:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC18setIdAttributeWith12namespaceURI4name02isG0ySS_SSSbtF">setIdAttributeWith(namespaceURI:name:isId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">setIdAttributeWith</span><span class="p">(</span><span class="nv">namespaceURI</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">isId</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L146-L148">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM14AnyElementNodeC14setIdAttribute9attribute02isG0yAA0hE0_p_SbtF"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Method/setIdAttribute(attribute:isId:)"></a>
+                    <a class="token" href="#/s:8SwiftDOM14AnyElementNodeC14setIdAttribute9attribute02isG0yAA0hE0_p_SbtF">setIdAttribute(attribute:isId:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">setIdAttribute</span><span class="p">(</span><span class="nv">attribute</span><span class="p">:</span> <span class="kt"><a href="../Protocols/AttributeNode.html">AttributeNode</a></span><span class="p">,</span> <span class="nv">isId</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Interface/Nodes/Elements/ElementNode.swift#L150-L152">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://blog.projectgalen.com" rel="external" target="_blank">Galen Rhodes</a>. All rights reserved. (Last updated: 2020-10-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" rel="external" target="_blank">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" rel="external" target="_blank">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

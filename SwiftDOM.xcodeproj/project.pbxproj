@@ -47,7 +47,6 @@
 		1117D67431837A21DE95DD2B /* ProcessingInstructionNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D2C404B2D6567A741901 /* ProcessingInstructionNodeImpl.swift */; };
 		1117D701336AC36821992BB6 /* NodeTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D886A41432CFE64D2203 /* NodeTypes.swift */; };
 		1117D703BC4A8B65B89DCFA7 /* LiveNodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D0A41B8649D26C784812 /* LiveNodeList.swift */; };
-		1117D78E7104787DE2A36789 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D671E722C23CC87485FA /* Utils.swift */; };
 		1117D790A9EF176931CCDF1A /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D09AF25CB0B5A7F2BA73 /* Node.swift */; };
 		1117D7940498916B0462686D /* DocumentTypeNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D6D4F2DA0F43814C0C51 /* DocumentTypeNodeImpl.swift */; };
 		1117D95E308B243E09808EE9 /* NodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DCC71402DD8EE70821C0 /* NodeImpl.swift */; };
@@ -62,6 +61,7 @@
 		1117DC6ACEB353BA541C634E /* NotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DD2AE325632EF9DF5B06 /* NotationNode.swift */; };
 		1117DC6B9BB7DF7C9F649E2B /* AttributeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D7963AD5A2500E71628D /* AttributeNode.swift */; };
 		1117DC85F3C204D4C82F0909 /* UserDataInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D750FC3C21F09DB762A0 /* UserDataInfo.swift */; };
+		1117DD0AAA0111644FE1F992 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DE9D49AB6DA8C1C26C9B /* Utils.swift */; };
 		1117DDD2ABA1030191F7307F /* TypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D523AC1B94BAE6E699E7 /* TypeInfo.swift */; };
 		1117DDE380889D928E763B84 /* EntityRefNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D12890757BD43DB86BE0 /* EntityRefNodeImpl.swift */; };
 		1117DED61AED4F5DDEFF4493 /* AttributeNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D6B114CE891F74CF31C0 /* AttributeNodeImpl.swift */; };
@@ -144,7 +144,6 @@
 		1117D41FB44D1CED6095D229 /* ElementNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementNodeImpl.swift; sourceTree = "<group>"; };
 		1117D523AC1B94BAE6E699E7 /* TypeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeInfo.swift; sourceTree = "<group>"; };
 		1117D54C878CDD59B0711D05 /* EntityNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityNode.swift; sourceTree = "<group>"; };
-		1117D671E722C23CC87485FA /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1117D6B114CE891F74CF31C0 /* AttributeNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeNodeImpl.swift; sourceTree = "<group>"; };
 		1117D6D4F2DA0F43814C0C51 /* DocumentTypeNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTypeNodeImpl.swift; sourceTree = "<group>"; };
 		1117D750FC3C21F09DB762A0 /* UserDataInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataInfo.swift; sourceTree = "<group>"; };
@@ -174,6 +173,7 @@
 		1117DD572CF87C1491903A8E /* NamedNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedNode.swift; sourceTree = "<group>"; };
 		1117DDDC53003FC4634388E2 /* CommentNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentNodeImpl.swift; sourceTree = "<group>"; };
 		1117DE1BB28201823BB638D5 /* NamespaceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamespaceNode.swift; sourceTree = "<group>"; };
+		1117DE9D49AB6DA8C1C26C9B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1117DEAAA7E011B1071D85BF /* ParentNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentNode.swift; sourceTree = "<group>"; };
 		1117DEABD062030DA64FE844 /* ChildNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildNode.swift; sourceTree = "<group>"; };
 		1117DED1C52A79FD09A81CC9 /* UserDataEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataEvents.swift; sourceTree = "<group>"; };
@@ -252,7 +252,6 @@
 				1117DF7B396D89C009F3632A /* DTD */,
 				1117D32D17ABD03A97DF6E42 /* DOMLocatorImpl.swift */,
 				1117D750FC3C21F09DB762A0 /* UserDataInfo.swift */,
-				1117D671E722C23CC87485FA /* Utils.swift */,
 				1117D987D4A8D9C4CE4BB204 /* Collections */,
 			);
 			path = ImplXML;
@@ -444,6 +443,7 @@
 				1117D35BE67C8E3043018AA7 /* Interface */,
 				1117D225045D53FEBD3C76E2 /* ImplXML */,
 				1117DFDDAAB65BCB7A43160F /* Other */,
+				1117DE9D49AB6DA8C1C26C9B /* Utils.swift */,
 			);
 			path = SwiftDOM;
 			sourceTree = "<group>";
@@ -653,7 +653,6 @@
 				1117D069A07648477592B2A6 /* ChildNode.swift in Sources */,
 				1117D49C09EE16CB0CA3FC58 /* NamespaceNode.swift in Sources */,
 				1117D15D8FA2021F3E0D0DD6 /* ParentNode.swift in Sources */,
-				1117D78E7104787DE2A36789 /* Utils.swift in Sources */,
 				1117D05C6FE3DD7F1952D8EB /* TextNodeImpl.swift in Sources */,
 				1117D0AB5EECDC2300066A50 /* CDataSectionNodeImpl.swift in Sources */,
 				1117D12F6D4A9186C869B7A8 /* CommentNodeImpl.swift in Sources */,
@@ -675,6 +674,7 @@
 				1117D547EB732FEC091F65EF /* NamespaceSupport.swift in Sources */,
 				1117D701336AC36821992BB6 /* NodeTypes.swift in Sources */,
 				1117D22D0F6F4A2644C51E27 /* UserDataEvents.swift in Sources */,
+				1117DD0AAA0111644FE1F992 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

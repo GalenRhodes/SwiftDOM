@@ -28,4 +28,3 @@ public enum TypeDerivation: Int {
     case Restriction = 1
     case Union       = 4
 }
-

@@ -138,11 +138,11 @@ open class DocumentNodeImpl: ParentNode, DocumentNode {
     }
 
     open func getElementsBy(name: String) -> NodeList<ElementNode> {
-        ElementNodeListImpl(documentElement as! ElementNodeImpl, nodeName: name)
+        ElementNodeListImpl<ElementNode>(documentElement as! ElementNodeImpl, nodeName: name)
     }
 
     open func getElementsBy(namespaceURI: String, name: String) -> NodeList<ElementNode> {
-        ElementNodeListImpl(documentElement as! ElementNodeImpl, namespaceURI: namespaceURI, localName: name)
+        ElementNodeListImpl<ElementNode>(documentElement as! ElementNodeImpl, namespaceURI: namespaceURI, localName: name)
     }
 
     open func importNode(node: Node, deep: Bool) -> Node {

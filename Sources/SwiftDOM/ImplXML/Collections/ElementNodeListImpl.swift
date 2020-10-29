@@ -1,6 +1,6 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: ElementNodeListImpl.swift
+ *    FILENAME: ElementListImpl.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
  *        DATE: 10/23/20
@@ -22,7 +22,7 @@
 
 import Foundation
 
-open class ElementNodeListImpl: LiveNodeList<ElementNode> {
+open class ElementNodeListImpl<Element>: LiveNodeList<Element> {
     let nodeName:     String?
     let localName:    String?
     let namespaceURI: String?
@@ -49,31 +49,34 @@ open class ElementNodeListImpl: LiveNodeList<ElementNode> {
         handleCollectionDidChange()
     }
 
-    open override func mapAs<S>(transform: (ElementNode) throws -> S) rethrows -> NodeList<S> {
+    open override func mapAs<S>(transform: (Element) throws -> S) rethrows -> NodeList<S> {
         NodeList<S>()
     }
 
-    open override func clone(parent p: ParentNode, deep: Bool, postEvents: Bool) -> NodeList<ElementNode> {
+    open override func clone(parent p: ParentNode, deep: Bool, postEvents: Bool) -> NodeList<Element> {
         ElementNodeListImpl(parent, nodeName: nodeName, namespaceURI: namespaceURI, localName: localName, elemId: elemId)
     }
 
-    open override func handleCollectionDidChange() {
+}
+
+extension ElementNodeListImpl where Element == ElementNodeImpl {
+    public func handleCollectionDidChange() {
         _nodes.removeAll()
         if let name: String = nodeName {
-            find(in: parent) { (node: ElementNodeImpl) in ((name == "*") || (name == node.nodeName)) }
+            find(in: parent) { node in ((name == "*") || (name == node.nodeName)) }
         }
         else if let lName: String = localName, let uri: String = namespaceURI {
-            find(in: parent) { (node: ElementNodeImpl) in ((lName == "*" || lName == node.localName) && (uri == "*" || uri == node.namespaceURI)) }
+            find(in: parent) { node in ((lName == "*" || lName == node.localName) && (uri == "*" || uri == node.namespaceURI)) }
         }
         else if let elemId: String = elemId {
-            find(in: parent) { (elem: ElementNodeImpl) in elem._attributes.contains { (attr: AttributeNodeImpl) in attr.isId && attr.value == elemId } }
+            find(in: parent) { elem in elem._attributes.contains { (attr: AttributeNodeImpl) in attr.isId && attr.value == elemId } }
         }
     }
 
-    func find(in parent: ParentNode, with body: (ElementNodeImpl) -> Bool) {
+    func find(in parent: ParentNode, with body: (Element) -> Bool) {
         var _aNode: Node? = parent.firstChild
         while let aNode: Node = _aNode {
-            if let elem: ElementNodeImpl = aNode as? ElementNodeImpl {
+            if let elem: ElementNodeImpl = (aNode as? ElementNodeImpl) {
                 if body(elem) { _nodes.append(elem) }
                 find(in: elem, with: body)
             }
@@ -81,4 +84,3 @@ open class ElementNodeListImpl: LiveNodeList<ElementNode> {
         }
     }
 }
-

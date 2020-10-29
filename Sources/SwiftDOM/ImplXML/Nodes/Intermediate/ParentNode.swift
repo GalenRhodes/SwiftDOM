@@ -181,7 +181,7 @@ open class ParentNode: ChildNode {
 
     func notifyChildListeners() {
         __nodes = nil
-        NotificationCenter.default.post(name: DOMCollectionDidChange, object: self)
+        NotificationCenter.default.post(name: DOMNodeListDidChange, object: self)
         _parentNode?.notifyChildListeners()
     }
 
