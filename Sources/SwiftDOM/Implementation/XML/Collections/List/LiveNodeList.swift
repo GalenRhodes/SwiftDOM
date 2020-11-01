@@ -3,7 +3,7 @@
  *    FILENAME: LiveNodeList.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/23/20
+ *        DATE: 10/30/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,31 +22,33 @@
 
 import Foundation
 
-open class LiveNodeList<Element>: NodeList<Element> {
-    var _nodes: [Element] = []
+public class LiveNodeList<Element>: NodeList<Element> {
+//@f:0
+    @usableFromInline          var nodes      : [Element] = []
+    @usableFromInline          var parent     : Node
+    @inlinable public override var startIndex : Int  { nodes.startIndex }
+    @inlinable public override var endIndex   : Int  { nodes.endIndex   }
+//@f:1
 
-    open override var startIndex: Int { _nodes.startIndex }
-    open override var endIndex:   Int { _nodes.endIndex }
-    open override var count:      Int { _nodes.count }
-
-    var parent: ParentNode
-
-    init(_ parent: ParentNode) {
+    public init(parent: Node) {
         self.parent = parent
         super.init()
         NotificationCenter.default.addObserver(forName: DOMNodeListDidChange, object: parent, queue: nil) {
-            [weak self] in
-            if let s: LiveNodeList<Element> = self, let p: ParentNode = ($0.object as? ParentNode), p === s.parent { s.handleCollectionDidChange() }
+            [weak self] (n: Notification) in
+            if let s = self, let o = n.object, let p = (o as? Node), p.isSameNode(as: s.parent) { s.handleDomNodeListDidChange() }
         }
     }
 
-    open func handleCollectionDidChange() {}
+    // Probably not necessary but I'll do it anyways.
+    deinit { NotificationCenter.default.removeObserver(self) }
 
-    open override func clone(deep: Bool = false, postEvents: Bool = false) -> NodeList<Element> { clone(parent: parent, deep: deep, postEvents: postEvents) }
+    /// Default behavior is to simply load the parent's child nodes.
+    public func handleDomNodeListDidChange() {
+        var t: [Element] = []
+        parent.forEachChild { node in if let e = (node as? Element) { t.append(e) } }
+        nodes = t
+    }
 
-    open func clone(parent p: ParentNode, deep: Bool, postEvents: Bool = false) -> NodeList<Element> { fatalError("Not implemented.") }
-
-    open override subscript(bounds: Range<Index>) -> ArraySlice<Element> { _nodes[bounds] }
-
-    open override subscript(position: Index) -> Element { _nodes[position] }
+    @inlinable public override subscript(bounds: Range<Int>) -> ArraySlice<Element> { nodes[bounds] }
+    @inlinable public override subscript(position: Int) -> Element { nodes[position] }
 }

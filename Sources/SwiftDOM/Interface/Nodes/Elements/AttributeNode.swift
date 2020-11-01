@@ -23,25 +23,25 @@
 import Foundation
 
 public protocol AttributeNode: Node {
-    var ownerElement:   ElementNode? { get }
-    var schemaTypeInfo: TypeInfo? { get }
-    var isSpecified:    Bool { get }
-    var isId:           Bool { get }
-    var name:           String { get }
-    var value:          String { get set }
+//@f:0
+    var isId           : Bool         { get     }
+    var isSpecified    : Bool         { get     }
+    var name           : String       { get     }
+    var ownerElement   : ElementNode? { get     }
+    var schemaTypeInfo : TypeInfo?    { get     }
+    var value          : String       { get set }
+//@f:1
 }
 
 public class AnyAttributeNode: AnyNode, AttributeNode {
-
-    open var name:           String { attribute.name }
-    open var ownerElement:   ElementNode? { attribute.ownerElement }
-    open var schemaTypeInfo: TypeInfo? { attribute.schemaTypeInfo }
-    open var isSpecified:    Bool { attribute.isSpecified }
-    open var isId:           Bool { attribute.isId }
-    open var value:          String {
-        get { attribute.value }
-        set { attribute.value = newValue }
-    }
+//@f:0
+    public var isId           : Bool         { attribute.isId           }
+    public var isSpecified    : Bool         { attribute.isSpecified    }
+    public var name           : String       { attribute.name           }
+    public var ownerElement   : ElementNode? { attribute.ownerElement   }
+    public var schemaTypeInfo : TypeInfo?    { attribute.schemaTypeInfo }
+    public var value          : String       { get { attribute.value } set { attribute.value = newValue } }
+//@f:1
 
     var attribute: AttributeNode { node as! AttributeNode }
 

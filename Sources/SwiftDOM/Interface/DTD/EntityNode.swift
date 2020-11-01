@@ -34,12 +34,12 @@ public protocol EntityNode: Node {
 public class AnyEntityNode: AnyNode, EntityNode {
     var entity: EntityNode { (node as! EntityNode) }
 
-    open var inputEncoding: String.Encoding { entity.inputEncoding }
-    open var notationName:  String { entity.notationName }
-    open var publicId:      String { entity.publicId }
-    open var systemId:      String { entity.systemId }
-    open var xmlEncoding:   String { entity.xmlEncoding }
-    open var xmlVersion:    String { entity.xmlVersion }
+    public var inputEncoding: String.Encoding { entity.inputEncoding }
+    public var notationName:  String { entity.notationName }
+    public var publicId:      String { entity.publicId }
+    public var systemId:      String { entity.systemId }
+    public var xmlEncoding:   String { entity.xmlEncoding }
+    public var xmlVersion:    String { entity.xmlVersion }
 
     public init(_ entity: EntityNode) { super.init(entity) }
 }

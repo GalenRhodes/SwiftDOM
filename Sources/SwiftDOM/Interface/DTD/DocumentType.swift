@@ -23,25 +23,28 @@
 import Foundation
 
 public protocol DocumentTypeNode: Node {
-    var name:           String { get }
-    var publicId:       String { get }
-    var systemId:       String { get }
-    var internalSubset: String { get }
-    var entities:       NamedNodeMap<EntityNode> { get }
-    var notations:      NamedNodeMap<NotationNode> { get }
+//@f:0
+    var name           : String                     { get }
+    var publicId       : String                     { get }
+    var systemId       : String                     { get }
+    var internalSubset : String                     { get }
+    var entities       : NamedNodeMap<EntityNode>   { get }
+    var notations      : NamedNodeMap<NotationNode> { get }
+//@f:1
 }
 
 public class AnyDocumentTypeNode: AnyNode, DocumentTypeNode {
-    var docType: DocumentTypeNode { node as! DocumentTypeNode }
+//@f:0
+           var docType        : DocumentTypeNode           { node as! DocumentTypeNode }
+    public var name           : String                     { docType.name              }
+    public var publicId       : String                     { docType.publicId          }
+    public var systemId       : String                     { docType.systemId          }
+    public var internalSubset : String                     { docType.internalSubset    }
+    public var entities       : NamedNodeMap<EntityNode>   { docType.entities          }
+    public var notations      : NamedNodeMap<NotationNode> { docType.notations         }
+//@f:1
 
     public init(_ docType: DocumentTypeNode) {
         super.init(docType)
     }
-
-    open var name:           String { docType.name }
-    open var publicId:       String { docType.publicId }
-    open var systemId:       String { docType.systemId }
-    open var internalSubset: String { docType.internalSubset }
-    open var entities:       NamedNodeMap<EntityNode> { docType.entities }
-    open var notations:      NamedNodeMap<NotationNode> { docType.notations }
 }

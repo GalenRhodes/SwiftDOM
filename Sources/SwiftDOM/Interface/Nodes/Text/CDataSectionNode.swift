@@ -25,7 +25,7 @@ import Foundation
 public protocol CDataSectionNode: TextNode {
 }
 
-open class AnyCDataSectionNode: AnyTextNode, CDataSectionNode {
+public class AnyCDataSectionNode: AnyTextNode, CDataSectionNode {
     var cDataSection: CDataSectionNode { textNode as! CDataSectionNode }
 
     public init(_ cDataSection: CDataSectionNode) { super.init(cDataSection) }

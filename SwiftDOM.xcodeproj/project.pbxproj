@@ -23,54 +23,38 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1117D00DEBAD437394307635 /* AttributeNamedNodeMapImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D2A3FD281F5C6B920F90 /* AttributeNamedNodeMapImpl.swift */; };
 		1117D01B45D252B8B7837C1F /* EntityNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D54C878CDD59B0711D05 /* EntityNode.swift */; };
-		1117D05C6FE3DD7F1952D8EB /* TextNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DBF3C565ED6C07AF4212 /* TextNodeImpl.swift */; };
-		1117D069A07648477592B2A6 /* ChildNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DEABD062030DA64FE844 /* ChildNode.swift */; };
-		1117D0AB5EECDC2300066A50 /* CDataSectionNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D8231A765E82CACE5284 /* CDataSectionNodeImpl.swift */; };
+		1117D0A2FC4618EB6CD53C64 /* TypeDerivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DF67CF3C572B1AB21529 /* TypeDerivation.swift */; };
 		1117D0D88DB33046058BA8B3 /* ElementNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D06F753DC7218F7852BF /* ElementNode.swift */; };
 		1117D1159231C860D7412D0B /* ProcessingInstructionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D1A89762E9E70F016C48 /* ProcessingInstructionNode.swift */; };
-		1117D12F6D4A9186C869B7A8 /* CommentNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DDDC53003FC4634388E2 /* CommentNodeImpl.swift */; };
-		1117D15D7CB89428AD63761F /* LiveNamedNodeMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D903B0B59AC59A4691BA /* LiveNamedNodeMap.swift */; };
-		1117D15D8FA2021F3E0D0DD6 /* ParentNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DEAAA7E011B1071D85BF /* ParentNode.swift */; };
 		1117D16AB28116E14CE642D8 /* NamedNodeMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D908BB713B402E73264C /* NamedNodeMap.swift */; };
 		1117D171F01F85B9C71BD708 /* SwiftDOM.h in Headers */ = {isa = PBXBuildFile; fileRef = 1117D97616C45B5FB41CCFB8 /* SwiftDOM.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1117D1788091171607D29296 /* EntityNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D9E4F6FB25FF6E58AF72 /* EntityNodeImpl.swift */; };
 		1117D22D0F6F4A2644C51E27 /* UserDataEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DED1C52A79FD09A81CC9 /* UserDataEvents.swift */; };
 		1117D2AC440C484FF6351A7E /* EntityRefNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DFC2CE22157710CB2047 /* EntityRefNode.swift */; };
 		1117D37D31F62980067BBBE9 /* CharacterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D8633C323787C310C99A /* CharacterData.swift */; };
+		1117D460DA4A874A6A5CE573 /* ParentNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DA11E2EB1CE9B1875A07 /* ParentNodeImpl.swift */; };
 		1117D495D5AA35F43557CA1A /* CDataSectionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D385BAF48B39A99A7AB5 /* CDataSectionNode.swift */; };
-		1117D49C09EE16CB0CA3FC58 /* NamespaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DE1BB28201823BB638D5 /* NamespaceNode.swift */; };
 		1117D547EB732FEC091F65EF /* NamespaceSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D8BFCBAC0A57F4AB2358 /* NamespaceSupport.swift */; };
 		1117D60641EAE0427A37F710 /* TextNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D9A91A0911EDE95B3A0B /* TextNode.swift */; };
-		1117D639BE496A3BD7B662C0 /* DOMLocatorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D32D17ABD03A97DF6E42 /* DOMLocatorImpl.swift */; };
-		1117D67431837A21DE95DD2B /* ProcessingInstructionNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D2C404B2D6567A741901 /* ProcessingInstructionNodeImpl.swift */; };
 		1117D701336AC36821992BB6 /* NodeTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D886A41432CFE64D2203 /* NodeTypes.swift */; };
-		1117D703BC4A8B65B89DCFA7 /* LiveNodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D0A41B8649D26C784812 /* LiveNodeList.swift */; };
 		1117D790A9EF176931CCDF1A /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D09AF25CB0B5A7F2BA73 /* Node.swift */; };
-		1117D7940498916B0462686D /* DocumentTypeNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D6D4F2DA0F43814C0C51 /* DocumentTypeNodeImpl.swift */; };
-		1117D95E308B243E09808EE9 /* NodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DCC71402DD8EE70821C0 /* NodeImpl.swift */; };
+		1117D8096B75E40C18CF6AC4 /* DocumentNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DA91A7079E76D13A5488 /* DocumentNodeImpl.swift */; };
 		1117D9DFAE1B0077349B5C3B /* CommentNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DAEC3007DC5B77A31062 /* CommentNode.swift */; };
-		1117DA60B8A593150771CE82 /* NotationNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D0225F50C3DBE62FE052 /* NotationNodeImpl.swift */; };
+		1117DA44309BA2ACDCA6CAA3 /* LiveNodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D59FCD04D4AE24383477 /* LiveNodeList.swift */; };
 		1117DA729AB01B0A6D60DB7B /* DocumentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DD08869F7024273DDAFF /* DocumentType.swift */; };
-		1117DA87254460D7A784574E /* DocumentFragmentNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DFE6FE355D9276769824 /* DocumentFragmentNodeImpl.swift */; };
+		1117DADBEC45A8CFA7AF45E7 /* UserDataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D57B4B91657ED2C58701 /* UserDataItem.swift */; };
 		1117DB12FD608A3733F23370 /* DocumentNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DB9F9C236E4F950AD3B8 /* DocumentNode.swift */; };
 		1117DB2692B4BA59E4F043F9 /* AnyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D9C3BB7047C54A3F4FE8 /* AnyNode.swift */; };
-		1117DBB612C52491726F6C93 /* NamedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DD572CF87C1491903A8E /* NamedNode.swift */; };
-		1117DC0FD08DAC4DEE690FDE /* ElementNodeListImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D83CFE7B7191252DA336 /* ElementNodeListImpl.swift */; };
 		1117DC6ACEB353BA541C634E /* NotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DD2AE325632EF9DF5B06 /* NotationNode.swift */; };
 		1117DC6B9BB7DF7C9F649E2B /* AttributeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D7963AD5A2500E71628D /* AttributeNode.swift */; };
-		1117DC85F3C204D4C82F0909 /* UserDataInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D750FC3C21F09DB762A0 /* UserDataInfo.swift */; };
+		1117DCB8C392163268CBC240 /* ElementAttributeMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DFA17E9831D6C74A3B7B /* ElementAttributeMap.swift */; };
 		1117DD0AAA0111644FE1F992 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DE9D49AB6DA8C1C26C9B /* Utils.swift */; };
 		1117DDD2ABA1030191F7307F /* TypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D523AC1B94BAE6E699E7 /* TypeInfo.swift */; };
-		1117DDE380889D928E763B84 /* EntityRefNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D12890757BD43DB86BE0 /* EntityRefNodeImpl.swift */; };
-		1117DED61AED4F5DDEFF4493 /* AttributeNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D6B114CE891F74CF31C0 /* AttributeNodeImpl.swift */; };
+		1117DF08505AC2E0F08C2F22 /* ElementNodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DD73DE61DBB47694398A /* ElementNodeList.swift */; };
 		1117DF17498E1A27928E13C7 /* DOMLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D322A8C012C3A36F6B4E /* DOMLocator.swift */; };
 		1117DF2561E31CDB32D1DC54 /* DocumentFragmentNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DAC7DE36D462354C99F9 /* DocumentFragmentNode.swift */; };
-		1117DF4DCC068C24D1738C8B /* TypeDerivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DA1741BDF80AF66AB528 /* TypeDerivation.swift */; };
+		1117DF30B38E1C82E00B2260 /* NodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DF05205E1B7A811FA07F /* NodeImpl.swift */; };
 		1117DF708B2955F6DE239380 /* NodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D9C8914055B964E0C276 /* NodeList.swift */; };
-		1117DFCEF5DE8ACDB0E0F4D1 /* DocumentNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D3409E125C84A9648920 /* DocumentNodeImpl.swift */; };
-		1117DFD38138DAB16E247859 /* ElementNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D41FB44D1CED6095D229 /* ElementNodeImpl.swift */; };
 		836097B02538DA7B008CB79D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836097AF2538DA7B008CB79D /* main.swift */; };
 		83BB029A2537E67200834BF5 /* SwiftDOM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83BB02902537E67200834BF5 /* SwiftDOM.framework */; };
 		83BB029F2537E67200834BF5 /* SwiftDOMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB029E2537E67200834BF5 /* SwiftDOMTests.swift */; };
@@ -128,58 +112,42 @@
 
 /* Begin PBXFileReference section */
 		1117D00DAAEC3DEB3C7B9FB9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		1117D0225F50C3DBE62FE052 /* NotationNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotationNodeImpl.swift; sourceTree = "<group>"; };
 		1117D06F753DC7218F7852BF /* ElementNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementNode.swift; sourceTree = "<group>"; };
 		1117D09AF25CB0B5A7F2BA73 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
-		1117D0A41B8649D26C784812 /* LiveNodeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveNodeList.swift; sourceTree = "<group>"; };
-		1117D12890757BD43DB86BE0 /* EntityRefNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityRefNodeImpl.swift; sourceTree = "<group>"; };
 		1117D1A89762E9E70F016C48 /* ProcessingInstructionNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingInstructionNode.swift; sourceTree = "<group>"; };
 		1117D28C9A036B7081440ED7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
-		1117D2A3FD281F5C6B920F90 /* AttributeNamedNodeMapImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeNamedNodeMapImpl.swift; sourceTree = "<group>"; };
-		1117D2C404B2D6567A741901 /* ProcessingInstructionNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingInstructionNodeImpl.swift; sourceTree = "<group>"; };
 		1117D322A8C012C3A36F6B4E /* DOMLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOMLocator.swift; sourceTree = "<group>"; };
-		1117D32D17ABD03A97DF6E42 /* DOMLocatorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOMLocatorImpl.swift; sourceTree = "<group>"; };
-		1117D3409E125C84A9648920 /* DocumentNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentNodeImpl.swift; sourceTree = "<group>"; };
 		1117D385BAF48B39A99A7AB5 /* CDataSectionNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDataSectionNode.swift; sourceTree = "<group>"; };
-		1117D41FB44D1CED6095D229 /* ElementNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementNodeImpl.swift; sourceTree = "<group>"; };
 		1117D523AC1B94BAE6E699E7 /* TypeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeInfo.swift; sourceTree = "<group>"; };
 		1117D54C878CDD59B0711D05 /* EntityNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityNode.swift; sourceTree = "<group>"; };
-		1117D6B114CE891F74CF31C0 /* AttributeNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeNodeImpl.swift; sourceTree = "<group>"; };
-		1117D6D4F2DA0F43814C0C51 /* DocumentTypeNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTypeNodeImpl.swift; sourceTree = "<group>"; };
-		1117D750FC3C21F09DB762A0 /* UserDataInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataInfo.swift; sourceTree = "<group>"; };
+		1117D57B4B91657ED2C58701 /* UserDataItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataItem.swift; sourceTree = "<group>"; };
+		1117D59FCD04D4AE24383477 /* LiveNodeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveNodeList.swift; sourceTree = "<group>"; };
 		1117D7963AD5A2500E71628D /* AttributeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeNode.swift; sourceTree = "<group>"; };
 		1117D799446075FCC97979A4 /* .jazzy.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .jazzy.yaml; sourceTree = "<group>"; };
-		1117D8231A765E82CACE5284 /* CDataSectionNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDataSectionNodeImpl.swift; sourceTree = "<group>"; };
-		1117D83CFE7B7191252DA336 /* ElementNodeListImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementNodeListImpl.swift; sourceTree = "<group>"; };
 		1117D8633C323787C310C99A /* CharacterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterData.swift; sourceTree = "<group>"; };
 		1117D886A41432CFE64D2203 /* NodeTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeTypes.swift; sourceTree = "<group>"; };
 		1117D8BFCBAC0A57F4AB2358 /* NamespaceSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamespaceSupport.swift; sourceTree = "<group>"; };
-		1117D903B0B59AC59A4691BA /* LiveNamedNodeMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveNamedNodeMap.swift; sourceTree = "<group>"; };
 		1117D908BB713B402E73264C /* NamedNodeMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedNodeMap.swift; sourceTree = "<group>"; };
 		1117D97616C45B5FB41CCFB8 /* SwiftDOM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftDOM.h; sourceTree = "<group>"; };
 		1117D9A91A0911EDE95B3A0B /* TextNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextNode.swift; sourceTree = "<group>"; };
 		1117D9C3BB7047C54A3F4FE8 /* AnyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyNode.swift; sourceTree = "<group>"; };
 		1117D9C8914055B964E0C276 /* NodeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeList.swift; sourceTree = "<group>"; };
-		1117D9E4F6FB25FF6E58AF72 /* EntityNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityNodeImpl.swift; sourceTree = "<group>"; };
-		1117DA1741BDF80AF66AB528 /* TypeDerivation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeDerivation.swift; sourceTree = "<group>"; };
+		1117DA11E2EB1CE9B1875A07 /* ParentNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentNodeImpl.swift; sourceTree = "<group>"; };
+		1117DA91A7079E76D13A5488 /* DocumentNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentNodeImpl.swift; sourceTree = "<group>"; };
 		1117DAC7DE36D462354C99F9 /* DocumentFragmentNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentFragmentNode.swift; sourceTree = "<group>"; };
 		1117DAEC3007DC5B77A31062 /* CommentNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentNode.swift; sourceTree = "<group>"; };
 		1117DB9F9C236E4F950AD3B8 /* DocumentNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentNode.swift; sourceTree = "<group>"; };
-		1117DBF3C565ED6C07AF4212 /* TextNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextNodeImpl.swift; sourceTree = "<group>"; };
 		1117DC968621B8A84EB4D43B /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		1117DCC71402DD8EE70821C0 /* NodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeImpl.swift; sourceTree = "<group>"; };
 		1117DD08869F7024273DDAFF /* DocumentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentType.swift; sourceTree = "<group>"; };
 		1117DD2AE325632EF9DF5B06 /* NotationNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotationNode.swift; sourceTree = "<group>"; };
-		1117DD572CF87C1491903A8E /* NamedNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedNode.swift; sourceTree = "<group>"; };
-		1117DDDC53003FC4634388E2 /* CommentNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentNodeImpl.swift; sourceTree = "<group>"; };
-		1117DE1BB28201823BB638D5 /* NamespaceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamespaceNode.swift; sourceTree = "<group>"; };
+		1117DD73DE61DBB47694398A /* ElementNodeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementNodeList.swift; sourceTree = "<group>"; };
 		1117DE9D49AB6DA8C1C26C9B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		1117DEAAA7E011B1071D85BF /* ParentNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentNode.swift; sourceTree = "<group>"; };
-		1117DEABD062030DA64FE844 /* ChildNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildNode.swift; sourceTree = "<group>"; };
 		1117DED1C52A79FD09A81CC9 /* UserDataEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataEvents.swift; sourceTree = "<group>"; };
 		1117DED6F9C3006FE54DE3AF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		1117DF05205E1B7A811FA07F /* NodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeImpl.swift; sourceTree = "<group>"; };
+		1117DF67CF3C572B1AB21529 /* TypeDerivation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeDerivation.swift; sourceTree = "<group>"; };
+		1117DFA17E9831D6C74A3B7B /* ElementAttributeMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementAttributeMap.swift; sourceTree = "<group>"; };
 		1117DFC2CE22157710CB2047 /* EntityRefNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityRefNode.swift; sourceTree = "<group>"; };
-		1117DFE6FE355D9276769824 /* DocumentFragmentNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentFragmentNodeImpl.swift; sourceTree = "<group>"; };
 		836097AD2538DA7B008CB79D /* DocFixer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DocFixer; sourceTree = BUILT_PRODUCTS_DIR; };
 		836097AF2538DA7B008CB79D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		83BB02902537E67200834BF5 /* SwiftDOM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftDOM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,24 +184,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1117D030FBDB1E45115FF029 /* Intermediate */ = {
+		1117D01FAADA0754AA0CABF6 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
-				1117DEABD062030DA64FE844 /* ChildNode.swift */,
-				1117DE1BB28201823BB638D5 /* NamespaceNode.swift */,
-				1117DEAAA7E011B1071D85BF /* ParentNode.swift */,
-				1117DD572CF87C1491903A8E /* NamedNode.swift */,
+				1117DF05205E1B7A811FA07F /* NodeImpl.swift */,
+				1117DA91A7079E76D13A5488 /* DocumentNodeImpl.swift */,
+				1117D10275A86587809DDC45 /* Intermediate */,
 			);
-			path = Intermediate;
+			path = Nodes;
 			sourceTree = "<group>";
 		};
-		1117D05E3BB7AB75EA11CE8D /* Abstract */ = {
+		1117D10275A86587809DDC45 /* Intermediate */ = {
 			isa = PBXGroup;
 			children = (
-				1117D0A41B8649D26C784812 /* LiveNodeList.swift */,
-				1117D903B0B59AC59A4691BA /* LiveNamedNodeMap.swift */,
+				1117DA11E2EB1CE9B1875A07 /* ParentNodeImpl.swift */,
 			);
-			path = Abstract;
+			path = Intermediate;
 			sourceTree = "<group>";
 		};
 		1117D13678BA3C04D9B2A945 /* Collections */ = {
@@ -245,23 +211,19 @@
 			path = Collections;
 			sourceTree = "<group>";
 		};
-		1117D225045D53FEBD3C76E2 /* ImplXML */ = {
+		1117D22322F2093F5C4BABF8 /* Collections */ = {
 			isa = PBXGroup;
 			children = (
-				1117DF086E09859B10688184 /* Nodes */,
-				1117DF7B396D89C009F3632A /* DTD */,
-				1117D32D17ABD03A97DF6E42 /* DOMLocatorImpl.swift */,
-				1117D750FC3C21F09DB762A0 /* UserDataInfo.swift */,
-				1117D987D4A8D9C4CE4BB204 /* Collections */,
+				1117DA704B2B423F2F99574F /* List */,
+				1117D8B66DB2F308B65ECDC6 /* Map */,
 			);
-			path = ImplXML;
+			path = Collections;
 			sourceTree = "<group>";
 		};
 		1117D2593F3D7BA56437260F /* DTD */ = {
 			isa = PBXGroup;
 			children = (
 				1117D523AC1B94BAE6E699E7 /* TypeInfo.swift */,
-				1117DA1741BDF80AF66AB528 /* TypeDerivation.swift */,
 				1117DD2AE325632EF9DF5B06 /* NotationNode.swift */,
 				1117D54C878CDD59B0711D05 /* EntityNode.swift */,
 				1117DD08869F7024273DDAFF /* DocumentType.swift */,
@@ -279,6 +241,7 @@
 				1117D8BFCBAC0A57F4AB2358 /* NamespaceSupport.swift */,
 				1117D886A41432CFE64D2203 /* NodeTypes.swift */,
 				1117DED1C52A79FD09A81CC9 /* UserDataEvents.swift */,
+				1117DF67CF3C572B1AB21529 /* TypeDerivation.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -317,14 +280,20 @@
 			path = Text;
 			sourceTree = "<group>";
 		};
-		1117D987D4A8D9C4CE4BB204 /* Collections */ = {
+		1117D898632C7D8E7D3DC7D1 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				1117D83CFE7B7191252DA336 /* ElementNodeListImpl.swift */,
-				1117D2A3FD281F5C6B920F90 /* AttributeNamedNodeMapImpl.swift */,
-				1117D05E3BB7AB75EA11CE8D /* Abstract */,
+				1117DC97D05CFF37AD2E8651 /* XML */,
 			);
-			path = Collections;
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		1117D8B66DB2F308B65ECDC6 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				1117DFA17E9831D6C74A3B7B /* ElementAttributeMap.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		1117D9F85EA19C418CAA4811 /* Other */ = {
@@ -335,13 +304,13 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		1117DAFDCF8502C034CCCC13 /* Document */ = {
+		1117DA704B2B423F2F99574F /* List */ = {
 			isa = PBXGroup;
 			children = (
-				1117D3409E125C84A9648920 /* DocumentNodeImpl.swift */,
-				1117DFE6FE355D9276769824 /* DocumentFragmentNodeImpl.swift */,
+				1117D59FCD04D4AE24383477 /* LiveNodeList.swift */,
+				1117DD73DE61DBB47694398A /* ElementNodeList.swift */,
 			);
-			path = Document;
+			path = List;
 			sourceTree = "<group>";
 		};
 		1117DC6B7C98DE37AF2EFC7B /* Other */ = {
@@ -355,28 +324,14 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
-		1117DF086E09859B10688184 /* Nodes */ = {
+		1117DC97D05CFF37AD2E8651 /* XML */ = {
 			isa = PBXGroup;
 			children = (
-				1117DCC71402DD8EE70821C0 /* NodeImpl.swift */,
-				1117D41FB44D1CED6095D229 /* ElementNodeImpl.swift */,
-				1117D6B114CE891F74CF31C0 /* AttributeNodeImpl.swift */,
-				1117D030FBDB1E45115FF029 /* Intermediate */,
-				1117DFFA44E252DB0E9985C7 /* Text */,
-				1117DAFDCF8502C034CCCC13 /* Document */,
-				1117D2C404B2D6567A741901 /* ProcessingInstructionNodeImpl.swift */,
+				1117D22322F2093F5C4BABF8 /* Collections */,
+				1117D01FAADA0754AA0CABF6 /* Nodes */,
+				1117D57B4B91657ED2C58701 /* UserDataItem.swift */,
 			);
-			path = Nodes;
-			sourceTree = "<group>";
-		};
-		1117DF7B396D89C009F3632A /* DTD */ = {
-			isa = PBXGroup;
-			children = (
-				1117D6D4F2DA0F43814C0C51 /* DocumentTypeNodeImpl.swift */,
-				1117D9E4F6FB25FF6E58AF72 /* EntityNodeImpl.swift */,
-				1117D0225F50C3DBE62FE052 /* NotationNodeImpl.swift */,
-			);
-			path = DTD;
+			path = XML;
 			sourceTree = "<group>";
 		};
 		1117DFC1D26F3FA32D7217D3 /* Document */ = {
@@ -395,17 +350,6 @@
 				1117D00DAAEC3DEB3C7B9FB9 /* Info.plist */,
 			);
 			name = Other;
-			sourceTree = "<group>";
-		};
-		1117DFFA44E252DB0E9985C7 /* Text */ = {
-			isa = PBXGroup;
-			children = (
-				1117DBF3C565ED6C07AF4212 /* TextNodeImpl.swift */,
-				1117D8231A765E82CACE5284 /* CDataSectionNodeImpl.swift */,
-				1117DDDC53003FC4634388E2 /* CommentNodeImpl.swift */,
-				1117D12890757BD43DB86BE0 /* EntityRefNodeImpl.swift */,
-			);
-			path = Text;
 			sourceTree = "<group>";
 		};
 		836097B72538DA86008CB79D /* DocFixer */ = {
@@ -441,9 +385,9 @@
 			isa = PBXGroup;
 			children = (
 				1117D35BE67C8E3043018AA7 /* Interface */,
-				1117D225045D53FEBD3C76E2 /* ImplXML */,
 				1117DFDDAAB65BCB7A43160F /* Other */,
 				1117DE9D49AB6DA8C1C26C9B /* Utils.swift */,
+				1117D898632C7D8E7D3DC7D1 /* Implementation */,
 			);
 			path = SwiftDOM;
 			sourceTree = "<group>";
@@ -628,13 +572,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1117D639BE496A3BD7B662C0 /* DOMLocatorImpl.swift in Sources */,
-				1117D95E308B243E09808EE9 /* NodeImpl.swift in Sources */,
-				1117DC85F3C204D4C82F0909 /* UserDataInfo.swift in Sources */,
-				1117DFD38138DAB16E247859 /* ElementNodeImpl.swift in Sources */,
 				1117DF17498E1A27928E13C7 /* DOMLocator.swift in Sources */,
 				1117DDD2ABA1030191F7307F /* TypeInfo.swift in Sources */,
-				1117DF4DCC068C24D1738C8B /* TypeDerivation.swift in Sources */,
 				1117DC6ACEB353BA541C634E /* NotationNode.swift in Sources */,
 				1117D01B45D252B8B7837C1F /* EntityNode.swift in Sources */,
 				1117DA729AB01B0A6D60DB7B /* DocumentType.swift in Sources */,
@@ -649,32 +588,21 @@
 				1117DC6B9BB7DF7C9F649E2B /* AttributeNode.swift in Sources */,
 				1117D0D88DB33046058BA8B3 /* ElementNode.swift in Sources */,
 				1117D1159231C860D7412D0B /* ProcessingInstructionNode.swift in Sources */,
-				1117DED61AED4F5DDEFF4493 /* AttributeNodeImpl.swift in Sources */,
-				1117D069A07648477592B2A6 /* ChildNode.swift in Sources */,
-				1117D49C09EE16CB0CA3FC58 /* NamespaceNode.swift in Sources */,
-				1117D15D8FA2021F3E0D0DD6 /* ParentNode.swift in Sources */,
-				1117D05C6FE3DD7F1952D8EB /* TextNodeImpl.swift in Sources */,
-				1117D0AB5EECDC2300066A50 /* CDataSectionNodeImpl.swift in Sources */,
-				1117D12F6D4A9186C869B7A8 /* CommentNodeImpl.swift in Sources */,
-				1117D7940498916B0462686D /* DocumentTypeNodeImpl.swift in Sources */,
-				1117DFCEF5DE8ACDB0E0F4D1 /* DocumentNodeImpl.swift in Sources */,
-				1117DA87254460D7A784574E /* DocumentFragmentNodeImpl.swift in Sources */,
-				1117D1788091171607D29296 /* EntityNodeImpl.swift in Sources */,
-				1117DA60B8A593150771CE82 /* NotationNodeImpl.swift in Sources */,
-				1117DDE380889D928E763B84 /* EntityRefNodeImpl.swift in Sources */,
 				1117D790A9EF176931CCDF1A /* Node.swift in Sources */,
-				1117D67431837A21DE95DD2B /* ProcessingInstructionNodeImpl.swift in Sources */,
-				1117DBB612C52491726F6C93 /* NamedNode.swift in Sources */,
 				1117D16AB28116E14CE642D8 /* NamedNodeMap.swift in Sources */,
 				1117DF708B2955F6DE239380 /* NodeList.swift in Sources */,
-				1117DC0FD08DAC4DEE690FDE /* ElementNodeListImpl.swift in Sources */,
-				1117D00DEBAD437394307635 /* AttributeNamedNodeMapImpl.swift in Sources */,
-				1117D703BC4A8B65B89DCFA7 /* LiveNodeList.swift in Sources */,
-				1117D15D7CB89428AD63761F /* LiveNamedNodeMap.swift in Sources */,
 				1117D547EB732FEC091F65EF /* NamespaceSupport.swift in Sources */,
 				1117D701336AC36821992BB6 /* NodeTypes.swift in Sources */,
 				1117D22D0F6F4A2644C51E27 /* UserDataEvents.swift in Sources */,
 				1117DD0AAA0111644FE1F992 /* Utils.swift in Sources */,
+				1117D0A2FC4618EB6CD53C64 /* TypeDerivation.swift in Sources */,
+				1117DA44309BA2ACDCA6CAA3 /* LiveNodeList.swift in Sources */,
+				1117DF08505AC2E0F08C2F22 /* ElementNodeList.swift in Sources */,
+				1117DCB8C392163268CBC240 /* ElementAttributeMap.swift in Sources */,
+				1117DF30B38E1C82E00B2260 /* NodeImpl.swift in Sources */,
+				1117D8096B75E40C18CF6AC4 /* DocumentNodeImpl.swift in Sources */,
+				1117D460DA4A874A6A5CE573 /* ParentNodeImpl.swift in Sources */,
+				1117DADBEC45A8CFA7AF45E7 /* UserDataItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

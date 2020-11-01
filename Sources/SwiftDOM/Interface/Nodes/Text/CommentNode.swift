@@ -25,7 +25,7 @@ import Foundation
 public protocol CommentNode: CharacterData {
 }
 
-open class AnyCommentNode: AnyCharacterData, CommentNode {
+public class AnyCommentNode: AnyCharacterData, CommentNode {
 
     var comment: CommentNode { cd as! CommentNode }
 

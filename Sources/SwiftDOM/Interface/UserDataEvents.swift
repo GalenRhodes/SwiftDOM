@@ -30,4 +30,4 @@ public enum UserDataEvents: Int {
     case Renamed  = 4
 }
 
-public typealias UserDataHandler = (UserDataEvents, String, Any, Node?, Node?) -> Void
+public typealias UserDataEventHandler = (UserDataEvents, String, Any, Node?, Node?) -> Void

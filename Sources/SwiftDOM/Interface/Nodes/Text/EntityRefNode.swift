@@ -23,10 +23,13 @@
 import Foundation
 
 public protocol EntityRefNode: Node {
+    var entityName: String { get }
 }
 
 public class AnyEntityRefNode: AnyNode, EntityRefNode {
     var entRef: EntityRefNode { (node as! EntityRefNode) }
+
+    public var entityName: String { entRef.entityName }
 
     public init(_ entRef: EntityRefNode) { super.init(entRef) }
 }

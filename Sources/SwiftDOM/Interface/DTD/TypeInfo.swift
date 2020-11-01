@@ -35,44 +35,32 @@ public protocol TypeInfo: AnyObject {
     func getHash(into hasher: inout Hasher)
 }
 
-open class AnyTypeInfo: TypeInfo, Hashable {
-    var ti: TypeInfo
+public class AnyTypeInfo: TypeInfo, Hashable {
+    @usableFromInline var info: TypeInfo
 
-    public var typeName:      String? { ti.typeName }
-    public var typeNamespace: String? { ti.typeNamespace }
+    public var typeName:      String? { info.typeName }
+    public var typeNamespace: String? { info.typeNamespace }
 
-    public init(_ typeInfo: TypeInfo) { ti = typeInfo }
+    public init(_ info: TypeInfo) { self.info = info }
 
-    open func isDerivedFrom(typeNamespace: String, typeName: String, derivation: [TypeDerivation]) -> Bool {
-        ti.isDerivedFrom(typeNamespace: typeNamespace, typeName: typeName, derivation: derivation)
-    }
+    @inlinable public func hash(into hasher: inout Hasher) { info.getHash(into: &hasher) }
 
-    open func hash(into hasher: inout Hasher) { ti.getHash(into: &hasher) }
+    @inlinable public static func == (lhs: AnyTypeInfo, rhs: AnyTypeInfo) -> Bool { lhs.info.isEqualTo(rhs.info) }
 
-    open func asHashable() -> AnyTypeInfo { self }
+    @inlinable public func asHashable() -> AnyTypeInfo { self }
 
-    open func isEqualTo(_ other: TypeInfo) -> Bool {
-        guard let _other: AnyTypeInfo = (other as? AnyTypeInfo) else { return false }
-        return ti.isEqualTo(_other.ti)
-    }
+    @inlinable public func isEqualTo(_ other: TypeInfo) -> Bool { info.isEqualTo(other) }
 
-    public static func == (lhs: AnyTypeInfo, rhs: AnyTypeInfo) -> Bool { lhs.ti.isEqualTo(rhs.ti) }
+    public func isDerivedFrom(typeNamespace ns: String, typeName n: String, derivation d: [TypeDerivation]) -> Bool { info.isDerivedFrom(typeNamespace: ns, typeName: n, derivation: d) }
 }
 
 extension TypeInfo where Self: Hashable {
-    public func asHashable() -> AnyTypeInfo { AnyTypeInfo(self) }
+    @inlinable public func asHashable() -> AnyTypeInfo { AnyTypeInfo(self) }
 
-    public func getHash(into hasher: inout Hasher) { hash(into: &hasher) }
+    @inlinable public func getHash(into hasher: inout Hasher) { hash(into: &hasher) }
 }
 
 extension Array where Element: TypeInfo {
-    public static func == (lhs: [TypeInfo], rhs: [TypeInfo]) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
+    @inlinable public static func == (lhs: [TypeInfo], rhs: [TypeInfo]) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
 }
 
-extension Dictionary where Value: TypeInfo {
-    public static func == (lhs: [Key: TypeInfo], rhs: [Key: TypeInfo]) -> Bool { lhs.mapValues({ $0.asHashable() }) == rhs.mapValues({ $0.asHashable() }) }
-}
-
-extension Set where Element: TypeInfo {
-    public static func == (lhs: Set<Element>, rhs: Set<Element>) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
-}

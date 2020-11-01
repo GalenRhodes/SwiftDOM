@@ -23,8 +23,10 @@
 import Foundation
 
 public protocol ProcessingInstructionNode: Node {
+//@f:0
     var data:   String { get set }
-    var target: String { get }
+    var target: String { get     }
+//@f:1
 }
 
 public class AnyProcessingInstructionNode: AnyNode, ProcessingInstructionNode {
@@ -32,9 +34,8 @@ public class AnyProcessingInstructionNode: AnyNode, ProcessingInstructionNode {
 
     public init(_ pi: ProcessingInstructionNode) { super.init(pi) }
 
-    open var target: String { pi.target }
-    open var data:   String {
-        get { pi.data }
-        set { pi.data = newValue }
-    }
+    //@f:0
+    public var target: String { pi.target }
+    public var data:   String { get { pi.data } set { pi.data = newValue } }
+    //@f:1
 }

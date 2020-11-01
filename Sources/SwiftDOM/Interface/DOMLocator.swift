@@ -22,13 +22,15 @@
 
 import Foundation
 
-public protocol DOMLocator {
-    var byteOffset:   Int { get }
-    var lineNumber:   Int { get }
-    var columnNumber: Int { get }
-    var utf16Offset:  Int { get }
+public protocol DOMLocator: AnyObject {
+//@f:0
+    var byteOffset:   Int    { get }
+    var lineNumber:   Int    { get }
+    var columnNumber: Int    { get }
+    var utf16Offset:  Int    { get }
     var uri:          String { get }
-    var relatedNode:  Node { get }
+    var relatedNode:  Node   { get }
+//@f:1
 
     func isEqualTo(_ other: DOMLocator) -> Bool
 
@@ -37,41 +39,36 @@ public protocol DOMLocator {
     func getHash(into hasher: inout Hasher)
 }
 
-@frozen public struct AnyDOMLocator: DOMLocator, Hashable {
-    var loc: DOMLocator
+public class AnyDOMLocator: DOMLocator, Hashable {
+    @usableFromInline var loc: DOMLocator
+
+//@f:0
+    public var byteOffset:   Int    { loc.byteOffset   }
+    public var lineNumber:   Int    { loc.lineNumber   }
+    public var columnNumber: Int    { loc.columnNumber }
+    public var utf16Offset:  Int    { loc.utf16Offset  }
+    public var uri:          String { loc.uri          }
+    public var relatedNode:  Node   { loc.relatedNode  }
+//@f:1
 
     public init(_ loc: DOMLocator) { self.loc = loc }
 
-    public func hash(into hasher: inout Hasher) { loc.getHash(into: &hasher) }
+    @inlinable public func hash(into hasher: inout Hasher) { loc.getHash(into: &hasher) }
 
-    public static func == (lhs: AnyDOMLocator, rhs: AnyDOMLocator) -> Bool { lhs.loc.isEqualTo(rhs.loc) }
+    @inlinable public static func == (lhs: AnyDOMLocator, rhs: AnyDOMLocator) -> Bool { lhs.loc.isEqualTo(rhs.loc) }
 
-    public func asHashable() -> AnyDOMLocator { self }
+    @inlinable public func asHashable() -> AnyDOMLocator { self }
 
-    public var byteOffset:   Int { loc.byteOffset }
-    public var lineNumber:   Int { loc.lineNumber }
-    public var columnNumber: Int { loc.columnNumber }
-    public var utf16Offset:  Int { loc.utf16Offset }
-    public var uri:          String { loc.uri }
-    public var relatedNode:  Node { loc.relatedNode }
+    @inlinable public func isEqualTo(_ other: DOMLocator) -> Bool { loc.isEqualTo(other) }
 }
 
 extension DOMLocator where Self: Hashable {
-    public func isEqualTo(_ other: DOMLocator) -> Bool { guard let other: Self = (other as? Self) else { return false }; return (self == other) }
+    @inlinable public func asHashable() -> AnyDOMLocator { AnyDOMLocator(self) }
 
-    public func asHashable() -> AnyDOMLocator { AnyDOMLocator(self) }
-
-    public func getHash(into hasher: inout Hasher) { hash(into: &hasher) }
+    @inlinable public func getHash(into hasher: inout Hasher) { hash(into: &hasher) }
 }
 
 extension Array where Element: DOMLocator {
-    public static func == (lhs: [DOMLocator], rhs: [DOMLocator]) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
+    @inlinable public static func == (lhs: [DOMLocator], rhs: [DOMLocator]) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
 }
 
-extension Dictionary where Value: DOMLocator {
-    public static func == (lhs: [Key: DOMLocator], rhs: [Key: DOMLocator]) -> Bool { lhs.mapValues({ $0.asHashable() }) == rhs.mapValues({ $0.asHashable() }) }
-}
-
-extension Set where Element: DOMLocator {
-    public static func == (lhs: Set<Element>, rhs: Set<Element>) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
-}

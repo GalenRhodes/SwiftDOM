@@ -23,14 +23,16 @@
 import Foundation
 
 public protocol DocumentNode: Node {
-    var docType:               DocumentTypeNode? { get }
-    var documentElement:       ElementNode { get }
-    var documentURI:           String? { get set }
-    var inputEncoding:         String.Encoding { get }
-    var isStrictErrorChecking: Bool { get set }
-    var xmlStandalone:         Bool { get set }
-    var xmlEncoding:           String { get }
-    var xmlVersion:            String { get set }
+//@f:0
+    var docType               : DocumentTypeNode? { get     }
+    var documentElement       : ElementNode       { get     }
+    var documentURI           : String?           { get set }
+    var inputEncoding         : String.Encoding   { get     }
+    var isStrictErrorChecking : Bool              { get set }
+    var xmlEncoding           : String            { get     }
+    var xmlStandalone         : Bool              { get set }
+    var xmlVersion            : String            { get set }
+//@f:1
 
     func adopt(node: Node) -> Node
 
@@ -71,107 +73,97 @@ public protocol DocumentNode: Node {
     @discardableResult func renameNode(node: Node, nodeName: String) -> Node
 }
 
-open class AnyDocumentNode: AnyNode, DocumentNode {
+public class AnyDocumentNode: AnyNode, DocumentNode {
 
     var document: DocumentNode { node as! DocumentNode }
 
     public init(_ document: DocumentNode) { super.init(document) }
 
-    open var docType:         DocumentTypeNode? { document.docType }
-    open var documentElement: ElementNode { document.documentElement }
-    open var inputEncoding:   String.Encoding { document.inputEncoding }
-    open var xmlEncoding:     String { document.xmlEncoding }
+//@f:0
+    public var docType         : DocumentTypeNode? { document.docType         }
+    public var documentElement : ElementNode       { document.documentElement }
+    public var inputEncoding   : String.Encoding   { document.inputEncoding   }
+    public var xmlEncoding     : String            { document.xmlEncoding     }
 
-    open var documentURI:           String? {
-        get { document.documentURI }
-        set { document.documentURI = newValue }
-    }
-    open var isStrictErrorChecking: Bool {
-        get { document.isStrictErrorChecking }
-        set { document.isStrictErrorChecking = newValue }
-    }
-    open var xmlStandalone:         Bool {
-        get { document.xmlStandalone }
-        set { document.xmlStandalone = newValue }
-    }
-    open var xmlVersion:            String {
-        get { document.xmlVersion }
-        set { document.xmlVersion = newValue }
-    }
+    public var documentURI           : String? { get { document.documentURI           } set { document.documentURI = newValue           } }
+    public var isStrictErrorChecking : Bool    { get { document.isStrictErrorChecking } set { document.isStrictErrorChecking = newValue } }
+    public var xmlStandalone         : Bool    { get { document.xmlStandalone         } set { document.xmlStandalone = newValue         } }
+    public var xmlVersion            : String  { get { document.xmlVersion            } set { document.xmlVersion = newValue            } }
+//@f:1
 
-    open func adopt(node: Node) -> Node {
+    public func adopt(node: Node) -> Node {
         document.adopt(node: node)
     }
 
-    open func createAttribute(name: String) -> AttributeNode {
+    public func createAttribute(name: String) -> AttributeNode {
         document.createAttribute(name: name)
     }
 
-    open func createAttribute(namespaceURI: String, name: String) -> AttributeNode {
+    public func createAttribute(namespaceURI: String, name: String) -> AttributeNode {
         document.createAttribute(namespaceURI: namespaceURI, name: name)
     }
 
-    open func createElement(name: String) -> ElementNode {
+    public func createElement(name: String) -> ElementNode {
         document.createElement(name: name)
     }
 
-    open func createElement(namespaceURI: String, name: String) -> ElementNode {
+    public func createElement(namespaceURI: String, name: String) -> ElementNode {
         document.createElement(namespaceURI: namespaceURI, name: name)
     }
 
-    open func createTextNode(content: String) -> TextNode {
+    public func createTextNode(content: String) -> TextNode {
         document.createTextNode(content: content)
     }
 
-    open func createCDataSectionNode(content: String) -> CDataSectionNode {
+    public func createCDataSectionNode(content: String) -> CDataSectionNode {
         document.createCDataSectionNode(content: content)
     }
 
-    open func createComment(content: String) -> CommentNode {
+    public func createComment(content: String) -> CommentNode {
         document.createComment(content: content)
     }
 
-    open func createDocumentFragment() -> DocumentFragmentNode {
+    public func createDocumentFragment() -> DocumentFragmentNode {
         document.createDocumentFragment()
     }
 
-    open func normalizeDocument() {
+    public func normalizeDocument() {
         document.normalizeDocument()
     }
 
-    open func getElementBy(elementId: String) -> ElementNode? {
+    public func getElementBy(elementId: String) -> ElementNode? {
         document.getElementBy(elementId: elementId)
     }
 
-    open func getElementsBy(name: String) -> NodeList<ElementNode> {
+    public func getElementsBy(name: String) -> NodeList<ElementNode> {
         document.getElementsBy(name: name)
     }
 
-    open func getElementsBy(namespaceURI: String, name: String) -> NodeList<ElementNode> {
+    public func getElementsBy(namespaceURI: String, name: String) -> NodeList<ElementNode> {
         document.getElementsBy(namespaceURI: namespaceURI, name: name)
     }
 
-    open func importNode(node: Node, deep: Bool) -> Node {
+    public func importNode(node: Node, deep: Bool) -> Node {
         document.importNode(node: node, deep: deep)
     }
 
-    @discardableResult open func renameNode(node: Node, namespaceURI: String, qualifiedName: String) -> Node {
+    @discardableResult public func renameNode(node: Node, namespaceURI: String, qualifiedName: String) -> Node {
         document.renameNode(node: node, namespaceURI: namespaceURI, qualifiedName: qualifiedName)
     }
 
-    @discardableResult open func renameNode(node: Node, nodeName: String) -> Node {
+    @discardableResult public func renameNode(node: Node, nodeName: String) -> Node {
         document.renameNode(node: node, nodeName: nodeName)
     }
 
-    open func createProcessingInstruction(data: String, target: String) -> ProcessingInstructionNode {
+    public func createProcessingInstruction(data: String, target: String) -> ProcessingInstructionNode {
         document.createProcessingInstruction(data: data, target: target)
     }
 
-    open func createNotation(name: String, publicId: String, systemId: String) -> NotationNode {
+    public func createNotation(name: String, publicId: String, systemId: String) -> NotationNode {
         document.createNotation(name: name, publicId: publicId, systemId: systemId)
     }
 
-    open func createDocType(name: String, publicId: String, systemId: String, internalSubset: String) -> DocumentTypeNode {
+    public func createDocType(name: String, publicId: String, systemId: String, internalSubset: String) -> DocumentTypeNode {
         document.createDocType(name: name, publicId: publicId, systemId: systemId, internalSubset: internalSubset)
     }
 }

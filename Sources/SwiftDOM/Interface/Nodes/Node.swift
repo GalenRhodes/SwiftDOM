@@ -23,27 +23,29 @@
 import Foundation
 
 public protocol Node: AnyObject {
-    var owningDocument:  DocumentNode { get }
-    var nodeType:        NodeTypes { get }
-    var nodeName:        String { get }
-    var localName:       String? { get }
-    var namespaceURI:    String? { get }
-    var baseURI:         String? { get }
-    var parentNode:      Node? { get }
-    var firstChild:      Node? { get }
-    var lastChild:       Node? { get }
-    var nextSibling:     Node? { get }
-    var previousSibling: Node? { get }
-    var hasAttributes:   Bool { get }
-    var hasChildNodes:   Bool { get }
-    var hasNamespace:    Bool { get }
-    var count:           Int { get }
-    var startIndex:      Int { get }
-    var endIndex:        Int { get }
-    var nodeValue:       String? { get set }
-    var textContent:     String? { get set }
-    var prefix:          String? { get set }
-    var attributes:      NamedNodeMap<AttributeNode> { get }
+    //@f:0
+    var nodeType        : NodeTypes                      { get     }
+    var nodeName        : String                         { get     }
+    var nodeValue       : String?                        { get set }
+    var textContent     : String                         { get set }
+    var baseURI         : String?                        { get     }
+    var namespaceURI    : String?                        { get     }
+    var localName       : String?                        { get     }
+    var prefix          : String?                        { get set }
+    var count           : Int                            { get     }
+    var startIndex      : Int                            { get     }
+    var endIndex        : Int                            { get     }
+    var attributes      : NamedNodeMap<AttributeNode>    { get     }
+    var hasAttributes   : Bool                           { get     }
+    var hasChildNodes   : Bool                           { get     }
+    var hasNamespace    : Bool                           { get     }
+    var owningDocument  : DocumentNode                   { get     }
+    var parentNode      : Node?                          { get     }
+    var firstChild      : Node?                          { get     }
+    var lastChild       : Node?                          { get     }
+    var nextSibling     : Node?                          { get     }
+    var previousSibling : Node?                          { get     }
+    //@f:1
 
     func normalize()
 
@@ -55,13 +57,19 @@ public protocol Node: AnyObject {
 
     @discardableResult func remove(childNode: Node) -> Node
 
+    @discardableResult func removeAllChildNodes() -> [Node]
+
     func userData(key: String) -> Any?
 
-    func setUserData(key: String, userData: Any?, handler: UserDataHandler?)
+    func setUserData(key: String, userData: Any?, handler: UserDataEventHandler?)
 
     func cloneNode(deep: Bool) -> Node
 
+    func forEachChild(do block: (Node) throws -> Void) rethrows
+
     func contains(_ node: Node) -> Bool
+
+    func isNodeType(_ types: NodeTypes...) -> Bool
 
     func isEqualTo(_ other: Node) -> Bool
 
@@ -83,5 +91,30 @@ public protocol Node: AnyObject {
 }
 
 extension Node {
-    public static func == (lhs: Node, rhs: Node) -> Bool { lhs === rhs }
+    @inlinable public func isNodeType(_ types: [NodeTypes]) -> Bool { for t in types { if nodeType == t { return true } }; return false }
+
+    @inlinable public func isNodeType(_ types: NodeTypes...) -> Bool { isNodeType(types) }
+
+    @inlinable public func forEachChild(do block: (Node) throws -> Void) rethrows { var n0 = firstChild; while let n1 = n0 { try block(n1); n0 = n1.nextSibling } }
+
+    @inlinable public func isSameNode(as otherNode: Node) -> Bool { self === otherNode }
+
+    @inlinable @discardableResult public func append(child childNode: Node) -> Node { insert(childNode: childNode, before: nil) }
+
+//@f:0
+    @inlinable public var textContent: String {
+        get { var _s: String = ""; forEachChild { _s += $0.textContent }; return _s }
+        set { removeAllChildNodes(); if !newValue.isEmpty { append(child: owningDocument.createTextNode(content: newValue)) } }
+    }
+//@f:1
+}
+
+extension Node where Self: Hashable {
+    @inlinable public func hash(into hasher: inout Hasher) { getHash(into: &hasher) }
+
+    @inlinable public static func == (lhs: Self, rhs: Self) -> Bool { lhs.isSameNode(as: rhs) }
+}
+
+extension Array where Element: Node {
+    @inlinable public static func == (lhs: [Node], rhs: [Node]) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
 }

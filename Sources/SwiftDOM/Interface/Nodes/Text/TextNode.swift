@@ -23,26 +23,27 @@
 import Foundation
 
 public protocol TextNode: CharacterData {
+//@f:0
     var wholeText:                  String { get set }
-    var isElementContentWhitespace: Bool { get }
+    var isElementContentWhitespace: Bool   { get     }
+//@f:1
 
     func splitText(offset: Int) -> TextNode
 
     @discardableResult func replaceWholeText(text: String) -> TextNode
 }
 
-open class AnyTextNode: AnyCharacterData, TextNode {
-    open var wholeText:                  String {
-        get { textNode.wholeText }
-        set { textNode.wholeText = newValue }
-    }
-    open var isElementContentWhitespace: Bool { textNode.isElementContentWhitespace }
+public class AnyTextNode: AnyCharacterData, TextNode {
+//@f:0
+    public var wholeText:                  String { get { textNode.wholeText } set { textNode.wholeText = newValue } }
+    public var isElementContentWhitespace: Bool   { textNode.isElementContentWhitespace                              }
+//@f:1
 
     var textNode: TextNode { cd as! TextNode }
 
     public init(_ textNode: TextNode) { super.init(textNode) }
 
-    open func splitText(offset: Int) -> TextNode { textNode.splitText(offset: offset) }
+    public func splitText(offset: Int) -> TextNode { textNode.splitText(offset: offset) }
 
-    open func replaceWholeText(text: String) -> TextNode { textNode.replaceWholeText(text: text) }
+    public func replaceWholeText(text: String) -> TextNode { textNode.replaceWholeText(text: text) }
 }

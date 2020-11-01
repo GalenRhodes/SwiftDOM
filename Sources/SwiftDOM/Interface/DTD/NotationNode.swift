@@ -32,6 +32,6 @@ public class AnyNotationNode: AnyNode, NotationNode {
 
     public init(_ notation: NotationNode) { super.init(notation) }
 
-    open var publicId: String { notation.publicId }
-    open var systemId: String { notation.systemId }
+    public var publicId: String { notation.publicId }
+    public var systemId: String { notation.systemId }
 }

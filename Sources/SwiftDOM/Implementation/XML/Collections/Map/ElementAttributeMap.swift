@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: NamedNode.swift
+ *    FILENAME: LiveNamedNodeMap.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/27/20
+ *        DATE: 10/30/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,14 +22,19 @@
 
 import Foundation
 
-open class NamedNode: ParentNode {
-    open override var nodeName: String { _nodeName }
+public class ElementAttributeMap: NamedNodeMap<AttributeNode> {
+    @inlinable public override var startIndex: Int { element.attributes.startIndex }
+    @inlinable public override var endIndex:   Int { element.attributes.endIndex }
 
-    var _nodeName: String { willSet { guard let _ = regexName.firstMatch(in: newValue) else { fatalError("Invalid Node Name: \"\(newValue)\"") } } }
+    @usableFromInline var element: ElementNode
 
-    public init(_ owningDocument: DocumentNodeImpl, nodeName: String) {
-        guard let _ = regexName.firstMatch(in: nodeName) else { fatalError("Invalid Node Name: \"\(nodeName)\"") }
-        _nodeName = nodeName
-        super.init(owningDocument)
+    public init(element: ElementNode) {
+        self.element = element
+        super.init()
     }
+
+    @inlinable public override subscript(nodeName: String) -> AttributeNode? { element.attributes[nodeName] }
+    @inlinable public override subscript(namespaceURI: String, localName: String) -> AttributeNode? { element.attributes[namespaceURI, localName] }
+    @inlinable public override subscript(bounds: Range<Int>) -> ArraySlice<AttributeNode> { element.attributes[bounds] }
+    @inlinable public override subscript(position: Int) -> AttributeNode { element.attributes[position] }
 }

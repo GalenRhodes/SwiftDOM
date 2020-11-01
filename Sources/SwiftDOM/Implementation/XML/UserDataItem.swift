@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: CommentNodeImpl.swift
+ *    FILENAME: UserDataItem.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/26/20
+ *        DATE: 10/30/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,15 +22,12 @@
 
 import Foundation
 
-open class CommentNodeImpl: CharacterDataImpl, CommentNode {
-    open override var nodeType: NodeTypes { .CommentNode }
-    open override var nodeName: String { "#comment" }
+class UserDataItem {
+    var userData:     Any
+    var eventHandler: UserDataEventHandler?
 
-    public override init(_ owningDocument: DocumentNodeImpl, content: String) { super.init(owningDocument, content: content) }
-
-    open override func baseClone(_ doc: DocumentNodeImpl, postEvent: Bool, deep: Bool) -> NodeImpl {
-        CommentNodeImpl(doc, content: data)
+    init(userData: Any, eventHandler: UserDataEventHandler?) {
+        self.userData = userData
+        self.eventHandler = eventHandler
     }
-
-    public static func == (lhs: CommentNodeImpl, rhs: CommentNodeImpl) -> Bool { lhs === rhs }
 }

@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: DocumentFragmentNodeImpl.swift
+ *    FILENAME: DocumentNodeImpl.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/26/20
+ *        DATE: 10/30/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,17 +22,8 @@
 
 import Foundation
 
-open class DocumentFragmentNodeImpl: ParentNode, DocumentFragmentNode {
-    open override var nodeType: NodeTypes { .DocumentFragmentNode }
-    open override var nodeName: String { "#document-fragment" }
+class DocumentNodeImpl: ParentNodeImpl, DocumentNode {
+}
 
-    override init(_ owningDocument: DocumentNodeImpl) { super.init(owningDocument) }
-
-    open override func baseClone(_ doc: DocumentNodeImpl, postEvent: Bool, deep: Bool) -> NodeImpl {
-        let d = DocumentFragmentNodeImpl(doc)
-        if deep { forEachChild { d.append(child: $0.cloneNode(doc, postEvent: postEvent, deep: deep)) } }
-        return d
-    }
-
-    static func == (lhs: DocumentFragmentNodeImpl, rhs: DocumentFragmentNodeImpl) -> Bool { lhs === rhs }
+private class DummyDocument: NodeImpl, DocumentNode {
 }

@@ -23,9 +23,10 @@
 import Foundation
 
 public protocol ElementNode: Node {
-
+//@f:0
     var schemaTypeInfo: TypeInfo? { get }
-    var tagName:        String { get }
+    var tagName:        String    { get }
+//@f:1
 
     func attributeValueWith(name: String) -> String?
 
@@ -45,12 +46,6 @@ public protocol ElementNode: Node {
 
     func hasAttributeWith(namespaceURI: String, name: String) -> Bool
 
-    @discardableResult func removeAttributeWith(name: String) -> AttributeNode?
-
-    @discardableResult func removeAttributeWith(namespaceURI: String, name: String) -> AttributeNode?
-
-    @discardableResult func removeAttribute(attribute: AttributeNode) -> AttributeNode?
-
     func setAttributeWith(name: String, value: String)
 
     func setAttributeWith(namespaceURI: String, name: String, value: String)
@@ -58,6 +53,12 @@ public protocol ElementNode: Node {
     @discardableResult func setAttribute(attribute: AttributeNode) -> AttributeNode?
 
     @discardableResult func setAttributeNS(attribute: AttributeNode) -> AttributeNode?
+
+    @discardableResult func removeAttributeWith(name: String) -> AttributeNode?
+
+    @discardableResult func removeAttributeWith(namespaceURI: String, name: String) -> AttributeNode?
+
+    @discardableResult func removeAttribute(attribute: AttributeNode) -> AttributeNode?
 
     func setIdAttributeWith(name: String, isId: Bool)
 
@@ -67,87 +68,87 @@ public protocol ElementNode: Node {
 }
 
 public class AnyElementNode: AnyNode, ElementNode {
-
-    var element: ElementNode { node as! ElementNode }
-
-    public var schemaTypeInfo: TypeInfo? { element.schemaTypeInfo }
-    public var tagName:        String { element.tagName }
+//@f:0
+           var element:        ElementNode { node as! ElementNode   }
+    public var schemaTypeInfo: TypeInfo?   { element.schemaTypeInfo }
+    public var tagName:        String      { element.tagName        }
+//@f:1
 
     public init(_ element: ElementNode) { super.init(element) }
 
-    open func attributeValueWith(name: String) -> String? {
+    public func attributeValueWith(name: String) -> String? {
         element.attributeValueWith(name: name)
     }
 
-    open func attributeValueWith(namespaceURI: String, name: String) -> String? {
+    public func attributeValueWith(namespaceURI: String, name: String) -> String? {
         element.attributeValueWith(namespaceURI: namespaceURI, name: name)
     }
 
-    open func attributeWith(name: String) -> AttributeNode? {
+    public func attributeWith(name: String) -> AttributeNode? {
         element.attributeWith(name: name)
     }
 
-    open func attributeWith(namespaceURI: String, name: String) -> AttributeNode? {
+    public func attributeWith(namespaceURI: String, name: String) -> AttributeNode? {
         element.attributeWith(namespaceURI: namespaceURI, name: name)
     }
 
-    open func attribute(where body: (AttributeNode) throws -> Bool) rethrows -> AttributeNode? {
+    public func attribute(where body: (AttributeNode) throws -> Bool) rethrows -> AttributeNode? {
         try element.attribute(where: body)
     }
 
-    open func elementsBy(tagName: String) -> NodeList<ElementNode> {
+    public func elementsBy(tagName: String) -> NodeList<ElementNode> {
         element.elementsBy(tagName: tagName)
     }
 
-    open func elementsBy(namespaceURI: String, name: String) -> NodeList<ElementNode> {
+    public func elementsBy(namespaceURI: String, name: String) -> NodeList<ElementNode> {
         element.elementsBy(namespaceURI: namespaceURI, name: name)
     }
 
-    open func hasAttributeWith(name: String) -> Bool {
+    public func hasAttributeWith(name: String) -> Bool {
         element.hasAttributeWith(name: name)
     }
 
-    open func hasAttributeWith(namespaceURI: String, name: String) -> Bool {
+    public func hasAttributeWith(namespaceURI: String, name: String) -> Bool {
         element.hasAttributeWith(namespaceURI: namespaceURI, name: name)
     }
 
-    @discardableResult open func removeAttributeWith(name: String) -> AttributeNode? {
+    @discardableResult public func removeAttributeWith(name: String) -> AttributeNode? {
         element.removeAttributeWith(name: name)
     }
 
-    @discardableResult open func removeAttributeWith(namespaceURI: String, name: String) -> AttributeNode? {
+    @discardableResult public func removeAttributeWith(namespaceURI: String, name: String) -> AttributeNode? {
         element.removeAttributeWith(namespaceURI: namespaceURI, name: name)
     }
 
-    @discardableResult open func removeAttribute(attribute: AttributeNode) -> AttributeNode? {
+    @discardableResult public func removeAttribute(attribute: AttributeNode) -> AttributeNode? {
         element.removeAttribute(attribute: attribute)
     }
 
-    open func setAttributeWith(name: String, value: String) {
+    public func setAttributeWith(name: String, value: String) {
         element.setAttributeWith(name: name, value: value)
     }
 
-    open func setAttributeWith(namespaceURI: String, name: String, value: String) {
+    public func setAttributeWith(namespaceURI: String, name: String, value: String) {
         element.setAttributeWith(namespaceURI: namespaceURI, name: name, value: value)
     }
 
-    @discardableResult open func setAttribute(attribute: AttributeNode) -> AttributeNode? {
+    @discardableResult public func setAttribute(attribute: AttributeNode) -> AttributeNode? {
         element.setAttribute(attribute: attribute)
     }
 
-    @discardableResult open func setAttributeNS(attribute: AttributeNode) -> AttributeNode? {
+    @discardableResult public func setAttributeNS(attribute: AttributeNode) -> AttributeNode? {
         element.setAttributeNS(attribute: attribute)
     }
 
-    open func setIdAttributeWith(name: String, isId: Bool) {
+    public func setIdAttributeWith(name: String, isId: Bool) {
         element.setIdAttributeWith(name: name, isId: isId)
     }
 
-    open func setIdAttributeWith(namespaceURI: String, name: String, isId: Bool) {
+    public func setIdAttributeWith(namespaceURI: String, name: String, isId: Bool) {
         element.setIdAttributeWith(namespaceURI: namespaceURI, name: name, isId: isId)
     }
 
-    open func setIdAttribute(attribute: AttributeNode, isId: Bool) {
+    public func setIdAttribute(attribute: AttributeNode, isId: Bool) {
         element.setIdAttribute(attribute: attribute, isId: isId)
     }
 }

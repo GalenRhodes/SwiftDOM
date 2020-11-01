@@ -26,10 +26,10 @@ public protocol CharacterData: Node {
     var data: String { get set }
 }
 
-open class AnyCharacterData: AnyNode, CharacterData {
+public class AnyCharacterData: AnyNode, CharacterData {
     var cd: CharacterData { node as! CharacterData }
 
-    open var data: String {
+    public var data: String {
         get { cd.data }
         set { cd.data = newValue }
     }
