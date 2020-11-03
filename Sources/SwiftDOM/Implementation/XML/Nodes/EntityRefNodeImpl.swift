@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: NotationNode.swift
+ *    FILENAME: EntityRefNodeImpl.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/21/20
+ *        DATE: 11/3/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,18 +22,14 @@
 
 import Foundation
 
-public protocol NotationNode: Node {
-    var name:     String { get }
-    var publicId: String? { get }
-    var systemId: String { get }
-}
+public class EntityRefNodeImpl: NamedNodeImpl, EntityRefNode {
+//@f:0
+    @inlinable public          var entityName : String    { nodeName             }
+    @inlinable public override var isReadOnly : Bool      { true                 }
+    @inlinable public override var nodeType   : NodeTypes { .EntityReferenceNode }
+//@f:1
 
-public class AnyNotationNode: AnyNode, NotationNode {
-    var notation: NotationNode { (node as! NotationNode) }
+    public init(_ owningDocument: DocumentNode, entityName: String) { super.init(owningDocument, nodeName: entityName) }
 
-    public init(_ notation: NotationNode) { super.init(notation) }
-
-    public var publicId: String? { notation.publicId }
-    public var systemId: String { notation.systemId }
-    public var name:     String { notation.name }
+    public init(_ owningDocument: DocumentNode, namespaceURI: String, qualifiedEntityName name: String) { super.init(owningDocument, namespaceURI: namespaceURI, qualifiedName: name) }
 }

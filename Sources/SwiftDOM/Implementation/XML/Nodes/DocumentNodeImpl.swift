@@ -25,6 +25,7 @@ import Foundation
 public class DocumentNodeImpl: ParentNodeImpl, DocumentNode {
     //@f:0
     public override      var nodeType              : NodeTypes         { .DocumentNode }
+    public override      var nodeName              : String            { "#document"   }
     public internal(set) var docType               : DocumentTypeNode? = nil
     public               var documentElement       : ElementNode?      = nil
     public internal(set) var inputEncoding         : String.Encoding   = String.Encoding.utf8

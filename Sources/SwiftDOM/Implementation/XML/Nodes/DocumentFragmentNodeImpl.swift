@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: NotationNode.swift
+ *    FILENAME: DocumentFragmentNodeImpl.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/21/20
+ *        DATE: 11/3/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,18 +22,16 @@
 
 import Foundation
 
-public protocol NotationNode: Node {
-    var name:     String { get }
-    var publicId: String? { get }
-    var systemId: String { get }
-}
+public class DocumentFragmentNodeImpl: ParentNodeImpl, DocumentFragmentNode {
+    @inlinable public override var nodeType: NodeTypes { .DocumentFragmentNode }
+    @inlinable public override var nodeName: String { "#document-fragment" }
 
-public class AnyNotationNode: AnyNode, NotationNode {
-    var notation: NotationNode { (node as! NotationNode) }
+    public override init(_ owningDocument: DocumentNode) { super.init(owningDocument) }
 
-    public init(_ notation: NotationNode) { super.init(notation) }
-
-    public var publicId: String? { notation.publicId }
-    public var systemId: String { notation.systemId }
-    public var name:     String { notation.name }
+    public override func cloneNode(owningDocument: DocumentNode, notify: Bool, deep: Bool) -> Node {
+        let df = owningDocument.createDocumentFragment()
+        if deep { for n in _nodes { df.append(child: n.cloneNode(owningDocument: owningDocument, notify: notify, deep: deep)) } }
+        if notify { postUserDataEvent(action: .Cloned, destination: df) }
+        return df
+    }
 }

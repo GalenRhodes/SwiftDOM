@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: NotationNode.swift
+ *    FILENAME: TypeInfoImpl.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/21/20
+ *        DATE: 11/3/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,18 +22,23 @@
 
 import Foundation
 
-public protocol NotationNode: Node {
-    var name:     String { get }
-    var publicId: String? { get }
-    var systemId: String { get }
-}
+public class TypeInfoImpl: TypeInfo, Hashable {
+    public internal(set) var typeName:      String? = nil
+    public internal(set) var typeNamespace: String? = nil
 
-public class AnyNotationNode: AnyNode, NotationNode {
-    var notation: NotationNode { (node as! NotationNode) }
+    public init(typeName: String?, typeNamespace: String?) {
+        self.typeName = typeName
+        self.typeNamespace = typeNamespace
+    }
 
-    public init(_ notation: NotationNode) { super.init(notation) }
+    public func isDerivedFrom(typeNamespace: String, typeName: String, derivation: [TypeDerivation]) -> Bool { ((self.typeNamespace == typeNamespace) && (self.typeName == typeName)) }
 
-    public var publicId: String? { notation.publicId }
-    public var systemId: String { notation.systemId }
-    public var name:     String { notation.name }
+    public func isEqualTo(_ other: TypeInfo) -> Bool { self === other }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(typeName)
+        hasher.combine(typeNamespace)
+    }
+
+    public static func == (lhs: TypeInfoImpl, rhs: TypeInfoImpl) -> Bool { lhs.isEqualTo(rhs) }
 }

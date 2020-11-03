@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: NotationNode.swift
+ *    FILENAME: NotationNodeImpl.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/21/20
+ *        DATE: 11/3/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,18 +22,20 @@
 
 import Foundation
 
-public protocol NotationNode: Node {
-    var name:     String { get }
-    var publicId: String? { get }
-    var systemId: String { get }
-}
+public class NotationNodeImpl: NodeImpl, NotationNode {
+//@f:0
+    public internal(set)       var publicId   : String?   = ""
+    public internal(set)       var systemId   : String    = ""
+    public internal(set)       var name       : String    = ""
+    @inlinable public override var isReadOnly : Bool      { true          }
+    @inlinable public override var nodeName   : String    { name          }
+    @inlinable public override var nodeType   : NodeTypes { .NotationNode }
+//@f:1
 
-public class AnyNotationNode: AnyNode, NotationNode {
-    var notation: NotationNode { (node as! NotationNode) }
-
-    public init(_ notation: NotationNode) { super.init(notation) }
-
-    public var publicId: String? { notation.publicId }
-    public var systemId: String { notation.systemId }
-    public var name:     String { notation.name }
+    public init(_ owningDocument: DocumentNode, name: String, publicId: String?, systemId: String) {
+        self.publicId = publicId
+        self.systemId = systemId
+        self.name = name
+        super.init(owningDocument)
+    }
 }

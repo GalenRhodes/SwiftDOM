@@ -23,23 +23,27 @@
 import Foundation
 
 public protocol EntityNode: Node {
-    var inputEncoding: String.Encoding { get }
-    var notationName:  String { get }
-    var publicId:      String { get }
-    var systemId:      String { get }
-    var xmlEncoding:   String { get }
-    var xmlVersion:    String { get }
+//@f:0
+     var inputEncoding : String.Encoding { get }
+     var entityName    : String          { get }
+     var notationName  : String          { get }
+     var publicId      : String?         { get }
+     var systemId      : String          { get }
+     var xmlEncoding   : String          { get }
+     var xmlVersion    : String          { get }
+//@f:1
 }
 
 public class AnyEntityNode: AnyNode, EntityNode {
-    var entity: EntityNode { (node as! EntityNode) }
-
-    public var inputEncoding: String.Encoding { entity.inputEncoding }
-    public var notationName:  String { entity.notationName }
-    public var publicId:      String { entity.publicId }
-    public var systemId:      String { entity.systemId }
-    public var xmlEncoding:   String { entity.xmlEncoding }
-    public var xmlVersion:    String { entity.xmlVersion }
-
+//@f:0
+    @inlinable        var entity        : EntityNode      { (node as! EntityNode) }
+    @inlinable public var inputEncoding : String.Encoding { entity.inputEncoding  }
+    @inlinable public var notationName  : String          { entity.notationName   }
+    @inlinable public var publicId      : String?         { entity.publicId       }
+    @inlinable public var systemId      : String          { entity.systemId       }
+    @inlinable public var xmlEncoding   : String          { entity.xmlEncoding    }
+    @inlinable public var xmlVersion    : String          { entity.xmlVersion     }
+    @inlinable public var entityName    : String          { entity.entityName     }
+//@f:1
     public init(_ entity: EntityNode) { super.init(entity) }
 }

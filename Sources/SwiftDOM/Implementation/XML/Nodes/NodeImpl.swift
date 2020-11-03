@@ -45,7 +45,7 @@ public class NodeImpl: Node, Hashable, Equatable, RandomAccessCollection {
     public               var endIndex        : Int                         { 0                                   }
     @inlinable public    var count           : Int                         { (endIndex - startIndex)             }
     @inlinable public    var isEmpty         : Bool                        { (count == 0)                        }
-    public internal(set) var isReadOnly      : Bool                        = false
+    public               var isReadOnly      : Bool                        { false                               }
     public               var hasAttributes   : Bool                        { false                               }
     public               var hasChildNodes   : Bool                        { false                               }
     public               var hasNamespace    : Bool                        { false                               }
