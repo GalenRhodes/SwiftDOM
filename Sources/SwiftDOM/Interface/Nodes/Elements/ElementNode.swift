@@ -60,9 +60,9 @@ public protocol ElementNode: Node {
 
     @discardableResult func removeAttribute(attribute: AttributeNode) -> AttributeNode?
 
-    func setIdAttributeWith(name: String, isId: Bool)
+    @discardableResult func setIdAttributeWith(name: String, isId: Bool) -> AttributeNode?
 
-    func setIdAttributeWith(namespaceURI: String, name: String, isId: Bool)
+    @discardableResult func setIdAttributeWith(namespaceURI: String, name: String, isId: Bool) -> AttributeNode?
 
     func setIdAttribute(attribute: AttributeNode, isId: Bool)
 }
@@ -140,11 +140,11 @@ public class AnyElementNode: AnyNode, ElementNode {
         element.setAttributeNS(attribute: attribute)
     }
 
-    public func setIdAttributeWith(name: String, isId: Bool) {
+    public func setIdAttributeWith(name: String, isId: Bool) -> AttributeNode? {
         element.setIdAttributeWith(name: name, isId: isId)
     }
 
-    public func setIdAttributeWith(namespaceURI: String, name: String, isId: Bool) {
+    public func setIdAttributeWith(namespaceURI: String, name: String, isId: Bool) -> AttributeNode? {
         element.setIdAttributeWith(namespaceURI: namespaceURI, name: name, isId: isId)
     }
 

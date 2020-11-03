@@ -100,13 +100,6 @@ extension Node {
     @inlinable public func isSameNode(as otherNode: Node) -> Bool { self === otherNode }
 
     @inlinable @discardableResult public func append(child childNode: Node) -> Node { insert(childNode: childNode, before: nil) }
-
-//@f:0
-    @inlinable public var textContent: String {
-        get { var _s: String = ""; forEachChild { _s += $0.textContent }; return _s }
-        set { removeAllChildNodes(); if !newValue.isEmpty { append(child: owningDocument.createTextNode(content: newValue)) } }
-    }
-//@f:1
 }
 
 extension Node where Self: Hashable {

@@ -37,13 +37,13 @@ internal let xNameChar:        String = "\(xNameStartChar)\(xNoStart)"
 internal let xName:            String = "[\(xNameStartChar)][\(xNameChar)]*"
 internal let xNameAll:         String = "^\(xName)$"
 
-internal let xNcNameStartChar: String = "\(xAscii)\(xUnicode)\(xExtended)" // No Colon Allowed
-internal let xNcNameChar:      String = "\(xNcNameStartChar)\(xNoStart)"
-internal let xNcName:          String = "[\(xNcNameStartChar)][\(xNcNameChar)]*"
+internal let xNsNameStartChar: String = "\(xAscii)\(xUnicode)\(xExtended)" // No Colon Allowed
+internal let xNsNameChar:      String = "\(xNsNameStartChar)\(xNoStart)"
+internal let xNsName:          String = "[\(xNsNameStartChar)][\(xNsNameChar)]*"
 
-internal let xNcNameAll:       String = "^\(xNcName)$"
-internal let xQName:           String = "^(?:(\(xNcName)):)?(\(xNcName))$"
-internal let xURIAttr:         String = "^\(Namespace.XMLNS_PREFIX.rawValue)(?:[:](\(xNcName)))?$"
+internal let xNsNameAll:       String = "^\(xNsName)$"
+internal let xQName:           String = "^(?:(\(xNsName)):)?(\(xNsName))$"
+internal let xURIAttr:         String = "^\(Namespace.XMLNS_PREFIX.rawValue)(?:[:](\(xNsName)))?$"
 //@f:1
 
 public enum Namespace: String {
@@ -53,17 +53,5 @@ public enum Namespace: String {
 }
 
 public let regexQName:  NSRegularExpression = try! NSRegularExpression(pattern: xQName)
-public let regexNcName: NSRegularExpression = try! NSRegularExpression(pattern: xNcNameAll)
+public let regexNsName: NSRegularExpression = try! NSRegularExpression(pattern: xNsNameAll)
 public let regexName:   NSRegularExpression = try! NSRegularExpression(pattern: xNameAll)
-
-public typealias NsNamesCheckResult = (namespaceURI: String, prefix: String?, localName: String)
-
-public func nsNamesCheck(namespaceURI uri: String, qualifiedName qName: String) -> NsNamesCheckResult {
-    guard !uri.isEmpty else { fatalError("Invalid URI: \"\(uri)\"") }
-    guard let m: RegExResult = regexQName.firstMatch(in: qName) else { fatalError("Invalid Qualified Name: \"\(qName)\"") }
-
-    let prefix:    String? = qName.matchGroup(match: m, group: 1)
-    let localName: String  = (qName.matchGroup(match: m, group: 2) ?? qName)
-
-    return (uri, prefix, localName)
-}

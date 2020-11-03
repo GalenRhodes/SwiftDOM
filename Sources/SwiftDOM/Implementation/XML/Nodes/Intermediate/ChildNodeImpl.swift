@@ -1,9 +1,9 @@
 /************************************************************************//**
  *     PROJECT: SwiftDOM
- *    FILENAME: Utils.swift
+ *    FILENAME: ChildNodeImpl.swift
  *         IDE: AppCode
  *      AUTHOR: Galen Rhodes
- *        DATE: 10/23/20
+ *        DATE: 11/2/20
  *
  * Copyright © 2020 Galen Rhodes. All rights reserved.
  *
@@ -22,19 +22,17 @@
 
 import Foundation
 
-/*===============================================================================================================================*/
-/// Notification name posted when the source for a live named node map is updated.
-///
-public let DOMNamedNodeMapDidChange: Notification.Name = Notification.Name("DOMNamedNodeMapDidChange")
-/*===============================================================================================================================*/
-/// Notification name posted when the source for a live node list is updated.
-///
-public let DOMNodeListDidChange:     Notification.Name = Notification.Name("DOMNodeListDidChange")
+public class ChildNodeImpl: NodeImpl {
+//@f:0
+    public override   var parentNode       : Node?           { _parentNode      }
+    public override   var nextSibling      : Node?           { _nextSibling     }
+    public override   var previousSibling  : Node?           { _previousSibling }
+    @usableFromInline var _parentNode      : ParentNodeImpl? = nil
+    @usableFromInline var _nextSibling     : ChildNodeImpl?  = nil
+    @usableFromInline var _previousSibling : ChildNodeImpl?  = nil
+//@f:1
 
-@inlinable public func hashThem<T>(into hasher: inout Hasher, items: T?...) where T: Hashable {
-    for item in items {
-        if let i = item {
-            hasher.combine(i)
-        }
-    }
+    public override init() { super.init() }
+
+    public override init(_ owningDocument: DocumentNode) { super.init(owningDocument) }
 }

@@ -22,8 +22,110 @@
 
 import Foundation
 
-class DocumentNodeImpl: ParentNodeImpl, DocumentNode {
-}
+public class DocumentNodeImpl: ParentNodeImpl, DocumentNode {
+    //@f:0
+    public override      var nodeType              : NodeTypes         { .DocumentNode }
+    public internal(set) var docType               : DocumentTypeNode? = nil
+    public               var documentElement       : ElementNode?      = nil
+    public internal(set) var inputEncoding         : String.Encoding   = String.Encoding.utf8
+    public               var documentURI           : String?           = nil
+    public internal(set) var xmlEncoding           : String            = ""
+    public               var xmlVersion            : String            = ""
+    public               var xmlStandalone         : Bool              = false
+    public               var isStrictErrorChecking : Bool              = false
+    //@f:1
 
-private class DummyDocument: NodeImpl, DocumentNode {
+    public override init() { super.init() }
+
+    public func adopt(node: Node) -> Node {
+        fatalError("adopt(node:) has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func createAttribute(name: String) -> AttributeNode {
+        fatalError("createAttribute(name:) has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func createAttribute(namespaceURI: String, name: String) -> AttributeNode {
+        fatalError("createAttribute(namespaceURI:name:) has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func createElement(name: String) -> ElementNode {
+        fatalError("createElement(name:) has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func createElement(namespaceURI: String, name: String) -> ElementNode {
+        fatalError("createElement(namespaceURI:name:) has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func createTextNode(content: String) -> TextNode {
+        fatalError("createTextNode(content:) has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func createCDataSectionNode(content: String) -> CDataSectionNode {
+        fatalError("createCDataSectionNode(content:) has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func createComment(content: String) -> CommentNode {
+        fatalError("createComment(content:) has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func createDocumentFragment() -> DocumentFragmentNode {
+        fatalError("createDocumentFragment() has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func createProcessingInstruction(data: String, target: String) -> ProcessingInstructionNode {
+        fatalError("createProcessingInstruction(data:target:) has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func createNotation(name: String, publicId: String, systemId: String) -> NotationNode {
+        fatalError("createNotation(name:publicId:systemId:) has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func createDocType(name: String, publicId: String, systemId: String, internalSubset: String) -> DocumentTypeNode {
+        fatalError("createDocType(name:publicId:systemId:internalSubset:) has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func normalizeDocument() { /* TODO: Implement me... */ }
+
+    public func getElementBy(elementId: String) -> ElementNode? {
+        fatalError("getElementBy(elementId:) has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func getElementsBy(name: String) -> NodeList<ElementNode> {
+        fatalError("getElementsBy(name:) has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func getElementsBy(namespaceURI: String, name: String) -> NodeList<ElementNode> {
+        fatalError("getElementsBy(namespaceURI:name:) has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func importNode(node: Node, deep: Bool) -> Node {
+        fatalError("importNode(node:deep:) has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func renameNode(node: Node, namespaceURI: String, qualifiedName: String) -> Node {
+        fatalError("renameNode(node:namespaceURI:qualifiedName:) has not been implemented")
+        /* TODO: Implement me... */
+    }
+
+    public func renameNode(node: Node, nodeName: String) -> Node {
+        fatalError("renameNode(node:nodeName:) has not been implemented")
+        /* TODO: Implement me... */
+    }
 }

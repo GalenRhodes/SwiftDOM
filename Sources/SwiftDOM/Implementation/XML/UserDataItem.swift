@@ -22,11 +22,11 @@
 
 import Foundation
 
-class UserDataItem {
-    var userData:     Any
-    var eventHandler: UserDataEventHandler?
+@usableFromInline class UserDataItem {
+    @usableFromInline var userData:     Any
+    @usableFromInline var eventHandler: UserDataEventHandler?
 
-    init(userData: Any, eventHandler: UserDataEventHandler?) {
+    @usableFromInline init(userData: Any, eventHandler: UserDataEventHandler?) {
         self.userData = userData
         self.eventHandler = eventHandler
     }

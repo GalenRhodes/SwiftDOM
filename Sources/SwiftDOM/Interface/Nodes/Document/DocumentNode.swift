@@ -25,7 +25,7 @@ import Foundation
 public protocol DocumentNode: Node {
 //@f:0
     var docType               : DocumentTypeNode? { get     }
-    var documentElement       : ElementNode       { get     }
+    var documentElement       : ElementNode?      { get     }
     var documentURI           : String?           { get set }
     var inputEncoding         : String.Encoding   { get     }
     var isStrictErrorChecking : Bool              { get set }
@@ -81,7 +81,7 @@ public class AnyDocumentNode: AnyNode, DocumentNode {
 
 //@f:0
     public var docType         : DocumentTypeNode? { document.docType         }
-    public var documentElement : ElementNode       { document.documentElement }
+    public var documentElement : ElementNode?      { document.documentElement }
     public var inputEncoding   : String.Encoding   { document.inputEncoding   }
     public var xmlEncoding     : String            { document.xmlEncoding     }
 

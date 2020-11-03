@@ -42,7 +42,9 @@ public class LiveNodeList<Element>: NodeList<Element> {
     // Probably not necessary but I'll do it anyways.
     deinit { NotificationCenter.default.removeObserver(self) }
 
+    /*===========================================================================================================================*/
     /// Default behavior is to simply load the parent's child nodes.
+    ///
     public func handleDomNodeListDidChange() {
         var t: [Element] = []
         parent.forEachChild { node in if let e = (node as? Element) { t.append(e) } }

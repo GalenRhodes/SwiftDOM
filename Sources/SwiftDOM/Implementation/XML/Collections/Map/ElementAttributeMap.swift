@@ -23,18 +23,32 @@
 import Foundation
 
 public class ElementAttributeMap: NamedNodeMap<AttributeNode> {
-    @inlinable public override var startIndex: Int { element.attributes.startIndex }
-    @inlinable public override var endIndex:   Int { element.attributes.endIndex }
+//@f:0
+    @inlinable public override var startIndex : Int             { element._attrs.startIndex }
+    @inlinable public override var endIndex   : Int             { element._attrs.endIndex   }
+    @inlinable public override var isEmpty    : Bool            { element._attrs.isEmpty    }
+    @inlinable public override var count      : Int             { element._attrs.count      }
+    @usableFromInline          var element    : ElementNodeImpl
+//@f:1
 
-    @usableFromInline var element: ElementNode
-
-    public init(element: ElementNode) {
+    public init(element: ElementNodeImpl) {
         self.element = element
         super.init()
     }
 
-    @inlinable public override subscript(nodeName: String) -> AttributeNode? { element.attributes[nodeName] }
-    @inlinable public override subscript(namespaceURI: String, localName: String) -> AttributeNode? { element.attributes[namespaceURI, localName] }
-    @inlinable public override subscript(bounds: Range<Int>) -> ArraySlice<AttributeNode> { element.attributes[bounds] }
-    @inlinable public override subscript(position: Int) -> AttributeNode { element.attributes[position] }
+    @inlinable public override subscript(nodeName: String) -> AttributeNode? {
+        element._attributeWith(name: nodeName)
+    }
+
+    @inlinable public override subscript(namespaceURI: String, localName: String) -> AttributeNode? {
+        element._attributeWith(namespaceURI: namespaceURI, name: localName)
+    }
+
+    @inlinable public override subscript(bounds: Range<Int>) -> ArraySlice<AttributeNode> {
+        element._attrs.map({ (a: AttributeNodeImpl) -> AttributeNode in a })[bounds]
+    }
+
+    @inlinable public override subscript(position: Int) -> AttributeNode {
+        element._attrs[position]
+    }
 }

@@ -63,4 +63,3 @@ extension TypeInfo where Self: Hashable {
 extension Array where Element: TypeInfo {
     @inlinable public static func == (lhs: [TypeInfo], rhs: [TypeInfo]) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
 }
-

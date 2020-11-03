@@ -71,4 +71,3 @@ extension DOMLocator where Self: Hashable {
 extension Array where Element: DOMLocator {
     @inlinable public static func == (lhs: [DOMLocator], rhs: [DOMLocator]) -> Bool { lhs.map({ $0.asHashable() }) == rhs.map({ $0.asHashable() }) }
 }
-

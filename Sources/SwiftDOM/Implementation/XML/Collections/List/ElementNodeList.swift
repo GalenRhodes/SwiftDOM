@@ -24,9 +24,9 @@ import Foundation
 
 public class ElementNodeList: LiveNodeList<ElementNode> {
 //@f:0
-    @usableFromInline var nodeName     : String?
-    @usableFromInline var localName    : String?
-    @usableFromInline var namespaceURI : String?
+    @usableFromInline let nodeName     : String?
+    @usableFromInline let localName    : String?
+    @usableFromInline let namespaceURI : String?
     @usableFromInline var element      : ElementNode { if let e = (parent as? ElementNode) { return e } else { fatalError("Not element node.") }  }
 //@f:1
 
@@ -60,8 +60,14 @@ public class ElementNodeList: LiveNodeList<ElementNode> {
     }
 
     @inlinable final func testElement(element: ElementNode) -> Bool {
-        if let name = nodeName { if name == "*" || element.nodeName == name { return true } }
-        if let uri = namespaceURI, let name = localName { if (uri == "*" || element.namespaceURI == uri) && (name == "*" || element.localName == name) { return true } }
-        return false
+        if let name = nodeName {
+            return ((name == "*") || (element.nodeName == name))
+        }
+        else if let uri = namespaceURI, let name = localName {
+            return ((uri == "*" || element.namespaceURI == uri) && (name == "*" || element.localName == name))
+        }
+        else {
+            return false
+        }
     }
 }
