@@ -24,17 +24,17 @@ import Foundation
 
 public class ParentNodeImpl: ChildNodeImpl {
 //@f:0
-    public override   var startIndex    : Int             { _worker.sync { () -> Int  in _nodes.startIndex } }
-    public override   var endIndex      : Int             { _worker.sync { () -> Int  in _nodes.endIndex   } }
-    public            var count         : Int             { _worker.sync { () -> Int  in _nodes.count      } }
-    public            var isEmpty       : Bool            { _worker.sync { () -> Bool in _nodes.isEmpty    } }
-    public override   var hasChildNodes : Bool            { _firstChild != nil                               }
-    public override   var firstChild    : Node?           { _firstChild                                      }
-    public override   var lastChild     : Node?           { _lastChild                                       }
-    @usableFromInline var _firstChild   : ChildNodeImpl?  = nil
-    @usableFromInline var _lastChild    : ChildNodeImpl?  = nil
-    @usableFromInline var _nodes        : [ChildNodeImpl] = []
-    @usableFromInline let _worker       : DispatchQueue   = DispatchQueue(label: UUID().uuidString, qos: .background, autoreleaseFrequency: .workItem)
+    @inlinable public override var startIndex    : Int             { _worker.sync { () -> Int  in _nodes.startIndex } }
+    @inlinable public override var endIndex      : Int             { _worker.sync { () -> Int  in _nodes.endIndex   } }
+    @inlinable public override var count         : Int             { _worker.sync { () -> Int  in _nodes.count      } }
+    @inlinable public override var isEmpty       : Bool            { _worker.sync { () -> Bool in _nodes.isEmpty    } }
+    @inlinable public override var hasChildNodes : Bool            { _firstChild != nil                               }
+    @inlinable public override var firstChild    : Node?           { _firstChild                                      }
+    @inlinable public override var lastChild     : Node?           { _lastChild                                       }
+    @usableFromInline          var _firstChild   : ChildNodeImpl?  = nil
+    @usableFromInline          var _lastChild    : ChildNodeImpl?  = nil
+    @usableFromInline          var _nodes        : [ChildNodeImpl] = []
+    @usableFromInline          let _worker       : DispatchQueue   = DispatchQueue(label: UUID().uuidString, qos: .background, autoreleaseFrequency: .workItem)
 //@f:1
 
     public override init() { super.init() }
@@ -42,6 +42,7 @@ public class ParentNodeImpl: ChildNodeImpl {
     public override init(_ owningDocument: DocumentNode) { super.init(owningDocument) }
 
     @discardableResult public func append(child childNode: Node) -> Node {
+        if isReadOnly { fatalError("No modification allowed") }
         let childNode = validateNew(child: childNode)
         if let p = childNode._parentNode { p.remove(childNode: childNode) }
 
@@ -65,6 +66,7 @@ public class ParentNodeImpl: ChildNodeImpl {
     }
 
     public override func insert(childNode: Node, before refNode: Node?) -> Node {
+        if isReadOnly { fatalError("No modification allowed") }
         guard let refNode = (refNode as? ChildNodeImpl) else { return append(child: childNode) }
         guard (refNode._parentNode?.isSameNode(as: self) ?? false) else { fatalError("Invalid reference node.") }
 
@@ -103,6 +105,7 @@ public class ParentNodeImpl: ChildNodeImpl {
     }
 
     public override func replace(childNode oldChildNode: Node, with newChildNode: Node) -> Node {
+        if isReadOnly { fatalError("No modification allowed") }
         let newChildNode = validateNew(child: newChildNode)
 
         guard let oldChildNode = (oldChildNode as? ChildNodeImpl), (oldChildNode._parentNode?.isSameNode(as: self) ?? false) else { fatalError("Invalid old child node") }
@@ -134,8 +137,10 @@ public class ParentNodeImpl: ChildNodeImpl {
     }
 
     @discardableResult public override func remove(childNode: Node) -> Node {
+        if isReadOnly { fatalError("No modification allowed") }
+        guard let childNode = (childNode as? ChildNodeImpl), (childNode._parentNode?.isSameNode(as: self) ?? false) else { fatalError("Invalid node.") }
+
         _worker.sync {
-            guard let childNode = (childNode as? ChildNodeImpl), (childNode._parentNode?.isSameNode(as: self) ?? false) else { fatalError("Invalid node.") }
             let prev = childNode._previousSibling
             let next = childNode._nextSibling
 
@@ -151,12 +156,16 @@ public class ParentNodeImpl: ChildNodeImpl {
 
             _worker.async { [weak self] in if let s = self { s._nodes.removeAll { childNode.isSameNode(as: $0) } } }
         }
+
         notifyListeners()
         return childNode
     }
 
     @discardableResult public override func removeAllChildNodes() -> [Node] {
-        let arr = _worker.sync { () -> [Node] in
+        if isReadOnly { fatalError("No modification allowed") }
+
+        let arr = _worker.sync {
+            () -> [Node] in
             let arr: [Node] = Array(_nodes)
             _nodes.removeAll()
 
@@ -178,7 +187,7 @@ public class ParentNodeImpl: ChildNodeImpl {
         return arr
     }
 
-    public func forEachChild(do block: (Node) throws -> Void) rethrows {
+    @inlinable public func forEachChild(do block: (Node) throws -> Void) rethrows {
         var _node = _firstChild
         while let node = _node {
             try block(node)
@@ -186,32 +195,33 @@ public class ParentNodeImpl: ChildNodeImpl {
         }
     }
 
-    public override func contains(_ node: Node) -> Bool { _worker.sync { _nodes.contains { $0.isSameNode(as: node) } } }
+    @inlinable public override func contains(_ node: Node) -> Bool { _worker.sync { _nodes.contains { $0.isSameNode(as: node) } } }
 
-    public override subscript(position: Int) -> Node { _worker.sync { _nodes[position] } }
+    @inlinable public override subscript(position: Int) -> Node { _worker.sync { _nodes[position] } }
 
-    public override subscript(bounds: Range<Int>) -> ArraySlice<Node> { _worker.sync { _nodes.map({ n -> Node in n })[bounds] } }
+    @inlinable public override subscript(bounds: Range<Int>) -> ArraySlice<Node> { _worker.sync { _nodes.map({ n -> Node in n })[bounds] } }
 
-    public override var textContent: String {
+    @inlinable public override var textContent: String {
         get {
             var txt: String = ""
             forEachChild { txt += $0.textContent }
             return txt
         }
         set {
+            if isReadOnly { fatalError("No modification allowed") }
             removeAllChildNodes()
             if !newValue.isEmpty { append(child: owningDocument.createTextNode(content: newValue)) }
         }
     }
 
-    func notifyListeners() {
+    @inlinable func notifyListeners() {
         NotificationCenter.default.post(name: DOMNodeListDidChange, object: self)
         if let p = _parentNode { p.notifyListeners() }
     }
 
-    func canBeParentTo(child: Node) -> Bool { false }
+    @usableFromInline func canBeParentTo(child: Node) -> Bool { false }
 
-    func hierarchyCheck(node: Node) -> Bool {
+    @usableFromInline func hierarchyCheck(node: Node) -> Bool {
         var _n: ChildNodeImpl? = self
         while let n = _n {
             if n.isSameNode(as: node) { return false }
@@ -220,7 +230,7 @@ public class ParentNodeImpl: ChildNodeImpl {
         return true
     }
 
-    func validateNew(child: Node) -> ChildNodeImpl {
+    @inlinable func validateNew(child: Node) -> ChildNodeImpl {
         guard let child = (child as? ChildNodeImpl) else { fatalError("Invalid Node Type.") }
         guard canBeParentTo(child: child) else { fatalError("Invalid Node Type.") }
         guard hierarchyCheck(node: child) else { fatalError("Hierarchy Error.") }

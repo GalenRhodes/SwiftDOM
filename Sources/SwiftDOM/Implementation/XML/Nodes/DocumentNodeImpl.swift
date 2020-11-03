@@ -33,6 +33,7 @@ public class DocumentNodeImpl: ParentNodeImpl, DocumentNode {
     public               var xmlVersion            : String            = ""
     public               var xmlStandalone         : Bool              = false
     public               var isStrictErrorChecking : Bool              = false
+    public override      var owningDocument        : DocumentNode      { self }
     //@f:1
 
     public override init() { super.init() }

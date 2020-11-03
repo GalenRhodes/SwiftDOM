@@ -24,27 +24,29 @@ import Foundation
 
 public protocol Node: AnyObject {
     //@f:0
-    var nodeType        : NodeTypes                      { get     }
-    var nodeName        : String                         { get     }
-    var nodeValue       : String?                        { get set }
-    var textContent     : String                         { get set }
-    var baseURI         : String?                        { get     }
-    var namespaceURI    : String?                        { get     }
-    var localName       : String?                        { get     }
-    var prefix          : String?                        { get set }
-    var count           : Int                            { get     }
-    var startIndex      : Int                            { get     }
-    var endIndex        : Int                            { get     }
-    var attributes      : NamedNodeMap<AttributeNode>    { get     }
-    var hasAttributes   : Bool                           { get     }
-    var hasChildNodes   : Bool                           { get     }
-    var hasNamespace    : Bool                           { get     }
-    var owningDocument  : DocumentNode                   { get     }
-    var parentNode      : Node?                          { get     }
-    var firstChild      : Node?                          { get     }
-    var lastChild       : Node?                          { get     }
-    var nextSibling     : Node?                          { get     }
-    var previousSibling : Node?                          { get     }
+    var nodeType        : NodeTypes                   { get     }
+    var nodeName        : String                      { get     }
+    var nodeValue       : String?                     { get set }
+    var textContent     : String                      { get set }
+    var baseURI         : String?                     { get     }
+    var namespaceURI    : String?                     { get     }
+    var localName       : String?                     { get     }
+    var prefix          : String?                     { get set }
+    var count           : Int                         { get     }
+    var startIndex      : Int                         { get     }
+    var endIndex        : Int                         { get     }
+    var attributes      : NamedNodeMap<AttributeNode> { get     }
+    var isEmpty         : Bool                        { get     }
+    var isReadOnly      : Bool                        { get     }
+    var hasAttributes   : Bool                        { get     }
+    var hasChildNodes   : Bool                        { get     }
+    var hasNamespace    : Bool                        { get     }
+    var owningDocument  : DocumentNode                { get     }
+    var parentNode      : Node?                       { get     }
+    var firstChild      : Node?                       { get     }
+    var lastChild       : Node?                       { get     }
+    var nextSibling     : Node?                       { get     }
+    var previousSibling : Node?                       { get     }
     //@f:1
 
     func normalize()
@@ -91,6 +93,9 @@ public protocol Node: AnyObject {
 }
 
 extension Node {
+    @inlinable public var count:   Int { (endIndex - startIndex) }
+    @inlinable public var isEmpty: Bool { (count == 0) }
+
     @inlinable public func isNodeType(_ types: [NodeTypes]) -> Bool { for t in types { if nodeType == t { return true } }; return false }
 
     @inlinable public func isNodeType(_ types: NodeTypes...) -> Bool { isNodeType(types) }

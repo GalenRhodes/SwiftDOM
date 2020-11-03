@@ -32,27 +32,29 @@ public class AnyNode: Node, Hashable, RandomAccessCollection {
     @usableFromInline var node: Node
 
 //@f:0
-    @inlinable public var owningDocument:   DocumentNode                   { node.owningDocument  }
-    @inlinable public var nodeType:         NodeTypes                      { node.nodeType        }
-    @inlinable public var nodeName:         String                         { node.nodeName        }
-    @inlinable public var localName:        String?                        { node.localName       }
-    @inlinable public var namespaceURI:     String?                        { node.namespaceURI    }
-    @inlinable public var baseURI:          String?                        { node.baseURI         }
-    @inlinable public var parentNode:       Node?                          { node.parentNode      }
-    @inlinable public var firstChild:       Node?                          { node.firstChild      }
-    @inlinable public var lastChild:        Node?                          { node.lastChild       }
-    @inlinable public var nextSibling:      Node?                          { node.nextSibling     }
-    @inlinable public var previousSibling:  Node?                          { node.previousSibling }
-    @inlinable public var hasAttributes:    Bool                           { node.hasAttributes   }
-    @inlinable public var hasChildNodes:    Bool                           { node.hasChildNodes   }
-    @inlinable public var hasNamespace:     Bool                           { node.hasNamespace    }
-    @inlinable public var count:            Int                            { node.count           }
-    @inlinable public var startIndex:       Int                            { node.startIndex      }
-    @inlinable public var endIndex:         Int                            { node.endIndex        }
-    @inlinable public var attributes:       NamedNodeMap<AttributeNode> { node.attributes      }
-    @inlinable public var nodeValue:        String?                        { get { node.nodeValue   } set { node.nodeValue   = newValue } }
-    @inlinable public var textContent:      String                         { get { node.textContent } set { node.textContent = newValue } }
-    @inlinable public var prefix:           String?                        { get { node.prefix      } set { node.prefix      = newValue } }
+    @inlinable public var owningDocument  : DocumentNode                { node.owningDocument                                          }
+    @inlinable public var nodeType        : NodeTypes                   { node.nodeType                                                }
+    @inlinable public var nodeName        : String                      { node.nodeName                                                }
+    @inlinable public var localName       : String?                     { node.localName                                               }
+    @inlinable public var namespaceURI    : String?                     { node.namespaceURI                                            }
+    @inlinable public var baseURI         : String?                     { node.baseURI                                                 }
+    @inlinable public var parentNode      : Node?                       { node.parentNode                                              }
+    @inlinable public var firstChild      : Node?                       { node.firstChild                                              }
+    @inlinable public var lastChild       : Node?                       { node.lastChild                                               }
+    @inlinable public var nextSibling     : Node?                       { node.nextSibling                                             }
+    @inlinable public var previousSibling : Node?                       { node.previousSibling                                         }
+    @inlinable public var isReadOnly      : Bool                        { node.isReadOnly                                              }
+    @inlinable public var hasAttributes   : Bool                        { node.hasAttributes                                           }
+    @inlinable public var hasChildNodes   : Bool                        { node.hasChildNodes                                           }
+    @inlinable public var hasNamespace    : Bool                        { node.hasNamespace                                            }
+    @inlinable public var isEmpty         : Bool                        { node.isEmpty                                                 }
+    @inlinable public var count           : Int                         { node.count                                                   }
+    @inlinable public var startIndex      : Int                         { node.startIndex                                              }
+    @inlinable public var endIndex        : Int                         { node.endIndex                                                }
+    @inlinable public var attributes      : NamedNodeMap<AttributeNode> { node.attributes                                              }
+    @inlinable public var nodeValue       : String?                     { get { node.nodeValue   } set { node.nodeValue   = newValue } }
+    @inlinable public var textContent     : String                      { get { node.textContent } set { node.textContent = newValue } }
+    @inlinable public var prefix          : String?                     { get { node.prefix      } set { node.prefix      = newValue } }
 //@f:1
 
     public init(_ node: Node) { self.node = node }

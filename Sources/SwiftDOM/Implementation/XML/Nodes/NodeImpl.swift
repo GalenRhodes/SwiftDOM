@@ -32,30 +32,32 @@ public class NodeImpl: Node, Hashable, Equatable, RandomAccessCollection {
     public typealias Indices     = Range<Index>
     public typealias SubSequence = ArraySlice<Element>
 
-    @inlinable public    var owningDocument  : DocumentNode                { _owningDocument }
-    @inlinable public    var nodeType        : NodeTypes                   { fatalError() }
-    public               var nodeName        : String                      { "" }
-    public               var nodeValue       : String?                     { get { nil } set {} }
-    public               var baseURI         : String?                     { nil }
-    public               var namespaceURI    : String?                     { nil }
-    public               var localName       : String?                     { nil }
-    public               var prefix          : String?                     { get { nil } set {} }
-    public               var textContent     : String                      { get { ""  } set {} }
-    public               var startIndex      : Int                         {0}
-    public               var endIndex        : Int                         {0}
-    public               var hasAttributes   : Bool                        {false}
-    public               var hasChildNodes   : Bool                        {false}
-    public               var hasNamespace    : Bool                        {false}
-    public               var parentNode      : Node?                       { nil }
-    public               var firstChild      : Node?                       { nil }
-    public               var lastChild       : Node?                       { nil }
-    public               var nextSibling     : Node?                       { nil }
-    public               var previousSibling : Node?                       { nil }
+    @inlinable public    var owningDocument  : DocumentNode                { _owningDocument                     }
+    @inlinable public    var nodeType        : NodeTypes                   { fatalError()                        }
+    public               var nodeName        : String                      { ""                                  }
+    public               var nodeValue       : String?                     { get { nil } set {}                  }
+    public               var baseURI         : String?                     { nil                                 }
+    public               var namespaceURI    : String?                     { nil                                 }
+    public               var localName       : String?                     { nil                                 }
+    public               var prefix          : String?                     { get { nil } set {}                  }
+    public               var textContent     : String                      { get { ""  } set {}                  }
+    public               var startIndex      : Int                         { 0                                   }
+    public               var endIndex        : Int                         { 0                                   }
+    @inlinable public    var count           : Int                         { (endIndex - startIndex)             }
+    @inlinable public    var isEmpty         : Bool                        { (count == 0)                        }
+    public internal(set) var isReadOnly      : Bool                        = false
+    public               var hasAttributes   : Bool                        { false                               }
+    public               var hasChildNodes   : Bool                        { false                               }
+    public               var hasNamespace    : Bool                        { false                               }
+    public               var parentNode      : Node?                       { nil                                 }
+    public               var firstChild      : Node?                       { nil                                 }
+    public               var lastChild       : Node?                       { nil                                 }
+    public               var nextSibling     : Node?                       { nil                                 }
+    public               var previousSibling : Node?                       { nil                                 }
     public               var attributes      : NamedNodeMap<AttributeNode> { NodeImpl.emptyAttributeNamedNodeMap }
-    @usableFromInline    var _userData       : [String: UserDataItem]      = [:]
+    @usableFromInline    var _userData       : [String:UserDataItem]       = [:]
     @usableFromInline    var _owningDocument : DocumentNode!               = nil
 //@f:1
-
 
     public init() {
         _owningDocument = nil
@@ -177,7 +179,6 @@ public class NodeImpl: Node, Hashable, Equatable, RandomAccessCollection {
     }
 
     func postUserDataEvent(action: UserDataEvents, destination destNode: Node) {
-
     }
 
     public func isEqualTo(_ other: Node) -> Bool { fatalError("isEqualTo(_:) has not been implemented") }
