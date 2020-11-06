@@ -120,7 +120,7 @@ public class NodeImpl: Node, Hashable, Equatable, RandomAccessCollection {
 
     /*===========================================================================================================================*/
     /// Sub-classes will want to override this with a more efficient implementation.
-    ///
+    /// 
     /// - Parameter position: the position of the node to get.
     /// - Returns: the node.
     ///
@@ -144,7 +144,7 @@ public class NodeImpl: Node, Hashable, Equatable, RandomAccessCollection {
 
     /*===========================================================================================================================*/
     /// Sub-classes will want to override this with a more efficient implementation.
-    ///
+    /// 
     /// - Parameter bounds: the bounds of the nodes to get.
     /// - Returns: and <code>[ArraySlice](https://developer.apple.com/documentation/swift/ArraySlice)</code> containing the nodes.
     ///

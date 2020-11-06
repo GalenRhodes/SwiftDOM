@@ -10,10 +10,13 @@ let package = Package(
       .library(name: "SwiftDOM", targets: [ "SwiftDOM" ]),
   ],
   dependencies: [
-      .package(name: "Rubicon", url: "https://github.com/GalenRhodes/Rubicon", from: "0.2.33"),
+      .package(name: "Rubicon", url: "https://github.com/GalenRhodes/Rubicon", from: "0.2.36"),
+      .package(name: "LibXML2Helper", url: "https://github.com/GalenRhodes/LibXML2Helper", from: "1.1.0"),
   ],
   targets: [
-      .target(name: "SwiftDOM", dependencies: [ "Rubicon" ]),
+      //.systemLibrary(name: "LibXML2", pkgConfig: "libxml-2.0", providers: [ .apt([ "libxml2-dev" ]) ]),
+      //.target(name: "SwiftDOM", dependencies: [ "Rubicon", "LibXML2" ]),
+      .target(name: "SwiftDOM", dependencies: [ "Rubicon", "LibXML2Helper" ]),
       .testTarget(name: "SwiftDOMTests", dependencies: [ "SwiftDOM" ]),
   ]
 )

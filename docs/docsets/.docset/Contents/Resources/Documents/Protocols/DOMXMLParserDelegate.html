@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DOMXMLParserDelegate Protocol Reference</title>
+    <link href="../css/jazzy.css" rel="stylesheet" type="text/css" />
+    <link href="../css/highlight.css" rel="stylesheet" type="text/css" />
+    <meta charset='utf-8'>
+    <script defer src="../js/jquery.min.js"></script>
+    <script defer src="../js/jazzy.js"></script>
+
+  </head>
+  <body>
+    <a class="dashAnchor" name="//apple_ref/swift/Protocol/DOMXMLParserDelegate"></a>
+    <a title="DOMXMLParserDelegate Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SwiftDOM©</a> (8% documented)</p>
+        <p class="header-right"><a href="https://github.com/GalenRhodes/SwiftDOM"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        DOMXMLParserDelegate Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AnyAttributeNode.html">AnyAttributeNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyCDataSectionNode.html">AnyCDataSectionNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyCharacterData.html">AnyCharacterData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyCommentNode.html">AnyCommentNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyDOMLocator.html">AnyDOMLocator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyDocumentFragmentNode.html">AnyDocumentFragmentNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyDocumentNode.html">AnyDocumentNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyDocumentTypeNode.html">AnyDocumentTypeNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyElementNode.html">AnyElementNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyEntityNode.html">AnyEntityNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyEntityRefNode.html">AnyEntityRefNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyNode.html">AnyNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyNotationNode.html">AnyNotationNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyProcessingInstructionNode.html">AnyProcessingInstructionNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyTextNode.html">AnyTextNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AnyTypeInfo.html">AnyTypeInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AttributeNodeImpl.html">AttributeNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CDataSectionNodeImpl.html">CDataSectionNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CharacterDataImpl.html">CharacterDataImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ChildNodeImpl.html">ChildNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CommentNodeImpl.html">CommentNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DOMXMLParser.html">DOMXMLParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DocumentFragmentNodeImpl.html">DocumentFragmentNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DocumentNodeImpl.html">DocumentNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DocumentTypeNodeImpl.html">DocumentTypeNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ElementAttributeMap.html">ElementAttributeMap</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ElementNodeImpl.html">ElementNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ElementNodeList.html">ElementNodeList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EntityNodeImpl.html">EntityNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/EntityRefNodeImpl.html">EntityRefNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LiveNodeList.html">LiveNodeList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NamedNodeImpl.html">NamedNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NamedNodeMap.html">NamedNodeMap</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NodeImpl.html">NodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NodeList.html">NodeList</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NotationNodeImpl.html">NotationNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ParentNodeImpl.html">ParentNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ProcessingInstructionNodeImpl.html">ProcessingInstructionNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SAXAttribute.html">SAXAttribute</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:8SwiftDOM17SAXElementContentC">SAXElementContent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:8SwiftDOM9SAXEntityC">SAXEntity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:8SwiftDOM14SAXEnumerationC">SAXEnumeration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:8SwiftDOM10SAXLocatorC">SAXLocator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SAXNamespaceMapping.html">SAXNamespaceMapping</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TextNodeImpl.html">TextNodeImpl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TypeInfoImpl.html">TypeInfoImpl</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:8SwiftDOM24DOMNamedNodeMapDidChangeSo18NSNotificationNameavp">DOMNamedNodeMapDidChange</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:8SwiftDOM20DOMNodeListDidChangeSo18NSNotificationNameavp">DOMNodeListDidChange</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:8SwiftDOM9regexNameSo19NSRegularExpressionCvp">regexName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:8SwiftDOM11regexNsNameSo19NSRegularExpressionCvp">regexNsName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Global%20Variables.html#/s:8SwiftDOM10regexQNameSo19NSRegularExpressionCvp">regexQName</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/Namespace.html">Namespace</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/NodeTypes.html">NodeTypes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TypeDerivation.html">TypeDerivation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UserDataEvents.html">UserDataEvents</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Array.html">Array</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:8SwiftDOM8hashThem4into5itemsys6HasherVz_xSgdtSHRzlF">hashThem(into:items:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AttributeNode.html">AttributeNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:8SwiftDOM16CDataSectionNodeP">CDataSectionNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/CharacterData.html">CharacterData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:8SwiftDOM11CommentNodeP">CommentNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DOMLocator.html">DOMLocator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DOMXMLParserDelegate.html">DOMXMLParserDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:8SwiftDOM20DocumentFragmentNodeP">DocumentFragmentNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DocumentNode.html">DocumentNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DocumentTypeNode.html">DocumentTypeNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ElementNode.html">ElementNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EntityNode.html">EntityNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EntityRefNode.html">EntityRefNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Node.html">Node</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NotationNode.html">NotationNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ProcessingInstructionNode.html">ProcessingInstructionNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TextNode.html">TextNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/TypeInfo.html">TypeInfo</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM20SAXAttributeDeclFunca">SAXAttributeDeclFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM16SAXAttributeFunca">SAXAttributeFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM17SAXCdataBlockFunca">SAXCdataBlockFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM17SAXCharactersFunca">SAXCharactersFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM14SAXCommentFunca">SAXCommentFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM18SAXElementDeclFunca">SAXElementDeclFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM18SAXEndDocumentFunca">SAXEndDocumentFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM17SAXEndElementFunca">SAXEndElementFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM17SAXEntityDeclFunca">SAXEntityDeclFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM12SAXErrorFunca">SAXErrorFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM21SAXExternalSubsetFunca">SAXExternalSubsetFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM17SAXFatalErrorFunca">SAXFatalErrorFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM16SAXGetEntityFunca">SAXGetEntityFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM25SAXGetParameterEntityFunca">SAXGetParameterEntityFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM24SAXHasExternalSubsetFunca">SAXHasExternalSubsetFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM24SAXHasInternalSubsetFunca">SAXHasInternalSubsetFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM26SAXIgnorableWhitespaceFunca">SAXIgnorableWhitespaceFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM21SAXInternalSubsetFunca">SAXInternalSubsetFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM19SAXIsStandaloneFunca">SAXIsStandaloneFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM19SAXNotationDeclFunca">SAXNotationDeclFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM28SAXProcessingInstructionFunca">SAXProcessingInstructionFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM16SAXReferenceFunca">SAXReferenceFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM20SAXResolveEntityFunca">SAXResolveEntityFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM25SAXSetDocumentLocatorFunca">SAXSetDocumentLocatorFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM20SAXStartDocumentFunca">SAXStartDocumentFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM19SAXStartElementFunca">SAXStartElementFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM25SAXUnparsedEntityDeclFunca">SAXUnparsedEntityDeclFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM14SAXWarningFunca">SAXWarningFunc</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:8SwiftDOM20UserDataEventHandlera">UserDataEventHandler</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>DOMXMLParserDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">DOMXMLParserDelegate</span></code></pre>
+
+                </div>
+              </div>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP18parseAttributeDeclyAA0C0C_S2SS2iSSAA14SAXEnumerationCtcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseAttributeDecl"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP18parseAttributeDeclyAA0C0C_S2SS2iSSAA14SAXEnumerationCtcSgvp">parseAttributeDecl</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseAttributeDecl</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM20SAXAttributeDeclFunca">SAXAttributeDeclFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP14parseAttributeyAA0C0C_S2StcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseAttribute"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP14parseAttributeyAA0C0C_S2StcSgvp">parseAttribute</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseAttribute</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM16SAXAttributeFunca">SAXAttributeFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP15parseCdataBlockyAA0C0C_SSSitcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseCdataBlock"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP15parseCdataBlockyAA0C0C_SSSitcSgvp">parseCdataBlock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseCdataBlock</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM17SAXCdataBlockFunca">SAXCdataBlockFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP15parseCharactersyAA0C0C_SSSitcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseCharacters"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP15parseCharactersyAA0C0C_SSSitcSgvp">parseCharacters</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseCharacters</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM17SAXCharactersFunca">SAXCharactersFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP12parseCommentyAA0C0C_SStcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseComment"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP12parseCommentyAA0C0C_SStcSgvp">parseComment</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseComment</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM14SAXCommentFunca">SAXCommentFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP16parseElementDeclyAA0C0C_SSSiAA17SAXElementContentCtcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseElementDecl"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP16parseElementDeclyAA0C0C_SSSiAA17SAXElementContentCtcSgvp">parseElementDecl</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseElementDecl</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM18SAXElementDeclFunca">SAXElementDeclFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP16parseEndDocumentyAA0C0CcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseEndDocument"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP16parseEndDocumentyAA0C0CcSgvp">parseEndDocument</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseEndDocument</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM18SAXEndDocumentFunca">SAXEndDocumentFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP15parseEndElementyAA0C0C_SStcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseEndElement"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP15parseEndElementyAA0C0C_SStcSgvp">parseEndElement</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseEndElement</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM17SAXEndElementFunca">SAXEndElementFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP15parseEntityDeclyAA0C0C_SSSiS2SSaySSGtcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseEntityDecl"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP15parseEntityDeclyAA0C0C_SSSiS2SSaySSGtcSgvp">parseEntityDecl</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseEntityDecl</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM17SAXEntityDeclFunca">SAXEntityDeclFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP10parseErroryAA0C0C_s0F0_ptcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseError"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP10parseErroryAA0C0C_s0F0_ptcSgvp">parseError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseError</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM12SAXErrorFunca">SAXErrorFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP19parseExternalSubsetyAA0C0C_S3StcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseExternalSubset"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP19parseExternalSubsetyAA0C0C_S3StcSgvp">parseExternalSubset</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseExternalSubset</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM21SAXExternalSubsetFunca">SAXExternalSubsetFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP15parseFatalErroryAA0C0C_s0G0_ptcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseFatalError"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP15parseFatalErroryAA0C0C_s0G0_ptcSgvp">parseFatalError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseFatalError</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM17SAXFatalErrorFunca">SAXFatalErrorFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP14parseGetEntityAA9SAXEntityCAA0C0C_SStcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseGetEntity"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP14parseGetEntityAA9SAXEntityCAA0C0C_SStcSgvp">parseGetEntity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseGetEntity</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM16SAXGetEntityFunca">SAXGetEntityFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP23parseGetParameterEntityAA9SAXEntityCAA0C0C_SStcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseGetParameterEntity"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP23parseGetParameterEntityAA9SAXEntityCAA0C0C_SStcSgvp">parseGetParameterEntity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseGetParameterEntity</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM25SAXGetParameterEntityFunca">SAXGetParameterEntityFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP22parseHasExternalSubsetSiAA0C0CcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseHasExternalSubset"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP22parseHasExternalSubsetSiAA0C0CcSgvp">parseHasExternalSubset</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseHasExternalSubset</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM24SAXHasExternalSubsetFunca">SAXHasExternalSubsetFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP22parseHasInternalSubsetSiAA0C0CcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseHasInternalSubset"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP22parseHasInternalSubsetSiAA0C0CcSgvp">parseHasInternalSubset</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseHasInternalSubset</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM24SAXHasInternalSubsetFunca">SAXHasInternalSubsetFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP24parseIgnorableWhitespaceyAA0C0C_SSSitcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseIgnorableWhitespace"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP24parseIgnorableWhitespaceyAA0C0C_SSSitcSgvp">parseIgnorableWhitespace</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseIgnorableWhitespace</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM26SAXIgnorableWhitespaceFunca">SAXIgnorableWhitespaceFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP19parseInternalSubsetyAA0C0C_S3StcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseInternalSubset"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP19parseInternalSubsetyAA0C0C_S3StcSgvp">parseInternalSubset</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseInternalSubset</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM21SAXInternalSubsetFunca">SAXInternalSubsetFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP17parseIsStandaloneSiAA0C0CcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseIsStandalone"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP17parseIsStandaloneSiAA0C0CcSgvp">parseIsStandalone</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseIsStandalone</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM19SAXIsStandaloneFunca">SAXIsStandaloneFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP17parseNotationDeclyAA0C0C_S3StcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseNotationDecl"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP17parseNotationDeclyAA0C0C_S3StcSgvp">parseNotationDecl</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseNotationDecl</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM19SAXNotationDeclFunca">SAXNotationDeclFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP26parseProcessingInstructionyAA0C0C_S2StcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseProcessingInstruction"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP26parseProcessingInstructionyAA0C0C_S2StcSgvp">parseProcessingInstruction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseProcessingInstruction</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM28SAXProcessingInstructionFunca">SAXProcessingInstructionFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP14parseReferenceyAA0C0C_SStcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseReference"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP14parseReferenceyAA0C0C_SStcSgvp">parseReference</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseReference</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM16SAXReferenceFunca">SAXReferenceFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP18parseResolveEntitySo13NSInputStreamCAA0C0C_S2StcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseResolveEntity"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP18parseResolveEntitySo13NSInputStreamCAA0C0C_S2StcSgvp">parseResolveEntity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseResolveEntity</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM20SAXResolveEntityFunca">SAXResolveEntityFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP23parseSetDocumentLocatoryAA0C0C_AA10SAXLocatorCtcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseSetDocumentLocator"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP23parseSetDocumentLocatoryAA0C0C_AA10SAXLocatorCtcSgvp">parseSetDocumentLocator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseSetDocumentLocator</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM25SAXSetDocumentLocatorFunca">SAXSetDocumentLocatorFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP18parseStartDocumentyAA0C0CcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseStartDocument"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP18parseStartDocumentyAA0C0CcSgvp">parseStartDocument</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseStartDocument</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM20SAXStartDocumentFunca">SAXStartDocumentFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP17parseStartElementyAA0C0C_SSSayAA12SAXAttributeCGtcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseStartElement"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP17parseStartElementyAA0C0C_SSSayAA12SAXAttributeCGtcSgvp">parseStartElement</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseStartElement</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM19SAXStartElementFunca">SAXStartElementFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP23parseUnparsedEntityDeclyAA0C0C_S4StcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseUnparsedEntityDecl"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP23parseUnparsedEntityDeclyAA0C0C_S4StcSgvp">parseUnparsedEntityDecl</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseUnparsedEntityDecl</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM25SAXUnparsedEntityDeclFunca">SAXUnparsedEntityDeclFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8SwiftDOM20DOMXMLParserDelegateP12parseWarningyAA0C0C_s5Error_ptcSgvp"></a>
+                    <a class="dashAnchor" name="//apple_ref/swift/Property/parseWarning"></a>
+                    <a class="token" href="#/s:8SwiftDOM20DOMXMLParserDelegateP12parseWarningyAA0C0C_s5Error_ptcSgvp">parseWarning</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parseWarning</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:8SwiftDOM14SAXWarningFunca">SAXWarningFunc</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/GalenRhodes/SwiftDOM/blob/master/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://blog.projectgalen.com" rel="external" target="_blank">Galen Rhodes</a>. All rights reserved. (Last updated: 2020-11-05)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" rel="external" target="_blank">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" rel="external" target="_blank">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

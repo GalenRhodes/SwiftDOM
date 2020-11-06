@@ -31,18 +31,25 @@
 		1117D1159231C860D7412D0B /* ProcessingInstructionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D1A89762E9E70F016C48 /* ProcessingInstructionNode.swift */; };
 		1117D16AB28116E14CE642D8 /* NamedNodeMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D908BB713B402E73264C /* NamedNodeMap.swift */; };
 		1117D171F01F85B9C71BD708 /* SwiftDOM.h in Headers */ = {isa = PBXBuildFile; fileRef = 1117D97616C45B5FB41CCFB8 /* SwiftDOM.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1117D17BC4BCADC263F32D42 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D12881F707E24094F6A8 /* Tools.swift */; };
 		1117D1D483C4AFCE62D4E693 /* DocumentTypeNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D7B8C16851F4195E56F1 /* DocumentTypeNodeImpl.swift */; };
 		1117D22D0F6F4A2644C51E27 /* UserDataEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DED1C52A79FD09A81CC9 /* UserDataEvents.swift */; };
 		1117D2E7C2F405252675F6F8 /* ProcessingInstructionNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D0E9CD436399363CC823 /* ProcessingInstructionNodeImpl.swift */; };
+		1117D329B02163C2D439CD46 /* swift_libxml.h in Headers */ = {isa = PBXBuildFile; fileRef = 1117DBC238CA79640FE5E761 /* swift_libxml.h */; };
+		1117D3460ABA6B8279D8FC11 /* SAXAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D776F54C5255DA58CC55 /* SAXAttribute.swift */; };
 		1117D460DA4A874A6A5CE573 /* ParentNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DA11E2EB1CE9B1875A07 /* ParentNodeImpl.swift */; };
 		1117D4FF609197047E8BC408 /* TypeInfoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D325C8594D9E188C275B /* TypeInfoImpl.swift */; };
 		1117D5769A18957165E40A5B /* EntityNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DE3129D7BE4852463A8E /* EntityNodeImpl.swift */; };
 		1117D5E3652A06107AA54B44 /* AttributeNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D0341A2767288A8DE287 /* AttributeNodeImpl.swift */; };
+		1117D607DF2C8CB493A9AC62 /* LibXMLTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DB65D25AEE02DAF40939 /* LibXMLTools.swift */; };
 		1117D68AA5513E0E349F36E0 /* NamedNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DF6C6AF8B1743E62773B /* NamedNodeImpl.swift */; };
+		1117D6CB638AEBE048FAD568 /* DOMXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D4DF92E20B8BB578EF15 /* DOMXMLParser.swift */; };
 		1117D701336AC36821992BB6 /* NodeTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D886A41432CFE64D2203 /* NodeTypes.swift */; };
 		1117D790A9EF176931CCDF1A /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D09AF25CB0B5A7F2BA73 /* Node.swift */; };
 		1117D8096B75E40C18CF6AC4 /* DocumentNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DA91A7079E76D13A5488 /* DocumentNodeImpl.swift */; };
+		1117D84E77669C5BD6DDC9DB /* SAXEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DC770F1297C15AFDA677 /* SAXEntity.swift */; };
 		1117D8E8FE87E86349329F4F /* CharacterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DD17F4A534F39EA78A8E /* CharacterData.swift */; };
+		1117D9CB5D2819863B3EDCCE /* SAXLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D83B5278290862F06E4B /* SAXLocator.swift */; };
 		1117DA40BDA562A7EF866863 /* EntityRefNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DD1D4C643DFC9C950EAD /* EntityRefNodeImpl.swift */; };
 		1117DA44309BA2ACDCA6CAA3 /* LiveNodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D59FCD04D4AE24383477 /* LiveNodeList.swift */; };
 		1117DA729AB01B0A6D60DB7B /* DocumentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DD08869F7024273DDAFF /* DocumentType.swift */; };
@@ -51,18 +58,25 @@
 		1117DB12FD608A3733F23370 /* DocumentNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DB9F9C236E4F950AD3B8 /* DocumentNode.swift */; };
 		1117DB1BAF130E62BAC341B3 /* NamespaceSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D103794DF67A4F754DFF /* NamespaceSupport.swift */; };
 		1117DB2692B4BA59E4F043F9 /* AnyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D9C3BB7047C54A3F4FE8 /* AnyNode.swift */; };
+		1117DBB6501928E9AC595720 /* SAXElementContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DEC82ADB5140067A7ACE /* SAXElementContent.swift */; };
 		1117DC6ACEB353BA541C634E /* NotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DD2AE325632EF9DF5B06 /* NotationNode.swift */; };
 		1117DC6B9BB7DF7C9F649E2B /* AttributeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D7963AD5A2500E71628D /* AttributeNode.swift */; };
 		1117DCB8C392163268CBC240 /* ElementAttributeMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DFA17E9831D6C74A3B7B /* ElementAttributeMap.swift */; };
+		1117DCFCAEF1083ECE1D2B02 /* DOMXMLParserDelegateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D045301E5D7EA6325EBD /* DOMXMLParserDelegateTest.swift */; };
 		1117DD0AAA0111644FE1F992 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DE9D49AB6DA8C1C26C9B /* Utils.swift */; };
 		1117DD3148AE37757B6AE513 /* NotationNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DF1578F718D4CC8ABED4 /* NotationNodeImpl.swift */; };
+		1117DD35A917E4C107BA1962 /* LibXMLSAXHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D048F2AEC3C901B3FAC6 /* LibXMLSAXHandler.swift */; };
+		1117DD4995621AA9E98DB319 /* SAXParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D6CA4E3AB0F1B552331B /* SAXParser.swift */; };
+		1117DD77280F8EBB4EB5ED7C /* SAXNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DB4FB2F1EE37498815DA /* SAXNamespace.swift */; };
 		1117DDD2ABA1030191F7307F /* TypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D523AC1B94BAE6E699E7 /* TypeInfo.swift */; };
 		1117DE643DC03835D76FA5CC /* ChildNodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DA5BE77EB1FC6E2E300A /* ChildNodeImpl.swift */; };
+		1117DEE46C0C270F4BA164C2 /* DOMXMLParserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DFFAF831F609DCB5220C /* DOMXMLParserError.swift */; };
 		1117DF08505AC2E0F08C2F22 /* ElementNodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DD73DE61DBB47694398A /* ElementNodeList.swift */; };
 		1117DF17498E1A27928E13C7 /* DOMLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D322A8C012C3A36F6B4E /* DOMLocator.swift */; };
 		1117DF2561E31CDB32D1DC54 /* DocumentFragmentNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DAC7DE36D462354C99F9 /* DocumentFragmentNode.swift */; };
 		1117DF30B38E1C82E00B2260 /* NodeImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117DF05205E1B7A811FA07F /* NodeImpl.swift */; };
 		1117DF708B2955F6DE239380 /* NodeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D9C8914055B964E0C276 /* NodeList.swift */; };
+		1117DF9D91761C6D43EF2CA4 /* SAXEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117D17B4C89805527014C5E /* SAXEnumeration.swift */; };
 		836097B02538DA7B008CB79D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836097AF2538DA7B008CB79D /* main.swift */; };
 		83BB029A2537E67200834BF5 /* SwiftDOM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83BB02902537E67200834BF5 /* SwiftDOM.framework */; };
 		83BB029F2537E67200834BF5 /* SwiftDOMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB029E2537E67200834BF5 /* SwiftDOMTests.swift */; };
@@ -121,23 +135,32 @@
 /* Begin PBXFileReference section */
 		1117D00DAAEC3DEB3C7B9FB9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		1117D0341A2767288A8DE287 /* AttributeNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeNodeImpl.swift; sourceTree = "<group>"; };
+		1117D045301E5D7EA6325EBD /* DOMXMLParserDelegateTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOMXMLParserDelegateTest.swift; sourceTree = "<group>"; };
+		1117D048F2AEC3C901B3FAC6 /* LibXMLSAXHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibXMLSAXHandler.swift; sourceTree = "<group>"; };
 		1117D06D85EC303753852395 /* CharacterDataImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDataImpl.swift; sourceTree = "<group>"; };
 		1117D06F753DC7218F7852BF /* ElementNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementNode.swift; sourceTree = "<group>"; };
 		1117D09AF25CB0B5A7F2BA73 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		1117D0E9CD436399363CC823 /* ProcessingInstructionNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingInstructionNodeImpl.swift; sourceTree = "<group>"; };
 		1117D103794DF67A4F754DFF /* NamespaceSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamespaceSupport.swift; sourceTree = "<group>"; };
+		1117D12881F707E24094F6A8 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		1117D17B4C89805527014C5E /* SAXEnumeration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAXEnumeration.swift; sourceTree = "<group>"; };
 		1117D1A89762E9E70F016C48 /* ProcessingInstructionNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingInstructionNode.swift; sourceTree = "<group>"; };
 		1117D28C9A036B7081440ED7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
 		1117D322A8C012C3A36F6B4E /* DOMLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOMLocator.swift; sourceTree = "<group>"; };
 		1117D325C8594D9E188C275B /* TypeInfoImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeInfoImpl.swift; sourceTree = "<group>"; };
+		1117D3C64A07FB53F5B80975 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		1117D4DF92E20B8BB578EF15 /* DOMXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOMXMLParser.swift; sourceTree = "<group>"; };
 		1117D523AC1B94BAE6E699E7 /* TypeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeInfo.swift; sourceTree = "<group>"; };
 		1117D54C878CDD59B0711D05 /* EntityNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityNode.swift; sourceTree = "<group>"; };
 		1117D57B4B91657ED2C58701 /* UserDataItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataItem.swift; sourceTree = "<group>"; };
 		1117D59FCD04D4AE24383477 /* LiveNodeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveNodeList.swift; sourceTree = "<group>"; };
+		1117D6CA4E3AB0F1B552331B /* SAXParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAXParser.swift; sourceTree = "<group>"; };
 		1117D757857D703FCC515BA9 /* DocumentFragmentNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentFragmentNodeImpl.swift; sourceTree = "<group>"; };
+		1117D776F54C5255DA58CC55 /* SAXAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAXAttribute.swift; sourceTree = "<group>"; };
 		1117D7963AD5A2500E71628D /* AttributeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeNode.swift; sourceTree = "<group>"; };
 		1117D799446075FCC97979A4 /* .jazzy.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .jazzy.yaml; sourceTree = "<group>"; };
 		1117D7B8C16851F4195E56F1 /* DocumentTypeNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentTypeNodeImpl.swift; sourceTree = "<group>"; };
+		1117D83B5278290862F06E4B /* SAXLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAXLocator.swift; sourceTree = "<group>"; };
 		1117D886A41432CFE64D2203 /* NodeTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeTypes.swift; sourceTree = "<group>"; };
 		1117D8B6991FE3B83CF3B49C /* ElementNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementNodeImpl.swift; sourceTree = "<group>"; };
 		1117D908BB713B402E73264C /* NamedNodeMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedNodeMap.swift; sourceTree = "<group>"; };
@@ -148,7 +171,11 @@
 		1117DA5BE77EB1FC6E2E300A /* ChildNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildNodeImpl.swift; sourceTree = "<group>"; };
 		1117DA91A7079E76D13A5488 /* DocumentNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentNodeImpl.swift; sourceTree = "<group>"; };
 		1117DAC7DE36D462354C99F9 /* DocumentFragmentNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentFragmentNode.swift; sourceTree = "<group>"; };
+		1117DB4FB2F1EE37498815DA /* SAXNamespace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAXNamespace.swift; sourceTree = "<group>"; };
+		1117DB65D25AEE02DAF40939 /* LibXMLTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibXMLTools.swift; sourceTree = "<group>"; };
 		1117DB9F9C236E4F950AD3B8 /* DocumentNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentNode.swift; sourceTree = "<group>"; };
+		1117DBC238CA79640FE5E761 /* swift_libxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = swift_libxml.h; sourceTree = "<group>"; };
+		1117DC770F1297C15AFDA677 /* SAXEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAXEntity.swift; sourceTree = "<group>"; };
 		1117DC968621B8A84EB4D43B /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		1117DD08869F7024273DDAFF /* DocumentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentType.swift; sourceTree = "<group>"; };
 		1117DD17F4A534F39EA78A8E /* CharacterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterData.swift; sourceTree = "<group>"; };
@@ -157,6 +184,7 @@
 		1117DD73DE61DBB47694398A /* ElementNodeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementNodeList.swift; sourceTree = "<group>"; };
 		1117DE3129D7BE4852463A8E /* EntityNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityNodeImpl.swift; sourceTree = "<group>"; };
 		1117DE9D49AB6DA8C1C26C9B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		1117DEC82ADB5140067A7ACE /* SAXElementContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAXElementContent.swift; sourceTree = "<group>"; };
 		1117DED1C52A79FD09A81CC9 /* UserDataEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataEvents.swift; sourceTree = "<group>"; };
 		1117DED6F9C3006FE54DE3AF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1117DF05205E1B7A811FA07F /* NodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeImpl.swift; sourceTree = "<group>"; };
@@ -164,6 +192,7 @@
 		1117DF67CF3C572B1AB21529 /* TypeDerivation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeDerivation.swift; sourceTree = "<group>"; };
 		1117DF6C6AF8B1743E62773B /* NamedNodeImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedNodeImpl.swift; sourceTree = "<group>"; };
 		1117DFA17E9831D6C74A3B7B /* ElementAttributeMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementAttributeMap.swift; sourceTree = "<group>"; };
+		1117DFFAF831F609DCB5220C /* DOMXMLParserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOMXMLParserError.swift; sourceTree = "<group>"; };
 		836097AD2538DA7B008CB79D /* DocFixer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DocFixer; sourceTree = BUILT_PRODUCTS_DIR; };
 		836097AF2538DA7B008CB79D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		83BB02902537E67200834BF5 /* SwiftDOM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftDOM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,10 +320,38 @@
 			path = Nodes;
 			sourceTree = "<group>";
 		};
+		1117D546BB3BB66E4FC9FBE4 /* libxml */ = {
+			isa = PBXGroup;
+			children = (
+				1117D3C64A07FB53F5B80975 /* module.modulemap */,
+				1117DBC238CA79640FE5E761 /* swift_libxml.h */,
+			);
+			path = libxml;
+			sourceTree = "<group>";
+		};
+		1117D84AAB4105017A58328B /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				1117D4DF92E20B8BB578EF15 /* DOMXMLParser.swift */,
+				1117D776F54C5255DA58CC55 /* SAXAttribute.swift */,
+				1117DB4FB2F1EE37498815DA /* SAXNamespace.swift */,
+				1117DC770F1297C15AFDA677 /* SAXEntity.swift */,
+				1117D83B5278290862F06E4B /* SAXLocator.swift */,
+				1117DEC82ADB5140067A7ACE /* SAXElementContent.swift */,
+				1117D17B4C89805527014C5E /* SAXEnumeration.swift */,
+				1117D6CA4E3AB0F1B552331B /* SAXParser.swift */,
+				1117D048F2AEC3C901B3FAC6 /* LibXMLSAXHandler.swift */,
+				1117DFFAF831F609DCB5220C /* DOMXMLParserError.swift */,
+				1117DB65D25AEE02DAF40939 /* LibXMLTools.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
 		1117D898632C7D8E7D3DC7D1 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
 				1117DC97D05CFF37AD2E8651 /* XML */,
+				1117D12881F707E24094F6A8 /* Tools.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -354,6 +411,7 @@
 				1117D57B4B91657ED2C58701 /* UserDataItem.swift */,
 				1117D103794DF67A4F754DFF /* NamespaceSupport.swift */,
 				1117DC40D949DE56C52294DA /* DTD */,
+				1117D84AAB4105017A58328B /* Parser */,
 			);
 			path = XML;
 			sourceTree = "<group>";
@@ -421,6 +479,7 @@
 			children = (
 				83BB029E2537E67200834BF5 /* SwiftDOMTests.swift */,
 				83BB02A02537E67200834BF5 /* Info.plist */,
+				1117D045301E5D7EA6325EBD /* DOMXMLParserDelegateTest.swift */,
 			);
 			path = SwiftDOMTests;
 			sourceTree = "<group>";
@@ -430,6 +489,7 @@
 			children = (
 				83BB02922537E67200834BF5 /* SwiftDOM */,
 				836097B72538DA86008CB79D /* DocFixer */,
+				1117D546BB3BB66E4FC9FBE4 /* libxml */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -451,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1117D171F01F85B9C71BD708 /* SwiftDOM.h in Headers */,
+				1117D329B02163C2D439CD46 /* swift_libxml.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +555,7 @@
 			name = SwiftDOM;
 			packageProductDependencies = (
 				83BB02AD2537E6D200834BF5,
+				83921CBD2554A0C7006E314A,
 			);
 			productName = SwiftDOM;
 			productReference = 83BB02902537E67200834BF5 /* SwiftDOM.framework */;
@@ -553,6 +615,7 @@
 			packageReferences = (
 				83BB02AC2537E6D200834BF5,
 				836097B82538DB49008CB79D,
+				83921CBC2554A0C7006E314A,
 			);
 			productRefGroup = 83BB02912537E67200834BF5 /* Products */;
 			projectDirPath = "";
@@ -635,6 +698,18 @@
 				1117DD3148AE37757B6AE513 /* NotationNodeImpl.swift in Sources */,
 				1117D4FF609197047E8BC408 /* TypeInfoImpl.swift in Sources */,
 				1117D1D483C4AFCE62D4E693 /* DocumentTypeNodeImpl.swift in Sources */,
+				1117D6CB638AEBE048FAD568 /* DOMXMLParser.swift in Sources */,
+				1117D3460ABA6B8279D8FC11 /* SAXAttribute.swift in Sources */,
+				1117DD77280F8EBB4EB5ED7C /* SAXNamespace.swift in Sources */,
+				1117D17BC4BCADC263F32D42 /* Tools.swift in Sources */,
+				1117D84E77669C5BD6DDC9DB /* SAXEntity.swift in Sources */,
+				1117D9CB5D2819863B3EDCCE /* SAXLocator.swift in Sources */,
+				1117DBB6501928E9AC595720 /* SAXElementContent.swift in Sources */,
+				1117DF9D91761C6D43EF2CA4 /* SAXEnumeration.swift in Sources */,
+				1117DD4995621AA9E98DB319 /* SAXParser.swift in Sources */,
+				1117DD35A917E4C107BA1962 /* LibXMLSAXHandler.swift in Sources */,
+				1117DEE46C0C270F4BA164C2 /* DOMXMLParserError.swift in Sources */,
+				1117D607DF2C8CB493A9AC62 /* LibXMLTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,6 +718,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83BB029F2537E67200834BF5 /* SwiftDOMTests.swift in Sources */,
+				1117DCFCAEF1083ECE1D2B02 /* DOMXMLParserDelegateTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,6 +852,7 @@
 				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Sources/libxml";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -835,6 +912,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Sources/libxml";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -987,6 +1065,14 @@
 				minimumVersion = 1.0.2;
 			};
 		};
+		83921CBC2554A0C7006E314A = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GalenRhodes/LibXML2Helper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		83BB02AC2537E6D200834BF5 = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/GalenRhodes/Rubicon.git";
@@ -1002,6 +1088,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 836097B82538DB49008CB79D;
 			productName = PGDocFixer;
+		};
+		83921CBD2554A0C7006E314A = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83921CBC2554A0C7006E314A;
+			productName = LibXML2Helper;
 		};
 		83BB02AD2537E6D200834BF5 = {
 			isa = XCSwiftPackageProductDependency;

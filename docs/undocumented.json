@@ -72,44 +72,37 @@
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Collections/Map/ElementAttributeMap.swift",
-      "line": 26,
+      "line": 27,
       "symbol": "ElementAttributeMap.startIndex",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Collections/Map/ElementAttributeMap.swift",
-      "line": 27,
+      "line": 28,
       "symbol": "ElementAttributeMap.endIndex",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Collections/Map/ElementAttributeMap.swift",
-      "line": 31,
+      "line": 29,
+      "symbol": "ElementAttributeMap.isEmpty",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Collections/Map/ElementAttributeMap.swift",
+      "line": 30,
+      "symbol": "ElementAttributeMap.count",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Collections/Map/ElementAttributeMap.swift",
+      "line": 34,
       "symbol": "ElementAttributeMap.init(element:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Collections/Map/ElementAttributeMap.swift",
-      "line": 36,
-      "symbol": "ElementAttributeMap.subscript(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.subscript",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Collections/Map/ElementAttributeMap.swift",
-      "line": 37,
-      "symbol": "ElementAttributeMap.subscript(_:_:)",
-      "symbol_kind": "source.lang.swift.decl.function.subscript",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Collections/Map/ElementAttributeMap.swift",
-      "line": 38,
-      "symbol": "ElementAttributeMap.subscript(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.subscript",
       "warning": "undocumented"
     },
     {
@@ -117,6 +110,1287 @@
       "line": 39,
       "symbol": "ElementAttributeMap.subscript(_:)",
       "symbol_kind": "source.lang.swift.decl.function.subscript",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Collections/Map/ElementAttributeMap.swift",
+      "line": 43,
+      "symbol": "ElementAttributeMap.subscript(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.subscript",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Collections/Map/ElementAttributeMap.swift",
+      "line": 47,
+      "symbol": "ElementAttributeMap.subscript(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.subscript",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Collections/Map/ElementAttributeMap.swift",
+      "line": 51,
+      "symbol": "ElementAttributeMap.subscript(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.subscript",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/DocumentTypeNodeImpl.swift",
+      "line": 25,
+      "symbol": "DocumentTypeNodeImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/DocumentTypeNodeImpl.swift",
+      "line": 27,
+      "symbol": "DocumentTypeNodeImpl.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/DocumentTypeNodeImpl.swift",
+      "line": 28,
+      "symbol": "DocumentTypeNodeImpl.publicId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/DocumentTypeNodeImpl.swift",
+      "line": 29,
+      "symbol": "DocumentTypeNodeImpl.systemId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/DocumentTypeNodeImpl.swift",
+      "line": 30,
+      "symbol": "DocumentTypeNodeImpl.internalSubset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/DocumentTypeNodeImpl.swift",
+      "line": 31,
+      "symbol": "DocumentTypeNodeImpl.entities",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/DocumentTypeNodeImpl.swift",
+      "line": 32,
+      "symbol": "DocumentTypeNodeImpl.notations",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/DocumentTypeNodeImpl.swift",
+      "line": 34,
+      "symbol": "DocumentTypeNodeImpl.nodeType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/DocumentTypeNodeImpl.swift",
+      "line": 35,
+      "symbol": "DocumentTypeNodeImpl.nodeName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/DocumentTypeNodeImpl.swift",
+      "line": 36,
+      "symbol": "DocumentTypeNodeImpl.isReadOnly",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/DocumentTypeNodeImpl.swift",
+      "line": 39,
+      "symbol": "DocumentTypeNodeImpl.init(_:name:publicId:systemId:internalSubset:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/EntityNodeImpl.swift",
+      "line": 25,
+      "symbol": "EntityNodeImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/EntityNodeImpl.swift",
+      "line": 27,
+      "symbol": "EntityNodeImpl.inputEncoding",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/EntityNodeImpl.swift",
+      "line": 28,
+      "symbol": "EntityNodeImpl.notationName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/EntityNodeImpl.swift",
+      "line": 29,
+      "symbol": "EntityNodeImpl.publicId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/EntityNodeImpl.swift",
+      "line": 30,
+      "symbol": "EntityNodeImpl.systemId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/EntityNodeImpl.swift",
+      "line": 31,
+      "symbol": "EntityNodeImpl.xmlEncoding",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/EntityNodeImpl.swift",
+      "line": 32,
+      "symbol": "EntityNodeImpl.xmlVersion",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/EntityNodeImpl.swift",
+      "line": 33,
+      "symbol": "EntityNodeImpl.entityName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/EntityNodeImpl.swift",
+      "line": 34,
+      "symbol": "EntityNodeImpl.isReadOnly",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/EntityNodeImpl.swift",
+      "line": 35,
+      "symbol": "EntityNodeImpl.nodeType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/EntityNodeImpl.swift",
+      "line": 38,
+      "symbol": "EntityNodeImpl.init(_:entityName:inputEncoding:notationName:publicId:systemId:xmlEncoding:xmlVersion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/EntityNodeImpl.swift",
+      "line": 55,
+      "symbol": "EntityNodeImpl.init(_:namespaceURI:qualifiedName:inputEncoding:notationName:publicId:systemId:xmlEncoding:xmlVersion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/NotationNodeImpl.swift",
+      "line": 25,
+      "symbol": "NotationNodeImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/NotationNodeImpl.swift",
+      "line": 27,
+      "symbol": "NotationNodeImpl.publicId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/NotationNodeImpl.swift",
+      "line": 28,
+      "symbol": "NotationNodeImpl.systemId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/NotationNodeImpl.swift",
+      "line": 29,
+      "symbol": "NotationNodeImpl.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/NotationNodeImpl.swift",
+      "line": 30,
+      "symbol": "NotationNodeImpl.isReadOnly",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/NotationNodeImpl.swift",
+      "line": 31,
+      "symbol": "NotationNodeImpl.nodeName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/NotationNodeImpl.swift",
+      "line": 32,
+      "symbol": "NotationNodeImpl.nodeType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/NotationNodeImpl.swift",
+      "line": 35,
+      "symbol": "NotationNodeImpl.init(_:name:publicId:systemId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/TypeInfoImpl.swift",
+      "line": 25,
+      "symbol": "TypeInfoImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/TypeInfoImpl.swift",
+      "line": 26,
+      "symbol": "TypeInfoImpl.typeName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/TypeInfoImpl.swift",
+      "line": 27,
+      "symbol": "TypeInfoImpl.typeNamespace",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/TypeInfoImpl.swift",
+      "line": 29,
+      "symbol": "TypeInfoImpl.init(typeName:typeNamespace:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/TypeInfoImpl.swift",
+      "line": 34,
+      "symbol": "TypeInfoImpl.isDerivedFrom(typeNamespace:typeName:derivation:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/DTD/TypeInfoImpl.swift",
+      "line": 36,
+      "symbol": "TypeInfoImpl.isEqualTo(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/NamespaceSupport.swift",
+      "line": 49,
+      "symbol": "Namespace",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/NamespaceSupport.swift",
+      "line": 50,
+      "symbol": "Namespace.NSDECL",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/NamespaceSupport.swift",
+      "line": 51,
+      "symbol": "Namespace.XMLNS",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/NamespaceSupport.swift",
+      "line": 52,
+      "symbol": "Namespace.XMLNS_PREFIX",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/NamespaceSupport.swift",
+      "line": 55,
+      "symbol": "regexQName",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/NamespaceSupport.swift",
+      "line": 56,
+      "symbol": "regexNsName",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/NamespaceSupport.swift",
+      "line": 57,
+      "symbol": "regexName",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/AttributeNodeImpl.swift",
+      "line": 25,
+      "symbol": "AttributeNodeImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/AttributeNodeImpl.swift",
+      "line": 27,
+      "symbol": "AttributeNodeImpl.isId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/AttributeNodeImpl.swift",
+      "line": 28,
+      "symbol": "AttributeNodeImpl.isSpecified",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/AttributeNodeImpl.swift",
+      "line": 29,
+      "symbol": "AttributeNodeImpl.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/AttributeNodeImpl.swift",
+      "line": 30,
+      "symbol": "AttributeNodeImpl.ownerElement",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/AttributeNodeImpl.swift",
+      "line": 31,
+      "symbol": "AttributeNodeImpl.schemaTypeInfo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/AttributeNodeImpl.swift",
+      "line": 32,
+      "symbol": "AttributeNodeImpl.value",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/AttributeNodeImpl.swift",
+      "line": 33,
+      "symbol": "AttributeNodeImpl.nodeValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/AttributeNodeImpl.swift",
+      "line": 36,
+      "symbol": "AttributeNodeImpl.init(_:nodeName:value:isId:isSpecified:ownerElement:schemaTypeInfo:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/AttributeNodeImpl.swift",
+      "line": 44,
+      "symbol": "AttributeNodeImpl.init(_:namespaceURI:qualifiedName:value:isId:isSpecified:ownerElement:schemaTypeInfo:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/AttributeNodeImpl.swift",
+      "line": 52,
+      "symbol": "AttributeNodeImpl.init(_:nodeName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/AttributeNodeImpl.swift",
+      "line": 54,
+      "symbol": "AttributeNodeImpl.init(_:namespaceURI:qualifiedName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/AttributeNodeImpl.swift",
+      "line": 56,
+      "symbol": "AttributeNodeImpl.cloneNode(owningDocument:notify:deep:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 25,
+      "symbol": "CharacterDataImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 27,
+      "symbol": "CharacterDataImpl.data",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 28,
+      "symbol": "CharacterDataImpl.nodeValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 29,
+      "symbol": "CharacterDataImpl.textContent",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 32,
+      "symbol": "CharacterDataImpl.init(_:data:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 38,
+      "symbol": "CommentNodeImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 40,
+      "symbol": "CommentNodeImpl.nodeType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 41,
+      "symbol": "CommentNodeImpl.nodeName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 44,
+      "symbol": "CommentNodeImpl.init(_:data:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 46,
+      "symbol": "CommentNodeImpl.cloneNode(owningDocument:notify:deep:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 53,
+      "symbol": "TextNodeImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 55,
+      "symbol": "TextNodeImpl.isElementContentWhitespace",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 56,
+      "symbol": "TextNodeImpl.wholeText",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 57,
+      "symbol": "TextNodeImpl.nodeType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 58,
+      "symbol": "TextNodeImpl.nodeName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 61,
+      "symbol": "TextNodeImpl.init(_:data:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 63,
+      "symbol": "TextNodeImpl.splitText(offset:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 72,
+      "symbol": "TextNodeImpl.replaceWholeText(content:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 99,
+      "symbol": "TextNodeImpl.cloneNode(owningDocument:notify:deep:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 193,
+      "symbol": "CDataSectionNodeImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 195,
+      "symbol": "CDataSectionNodeImpl.nodeType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 196,
+      "symbol": "CDataSectionNodeImpl.nodeName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/CharacterDataImpl.swift",
+      "line": 199,
+      "symbol": "CDataSectionNodeImpl.init(_:data:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentFragmentNodeImpl.swift",
+      "line": 25,
+      "symbol": "DocumentFragmentNodeImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentFragmentNodeImpl.swift",
+      "line": 26,
+      "symbol": "DocumentFragmentNodeImpl.nodeType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentFragmentNodeImpl.swift",
+      "line": 27,
+      "symbol": "DocumentFragmentNodeImpl.nodeName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentFragmentNodeImpl.swift",
+      "line": 29,
+      "symbol": "DocumentFragmentNodeImpl.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentFragmentNodeImpl.swift",
+      "line": 31,
+      "symbol": "DocumentFragmentNodeImpl.cloneNode(owningDocument:notify:deep:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 25,
+      "symbol": "DocumentNodeImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 27,
+      "symbol": "DocumentNodeImpl.nodeType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 28,
+      "symbol": "DocumentNodeImpl.nodeName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 29,
+      "symbol": "DocumentNodeImpl.docType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 30,
+      "symbol": "DocumentNodeImpl.documentElement",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 31,
+      "symbol": "DocumentNodeImpl.inputEncoding",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 32,
+      "symbol": "DocumentNodeImpl.documentURI",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 33,
+      "symbol": "DocumentNodeImpl.xmlEncoding",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 34,
+      "symbol": "DocumentNodeImpl.xmlVersion",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 35,
+      "symbol": "DocumentNodeImpl.xmlStandalone",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 36,
+      "symbol": "DocumentNodeImpl.isStrictErrorChecking",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 37,
+      "symbol": "DocumentNodeImpl.owningDocument",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 40,
+      "symbol": "DocumentNodeImpl.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 42,
+      "symbol": "DocumentNodeImpl.adopt(node:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 47,
+      "symbol": "DocumentNodeImpl.createAttribute(name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 52,
+      "symbol": "DocumentNodeImpl.createAttribute(namespaceURI:name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 57,
+      "symbol": "DocumentNodeImpl.createElement(name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 62,
+      "symbol": "DocumentNodeImpl.createElement(namespaceURI:name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 67,
+      "symbol": "DocumentNodeImpl.createTextNode(content:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 72,
+      "symbol": "DocumentNodeImpl.createCDataSectionNode(content:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 77,
+      "symbol": "DocumentNodeImpl.createComment(content:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 82,
+      "symbol": "DocumentNodeImpl.createDocumentFragment()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 87,
+      "symbol": "DocumentNodeImpl.createProcessingInstruction(data:target:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 92,
+      "symbol": "DocumentNodeImpl.createNotation(name:publicId:systemId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 97,
+      "symbol": "DocumentNodeImpl.createDocType(name:publicId:systemId:internalSubset:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 102,
+      "symbol": "DocumentNodeImpl.normalizeDocument()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 104,
+      "symbol": "DocumentNodeImpl.getElementBy(elementId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 109,
+      "symbol": "DocumentNodeImpl.getElementsBy(name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 114,
+      "symbol": "DocumentNodeImpl.getElementsBy(namespaceURI:name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 119,
+      "symbol": "DocumentNodeImpl.importNode(node:deep:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 124,
+      "symbol": "DocumentNodeImpl.renameNode(node:namespaceURI:qualifiedName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/DocumentNodeImpl.swift",
+      "line": 129,
+      "symbol": "DocumentNodeImpl.renameNode(node:nodeName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 25,
+      "symbol": "ElementNodeImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 27,
+      "symbol": "ElementNodeImpl.schemaTypeInfo",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 28,
+      "symbol": "ElementNodeImpl.tagName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 29,
+      "symbol": "ElementNodeImpl.attributes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 35,
+      "symbol": "ElementNodeImpl.init(_:tagName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 39,
+      "symbol": "ElementNodeImpl.init(_:namespaceURI:qualifiedName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 45,
+      "symbol": "ElementNodeImpl.elementsBy(tagName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 47,
+      "symbol": "ElementNodeImpl.elementsBy(namespaceURI:name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 49,
+      "symbol": "ElementNodeImpl.attributeValueWith(name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 51,
+      "symbol": "ElementNodeImpl.attributeValueWith(namespaceURI:name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 53,
+      "symbol": "ElementNodeImpl.attributeWith(name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 55,
+      "symbol": "ElementNodeImpl.attributeWith(namespaceURI:name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 57,
+      "symbol": "ElementNodeImpl.attribute(where:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 59,
+      "symbol": "ElementNodeImpl.hasAttributeWith(name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 61,
+      "symbol": "ElementNodeImpl.hasAttributeWith(namespaceURI:name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 63,
+      "symbol": "ElementNodeImpl.setAttributeWith(name:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 77,
+      "symbol": "ElementNodeImpl.setAttributeWith(namespaceURI:name:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 91,
+      "symbol": "ElementNodeImpl.setAttribute(attribute:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 108,
+      "symbol": "ElementNodeImpl.setAttributeNS(attribute:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 126,
+      "symbol": "ElementNodeImpl.removeAttributeWith(name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 141,
+      "symbol": "ElementNodeImpl.removeAttributeWith(namespaceURI:name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 156,
+      "symbol": "ElementNodeImpl.removeAttribute(attribute:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 166,
+      "symbol": "ElementNodeImpl.setIdAttributeWith(name:isId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 174,
+      "symbol": "ElementNodeImpl.setIdAttributeWith(namespaceURI:name:isId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ElementNodeImpl.swift",
+      "line": 182,
+      "symbol": "ElementNodeImpl.setIdAttribute(attribute:isId:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/EntityRefNodeImpl.swift",
+      "line": 25,
+      "symbol": "EntityRefNodeImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/EntityRefNodeImpl.swift",
+      "line": 27,
+      "symbol": "EntityRefNodeImpl.entityName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/EntityRefNodeImpl.swift",
+      "line": 28,
+      "symbol": "EntityRefNodeImpl.isReadOnly",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/EntityRefNodeImpl.swift",
+      "line": 29,
+      "symbol": "EntityRefNodeImpl.nodeType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/EntityRefNodeImpl.swift",
+      "line": 32,
+      "symbol": "EntityRefNodeImpl.init(_:entityName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/EntityRefNodeImpl.swift",
+      "line": 34,
+      "symbol": "EntityRefNodeImpl.init(_:namespaceURI:qualifiedEntityName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ChildNodeImpl.swift",
+      "line": 25,
+      "symbol": "ChildNodeImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ChildNodeImpl.swift",
+      "line": 27,
+      "symbol": "ChildNodeImpl.parentNode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ChildNodeImpl.swift",
+      "line": 28,
+      "symbol": "ChildNodeImpl.nextSibling",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ChildNodeImpl.swift",
+      "line": 29,
+      "symbol": "ChildNodeImpl.previousSibling",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ChildNodeImpl.swift",
+      "line": 35,
+      "symbol": "ChildNodeImpl.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ChildNodeImpl.swift",
+      "line": 37,
+      "symbol": "ChildNodeImpl.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/NamedNodeImpl.swift",
+      "line": 26,
+      "symbol": "NamedNodeImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/NamedNodeImpl.swift",
+      "line": 28,
+      "symbol": "NamedNodeImpl.hasNamespace",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/NamedNodeImpl.swift",
+      "line": 29,
+      "symbol": "NamedNodeImpl.nodeName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/NamedNodeImpl.swift",
+      "line": 30,
+      "symbol": "NamedNodeImpl.namespaceURI",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/NamedNodeImpl.swift",
+      "line": 31,
+      "symbol": "NamedNodeImpl.localName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/NamedNodeImpl.swift",
+      "line": 32,
+      "symbol": "NamedNodeImpl.prefix",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/NamedNodeImpl.swift",
+      "line": 39,
+      "symbol": "NamedNodeImpl.init(_:nodeName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/NamedNodeImpl.swift",
+      "line": 48,
+      "symbol": "NamedNodeImpl.init(_:namespaceURI:qualifiedName:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 25,
+      "symbol": "ParentNodeImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 27,
+      "symbol": "ParentNodeImpl.startIndex",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 28,
+      "symbol": "ParentNodeImpl.endIndex",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 29,
+      "symbol": "ParentNodeImpl.count",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 30,
+      "symbol": "ParentNodeImpl.isEmpty",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 31,
+      "symbol": "ParentNodeImpl.hasChildNodes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 32,
+      "symbol": "ParentNodeImpl.firstChild",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 33,
+      "symbol": "ParentNodeImpl.lastChild",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 40,
+      "symbol": "ParentNodeImpl.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 42,
+      "symbol": "ParentNodeImpl.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 44,
+      "symbol": "ParentNodeImpl.append(child:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 68,
+      "symbol": "ParentNodeImpl.insert(childNode:before:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 107,
+      "symbol": "ParentNodeImpl.replace(childNode:with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 139,
+      "symbol": "ParentNodeImpl.remove(childNode:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 164,
+      "symbol": "ParentNodeImpl.removeAllChildNodes()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 190,
+      "symbol": "ParentNodeImpl.forEachChild(do:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 198,
+      "symbol": "ParentNodeImpl.contains(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/Intermediate/ParentNodeImpl.swift",
+      "line": 204,
+      "symbol": "ParentNodeImpl.textContent",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
@@ -184,190 +1458,806 @@
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 45,
-      "symbol": "NodeImpl.hasAttributes",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 46,
-      "symbol": "NodeImpl.hasChildNodes",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 47,
-      "symbol": "NodeImpl.hasNamespace",
+      "line": 43,
+      "symbol": "NodeImpl.textContent",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
       "line": 48,
-      "symbol": "NodeImpl.parentNode",
+      "symbol": "NodeImpl.isReadOnly",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
       "line": 49,
-      "symbol": "NodeImpl.firstChild",
+      "symbol": "NodeImpl.hasAttributes",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
       "line": 50,
-      "symbol": "NodeImpl.lastChild",
+      "symbol": "NodeImpl.hasChildNodes",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
       "line": 51,
-      "symbol": "NodeImpl.nextSibling",
+      "symbol": "NodeImpl.hasNamespace",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
       "line": 52,
-      "symbol": "NodeImpl.previousSibling",
+      "symbol": "NodeImpl.parentNode",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
       "line": 53,
+      "symbol": "NodeImpl.firstChild",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
+      "line": 54,
+      "symbol": "NodeImpl.lastChild",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
+      "line": 55,
+      "symbol": "NodeImpl.nextSibling",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
+      "line": 56,
+      "symbol": "NodeImpl.previousSibling",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
+      "line": 57,
       "symbol": "NodeImpl.attributes",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 59,
+      "line": 62,
       "symbol": "NodeImpl.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 63,
+      "line": 66,
       "symbol": "NodeImpl.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 67,
+      "line": 70,
       "symbol": "NodeImpl.contains(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 72,
+      "line": 75,
       "symbol": "NodeImpl.normalize()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 74,
+      "line": 77,
       "symbol": "NodeImpl.insert(childNode:before:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 76,
+      "line": 79,
       "symbol": "NodeImpl.replace(childNode:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 78,
+      "line": 81,
       "symbol": "NodeImpl.remove(childNode:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 80,
+      "line": 83,
       "symbol": "NodeImpl.removeAllChildNodes()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 82,
+      "line": 85,
       "symbol": "NodeImpl.userData(key:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 84,
+      "line": 87,
       "symbol": "NodeImpl.setUserData(key:userData:handler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 89,
+      "line": 92,
       "symbol": "NodeImpl.isDefaultNamespace(namespaceURI:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 91,
+      "line": 97,
       "symbol": "NodeImpl.lookupNamespaceURL(prefix:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 93,
+      "line": 103,
       "symbol": "NodeImpl.lookupPrefix(namespaceURI:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 95,
+      "line": 109,
       "symbol": "NodeImpl.asHashable()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 97,
+      "line": 111,
       "symbol": "NodeImpl.getHash(into:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 157,
+      "line": 171,
       "symbol": "NodeImpl.cloneNode(deep:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 159,
+      "line": 173,
       "symbol": "NodeImpl.cloneNode(owningDocument:notify:deep:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/NodeImpl.swift",
-      "line": 163,
+      "line": 184,
       "symbol": "NodeImpl.isEqualTo(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ProcessingInstructionNodeImpl.swift",
+      "line": 25,
+      "symbol": "ProcessingInstructionNodeImpl",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ProcessingInstructionNodeImpl.swift",
+      "line": 27,
+      "symbol": "ProcessingInstructionNodeImpl.data",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ProcessingInstructionNodeImpl.swift",
+      "line": 28,
+      "symbol": "ProcessingInstructionNodeImpl.target",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ProcessingInstructionNodeImpl.swift",
+      "line": 29,
+      "symbol": "ProcessingInstructionNodeImpl.nodeType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ProcessingInstructionNodeImpl.swift",
+      "line": 30,
+      "symbol": "ProcessingInstructionNodeImpl.nodeName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ProcessingInstructionNodeImpl.swift",
+      "line": 31,
+      "symbol": "ProcessingInstructionNodeImpl.nodeValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ProcessingInstructionNodeImpl.swift",
+      "line": 32,
+      "symbol": "ProcessingInstructionNodeImpl.textContent",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Nodes/ProcessingInstructionNodeImpl.swift",
+      "line": 35,
+      "symbol": "ProcessingInstructionNodeImpl.init(_:data:target:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 26,
+      "symbol": "SAXAttributeDeclFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 27,
+      "symbol": "SAXAttributeFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 28,
+      "symbol": "SAXCdataBlockFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 29,
+      "symbol": "SAXCharactersFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 30,
+      "symbol": "SAXCommentFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 31,
+      "symbol": "SAXElementDeclFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 32,
+      "symbol": "SAXEndDocumentFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 33,
+      "symbol": "SAXEndElementFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 34,
+      "symbol": "SAXEntityDeclFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 35,
+      "symbol": "SAXErrorFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 36,
+      "symbol": "SAXExternalSubsetFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 37,
+      "symbol": "SAXFatalErrorFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 38,
+      "symbol": "SAXGetEntityFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 39,
+      "symbol": "SAXGetParameterEntityFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 40,
+      "symbol": "SAXHasExternalSubsetFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 41,
+      "symbol": "SAXHasInternalSubsetFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 42,
+      "symbol": "SAXIgnorableWhitespaceFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 43,
+      "symbol": "SAXInternalSubsetFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 44,
+      "symbol": "SAXIsStandaloneFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 45,
+      "symbol": "SAXNotationDeclFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 46,
+      "symbol": "SAXProcessingInstructionFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 47,
+      "symbol": "SAXReferenceFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 48,
+      "symbol": "SAXResolveEntityFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 49,
+      "symbol": "SAXSetDocumentLocatorFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 50,
+      "symbol": "SAXStartDocumentFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 51,
+      "symbol": "SAXStartElementFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 52,
+      "symbol": "SAXUnparsedEntityDeclFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 53,
+      "symbol": "SAXWarningFunc",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 55,
+      "symbol": "DOMXMLParserDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 56,
+      "symbol": "DOMXMLParserDelegate.parseAttributeDecl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 57,
+      "symbol": "DOMXMLParserDelegate.parseAttribute",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 58,
+      "symbol": "DOMXMLParserDelegate.parseCdataBlock",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 59,
+      "symbol": "DOMXMLParserDelegate.parseCharacters",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 60,
+      "symbol": "DOMXMLParserDelegate.parseComment",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 61,
+      "symbol": "DOMXMLParserDelegate.parseElementDecl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 62,
+      "symbol": "DOMXMLParserDelegate.parseEndDocument",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 63,
+      "symbol": "DOMXMLParserDelegate.parseEndElement",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 64,
+      "symbol": "DOMXMLParserDelegate.parseEntityDecl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 65,
+      "symbol": "DOMXMLParserDelegate.parseError",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 66,
+      "symbol": "DOMXMLParserDelegate.parseExternalSubset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 67,
+      "symbol": "DOMXMLParserDelegate.parseFatalError",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 68,
+      "symbol": "DOMXMLParserDelegate.parseGetEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 69,
+      "symbol": "DOMXMLParserDelegate.parseGetParameterEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 70,
+      "symbol": "DOMXMLParserDelegate.parseHasExternalSubset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 71,
+      "symbol": "DOMXMLParserDelegate.parseHasInternalSubset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 72,
+      "symbol": "DOMXMLParserDelegate.parseIgnorableWhitespace",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 73,
+      "symbol": "DOMXMLParserDelegate.parseInternalSubset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 74,
+      "symbol": "DOMXMLParserDelegate.parseIsStandalone",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 75,
+      "symbol": "DOMXMLParserDelegate.parseNotationDecl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 76,
+      "symbol": "DOMXMLParserDelegate.parseProcessingInstruction",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 77,
+      "symbol": "DOMXMLParserDelegate.parseReference",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 78,
+      "symbol": "DOMXMLParserDelegate.parseResolveEntity",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 79,
+      "symbol": "DOMXMLParserDelegate.parseSetDocumentLocator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 80,
+      "symbol": "DOMXMLParserDelegate.parseStartDocument",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 81,
+      "symbol": "DOMXMLParserDelegate.parseStartElement",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 82,
+      "symbol": "DOMXMLParserDelegate.parseUnparsedEntityDecl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/DOMXMLParser.swift",
+      "line": 83,
+      "symbol": "DOMXMLParserDelegate.parseWarning",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXAttribute.swift",
+      "line": 25,
+      "symbol": "SAXAttribute",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXAttribute.swift",
+      "line": 28,
+      "symbol": "SAXAttribute.prefix",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXAttribute.swift",
+      "line": 29,
+      "symbol": "SAXAttribute.namespaceURI",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXAttribute.swift",
+      "line": 30,
+      "symbol": "SAXAttribute.value",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXAttribute.swift",
+      "line": 31,
+      "symbol": "SAXAttribute.isDefault",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXAttribute.swift",
+      "line": 32,
+      "symbol": "SAXAttribute.localName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXAttribute.swift",
+      "line": 33,
+      "symbol": "SAXAttribute.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXAttribute.swift",
+      "line": 36,
+      "symbol": "SAXAttribute.init(name:value:isDefault:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXAttribute.swift",
+      "line": 44,
+      "symbol": "SAXAttribute.init(localName:prefix:namespaceURI:value:isDefault:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXElementContent.swift",
+      "line": 25,
+      "symbol": "SAXElementContent",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXEntity.swift",
+      "line": 25,
+      "symbol": "SAXEntity",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXEnumeration.swift",
+      "line": 25,
+      "symbol": "SAXEnumeration",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXLocator.swift",
+      "line": 25,
+      "symbol": "SAXLocator",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXNamespace.swift",
+      "line": 25,
+      "symbol": "SAXNamespaceMapping",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXNamespace.swift",
+      "line": 26,
+      "symbol": "SAXNamespaceMapping.uri",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXNamespace.swift",
+      "line": 27,
+      "symbol": "SAXNamespaceMapping.prefix",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXNamespace.swift",
+      "line": 29,
+      "symbol": "SAXNamespaceMapping.init(uri:prefix:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXParser.swift",
+      "line": 26,
+      "symbol": "DOMXMLParser",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXParser.swift",
+      "line": 27,
+      "symbol": "DOMXMLParser.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXParser.swift",
+      "line": 32,
+      "symbol": "DOMXMLParser.init(inputStream:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Implementation/XML/Parser/SAXParser.swift",
+      "line": 36,
+      "symbol": "DOMXMLParser.parse()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -702,98 +2592,112 @@
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
-      "line": 26,
+      "line": 27,
       "symbol": "EntityNode.inputEncoding",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
-      "line": 27,
-      "symbol": "EntityNode.notationName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
       "line": 28,
-      "symbol": "EntityNode.publicId",
+      "symbol": "EntityNode.entityName",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
       "line": 29,
-      "symbol": "EntityNode.systemId",
+      "symbol": "EntityNode.notationName",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
       "line": 30,
-      "symbol": "EntityNode.xmlEncoding",
+      "symbol": "EntityNode.publicId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
       "line": 31,
+      "symbol": "EntityNode.systemId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
+      "line": 32,
+      "symbol": "EntityNode.xmlEncoding",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
+      "line": 33,
       "symbol": "EntityNode.xmlVersion",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
-      "line": 34,
+      "line": 37,
       "symbol": "AnyEntityNode",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
-      "line": 37,
+      "line": 40,
       "symbol": "AnyEntityNode.inputEncoding",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
-      "line": 38,
+      "line": 41,
       "symbol": "AnyEntityNode.notationName",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
-      "line": 39,
+      "line": 42,
       "symbol": "AnyEntityNode.publicId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
-      "line": 40,
+      "line": 43,
       "symbol": "AnyEntityNode.systemId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
-      "line": 41,
+      "line": 44,
       "symbol": "AnyEntityNode.xmlEncoding",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
-      "line": 42,
+      "line": 45,
       "symbol": "AnyEntityNode.xmlVersion",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
-      "line": 44,
+      "line": 46,
+      "symbol": "AnyEntityNode.entityName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/EntityNode.swift",
+      "line": 48,
       "symbol": "AnyEntityNode.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -808,42 +2712,56 @@
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/NotationNode.swift",
       "line": 26,
-      "symbol": "NotationNode.publicId",
+      "symbol": "NotationNode.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/NotationNode.swift",
       "line": 27,
+      "symbol": "NotationNode.publicId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/NotationNode.swift",
+      "line": 28,
       "symbol": "NotationNode.systemId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/NotationNode.swift",
-      "line": 30,
+      "line": 31,
       "symbol": "AnyNotationNode",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/NotationNode.swift",
-      "line": 33,
+      "line": 34,
       "symbol": "AnyNotationNode.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/NotationNode.swift",
-      "line": 35,
+      "line": 36,
       "symbol": "AnyNotationNode.publicId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/NotationNode.swift",
-      "line": 36,
+      "line": 37,
       "symbol": "AnyNotationNode.systemId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/DTD/NotationNode.swift",
+      "line": 38,
+      "symbol": "AnyNotationNode.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
@@ -971,69 +2889,6 @@
       "line": 64,
       "symbol": "Array.==(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/NamespaceSupport.swift",
-      "line": 49,
-      "symbol": "Namespace",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/NamespaceSupport.swift",
-      "line": 50,
-      "symbol": "Namespace.NSDECL",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/NamespaceSupport.swift",
-      "line": 51,
-      "symbol": "Namespace.XMLNS",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/NamespaceSupport.swift",
-      "line": 52,
-      "symbol": "Namespace.XMLNS_PREFIX",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/NamespaceSupport.swift",
-      "line": 55,
-      "symbol": "regexQName",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/NamespaceSupport.swift",
-      "line": 56,
-      "symbol": "regexNcName",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/NamespaceSupport.swift",
-      "line": 57,
-      "symbol": "regexName",
-      "symbol_kind": "source.lang.swift.decl.var.global",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/NamespaceSupport.swift",
-      "line": 59,
-      "symbol": "NsNamesCheckResult",
-      "symbol_kind": "source.lang.swift.decl.typealias",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/NamespaceSupport.swift",
-      "line": 61,
-      "symbol": "nsNamesCheck(namespaceURI:qualifiedName:)",
-      "symbol_kind": "source.lang.swift.decl.function.free",
       "warning": "undocumented"
     },
     {
@@ -1214,189 +3069,385 @@
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
       "line": 46,
-      "symbol": "AnyNode.hasAttributes",
+      "symbol": "AnyNode.isReadOnly",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
       "line": 47,
-      "symbol": "AnyNode.hasChildNodes",
+      "symbol": "AnyNode.hasAttributes",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
       "line": 48,
+      "symbol": "AnyNode.hasChildNodes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
+      "line": 49,
       "symbol": "AnyNode.hasNamespace",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 52,
+      "line": 54,
       "symbol": "AnyNode.attributes",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 53,
+      "line": 55,
       "symbol": "AnyNode.nodeValue",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 54,
+      "line": 56,
       "symbol": "AnyNode.textContent",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 55,
+      "line": 57,
       "symbol": "AnyNode.prefix",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 58,
+      "line": 60,
       "symbol": "AnyNode.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 60,
+      "line": 62,
       "symbol": "AnyNode.getHash(into:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 64,
+      "line": 66,
       "symbol": "AnyNode.asHashable()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 66,
+      "line": 68,
       "symbol": "AnyNode.isEqualTo(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 68,
+      "line": 70,
       "symbol": "AnyNode.normalize()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 70,
+      "line": 72,
       "symbol": "AnyNode.append(child:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 72,
+      "line": 74,
       "symbol": "AnyNode.insert(childNode:before:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 74,
+      "line": 76,
       "symbol": "AnyNode.replace(childNode:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 76,
+      "line": 78,
       "symbol": "AnyNode.remove(childNode:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 78,
+      "line": 80,
       "symbol": "AnyNode.userData(key:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 80,
+      "line": 82,
       "symbol": "AnyNode.setUserData(key:userData:handler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 82,
+      "line": 84,
       "symbol": "AnyNode.cloneNode(deep:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 84,
+      "line": 86,
       "symbol": "AnyNode.contains(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 86,
+      "line": 88,
       "symbol": "AnyNode.isSameNode(as:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 88,
+      "line": 90,
       "symbol": "AnyNode.isDefaultNamespace(namespaceURI:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 90,
+      "line": 92,
       "symbol": "AnyNode.lookupNamespaceURL(prefix:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 92,
+      "line": 94,
       "symbol": "AnyNode.lookupPrefix(namespaceURI:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 94,
+      "line": 96,
       "symbol": "AnyNode.removeAllChildNodes()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 96,
+      "line": 98,
       "symbol": "AnyNode.forEachChild(do:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/AnyNode.swift",
-      "line": 98,
+      "line": 100,
       "symbol": "AnyNode.isNodeType(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 25,
+      "symbol": "EntityRefNode",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 26,
+      "symbol": "EntityRefNode.entityName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 29,
+      "symbol": "CharacterData",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 30,
+      "symbol": "CharacterData.data",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 33,
+      "symbol": "TextNode",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 35,
+      "symbol": "TextNode.wholeText",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 36,
+      "symbol": "TextNode.isElementContentWhitespace",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 39,
+      "symbol": "TextNode.splitText(offset:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 41,
+      "symbol": "TextNode.replaceWholeText(content:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 44,
+      "symbol": "CDataSectionNode",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 46,
+      "symbol": "CommentNode",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 48,
+      "symbol": "AnyEntityRefNode",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 51,
+      "symbol": "AnyEntityRefNode.entityName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 53,
+      "symbol": "AnyEntityRefNode.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 56,
+      "symbol": "AnyCharacterData",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 59,
+      "symbol": "AnyCharacterData.data",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 62,
+      "symbol": "AnyCharacterData.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 65,
+      "symbol": "AnyTextNode",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 67,
+      "symbol": "AnyTextNode.wholeText",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 68,
+      "symbol": "AnyTextNode.isElementContentWhitespace",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 72,
+      "symbol": "AnyTextNode.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 74,
+      "symbol": "AnyTextNode.splitText(offset:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 76,
+      "symbol": "AnyTextNode.replaceWholeText(content:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 79,
+      "symbol": "AnyCDataSectionNode",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 82,
+      "symbol": "AnyCDataSectionNode.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 85,
+      "symbol": "AnyCommentNode",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/CharacterData.swift",
+      "line": 88,
+      "symbol": "AnyCommentNode.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -2334,204 +4385,211 @@
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
       "line": 39,
-      "symbol": "Node.hasAttributes",
+      "symbol": "Node.isEmpty",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
       "line": 40,
-      "symbol": "Node.hasChildNodes",
+      "symbol": "Node.isReadOnly",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
       "line": 41,
-      "symbol": "Node.hasNamespace",
+      "symbol": "Node.hasAttributes",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
       "line": 42,
-      "symbol": "Node.owningDocument",
+      "symbol": "Node.hasChildNodes",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
       "line": 43,
-      "symbol": "Node.parentNode",
+      "symbol": "Node.hasNamespace",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
       "line": 44,
-      "symbol": "Node.firstChild",
+      "symbol": "Node.owningDocument",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
       "line": 45,
-      "symbol": "Node.lastChild",
+      "symbol": "Node.parentNode",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
       "line": 46,
-      "symbol": "Node.nextSibling",
+      "symbol": "Node.firstChild",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
       "line": 47,
+      "symbol": "Node.lastChild",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
+      "line": 48,
+      "symbol": "Node.nextSibling",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
+      "line": 49,
       "symbol": "Node.previousSibling",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 50,
+      "line": 52,
       "symbol": "Node.normalize()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 52,
+      "line": 54,
       "symbol": "Node.append(child:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 54,
+      "line": 56,
       "symbol": "Node.insert(childNode:before:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 56,
+      "line": 58,
       "symbol": "Node.replace(childNode:with:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 58,
+      "line": 60,
       "symbol": "Node.remove(childNode:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 60,
+      "line": 62,
       "symbol": "Node.removeAllChildNodes()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 62,
+      "line": 64,
       "symbol": "Node.userData(key:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 64,
+      "line": 66,
       "symbol": "Node.setUserData(key:userData:handler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 66,
+      "line": 68,
       "symbol": "Node.cloneNode(deep:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 68,
+      "line": 70,
       "symbol": "Node.forEachChild(do:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 70,
+      "line": 72,
       "symbol": "Node.contains(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 72,
+      "line": 74,
       "symbol": "Node.isNodeType(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 74,
+      "line": 76,
       "symbol": "Node.isEqualTo(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 76,
+      "line": 78,
       "symbol": "Node.isSameNode(as:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 78,
+      "line": 80,
       "symbol": "Node.isDefaultNamespace(namespaceURI:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 80,
+      "line": 82,
       "symbol": "Node.lookupNamespaceURL(prefix:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 82,
+      "line": 84,
       "symbol": "Node.lookupPrefix(namespaceURI:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 84,
+      "line": 86,
       "symbol": "Node.asHashable()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 86,
+      "line": 88,
       "symbol": "Node.getHash(into:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 88,
-      "symbol": "Node.subscript(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.subscript",
       "warning": "undocumented"
     },
     {
@@ -2543,77 +4601,91 @@
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 93,
+      "line": 92,
+      "symbol": "Node.subscript(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.subscript",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
+      "line": 95,
       "symbol": "Node",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 94,
-      "symbol": "Node.isNodeType(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
       "line": 96,
+      "symbol": "Node.count",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
+      "line": 97,
+      "symbol": "Node.isEmpty",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
+      "line": 99,
       "symbol": "Node.isNodeType(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 98,
+      "line": 101,
+      "symbol": "Node.isNodeType(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
+      "line": 103,
       "symbol": "Node.forEachChild(do:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 100,
+      "line": 105,
       "symbol": "Node.isSameNode(as:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 102,
+      "line": 107,
       "symbol": "Node.append(child:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 105,
-      "symbol": "Node.textContent",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 112,
+      "line": 110,
       "symbol": "Node",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 113,
+      "line": 111,
       "symbol": "Node.hash(into:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 115,
+      "line": 113,
       "symbol": "Node.==(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Node.swift",
-      "line": 119,
+      "line": 117,
       "symbol": "Array.==(_:_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
@@ -2665,195 +4737,6 @@
       "line": 39,
       "symbol": "AnyProcessingInstructionNode.data",
       "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/CDataSectionNode.swift",
-      "line": 25,
-      "symbol": "CDataSectionNode",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/CDataSectionNode.swift",
-      "line": 28,
-      "symbol": "AnyCDataSectionNode",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/CDataSectionNode.swift",
-      "line": 31,
-      "symbol": "AnyCDataSectionNode.init(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/CharacterData.swift",
-      "line": 25,
-      "symbol": "CharacterData",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/CharacterData.swift",
-      "line": 26,
-      "symbol": "CharacterData.data",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/CharacterData.swift",
-      "line": 29,
-      "symbol": "AnyCharacterData",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/CharacterData.swift",
-      "line": 32,
-      "symbol": "AnyCharacterData.data",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/CharacterData.swift",
-      "line": 37,
-      "symbol": "AnyCharacterData.init(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/CommentNode.swift",
-      "line": 25,
-      "symbol": "CommentNode",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/CommentNode.swift",
-      "line": 28,
-      "symbol": "AnyCommentNode",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/CommentNode.swift",
-      "line": 32,
-      "symbol": "AnyCommentNode.init(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/EntityRefNode.swift",
-      "line": 25,
-      "symbol": "EntityRefNode",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/EntityRefNode.swift",
-      "line": 26,
-      "symbol": "EntityRefNode.entityName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/EntityRefNode.swift",
-      "line": 29,
-      "symbol": "AnyEntityRefNode",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/EntityRefNode.swift",
-      "line": 32,
-      "symbol": "AnyEntityRefNode.entityName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/EntityRefNode.swift",
-      "line": 34,
-      "symbol": "AnyEntityRefNode.init(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/TextNode.swift",
-      "line": 25,
-      "symbol": "TextNode",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/TextNode.swift",
-      "line": 27,
-      "symbol": "TextNode.wholeText",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/TextNode.swift",
-      "line": 28,
-      "symbol": "TextNode.isElementContentWhitespace",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/TextNode.swift",
-      "line": 31,
-      "symbol": "TextNode.splitText(offset:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/TextNode.swift",
-      "line": 33,
-      "symbol": "TextNode.replaceWholeText(text:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/TextNode.swift",
-      "line": 36,
-      "symbol": "AnyTextNode",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/TextNode.swift",
-      "line": 38,
-      "symbol": "AnyTextNode.wholeText",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/TextNode.swift",
-      "line": 39,
-      "symbol": "AnyTextNode.isElementContentWhitespace",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/TextNode.swift",
-      "line": 44,
-      "symbol": "AnyTextNode.init(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/TextNode.swift",
-      "line": 46,
-      "symbol": "AnyTextNode.splitText(offset:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/grhodes/Projects/2020/SwiftProjects/SwiftDOM/Sources/SwiftDOM/Interface/Nodes/Text/TextNode.swift",
-      "line": 48,
-      "symbol": "AnyTextNode.replaceWholeText(text:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {

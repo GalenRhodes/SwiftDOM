@@ -1,0 +1,4 @@
+module LibXML2 {
+    umbrella header "swift_libxml.h"
+    link "xml2"
+}
